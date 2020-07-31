@@ -1,6 +1,6 @@
 {
   "name": "joinble-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Joinble UI is a set of React Components that implements theming of Joinble Creator",
   "author": "joinble",
   "license": "MIT",
@@ -55,9 +55,15 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "cz-customizable": "6.2.1"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
 }
