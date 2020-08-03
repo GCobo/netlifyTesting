@@ -2,7 +2,7 @@
 
 > Joinble UI is a set of React Components that implements theming of Joinble Creator
 
-[![NPM](https://img.shields.io/npm/v/joinble-ui.svg)](https://www.npmjs.com/package/joinble-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/joinble-ui.svg)](https://www.npmjs.com/package/joinble-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)[![Joinble](https://circleci.com/gh/Joinble/joinble-ui.svg?style=svg)](https://app.circleci.com/pipelines/github/Joinble/joinble-ui)
 
 ## Install
 
