@@ -8,6 +8,8 @@ jobs:
     name: Release
     runs-on: ubuntu-18.04
     steps:
+      - name: Change wrapper permissions
+        run: chmod +x ./home/runner/work/joinble-ui/joinble-ui/node_modules
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup Node.js
