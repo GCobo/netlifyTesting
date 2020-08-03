@@ -27,4 +27,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [joinble](https://github.com/joinble/LICENSE)
+MIT © [joinble](https://github.com/joinble)
