@@ -16,12 +16,10 @@ jobs:
           node-version: 12
       - name: GitHub Action for Yarn
         uses: Borales/actions-yarn@v2.3.0
-      - name: Change wrapper permissions
-        run: chmod +x ./home/runner/work/joinble-ui/joinble-ui/node_modules
-      - name: Test
-        run: yarn test
+      - name: Test        
+        run: sudo yarn test
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: sudo yarn semantic-release
