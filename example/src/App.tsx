@@ -8,7 +8,8 @@ import {
   AlertIcon,
   ErrorLabel,
   HelpLabel,
-  HelpIcon
+  HelpIcon,
+  Checkbox
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -99,6 +100,16 @@ const App = () => {
               A block of help text that breaks onto a new line and may extend
               beyond one line.
             </HelpLabel>
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Checkbox</Title>
+          <Grid size='250'>
+            <Checkbox labelLeft='label left' />
+            <Checkbox labelRight='label right' />
+            <Checkbox labelLeft='Input checked' checked />
+            <Checkbox labelLeft='Input disabled' disabled />
+            <Checkbox labelLeft='Input checked and disabled' disabled checked />
           </Grid>
         </Section>
       </Layout>
