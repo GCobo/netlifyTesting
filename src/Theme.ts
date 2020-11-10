@@ -1,0 +1,29 @@
+export type IThemeProps = {
+  primaryColor: string
+  primaryLightColor: string
+  primaryDarkColor: string
+  secondaryColor: string
+  secondaryLightColor: string
+  secondaryDarkColor: string
+  fontColor: string
+  successColor: string
+  warningColor: string
+  errorColor: string
+  lightestColor: string
+  darkestColor: string
+}
+
+export const JoinbleTheme: IThemeProps = {
+  primaryColor: '#0C66FF',
+  primaryLightColor: '#A2BDCE',
+  primaryDarkColor: '#105CDE',
+  secondaryColor: '#5bc0be',
+  secondaryLightColor: '#ADE0DF',
+  secondaryDarkColor: '#378F8D',
+  fontColor: '#264653',
+  successColor: '#1ABC9C',
+  warningColor: '#F7B84B',
+  errorColor: '#F1556C',
+  lightestColor: '#fff',
+  darkestColor: '#000'
+}

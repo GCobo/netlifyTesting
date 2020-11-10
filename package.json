@@ -7,7 +7,7 @@
   "repository": "joinble/joinble-ui",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
-  "source": "src/index.tsx",
+  "source": "src/index.ts",
   "engines": {
     "node": ">=10"
   },
@@ -58,7 +58,8 @@
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "semantic-release": "^17.1.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "tslint": "^6.1.2"
   },
   "files": [
     "dist"
@@ -67,5 +68,11 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-reset": "^2.0.7",
+    "emotion-theming": "^10.0.27"
   }
 }
