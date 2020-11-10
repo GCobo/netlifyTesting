@@ -1,3 +1,5 @@
 import SearchIcon from './searchIcon'
+import AlertIcon from './alertIcon'
+import HelpIcon from './helpIcon'
 
-export { SearchIcon }
+export { SearchIcon, AlertIcon, HelpIcon }

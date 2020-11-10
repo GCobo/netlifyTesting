@@ -11,6 +11,12 @@ export type IThemeProps = {
   errorColor: string
   lightestColor: string
   darkestColor: string
+  grey: string
+  greyLight: string
+  fontPrimary: string
+  fontSizeSmall: string
+  fontSizeMedium: string
+  fontSizeBig: string
 }
 
 export const JoinbleTheme: IThemeProps = {
@@ -20,10 +26,16 @@ export const JoinbleTheme: IThemeProps = {
   secondaryColor: '#5bc0be',
   secondaryLightColor: '#ADE0DF',
   secondaryDarkColor: '#378F8D',
-  fontColor: '#264653',
+  fontColor: '#0A1F44',
   successColor: '#1ABC9C',
   warningColor: '#F7B84B',
   errorColor: '#F1556C',
   lightestColor: '#fff',
-  darkestColor: '#000'
+  darkestColor: '#000',
+  grey: '#E1E4E8',
+  greyLight: '#B0B7C3',
+  fontPrimary: 'Inter',
+  fontSizeSmall: '0.75rem',
+  fontSizeMedium: '0.875rem',
+  fontSizeBig: '1rem'
 }

@@ -1,2 +1,2 @@
-export * from './components/button/Button'
-export * from './components/icons/'
+export * from './GlobalStyles'
+export * from './components'
