@@ -80,6 +80,7 @@ export const Label = styled.label`
   line-height: 1.25rem;
   margin-bottom: 0.25rem;
   color: ${JoinbleTheme.fontColor};
+  font-family: ${JoinbleTheme.fontPrimary};
 
   &:first-letter {
     text-transform: capitalize;
