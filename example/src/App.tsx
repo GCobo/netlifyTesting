@@ -14,7 +14,8 @@ import {
   Dropdown,
   ChevronDownIcon,
   ButtonSocialMedia,
-  socialMedia
+  socialMedia,
+  Loading
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -66,6 +67,7 @@ const App = () => {
             <Button disabled secondary icon={<SearchIcon />}>
               Button secondary with Icon disabled
             </Button>
+            <Button loading></Button>
           </Grid>
         </Section>
         <Section>
@@ -140,6 +142,12 @@ const App = () => {
             <Checkbox labelLeft='Input checked' checked />
             <Checkbox labelLeft='Input disabled' disabled />
             <Checkbox labelLeft='Input checked and disabled' disabled checked />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Loading</Title>
+          <Grid>
+            <Loading />
           </Grid>
         </Section>
       </Layout>

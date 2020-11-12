@@ -17,6 +17,7 @@ export type IThemeProps = {
   fontSizeSmall: string
   fontSizeMedium: string
   fontSizeBig: string
+  logoColor: string
 }
 
 export const JoinbleTheme: IThemeProps = {
@@ -37,5 +38,6 @@ export const JoinbleTheme: IThemeProps = {
   fontPrimary: 'Inter',
   fontSizeSmall: '0.75rem',
   fontSizeMedium: '0.875rem',
-  fontSizeBig: '1rem'
+  fontSizeBig: '1rem',
+  logoColor: '#e6ec33'
 }
