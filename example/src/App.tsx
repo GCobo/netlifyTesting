@@ -9,7 +9,9 @@ import {
   ErrorLabel,
   HelpLabel,
   HelpIcon,
-  Checkbox
+  Checkbox,
+  Dropdown,
+  ChevronDownIcon
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -80,11 +82,20 @@ const App = () => {
           </Grid>
         </Section>
         <Section>
+          <Title>Dropdown</Title>
+          <Grid size='250'>
+            <Dropdown label='label' />
+            <Dropdown label='label' errorLabel='Error' />
+            <Dropdown label='label' helpLabel='help label' />
+          </Grid>
+        </Section>
+        <Section>
           <Title>Icons</Title>
           <Grid>
             <SearchIcon />
             <AlertIcon />
             <HelpIcon />
+            <ChevronDownIcon />
           </Grid>
         </Section>
         <Section>
