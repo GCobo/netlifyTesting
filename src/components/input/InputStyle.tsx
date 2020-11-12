@@ -42,7 +42,8 @@ export const InputStyle = styled.input<IInputProps>`
   background-color: transparent;
   height: 2.5rem;
   padding: 0 0.75rem;
-  padding-right: ${(props) => props.errorLabel || (props.icon && '40px')};
+  padding-right: ${(props) =>
+    props.errorLabel ? '2.5rem' : props.icon && '2.5rem'};
   font-weight: 500;
   font-family: ${JoinbleTheme.fontPrimary};
 

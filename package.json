@@ -74,6 +74,7 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "emotion-reset": "^2.0.7",
-    "emotion-theming": "^10.0.27"
+    "emotion-theming": "^10.0.27",
+    "polished": "^4.0.3"
   }
 }

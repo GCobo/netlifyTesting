@@ -1,15 +1,27 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { JoinbleTheme } from '../../Theme'
+import { darken } from 'polished'
 
 type IButtonProps = {
   secondary?: boolean
   icon?: React.ReactElement
+  warning?: boolean
+  error?: boolean
+  success?: boolean
 }
 
 export const ButtonStyles = styled.button<IButtonProps>`
   background-color: ${(props) =>
-    props.secondary ? JoinbleTheme.lightestColor : JoinbleTheme.primaryColor};
+    props.secondary
+      ? JoinbleTheme.lightestColor
+      : props.error
+      ? JoinbleTheme.errorColor
+      : props.success
+      ? JoinbleTheme.successColor
+      : props.warning
+      ? JoinbleTheme.warningColor
+      : JoinbleTheme.primaryColor};
   border: 1px solid
     ${(props) => (props.secondary ? JoinbleTheme.primaryColor : 'transparent')};
   font-size: 1rem;
@@ -36,20 +48,31 @@ export const ButtonStyles = styled.button<IButtonProps>`
         props.secondary
           ? JoinbleTheme.lightestColor
           : JoinbleTheme.primaryColor};
+      color: ${(props) =>
+        props.secondary
+          ? JoinbleTheme.primaryColor
+          : JoinbleTheme.lightestColor};
     }
   }
+
   &:hover {
     background-color: ${(props) =>
       props.secondary
-        ? JoinbleTheme.primaryLightColor
-        : JoinbleTheme.primaryDarkColor};
-    color: ${(props) =>
-      props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
+        ? JoinbleTheme.primaryColor
+        : props.error
+        ? darken(0.1, JoinbleTheme.errorColor)
+        : props.success
+        ? darken(0.1, JoinbleTheme.successColor)
+        : props.warning
+        ? darken(0.1, JoinbleTheme.warningColor)
+        : darken(0.1, JoinbleTheme.primaryColor)};
+    color: ${JoinbleTheme.lightestColor};
   }
+
   &:focus,
   &:active {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.6);
+    box-shadow: 0 0 0 2px ${JoinbleTheme.focusShadow};
   }
   &:first-letter {
     text-transform: capitalize;
@@ -65,7 +88,7 @@ export const IconWrapper = styled.div<IIconProps>`
   left: 0;
   padding: 0 1rem;
   background-color: ${(props) =>
-    props.secondary ? 'inherit' : JoinbleTheme.primaryDarkColor};
+    props.secondary ? 'inherit' : darken(0.1, JoinbleTheme.primaryColor)};
   height: 100%;
   display: grid;
   place-items: center;

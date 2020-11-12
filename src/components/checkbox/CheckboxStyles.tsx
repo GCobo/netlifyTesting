@@ -50,7 +50,7 @@ export const CheckboxContainer = styled.section<ICcheckboxContainerProps>`
   &:hover {
     ${StyledCheckbox} {
       box-shadow: ${(props) =>
-        props.disabled ? 'none' : '0 0 0 2px rgba(66, 153, 225, 0.6)'};
+        props.disabled ? 'none' : `0 0 0 2px ${JoinbleTheme.focusShadow}`};
     }
   }
 `

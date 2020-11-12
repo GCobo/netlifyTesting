@@ -10,6 +10,9 @@ type IProps = {
   icon?: React.ReactElement
   testId?: string
   loading?: boolean
+  warning?: boolean
+  error?: boolean
+  success?: boolean
 }
 
 export const Button: React.FunctionComponent<IProps> = ({
@@ -19,6 +22,9 @@ export const Button: React.FunctionComponent<IProps> = ({
   type = 'button',
   icon,
   loading,
+  warning,
+  error,
+  success,
   testId
 }) => {
   return (
@@ -27,6 +33,9 @@ export const Button: React.FunctionComponent<IProps> = ({
       disabled={disabled}
       data-test={testId}
       secondary={secondary}
+      warning={warning}
+      error={error}
+      success={success}
     >
       {!loading && icon && (
         <IconWrapper secondary={secondary}>

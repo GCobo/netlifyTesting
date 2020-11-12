@@ -35,8 +35,8 @@ const App = () => {
   `
   const Grid = styled.div(
     {
-      columnGap: '1rem',
-      rowGap: '1rem'
+      gridColumnGap: '1rem',
+      gridRowGap: '1rem'
     },
     (props: any) => ({
       display: `${props.size ? 'grid' : 'flex'}`,
@@ -50,24 +50,27 @@ const App = () => {
       <Layout>
         <Section>
           <Title>Button</Title>
-          <Grid size='350'>
-            <Button>Button</Button>
-            <Button secondary>Button secondary</Button>
-            <Button disabled>Button primary disabled</Button>
+          <Grid size='300'>
+            <Button>Primary</Button>
+            <Button secondary> secondary</Button>
+            <Button disabled> primary disabled</Button>
             <Button secondary disabled>
-              Button secondary disabled
+              secondary disabled
             </Button>
-            <Button icon={<SearchIcon />}>Button with Icon</Button>
+            <Button icon={<SearchIcon />}> with Icon</Button>
             <Button secondary icon={<SearchIcon />}>
-              Button secondary with Icon
+              secondary with Icon
             </Button>
             <Button disabled icon={<SearchIcon />}>
-              Button with Icon disabled
+              with Icon disabled
             </Button>
             <Button disabled secondary icon={<SearchIcon />}>
-              Button secondary with Icon disabled
+              secondary with Icon disabled
             </Button>
             <Button loading></Button>
+            <Button error>error</Button>
+            <Button success>success</Button>
+            <Button warning>warning</Button>
           </Grid>
         </Section>
         <Section>
@@ -88,7 +91,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Input</Title>
-          <Grid size='250'>
+          <Grid size='300'>
             <Input label='With label' placeHolder='With label' />
             <Input label='Number' type='number' />
             <Input label='Password' type='password' />
@@ -136,7 +139,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Checkbox</Title>
-          <Grid size='250'>
+          <Grid size='150'>
             <Checkbox labelLeft='label left' />
             <Checkbox labelRight='label right' />
             <Checkbox labelLeft='Input checked' checked />

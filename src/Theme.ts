@@ -1,10 +1,6 @@
 export type IThemeProps = {
   primaryColor: string
-  primaryLightColor: string
-  primaryDarkColor: string
   secondaryColor: string
-  secondaryLightColor: string
-  secondaryDarkColor: string
   fontColor: string
   successColor: string
   warningColor: string
@@ -18,15 +14,12 @@ export type IThemeProps = {
   fontSizeMedium: string
   fontSizeBig: string
   logoColor: string
+  focusShadow: string
 }
 
 export const JoinbleTheme: IThemeProps = {
   primaryColor: '#0C66FF',
-  primaryLightColor: '#A2BDCE',
-  primaryDarkColor: '#105CDE',
   secondaryColor: '#5bc0be',
-  secondaryLightColor: '#ADE0DF',
-  secondaryDarkColor: '#378F8D',
   fontColor: '#0A1F44',
   successColor: '#1ABC9C',
   warningColor: '#F7B84B',
@@ -39,5 +32,6 @@ export const JoinbleTheme: IThemeProps = {
   fontSizeSmall: '0.75rem',
   fontSizeMedium: '0.875rem',
   fontSizeBig: '1rem',
-  logoColor: '#e6ec33'
+  logoColor: '#e6ec33',
+  focusShadow: 'rgba(66, 153, 225, 0.6)'
 }

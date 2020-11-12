@@ -19,10 +19,17 @@ export const DropdownStyle = styled(InputStyle)<IDropdownStyleProps>`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  padding-right: 0.75rem;
   box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
     props.errorLabel ? JoinbleTheme.errorColor : JoinbleTheme.grey
   }`};
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `
 
 type IChevronProps = {
