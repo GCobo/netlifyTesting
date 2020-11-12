@@ -1,4 +1,4 @@
-export * from './button/Button'
+export * from './button'
 export * from './icons/index'
 export * from './input/Input'
 export * from './errorLabel/ErrorLabel'

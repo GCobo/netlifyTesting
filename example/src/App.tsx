@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import {
   Button,
+  ButtonIcon,
   SearchIcon,
   Input,
   GlobalStyles,
@@ -11,7 +12,9 @@ import {
   HelpIcon,
   Checkbox,
   Dropdown,
-  ChevronDownIcon
+  ChevronDownIcon,
+  ButtonSocialMedia,
+  socialMedia
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -66,12 +69,28 @@ const App = () => {
           </Grid>
         </Section>
         <Section>
+          <Title>Button Icon</Title>
+          <Grid>
+            <ButtonIcon icon={<AlertIcon />} />
+            <ButtonIcon icon={<SearchIcon />} />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Button Social Media</Title>
+          <Grid>
+            <ButtonSocialMedia social={socialMedia.google} />
+            <ButtonSocialMedia social={socialMedia.facebook} />
+            <ButtonSocialMedia social={socialMedia.twitter} />
+            <ButtonSocialMedia social={socialMedia.linkedin} />
+          </Grid>
+        </Section>
+        <Section>
           <Title>Input</Title>
           <Grid size='250'>
             <Input label='With label' placeHolder='With label' />
-            <Input label='Number' inputType='number' />
-            <Input label='Password' inputType='password' />
-            <Input label='Email' inputType='email' />
+            <Input label='Number' type='number' />
+            <Input label='Password' type='password' />
+            <Input label='Email' type='email' />
             <Input label='with icon' icon={<SearchIcon />} />
             <Input label='with label and error' errorLabel='Error label' />
             <Input label='Disabled' disabled />
