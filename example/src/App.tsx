@@ -15,7 +15,8 @@ import {
   ChevronDownIcon,
   ButtonSocialMedia,
   socialMedia,
-  Loading
+  Loading,
+  Link
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -120,6 +121,12 @@ const App = () => {
             <AlertIcon />
             <HelpIcon />
             <ChevronDownIcon />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Link</Title>
+          <Grid>
+            <Link hRef=''>Links</Link>
           </Grid>
         </Section>
         <Section>
