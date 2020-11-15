@@ -16,7 +16,8 @@ import {
   ButtonSocialMedia,
   socialMedia,
   Loading,
-  Link
+  Link,
+  Modal
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -158,6 +159,12 @@ const App = () => {
           <Title>Loading</Title>
           <Grid>
             <Loading />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Modal</Title>
+          <Grid>
+            <Modal>Modal</Modal>
           </Grid>
         </Section>
       </Layout>
