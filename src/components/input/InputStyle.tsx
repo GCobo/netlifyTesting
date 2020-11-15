@@ -17,6 +17,7 @@ export const Wrapper = styled.section<IWrapperProps>`
   display: flex;
   flex-flow: column;
   position: relative;
+  width: 100%;
 
   svg {
     ${(props) =>
@@ -41,6 +42,7 @@ export const InputStyle = styled.input<IInputProps>`
   border-radius: 0.25rem;
   background-color: transparent;
   height: 2.5rem;
+  width: 100%;
   padding: 0 0.75rem;
   padding-right: ${(props) =>
     props.errorLabel ? '2.5rem' : props.icon && '2.5rem'};

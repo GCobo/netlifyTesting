@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import { Loading } from '../loading/Loading'
 import { IconWrapper, ButtonStyles } from './ButtonStyles'
 
@@ -13,6 +13,7 @@ type IProps = {
   warning?: boolean
   error?: boolean
   success?: boolean
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 export const Button: React.FunctionComponent<IProps> = ({
@@ -25,7 +26,8 @@ export const Button: React.FunctionComponent<IProps> = ({
   warning,
   error,
   success,
-  testId
+  testId,
+  onClick
 }) => {
   return (
     <ButtonStyles
@@ -36,6 +38,7 @@ export const Button: React.FunctionComponent<IProps> = ({
       warning={warning}
       error={error}
       success={success}
+      onClick={onClick}
     >
       {!loading && icon && (
         <IconWrapper secondary={secondary}>

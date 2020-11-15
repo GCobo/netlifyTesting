@@ -26,6 +26,7 @@ export const ButtonStyles = styled.button<IButtonProps>`
     ${(props) => (props.secondary ? JoinbleTheme.primaryColor : 'transparent')};
   font-size: 1rem;
   min-width: 7rem;
+  width: 100%;
   height: 2.5rem;
   border-radius: 0.25rem;
   display: inline-flex;

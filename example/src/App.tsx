@@ -53,42 +53,79 @@ const App = () => {
         <Section>
           <Title>Button</Title>
           <Grid size='300'>
-            <Button>Primary</Button>
-            <Button secondary> secondary</Button>
-            <Button disabled> primary disabled</Button>
-            <Button secondary disabled>
+            <Button onClick={() => alert('click')}>Primary</Button>
+            <Button onClick={() => alert('click')} secondary>
+              secondary
+            </Button>
+            <Button onClick={() => alert('click')} disabled>
+              primary disabled
+            </Button>
+            <Button onClick={() => alert('click')} secondary disabled>
               secondary disabled
             </Button>
-            <Button icon={<SearchIcon />}> with Icon</Button>
-            <Button secondary icon={<SearchIcon />}>
+            <Button onClick={() => alert('click')} icon={<SearchIcon />}>
+              with Icon
+            </Button>
+            <Button
+              onClick={() => alert('click')}
+              secondary
+              icon={<SearchIcon />}
+            >
               secondary with Icon
             </Button>
-            <Button disabled icon={<SearchIcon />}>
+            <Button
+              onClick={() => alert('click')}
+              disabled
+              icon={<SearchIcon />}
+            >
               with Icon disabled
             </Button>
-            <Button disabled secondary icon={<SearchIcon />}>
+            <Button
+              onClick={() => alert('click')}
+              disabled
+              secondary
+              icon={<SearchIcon />}
+            >
               secondary with Icon disabled
             </Button>
-            <Button loading></Button>
-            <Button error>error</Button>
-            <Button success>success</Button>
-            <Button warning>warning</Button>
+            <Button onClick={() => alert('click')} loading></Button>
+            <Button onClick={() => alert('click')} error>
+              error
+            </Button>
+            <Button onClick={() => alert('click')} success>
+              success
+            </Button>
+            <Button onClick={() => alert('click')} warning>
+              warning
+            </Button>
           </Grid>
         </Section>
         <Section>
           <Title>Button Icon</Title>
           <Grid>
-            <ButtonIcon icon={<AlertIcon />} />
-            <ButtonIcon icon={<SearchIcon />} />
+            <ButtonIcon onClick={() => alert('click')} icon={<AlertIcon />} />
+            <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
           </Grid>
         </Section>
         <Section>
           <Title>Button Social Media</Title>
           <Grid>
-            <ButtonSocialMedia social={socialMedia.google} />
-            <ButtonSocialMedia social={socialMedia.facebook} />
-            <ButtonSocialMedia social={socialMedia.twitter} />
-            <ButtonSocialMedia social={socialMedia.linkedin} />
+            <ButtonSocialMedia
+              social={socialMedia.google}
+              onClick={() => alert('click')}
+            />
+            <ButtonSocialMedia
+              social={socialMedia.facebook}
+              onClick={() => alert('click')}
+            />
+            <ButtonSocialMedia
+              social={socialMedia.twitter}
+              onClick={() => alert('click')}
+            />
+            <ButtonSocialMedia
+              social={socialMedia.linkedin}
+              onClick={() => alert('click')}
+            />
           </Grid>
         </Section>
         <Section>

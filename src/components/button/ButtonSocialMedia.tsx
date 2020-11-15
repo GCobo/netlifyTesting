@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, MouseEvent } from 'react'
 import { GoogleIcon, LinkedinIcon, TwitterIcon } from '../icons'
 import FacebookIcon from '../icons/facebookIcon'
 import {
@@ -17,30 +17,32 @@ export enum socialMedia {
 
 type IProps = {
   social: socialMedia
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
-  social
+  social,
+  onClick
 }) => {
   return (
     <Fragment>
       {social === socialMedia.google && (
-        <GoogleButton>
+        <GoogleButton onClick={onClick}>
           <GoogleIcon />
         </GoogleButton>
       )}
       {social === socialMedia.facebook && (
-        <FacebookButton>
+        <FacebookButton onClick={onClick}>
           <FacebookIcon />
         </FacebookButton>
       )}
       {social === socialMedia.linkedin && (
-        <LinkedinButton>
+        <LinkedinButton onClick={onClick}>
           <LinkedinIcon />
         </LinkedinButton>
       )}
       {social === socialMedia.twitter && (
-        <TwitterButton>
+        <TwitterButton onClick={onClick}>
           <TwitterIcon />
         </TwitterButton>
       )}
