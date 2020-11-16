@@ -5,15 +5,17 @@ type IProps = {
   hRef: string
   children?: React.ReactNode
   testId?: string
+  className?: string
 }
 
 export const Link: React.FunctionComponent<IProps> = ({
   hRef,
   children,
-  testId
+  testId,
+  className
 }) => {
   return (
-    <LinkStyles hRef={hRef} data-test={testId}>
+    <LinkStyles hRef={hRef} data-test={testId} className={className}>
       {children}
     </LinkStyles>
   )

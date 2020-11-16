@@ -13,6 +13,7 @@ type IProps = {
   checked?: boolean
   disabled?: boolean
   id?: string
+  className?: string
 }
 
 export const Checkbox: React.FunctionComponent<IProps> = ({
@@ -20,10 +21,11 @@ export const Checkbox: React.FunctionComponent<IProps> = ({
   labelRight,
   checked,
   disabled,
-  id
+  id,
+  className
 }) => {
   return (
-    <CheckboxContainer disabled={disabled}>
+    <CheckboxContainer disabled={disabled} className={className}>
       {labelLeft && (
         <Label id={id} labelLeft={labelLeft} disabled={disabled}>
           {labelLeft}

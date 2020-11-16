@@ -4,20 +4,24 @@ import { LoadingStyles, Dot1, Dot2 } from './LoadingStyles'
 
 type IProps = {
   overlay?: boolean
+  className?: string
 }
 
-export const Loading: React.FunctionComponent<IProps> = ({ overlay }) => {
+export const Loading: React.FunctionComponent<IProps> = ({
+  overlay,
+  className
+}) => {
   return (
     <Fragment>
       {overlay ? (
         <Overlay>
-          <LoadingStyles>
+          <LoadingStyles className={className}>
             <Dot1 />
             <Dot2 />
           </LoadingStyles>
         </Overlay>
       ) : (
-        <LoadingStyles>
+        <LoadingStyles className={className}>
           <Dot1 />
           <Dot2 />
         </LoadingStyles>

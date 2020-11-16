@@ -14,6 +14,7 @@ type IProps = {
   error?: boolean
   success?: boolean
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  className?: string
 }
 
 export const Button: React.FunctionComponent<IProps> = ({
@@ -27,7 +28,8 @@ export const Button: React.FunctionComponent<IProps> = ({
   error,
   success,
   testId,
-  onClick
+  onClick,
+  className
 }) => {
   return (
     <ButtonStyles
@@ -39,6 +41,7 @@ export const Button: React.FunctionComponent<IProps> = ({
       error={error}
       success={success}
       onClick={onClick}
+      className={className}
     >
       {!loading && icon && (
         <IconWrapper secondary={secondary}>

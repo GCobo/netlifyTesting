@@ -8,13 +8,15 @@ type IProps = {
   errorLabel?: string
   helpLabel?: string
   value?: string
+  className?: string
 }
 
 export const Dropdown: React.FunctionComponent<IProps> = ({
   label,
   errorLabel,
   helpLabel,
-  value
+  value,
+  className
 }) => {
   const [open, setOpen] = useState<boolean>(false)
 
@@ -23,7 +25,7 @@ export const Dropdown: React.FunctionComponent<IProps> = ({
   }
 
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <LabelDropdown as='p'>{label}</LabelDropdown>
       <DropdownStyle as='button' onClick={handleOpen} errorLabel={errorLabel}>
         <span> {value}</span>

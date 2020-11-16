@@ -7,6 +7,7 @@ import LinkedinIcon from './linkedinIcon'
 import TwitterIcon from './twitterIcon'
 import GoogleIcon from './googleIcon'
 import GithubIcon from './githubIcon'
+import joinbleIcon from './joinbleIcon'
 
 export {
   SearchIcon,
@@ -17,5 +18,6 @@ export {
   TwitterIcon,
   GoogleIcon,
   ChevronDownIcon,
-  GithubIcon
+  GithubIcon,
+  joinbleIcon
 }

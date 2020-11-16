@@ -26,31 +26,33 @@ export enum socialMedia {
 type IProps = {
   social: socialMedia
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  className?: string
 }
 
 export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
   social,
-  onClick
+  onClick,
+  className
 }) => {
   return (
     <Fragment>
       {social === socialMedia.google && (
-        <GoogleButton onClick={onClick}>
+        <GoogleButton className={className} onClick={onClick}>
           <GoogleIcon />
         </GoogleButton>
       )}
       {social === socialMedia.facebook && (
-        <FacebookButton onClick={onClick}>
+        <FacebookButton className={className} onClick={onClick}>
           <FacebookIcon />
         </FacebookButton>
       )}
       {social === socialMedia.linkedin && (
-        <LinkedinButton onClick={onClick}>
+        <LinkedinButton className={className} onClick={onClick}>
           <LinkedinIcon />
         </LinkedinButton>
       )}
       {social === socialMedia.twitter && (
-        <TwitterButton onClick={onClick}>
+        <TwitterButton className={className} onClick={onClick}>
           <TwitterIcon />
         </TwitterButton>
       )}

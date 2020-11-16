@@ -20,6 +20,7 @@ type IProps = {
   icon?: ReactElement
   name?: string
   ref?: Ref<HTMLInputElement>
+  className?: string
 }
 
 export const Input: React.FunctionComponent<IProps> = forwardRef(
@@ -33,12 +34,13 @@ export const Input: React.FunctionComponent<IProps> = forwardRef(
       id,
       placeHolder,
       icon,
-      name
+      name,
+      className
     },
     ref: Ref<HTMLInputElement>
   ) => {
     return (
-      <Wrapper icon={icon}>
+      <Wrapper icon={icon} className={className}>
         <Label htmlFor={id}>{label}</Label>
         <InputStyle
           type={type}
