@@ -2,18 +2,20 @@ import SearchIcon from './searchIcon'
 import AlertIcon from './alertIcon'
 import HelpIcon from './helpIcon'
 import ChevronDownIcon from './chevronDownIcon'
-import Facebook from './facebookIcon'
+import FacebookIcon from './facebookIcon'
 import LinkedinIcon from './linkedinIcon'
 import TwitterIcon from './twitterIcon'
 import GoogleIcon from './googleIcon'
+import GithubIcon from './githubIcon'
 
 export {
   SearchIcon,
   AlertIcon,
   HelpIcon,
-  Facebook,
+  FacebookIcon,
   LinkedinIcon,
   TwitterIcon,
   GoogleIcon,
-  ChevronDownIcon
+  ChevronDownIcon,
+  GithubIcon
 }

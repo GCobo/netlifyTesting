@@ -126,6 +126,10 @@ const App = () => {
               social={socialMedia.linkedin}
               onClick={() => alert('click')}
             />
+            <ButtonSocialMedia
+              social={socialMedia.github}
+              onClick={() => alert('click')}
+            />
           </Grid>
         </Section>
         <Section>

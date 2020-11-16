@@ -38,3 +38,11 @@ export const LinkedinButton = styled(Button)`
     fill: #0077b7;
   }
 `
+export const GithubButton = styled(Button)`
+  border-color: transparent;
+  padding: 0;
+  svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+`
