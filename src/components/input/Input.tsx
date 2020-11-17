@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref, ReactElement } from 'react'
+import React, { forwardRef, Ref, ReactElement, MouseEvent } from 'react'
 
 import { HelpLabel } from '../helpLabel/HelpLabel'
 import {
@@ -21,6 +21,8 @@ type IProps = {
   name?: string
   ref?: Ref<HTMLInputElement>
   className?: string
+  onClick?: (event: MouseEvent<HTMLInputElement>) => void
+  value?: any
 }
 
 export const Input: React.FunctionComponent<IProps> = forwardRef(
@@ -35,7 +37,9 @@ export const Input: React.FunctionComponent<IProps> = forwardRef(
       placeHolder,
       icon,
       name,
-      className
+      className,
+      onClick,
+      value
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -50,6 +54,8 @@ export const Input: React.FunctionComponent<IProps> = forwardRef(
           errorLabel={errorLabel}
           name={name}
           ref={ref}
+          onClick={onClick}
+          value={value}
         />
         {icon && React.cloneElement(icon)}
         {errorLabel && <IconError />}

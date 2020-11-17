@@ -17,7 +17,9 @@ import {
   socialMedia,
   Loading,
   Link,
-  Modal
+  Modal,
+  ColorPicker,
+  JoinbleTheme
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -163,6 +165,15 @@ const App = () => {
             <AlertIcon />
             <HelpIcon />
             <ChevronDownIcon />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Color Picker</Title>
+          <Grid>
+            <ColorPicker
+              label='Select Primary color'
+              value={JoinbleTheme.primaryColor}
+            />
           </Grid>
         </Section>
         <Section>
