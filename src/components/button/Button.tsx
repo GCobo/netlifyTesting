@@ -13,7 +13,7 @@ type IProps = {
   warning?: boolean
   error?: boolean
   success?: boolean
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
   className?: string
 }
 
