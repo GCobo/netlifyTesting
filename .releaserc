@@ -8,5 +8,8 @@
     ["@semantic-release/git", {
       "assets": ["CHANGELOG.md"]
     }],
-  ]
+  ],
+  "release": {
+    "branches": ["master", "next"]
+  }
 }
