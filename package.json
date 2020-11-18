@@ -73,6 +73,7 @@
     "@emotion/babel-preset-css-prop": "^10.2.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@semantic-release/changelog": "^5.0.1",
     "@types/react-color": "^3.0.4",
     "emotion-reset": "^2.0.7",
     "emotion-theming": "^10.0.27",

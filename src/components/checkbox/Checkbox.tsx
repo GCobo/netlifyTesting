@@ -14,6 +14,7 @@ type IProps = {
   disabled?: boolean
   id?: string
   className?: string
+  testId?: string
 }
 
 export const Checkbox: React.FunctionComponent<IProps> = ({
@@ -22,7 +23,8 @@ export const Checkbox: React.FunctionComponent<IProps> = ({
   checked,
   disabled,
   id,
-  className
+  className,
+  testId
 }) => {
   return (
     <CheckboxContainer disabled={disabled} className={className}>
@@ -35,6 +37,7 @@ export const Checkbox: React.FunctionComponent<IProps> = ({
         type='checkbox'
         checked={checked}
         disabled={disabled}
+        data-test={testId}
         id={id}
       />
       <StyledCheckbox checked={checked}>
