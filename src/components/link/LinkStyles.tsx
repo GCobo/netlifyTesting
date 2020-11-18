@@ -2,11 +2,7 @@ import styled from '@emotion/styled'
 import { JoinbleTheme } from '../../Theme'
 import { darken } from 'polished'
 
-type IProps = {
-  hRef: string
-}
-
-export const LinkStyles = styled.a<IProps>`
+export const LinkStyles = styled.a`
   color: ${JoinbleTheme.primaryColor};
   border-bottom: 1px solid ${JoinbleTheme.primaryColor};
   font-size: ${JoinbleTheme.fontSizeSmall};
@@ -14,6 +10,7 @@ export const LinkStyles = styled.a<IProps>`
   padding-bottom: 1px;
   cursor: pointer;
   display: block;
+  text-decoration: none;
 
   &:hover,
   &:focus {

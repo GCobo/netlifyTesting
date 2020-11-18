@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { JoinbleTheme } from '../../Theme'
 import { ErrorLabel } from '../errorLabel/ErrorLabel'
-import AlertIcon from '../icons/alertIcon'
+import { AlertIcon } from '../icons'
 
 type IInputProps = {
   errorLabel?: string
