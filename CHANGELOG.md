@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/joinble/joinble-ui/compare/v1.6.2...v1.6.3) (2020-11-18)
+
+
+### Bug Fixes
+
+* **components:** [#46](https://github.com/joinble/joinble-ui/issues/46) fix links props ([1ba9bdd](https://github.com/joinble/joinble-ui/commit/1ba9bddc2e2f914ad74d91d1cfa9559e8b7bbf48))
+
 ## [1.6.2](https://github.com/joinble/joinble-ui/compare/v1.6.1...v1.6.2) (2020-11-18)
 
 
