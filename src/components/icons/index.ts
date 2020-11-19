@@ -8,6 +8,8 @@ import LinkedinIcon from './linkedinIcon'
 import TwitterIcon from './twitterIcon'
 import GoogleIcon from './googleIcon'
 import GithubIcon from './githubIcon'
+import HamburguerIcon from './hamburguerIcon'
+import NotificationIcon from './notificationIcon'
 
 export {
   SearchIcon,
@@ -19,5 +21,7 @@ export {
   GoogleIcon,
   ChevronDownIcon,
   GithubIcon,
-  JoinbleIcon
+  JoinbleIcon,
+  HamburguerIcon,
+  NotificationIcon
 }

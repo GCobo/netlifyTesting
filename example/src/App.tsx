@@ -19,7 +19,10 @@ import {
   Link,
   Modal,
   ColorPicker,
-  JoinbleTheme
+  JoinbleTheme,
+  HamburguerIcon,
+  NotificationIcon,
+  Badgets
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -107,6 +110,21 @@ const App = () => {
           <Grid>
             <ButtonIcon onClick={() => alert('click')} icon={<AlertIcon />} />
             <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
+            <ButtonIcon
+              badgetsNumber={9}
+              onClick={() => alert('click')}
+              icon={<NotificationIcon />}
+            />
+            <ButtonIcon
+              badgetsNumber={99}
+              onClick={() => alert('click')}
+              icon={<NotificationIcon />}
+            />
+            <ButtonIcon
+              badgetsNumber={999}
+              onClick={() => alert('click')}
+              icon={<NotificationIcon />}
+            />
           </Grid>
         </Section>
         <Section>
@@ -165,6 +183,8 @@ const App = () => {
             <AlertIcon />
             <HelpIcon />
             <ChevronDownIcon />
+            <HamburguerIcon />
+            <NotificationIcon />
           </Grid>
         </Section>
         <Section>
@@ -179,7 +199,7 @@ const App = () => {
         <Section>
           <Title>Link</Title>
           <Grid>
-            <Link hRef=''>Links</Link>
+            <Link href=''>Links</Link>
           </Grid>
         </Section>
         <Section>
@@ -211,6 +231,14 @@ const App = () => {
           <Title>Loading</Title>
           <Grid>
             <Loading />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Badgets</Title>
+          <Grid>
+            <Badgets number={9} />
+            <Badgets number={99} />
+            <Badgets number={999} />
           </Grid>
         </Section>
         <Section>
