@@ -6,19 +6,22 @@ type IProps = {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
   className?: string
   badgetsNumber?: number
+  secondary?: boolean
 }
 
 export const ButtonIcon: React.FunctionComponent<IProps> = ({
   icon,
   onClick,
   className,
-  badgetsNumber
+  badgetsNumber,
+  secondary
 }) => {
   return (
     <ButtonIconStyle
       badgetsNumber={badgetsNumber}
       onClick={onClick}
       className={className}
+      secondary={secondary}
     >
       {badgetsNumber ? (
         <React.Fragment>

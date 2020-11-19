@@ -4,6 +4,7 @@ import { Badgets } from '../badgets/Badgets'
 
 type IProps = {
   badgetsNumber?: number
+  secondary?: boolean
 }
 
 export const ButtonIconStyle = styled.button<IProps>`
@@ -16,7 +17,8 @@ export const ButtonIconStyle = styled.button<IProps>`
   }
 
   svg {
-    stroke: ${JoinbleTheme.primaryColor};
+    stroke: ${(props) =>
+      props.secondary ? JoinbleTheme.lightestColor : JoinbleTheme.primaryColor};
   }
 `
 
