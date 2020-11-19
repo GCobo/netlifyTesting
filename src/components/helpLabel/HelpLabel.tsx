@@ -22,7 +22,7 @@ export const HelpLabel: React.FunctionComponent<IProps> = ({
       width: 1.5rem;
       min-width: 1.5rem;
       height: 1.5rem;
-      stroke: ${JoinbleTheme.greyLight};
+      fill: ${JoinbleTheme.greyLight};
     }
     p {
       color: ${JoinbleTheme.greyLight};

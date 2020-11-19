@@ -6,19 +6,11 @@ type IProps = {
 
 const NotificationIcon: React.FunctionComponent<IProps> = ({ className }) => {
   return (
-    <svg
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      className={className}
-    >
-      <path d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'></path>
-      <path d='M13.73 21a2 2 0 0 1-3.46 0'></path>
+    <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
+      <path
+        d='M12 22C10.8954 22 10 21.1046 10 20H14C14 21.1046 13.1046 22 12 22ZM20 19H4V17L6 16V10.5C6 7.038 7.421 4.793 10 4.18V2H14V4.18C16.579 4.792 18 7.036 18 10.5V16L20 17V19ZM12 5.75C10.7797 5.6712 9.60278 6.21728 8.875 7.2C8.25255 8.18456 7.94714 9.33638 8 10.5V17H16V10.5C16.0528 9.33639 15.7474 8.18458 15.125 7.2C14.3972 6.21728 13.2203 5.6712 12 5.75Z'
+        fillRule='evenodd'
+      ></path>
     </svg>
   )
 }

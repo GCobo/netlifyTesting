@@ -22,7 +22,9 @@ import {
   JoinbleTheme,
   HamburguerIcon,
   NotificationIcon,
-  Badgets
+  Badgets,
+  ApplicationIcon,
+  WidgetIcon
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -179,12 +181,14 @@ const App = () => {
         <Section>
           <Title>Icons</Title>
           <Grid>
-            <SearchIcon />
             <AlertIcon />
-            <HelpIcon />
+            <ApplicationIcon />
             <ChevronDownIcon />
             <HamburguerIcon />
+            <HelpIcon />
             <NotificationIcon />
+            <SearchIcon />
+            <WidgetIcon />
           </Grid>
         </Section>
         <Section>

@@ -37,7 +37,7 @@ type IChevronProps = {
 }
 
 export const Chevron = styled(ChevronDownIcon)<IChevronProps>`
-  stroke: ${JoinbleTheme.primaryColor};
+  fill: ${JoinbleTheme.primaryColor};
   transition: transform 0.2s ease-in-out;
   transform: ${(props) => (props.open ? 'rotate(180deg)' : 'rotate(0)')};
 `

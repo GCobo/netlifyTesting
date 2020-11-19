@@ -17,7 +17,7 @@ export const ButtonIconStyle = styled.button<IProps>`
   }
 
   svg {
-    stroke: ${(props) =>
+    fill: ${(props) =>
       props.secondary ? JoinbleTheme.lightestColor : JoinbleTheme.primaryColor};
   }
 `

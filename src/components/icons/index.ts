@@ -10,6 +10,8 @@ import GoogleIcon from './googleIcon'
 import GithubIcon from './githubIcon'
 import HamburguerIcon from './hamburguerIcon'
 import NotificationIcon from './notificationIcon'
+import ApplicationIcon from './applicationIcon'
+import WidgetIcon from './widgetIcon'
 
 export {
   SearchIcon,
@@ -23,5 +25,7 @@ export {
   GithubIcon,
   JoinbleIcon,
   HamburguerIcon,
-  NotificationIcon
+  NotificationIcon,
+  ApplicationIcon,
+  WidgetIcon
 }

@@ -53,6 +53,13 @@ export const ButtonStyles = styled.button<IButtonProps>`
         props.secondary
           ? JoinbleTheme.primaryColor
           : JoinbleTheme.lightestColor};
+
+      svg {
+        fill: ${(props) =>
+          props.secondary
+            ? JoinbleTheme.primaryColor
+            : JoinbleTheme.lightestColor};
+      }
     }
   }
 
@@ -68,6 +75,12 @@ export const ButtonStyles = styled.button<IButtonProps>`
         ? darken(0.1, JoinbleTheme.warningColor)
         : darken(0.1, JoinbleTheme.primaryColor)};
     color: ${JoinbleTheme.lightestColor};
+    svg {
+      fill: ${(props) =>
+        props.secondary
+          ? JoinbleTheme.lightestColor
+          : JoinbleTheme.lightestColor};
+    }
   }
 
   &:focus,
@@ -98,6 +111,7 @@ export const IconWrapper = styled.div<IIconProps>`
   svg {
     width: 1.5rem;
     height: 1.5rem;
-    fill: transparent;
+    fill: ${(props) =>
+      props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
   }
 `

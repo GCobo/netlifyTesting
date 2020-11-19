@@ -26,7 +26,7 @@ export const Wrapper = styled.section<IWrapperProps>`
       position: absolute;
       right: 0.75rem;
       top: 2rem;
-      stroke: ${JoinbleTheme.primaryColor};
+      fill: ${JoinbleTheme.primaryColor};
     `}
   }
 `
@@ -97,5 +97,5 @@ export const IconError = styled(AlertIcon)`
   position: absolute;
   right: 0.75rem;
   top: 2rem;
-  stroke: ${JoinbleTheme.errorColor};
+  fill: ${JoinbleTheme.errorColor};
 `
