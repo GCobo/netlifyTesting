@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/joinble/joinble-ui/compare/v1.7.0...v1.8.0) (2020-11-19)
+
+
+### Features
+
+* **components:** [#52](https://github.com/joinble/joinble-ui/issues/52) include secondary state in ButtonIcon ([45e0f36](https://github.com/joinble/joinble-ui/commit/45e0f3653f3bed8166807cad8cf2b5f88a8e7d0d))
+
 # [1.7.0](https://github.com/joinble/joinble-ui/compare/v1.6.3...v1.7.0) (2020-11-19)
 
 
