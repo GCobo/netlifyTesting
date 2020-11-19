@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/joinble/joinble-ui/compare/v1.6.3...v1.7.0) (2020-11-19)
+
+
+### Features
+
+* **components:** [#50](https://github.com/joinble/joinble-ui/issues/50) create badge component ([265d04d](https://github.com/joinble/joinble-ui/commit/265d04dd7443d23841b1adb03735029e61e3a1e9))
+
 ## [1.6.3](https://github.com/joinble/joinble-ui/compare/v1.6.2...v1.6.3) (2020-11-18)
 
 
