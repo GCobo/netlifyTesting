@@ -12,6 +12,8 @@ import HamburguerIcon from './hamburguerIcon'
 import NotificationIcon from './notificationIcon'
 import ApplicationIcon from './applicationIcon'
 import WidgetIcon from './widgetIcon'
+import CheckboxIcon from './checkboxIcon'
+import CheckboxCheckedIcon from './checkboxCheckedIcon'
 
 export {
   SearchIcon,
@@ -27,5 +29,7 @@ export {
   HamburguerIcon,
   NotificationIcon,
   ApplicationIcon,
-  WidgetIcon
+  WidgetIcon,
+  CheckboxIcon,
+  CheckboxCheckedIcon
 }

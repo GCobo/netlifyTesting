@@ -1,11 +1,6 @@
 import React from 'react'
-import {
-  CheckboxContainer,
-  HiddenCheckbox,
-  Icon,
-  Label,
-  StyledCheckbox
-} from './CheckboxStyles'
+import { CheckboxIcon, CheckboxCheckedIcon } from '../icons'
+import { CheckboxContainer, HiddenCheckbox, Label } from './CheckboxStyles'
 
 type IProps = {
   labelRight?: string
@@ -40,11 +35,7 @@ export const Checkbox: React.FunctionComponent<IProps> = ({
         data-test={testId}
         id={id}
       />
-      <StyledCheckbox checked={checked}>
-        <Icon viewBox='0 0 24 24'>
-          <polyline points='20 6 9 17 4 12' />
-        </Icon>
-      </StyledCheckbox>
+      {checked ? <CheckboxCheckedIcon /> : <CheckboxIcon />}
       {labelRight && (
         <Label id={id} labelRight={labelRight} disabled={disabled}>
           {labelRight}
