@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/joinble/joinble-ui/compare/v1.8.0...v1.9.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* **components:** [#56](https://github.com/joinble/joinble-ui/issues/56) fix input with icon padding ([d7dc27f](https://github.com/joinble/joinble-ui/commit/d7dc27f747a23a51387b5f269c70ba91996f300e))
+
+
+### Features
+
+* **components:** [#54](https://github.com/joinble/joinble-ui/issues/54) change all icons ([90af528](https://github.com/joinble/joinble-ui/commit/90af5285a06b8f965c3f6631ec4cd961ae835bf4))
+
 # [1.8.0](https://github.com/joinble/joinble-ui/compare/v1.7.0...v1.8.0) (2020-11-19)
 
 
