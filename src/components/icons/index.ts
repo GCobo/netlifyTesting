@@ -14,6 +14,7 @@ import ApplicationIcon from './applicationIcon'
 import WidgetIcon from './widgetIcon'
 import CheckboxIcon from './checkboxIcon'
 import CheckboxCheckedIcon from './checkboxCheckedIcon'
+import MessageIcon from './messageIcon'
 
 export {
   SearchIcon,
@@ -31,5 +32,6 @@ export {
   ApplicationIcon,
   WidgetIcon,
   CheckboxIcon,
-  CheckboxCheckedIcon
+  CheckboxCheckedIcon,
+  MessageIcon
 }

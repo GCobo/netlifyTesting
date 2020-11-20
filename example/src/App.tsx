@@ -24,7 +24,8 @@ import {
   NotificationIcon,
   Badgets,
   ApplicationIcon,
-  WidgetIcon
+  WidgetIcon,
+  MessageIcon
 } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
@@ -186,6 +187,7 @@ const App = () => {
             <ChevronDownIcon />
             <HamburguerIcon />
             <HelpIcon />
+            <MessageIcon />
             <NotificationIcon />
             <SearchIcon />
             <WidgetIcon />
