@@ -65,6 +65,7 @@ export const Input: FunctionComponent<IProps> = forwardRef(
           onClick={onClick}
           value={value}
           data-test={testId}
+          icon={icon}
         />
         {icon && React.cloneElement(icon)}
         {errorLabel && <IconError />}
