@@ -13,6 +13,7 @@ export const Wrapper = styled.section<IWrapperProps>`
   flex-flow: column;
   position: relative;
   width: 100%;
+  text-align: start;
 
   svg {
     ${(props) =>
