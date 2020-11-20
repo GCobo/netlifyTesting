@@ -20,7 +20,7 @@ export type IThemeProps = {
 export const JoinbleTheme: IThemeProps = {
   primaryColor: '#0C66FF',
   secondaryColor: '#5bc0be',
-  fontColor: '#0A1F44',
+  fontColor: '#6E768E',
   successColor: '#1ABC9C',
   warningColor: '#F7B84B',
   errorColor: '#F1556C',
