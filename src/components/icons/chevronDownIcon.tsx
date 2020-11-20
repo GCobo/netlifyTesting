@@ -6,11 +6,8 @@ type IProps = {
 
 const ChevronDownIcon: React.FunctionComponent<IProps> = ({ className }) => {
   return (
-    <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
-      <path
-        d='M12 15.713L18.01 9.70299L16.597 8.28799L12 12.888L7.40399 8.28799L5.98999 9.70199L12 15.713Z'
-        fillRule='evenodd'
-      ></path>
+    <svg width='16' height='16' viewBox='0 0 24 24' className={className}>
+      <path d='M12 19.413l12-12-2.821-2.825-9.179 9.185-9.177-9.185-2.823 2.823 12 12.002z'></path>
     </svg>
   )
 }

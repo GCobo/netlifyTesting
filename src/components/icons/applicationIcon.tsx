@@ -7,10 +7,7 @@ type IProps = {
 const ApplicationIcon: React.FunctionComponent<IProps> = ({ className }) => {
   return (
     <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
-      <path
-        d='M19 19H13V13H19V19ZM11 19H5V13H11V19ZM19 11H13V5H19V11ZM11 11H5V5H11V11Z'
-        fillRule='evenodd'
-      ></path>
+      <path d='M24 24h-10.286v-10.286h10.286v10.286zM10.286 24h-10.286v-10.286h10.286v10.286zM24 10.286h-10.286v-10.286h10.286v10.286zM10.286 10.286h-10.286v-10.286h10.286v10.286z'></path>
     </svg>
   )
 }
