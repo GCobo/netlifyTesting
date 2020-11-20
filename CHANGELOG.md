@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/joinble/joinble-ui/compare/v1.9.0...v1.9.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* **general:** [#58](https://github.com/joinble/joinble-ui/issues/58) change fontColor from Theme ([2230198](https://github.com/joinble/joinble-ui/commit/22301983a25f7793750c979cc83f4acdfa6ce45c))
+
 # [1.9.0](https://github.com/joinble/joinble-ui/compare/v1.8.0...v1.9.0) (2020-11-20)
 
 
