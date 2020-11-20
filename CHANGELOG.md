@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/joinble/joinble-ui/compare/v1.9.1...v1.10.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* **components:** [#60](https://github.com/joinble/joinble-ui/issues/60) change input label position ([a3e9ba5](https://github.com/joinble/joinble-ui/commit/a3e9ba5ba22bca8a633bc4c77d5717573f1dbbf9))
+
+
+### Features
+
+* **components:** [#62](https://github.com/joinble/joinble-ui/issues/62) create input password action ([a85d4ae](https://github.com/joinble/joinble-ui/commit/a85d4ae52104b183da95c3bf3a14936e179e6654))
+
 ## [1.9.1](https://github.com/joinble/joinble-ui/compare/v1.9.0...v1.9.1) (2020-11-20)
 
 
