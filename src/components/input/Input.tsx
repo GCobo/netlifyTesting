@@ -3,16 +3,20 @@ import React, {
   Ref,
   ReactElement,
   MouseEvent,
-  FunctionComponent
+  FunctionComponent,
+  useState
 } from 'react'
+import { ButtonIcon } from '../button'
 
 import { HelpLabel } from '../helpLabel/HelpLabel'
+import { HiddenIcon, ShowIcon } from '../icons'
 import {
   ErrorInputLabel,
   IconError,
   Label,
   Wrapper,
-  InputStyle
+  InputStyle,
+  ShowPassWordIcon
 } from './InputStyle'
 
 type IProps = {
@@ -51,11 +55,17 @@ export const Input: FunctionComponent<IProps> = forwardRef(
     },
     ref: Ref<HTMLInputElement>
   ) => {
+    const [passwordShow, setPasswordShow] = useState<boolean>(false)
+
+    const togglePasswordVisiblity = () => {
+      setPasswordShow(!passwordShow)
+    }
+
     return (
       <Wrapper icon={icon} className={className}>
         <Label htmlFor={id}>{label}</Label>
         <InputStyle
-          type={type}
+          type={passwordShow ? 'text' : type}
           id={id}
           disabled={disabled}
           placeholder={placeHolder}
@@ -67,6 +77,14 @@ export const Input: FunctionComponent<IProps> = forwardRef(
           data-test={testId}
           icon={icon}
         />
+        {type === 'password' && (
+          <ShowPassWordIcon>
+            <ButtonIcon
+              icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
+              onClick={togglePasswordVisiblity}
+            />
+          </ShowPassWordIcon>
+        )}
         {icon && React.cloneElement(icon)}
         {errorLabel && <IconError />}
         {errorLabel && <ErrorInputLabel>{errorLabel}</ErrorInputLabel>}

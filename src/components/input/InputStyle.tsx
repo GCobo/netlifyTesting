@@ -4,11 +4,6 @@ import { JoinbleTheme } from '../../Theme'
 import { ErrorLabel } from '../errorLabel/ErrorLabel'
 import { AlertIcon } from '../icons'
 
-type IInputProps = {
-  errorLabel?: string
-  icon?: React.ReactElement
-}
-
 type IWrapperProps = {
   icon?: React.ReactElement
 }
@@ -30,6 +25,12 @@ export const Wrapper = styled.section<IWrapperProps>`
     `}
   }
 `
+type IInputProps = {
+  errorLabel?: string
+  icon?: React.ReactElement
+  type?: 'text' | 'number' | 'password' | 'email'
+}
+
 export const InputStyle = styled.input<IInputProps>`
   border: none;
   font-size: ${JoinbleTheme.fontSizeMedium};
@@ -44,7 +45,7 @@ export const InputStyle = styled.input<IInputProps>`
   height: 2.5rem;
   width: 100%;
   padding: 0 0.75rem;
-  padding-right: ${(props) => (props.errorLabel || props.icon) && '2.5rem'};
+  padding-right: 2.5rem;
   font-weight: 500;
   font-family: ${JoinbleTheme.fontPrimary};
 
@@ -52,6 +53,11 @@ export const InputStyle = styled.input<IInputProps>`
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  &::-ms-reveal,
+  &::-ms-clear {
+    display: none;
   }
 
   &::placeholder {
@@ -97,4 +103,13 @@ export const IconError = styled(AlertIcon)`
   right: 0.75rem;
   top: 2rem;
   fill: ${JoinbleTheme.errorColor};
+`
+export const ShowPassWordIcon = styled.div`
+  svg {
+    position: absolute;
+    right: 0.75rem;
+    top: 2rem;
+    fill: ${JoinbleTheme.primaryColor};
+    cursor: pointer;
+  }
 `
