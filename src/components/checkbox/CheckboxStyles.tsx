@@ -1,19 +1,22 @@
 import { JoinbleTheme } from '../../Theme'
 import styled from '@emotion/styled/macro'
 
-export const Icon = styled.svg``
-
-export const HiddenCheckbox = styled.input`
-  border: 0;
-  position: absolute;
-  width: 0;
-`
-
 type ILabelProps = {
   disabled?: boolean
   labelLeft?: string
   labelRight?: string
 }
+
+export const Icon = styled.svg``
+
+export const HiddenCheckbox = styled.input`
+  border: 0;
+  position: absolute;
+  width: 10px;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+`
 
 export const Label = styled.label<ILabelProps>`
   font-size: ${JoinbleTheme.fontSizeMedium};
