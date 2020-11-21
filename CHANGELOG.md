@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/joinble/joinble-ui/compare/v1.10.0...v1.10.1) (2020-11-21)
+
+
+### Bug Fixes
+
+* **components:** [#64](https://github.com/joinble/joinble-ui/issues/64) checkbox component is not working properly ([187acf0](https://github.com/joinble/joinble-ui/commit/187acf06fd0263733b02635cd4d39783f038697f))
+
 # [1.10.0](https://github.com/joinble/joinble-ui/compare/v1.9.1...v1.10.0) (2020-11-20)
 
 
