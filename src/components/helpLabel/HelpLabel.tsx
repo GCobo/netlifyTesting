@@ -15,7 +15,6 @@ export const HelpLabel: React.FunctionComponent<IProps> = ({
   const HelpWrapper = styled.div`
     display: flex;
     align-items: flex-start;
-    margin-top: 0.5rem;
 
     svg {
       margin-right: 0.5rem;

@@ -6,16 +6,16 @@ import React, {
   FunctionComponent,
   useState
 } from 'react'
-import { ButtonIcon } from '../button'
-import { HelpLabel } from '../helpLabel/HelpLabel'
 import { HiddenIcon, ShowIcon } from '../icons'
 import {
-  ErrorInputLabel,
   IconError,
   Label,
   Wrapper,
   InputStyle,
-  ShowPassWordIcon
+  InputIcon,
+  ButtonPassword,
+  HelpLabelInput,
+  ErrorLabelInput
 } from './InputStyle'
 
 type IProps = {
@@ -61,7 +61,7 @@ export const Input: FunctionComponent<IProps> = forwardRef(
     }
 
     return (
-      <Wrapper icon={icon} className={className}>
+      <Wrapper className={className}>
         <Label htmlFor={id}>{label}</Label>
         <InputStyle
           type={passwordShow ? 'text' : type}
@@ -75,19 +75,20 @@ export const Input: FunctionComponent<IProps> = forwardRef(
           value={value}
           data-test={testId}
           icon={icon}
+          passwordShow={passwordShow}
         />
         {type === 'password' && (
-          <ShowPassWordIcon>
-            <ButtonIcon
-              icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
-              onClick={togglePasswordVisiblity}
-            />
-          </ShowPassWordIcon>
+          <ButtonPassword
+            icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
+            onClick={togglePasswordVisiblity}
+          />
         )}
-        {icon && React.cloneElement(icon)}
+        {icon &&
+          !errorLabel &&
+          React.cloneElement(icon, { className: InputIcon })}
         {errorLabel && <IconError />}
-        {errorLabel && <ErrorInputLabel>{errorLabel}</ErrorInputLabel>}
-        {helpLabel && <HelpLabel>{helpLabel}</HelpLabel>}
+        {errorLabel && <ErrorLabelInput>{errorLabel}</ErrorLabelInput>}
+        {helpLabel && <HelpLabelInput>{helpLabel}</HelpLabelInput>}
       </Wrapper>
     )
   }

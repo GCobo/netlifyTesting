@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { HelpLabel } from '../helpLabel/HelpLabel'
-import { ErrorInputLabel } from '../input/InputStyle'
+import { ErrorLabelInput, HelpLabelInput } from '../input/InputStyle'
 import { Chevron, DropdownStyle, LabelDropdown, Wrapper } from './DropdownStyle'
 
 type IProps = {
@@ -31,8 +30,8 @@ export const Dropdown: React.FunctionComponent<IProps> = ({
         <span> {value}</span>
         <Chevron open={open} />
       </DropdownStyle>
-      {errorLabel && <ErrorInputLabel>{errorLabel}</ErrorInputLabel>}
-      {helpLabel && <HelpLabel>{helpLabel}</HelpLabel>}
+      {errorLabel && <ErrorLabelInput>{errorLabel}</ErrorLabelInput>}
+      {helpLabel && <HelpLabelInput>{helpLabel}</HelpLabelInput>}
     </Wrapper>
   )
 }

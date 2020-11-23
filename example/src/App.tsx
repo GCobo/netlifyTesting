@@ -163,6 +163,11 @@ const App = () => {
             <Input label='Password' type='password' />
             <Input label='Email' type='email' />
             <Input label='with icon' icon={<SearchIcon />} />
+            <Input
+              label='with icon and error'
+              icon={<SearchIcon />}
+              errorLabel='Error'
+            />
             <Input label='with label and error' errorLabel='Error label' />
             <Input label='Disabled' disabled />
             <Input

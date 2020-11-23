@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { JoinbleTheme } from '../../Theme'
-import { ErrorLabel } from '../errorLabel/ErrorLabel'
 import { AlertIcon } from '../icons'
+import { css } from '@emotion/css'
+import { ButtonIcon } from '../button/ButtonIcon'
+import { HelpLabel } from '../helpLabel/HelpLabel'
+import { ErrorLabel } from '../errorLabel/ErrorLabel'
 
 type IWrapperProps = {
   icon?: React.ReactElement
@@ -14,22 +17,12 @@ export const Wrapper = styled.section<IWrapperProps>`
   position: relative;
   width: 100%;
   text-align: start;
-
-  svg {
-    ${(props) =>
-      props.icon &&
-      `
-      position: absolute;
-      right: 0.75rem;
-      top: 2rem;
-      fill: ${JoinbleTheme.primaryColor};
-    `}
-  }
 `
 type IInputProps = {
   errorLabel?: string
   icon?: React.ReactElement
   type?: 'text' | 'number' | 'password' | 'email'
+  passwordShow?: boolean
 }
 
 export const InputStyle = styled.input<IInputProps>`
@@ -46,7 +39,13 @@ export const InputStyle = styled.input<IInputProps>`
   height: 2.5rem;
   width: 100%;
   padding: 0 0.75rem;
-  padding-right: 2.5rem;
+  padding-right: ${(props) =>
+    props.type === 'password' ||
+    props.icon ||
+    props.errorLabel ||
+    props.passwordShow
+      ? '2.5rem'
+      : '0.75rem'};
   font-weight: 500;
   font-family: ${JoinbleTheme.fontPrimary};
 
@@ -96,21 +95,34 @@ export const Label = styled.label`
   }
 `
 
-export const ErrorInputLabel = styled(ErrorLabel)`
-  margin-top: 0.25rem;
-`
-export const IconError = styled(AlertIcon)`
-  position: absolute;
-  right: 0.75rem;
-  top: 2rem;
-  fill: ${JoinbleTheme.errorColor};
-`
-export const ShowPassWordIcon = styled.div`
+export const ButtonPassword = styled(ButtonIcon)`
   svg {
+    fill: ${JoinbleTheme.primaryColor};
     position: absolute;
+    width: 1.25rem;
     right: 0.75rem;
     top: 2rem;
-    fill: ${JoinbleTheme.primaryColor};
-    cursor: pointer;
   }
+`
+
+export const IconError = styled(AlertIcon)`
+  fill: ${JoinbleTheme.errorColor};
+  position: absolute;
+  width: 1.25rem;
+  right: 0.75rem;
+  top: 2rem;
+`
+
+export const InputIcon = css`
+  position: absolute;
+  width: 1.25rem;
+  right: 0.75rem;
+  top: 2rem;
+  fill: ${JoinbleTheme.primaryColor};
+`
+export const HelpLabelInput = styled(HelpLabel)`
+  margin-top: 0.25rem;
+`
+export const ErrorLabelInput = styled(ErrorLabel)`
+  margin-top: 0.25rem;
 `
