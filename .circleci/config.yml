@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 'circleci/ubuntu:latest'
+      - image: 'cimg/base:latest'
     steps:
       - checkout
       - run:
