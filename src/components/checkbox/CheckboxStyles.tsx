@@ -7,8 +7,6 @@ type ILabelProps = {
   labelRight?: string
 }
 
-export const Icon = styled.svg``
-
 export const HiddenCheckbox = styled.input`
   border: 0;
   position: absolute;

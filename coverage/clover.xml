@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1606162043720" clover="3.2.0">
+  <project timestamp="1606162043720" name="All files">
+    <metrics statements="108" coveredstatements="81" conditionals="106" coveredconditionals="41" methods="51" coveredmethods="24" elements="265" coveredelements="146" complexity="0" loc="108" ncloc="108" packages="10" files="39" classes="39"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Theme.ts" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\Theme.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="20" count="32" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.badgets">
+      <metrics statements="4" coveredstatements="2" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Badgets.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\badgets\Badgets.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="BadgetsStyles.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\badgets\BadgetsStyles.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="4"/>
+      </file>
+    </package>
+    <package name="src.components.button">
+      <metrics statements="29" coveredstatements="23" conditionals="59" coveredconditionals="22" methods="16" coveredmethods="10"/>
+      <file name="Button.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\Button.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="9" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="20" count="16" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+      </file>
+      <file name="ButtonIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\ButtonIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="ButtonIconStyles.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\ButtonIconStyles.tsx">
+        <metrics statements="4" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+      <file name="ButtonSocialMedia.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\ButtonSocialMedia.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="ButtonSocialMediaStyles.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\ButtonSocialMediaStyles.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="ButtonStyles.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\ButtonStyles.tsx">
+        <metrics statements="13" coveredstatements="11" conditionals="34" coveredconditionals="15" methods="11" coveredmethods="9"/>
+        <line num="14" count="16" type="stmt"/>
+        <line num="16" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="59" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="68" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="80" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="100" count="16" type="stmt"/>
+        <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="115" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="index.ts" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\button\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.checkbox">
+      <metrics statements="11" coveredstatements="11" conditionals="18" coveredconditionals="10" methods="7" coveredmethods="7"/>
+      <file name="Checkbox.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\checkbox\Checkbox.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+      </file>
+      <file name="CheckboxStyles.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\checkbox\CheckboxStyles.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="12" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="22" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="37" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="8" type="cond" truecount="1" falsecount="1"/>
+      </file>
+    </package>
+    <package name="src.components.errorLabel">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ErrorLabel.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\errorLabel\ErrorLabel.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.helpLabel">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="HelpLabel.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\helpLabel\HelpLabel.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.icons">
+      <metrics statements="38" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="2"/>
+      <file name="alertIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\alertIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="applicationIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\applicationIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="checkboxCheckedIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\checkboxCheckedIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="checkboxIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\checkboxIcon.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+      </file>
+      <file name="chevronDownIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\chevronDownIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="facebookIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\facebookIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="githubIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\githubIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="googleIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\googleIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="hamburguerIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\hamburguerIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="helpIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\helpIcon.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+      <file name="hiddenIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\hiddenIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="joinbleIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\joinbleIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="linkedinIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\linkedinIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="messageIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\messageIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="notificationIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\notificationIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="searchIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\searchIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="showIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\showIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="twitterIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\twitterIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="widgetIcon.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\icons\widgetIcon.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.input">
+      <metrics statements="13" coveredstatements="12" conditionals="19" coveredconditionals="9" methods="4" coveredmethods="3"/>
+      <file name="Input.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\input\Input.tsx">
+        <metrics statements="5" coveredstatements="4" conditionals="15" coveredconditionals="7" methods="2" coveredmethods="1"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+      </file>
+      <file name="InputStyle.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\input\InputStyle.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="99" count="2" type="stmt"/>
+        <line num="102" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.loading">
+      <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Loading.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\loading\Loading.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="LoadingStyles.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\loading\LoadingStyles.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="16" type="stmt"/>
+        <line num="17" count="16" type="stmt"/>
+        <line num="39" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.overlay">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Overlay.tsx" path="C:\Users\pjpen\Documents\projects\joinble\joinble-ui\src\components\overlay\Overlay.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="16" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

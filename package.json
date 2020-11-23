@@ -15,11 +15,8 @@
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint ./src/**/*.ts",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "test": "cypress run --headless",
+    "test:open": "cypress open",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "semantic-release": "semantic-release"
@@ -44,9 +41,6 @@
     "@emotion/core": "11.0.0",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
-    "@testing-library/jest-dom": "4.2.4",
-    "@testing-library/react": "9.5.0",
-    "@testing-library/user-event": "7.2.1",
     "@types/jest": "25.1.4",
     "@types/node": "12.12.38",
     "@types/react": "16.9.27",
@@ -78,7 +72,9 @@
     "tslint": "6.1.2",
     "typescript": "3.7.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "cypress": "5.6.0",
+    "cypress-react-unit-test": "4.16.10"
   },
   "files": [
     "dist"
