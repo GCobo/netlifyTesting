@@ -6,21 +6,16 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
         with:
-          fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Cypress install
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
-      - name: End to end test
+          node-version: '12'
+          check-latest: true
+      - run: yarn install
+      - run: yarn build
+      - name: Test
         uses: cypress-io/github-action@v2
         with:
           install: false
