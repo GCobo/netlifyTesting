@@ -27,7 +27,10 @@ import {
   WidgetIcon,
   MessageIcon
 } from 'joinble-ui'
-import 'joinble-ui/dist/index.css'
+
+type IGridProps = {
+  size?: 'grid' | 'flex'
+}
 
 const App = () => {
   const Layout = styled.section`
@@ -43,12 +46,12 @@ const App = () => {
     margin-bottom: 1rem;
     margin-top: 0;
   `
-  const Grid = styled.div(
+  const Grid = styled.div<IGridProps>(
     {
       gridColumnGap: '1rem',
       gridRowGap: '1rem'
     },
-    (props: any) => ({
+    (props: IGridProps) => ({
       display: `${props.size ? 'grid' : 'flex'}`,
       gridTemplateColumns: `repeat(auto-fit, minmax(${props.size}px, 1fr))`
     })
@@ -60,7 +63,7 @@ const App = () => {
       <Layout>
         <Section>
           <Title>Button</Title>
-          <Grid size='300'>
+          <Grid size='grid'>
             <Button onClick={() => alert('click')}>Primary</Button>
             <Button onClick={() => alert('click')} secondary>
               secondary
@@ -157,7 +160,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Input</Title>
-          <Grid size='300'>
+          <Grid size='grid'>
             <Input label='With label' placeHolder='With label' />
             <Input label='Number' type='number' />
             <Input label='Password' type='password' />
@@ -173,7 +176,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Dropdown</Title>
-          <Grid size='250'>
+          <Grid size='grid'>
             <Dropdown label='label' />
             <Dropdown label='label' errorLabel='Error' />
             <Dropdown label='label' helpLabel='help label' />
@@ -225,7 +228,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Checkbox</Title>
-          <Grid size='150'>
+          <Grid size='grid'>
             <Checkbox labelLeft='label left' />
             <Checkbox labelRight='label right' />
             <Checkbox labelLeft='Input checked' checked />
