@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+        name: install yarn
+        command: npm install -g yarn
+      - run:
           name: install
           command: yarn install --immutable
       - run:
