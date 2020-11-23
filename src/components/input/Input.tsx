@@ -7,7 +7,6 @@ import React, {
   useState
 } from 'react'
 import { ButtonIcon } from '../button'
-
 import { HelpLabel } from '../helpLabel/HelpLabel'
 import { HiddenIcon, ShowIcon } from '../icons'
 import {

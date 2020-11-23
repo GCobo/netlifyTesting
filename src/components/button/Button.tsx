@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react'
 import { Loading } from '../loading/Loading'
-import { IconWrapper, ButtonStyles } from './ButtonStyles'
+import { ButtonStyles, IconButton } from './ButtonStyles'
 
 type IProps = {
   secondary?: boolean
@@ -43,11 +43,11 @@ export const Button: React.FunctionComponent<IProps> = ({
       onClick={onClick}
       className={className}
     >
-      {!loading && icon && (
-        <IconWrapper secondary={secondary}>
-          {React.cloneElement(icon)}
-        </IconWrapper>
-      )}
+      {!loading &&
+        icon &&
+        React.cloneElement(icon, {
+          className: IconButton
+        })}
       {!loading && children && children}
       {loading && <Loading />}
     </ButtonStyles>

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { JoinbleTheme } from '../../Theme'
 import { darken } from 'polished'
+import { css } from '@emotion/css'
 
 type IButtonProps = {
   secondary?: boolean
@@ -26,7 +27,6 @@ export const ButtonStyles = styled.button<IButtonProps>`
     ${(props) => (props.secondary ? JoinbleTheme.primaryColor : 'transparent')};
   font-size: 1rem;
   min-width: 7rem;
-  width: 100%;
   height: 2.5rem;
   border-radius: 0.25rem;
   display: inline-flex;
@@ -35,6 +35,8 @@ export const ButtonStyles = styled.button<IButtonProps>`
   cursor: pointer;
   white-space: nowrap;
   color: ${(props) =>
+    props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
+  fill: ${(props) =>
     props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
   transition: 0.2s all ease-in-out;
   padding: ${(props) => (props.icon ? '0 1rem 0 4.5rem' : '0 1rem')};
@@ -53,13 +55,10 @@ export const ButtonStyles = styled.button<IButtonProps>`
         props.secondary
           ? JoinbleTheme.primaryColor
           : JoinbleTheme.lightestColor};
-
-      svg {
-        fill: ${(props) =>
-          props.secondary
-            ? JoinbleTheme.primaryColor
-            : JoinbleTheme.lightestColor};
-      }
+      fill: ${(props) =>
+        props.secondary
+          ? JoinbleTheme.primaryColor
+          : JoinbleTheme.lightestColor};
     }
   }
 
@@ -75,12 +74,7 @@ export const ButtonStyles = styled.button<IButtonProps>`
         ? darken(0.1, JoinbleTheme.warningColor)
         : darken(0.1, JoinbleTheme.primaryColor)};
     color: ${JoinbleTheme.lightestColor};
-    svg {
-      fill: ${(props) =>
-        props.secondary
-          ? JoinbleTheme.lightestColor
-          : JoinbleTheme.lightestColor};
-    }
+    fill: ${JoinbleTheme.lightestColor};
   }
 
   &:focus,
@@ -92,26 +86,9 @@ export const ButtonStyles = styled.button<IButtonProps>`
     text-transform: capitalize;
   }
 `
-type IIconProps = {
-  secondary?: boolean
-  icon?: React.ReactElement
-}
 
-export const IconWrapper = styled.div<IIconProps>`
-  position: absolute;
-  left: 0;
-  padding: 0 1rem;
-  background-color: ${(props) =>
-    props.secondary ? 'inherit' : darken(0.1, JoinbleTheme.primaryColor)};
-  height: 100%;
-  display: grid;
-  place-items: center;
-  border-radius: 0.25rem;
-
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: ${(props) =>
-      props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
-  }
+export const IconButton = css`
+  width: 1rem;
+  margin-right: 1rem;
+  fill: inherit;
 `

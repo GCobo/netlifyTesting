@@ -10,7 +10,6 @@ import {
   ErrorLabel,
   HelpLabel,
   HelpIcon,
-  Checkbox,
   Dropdown,
   ChevronDownIcon,
   ButtonSocialMedia,
@@ -25,11 +24,13 @@ import {
   Badgets,
   ApplicationIcon,
   WidgetIcon,
-  MessageIcon
+  MessageIcon,
+  Checkbox,
+  PlusIcon
 } from 'joinble-ui'
 
 type IGridProps = {
-  size?: 'grid' | 'flex'
+  size?: number
 }
 
 const App = () => {
@@ -63,7 +64,7 @@ const App = () => {
       <Layout>
         <Section>
           <Title>Button</Title>
-          <Grid size='grid'>
+          <Grid size={300}>
             <Button onClick={() => alert('click')}>Primary</Button>
             <Button onClick={() => alert('click')} secondary>
               secondary
@@ -74,28 +75,24 @@ const App = () => {
             <Button onClick={() => alert('click')} secondary disabled>
               secondary disabled
             </Button>
-            <Button onClick={() => alert('click')} icon={<SearchIcon />}>
+            <Button onClick={() => alert('click')} icon={<PlusIcon />}>
               with Icon
             </Button>
             <Button
               onClick={() => alert('click')}
               secondary
-              icon={<SearchIcon />}
+              icon={<PlusIcon />}
             >
               secondary with Icon
             </Button>
-            <Button
-              onClick={() => alert('click')}
-              disabled
-              icon={<SearchIcon />}
-            >
+            <Button onClick={() => alert('click')} disabled icon={<PlusIcon />}>
               with Icon disabled
             </Button>
             <Button
               onClick={() => alert('click')}
               disabled
               secondary
-              icon={<SearchIcon />}
+              icon={<PlusIcon />}
             >
               secondary with Icon disabled
             </Button>
@@ -160,7 +157,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Input</Title>
-          <Grid size='grid'>
+          <Grid size={300}>
             <Input label='With label' placeHolder='With label' />
             <Input label='Number' type='number' />
             <Input label='Password' type='password' />
@@ -176,7 +173,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Dropdown</Title>
-          <Grid size='grid'>
+          <Grid size={250}>
             <Dropdown label='label' />
             <Dropdown label='label' errorLabel='Error' />
             <Dropdown label='label' helpLabel='help label' />
@@ -192,6 +189,7 @@ const App = () => {
             <HelpIcon />
             <MessageIcon />
             <NotificationIcon />
+            <PlusIcon />
             <SearchIcon />
             <WidgetIcon />
           </Grid>
@@ -228,7 +226,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Checkbox</Title>
-          <Grid size='grid'>
+          <Grid size={250}>
             <Checkbox labelLeft='label left' />
             <Checkbox labelRight='label right' />
             <Checkbox labelLeft='Input checked' checked />
