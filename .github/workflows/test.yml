@@ -3,6 +3,9 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['10', '12']
     steps:
       - uses: actions/checkout@v2
       - name: Yarn install
