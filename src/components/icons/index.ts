@@ -18,6 +18,9 @@ import MessageIcon from './messageIcon'
 import ShowIcon from './showIcon'
 import HiddenIcon from './hiddenIcon'
 import PlusIcon from './plusIcon'
+import EditIcon from './editIcon'
+import TrashIcon from './trashIcon'
+import UpIcon from './upIcon'
 
 export {
   SearchIcon,
@@ -39,5 +42,8 @@ export {
   MessageIcon,
   ShowIcon,
   HiddenIcon,
-  PlusIcon
+  PlusIcon,
+  EditIcon,
+  TrashIcon,
+  UpIcon
 }
