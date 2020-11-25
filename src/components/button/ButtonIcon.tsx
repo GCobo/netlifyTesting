@@ -7,21 +7,24 @@ type IProps = {
   className?: string
   badgetsNumber?: number
   secondary?: boolean
+  negative?: boolean
 }
 
-export const ButtonIcon: React.FunctionComponent<IProps> = ({
+export const ButtonIcon = ({
   icon,
   onClick,
   className,
   badgetsNumber,
-  secondary
-}) => {
+  secondary,
+  negative
+}: IProps) => {
   return (
     <ButtonIconStyle
       badgetsNumber={badgetsNumber}
       onClick={onClick}
       className={className}
       secondary={secondary}
+      negative={negative}
     >
       {badgetsNumber ? (
         <React.Fragment>

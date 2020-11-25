@@ -26,7 +26,11 @@ import {
   WidgetIcon,
   MessageIcon,
   Checkbox,
-  PlusIcon
+  PlusIcon,
+  TrashIcon,
+  AppleIcon,
+  CloseIcon,
+  AndroidIcon
 } from 'joinble-ui'
 
 type IGridProps = {
@@ -114,6 +118,17 @@ const App = () => {
             <ButtonIcon onClick={() => alert('click')} icon={<AlertIcon />} />
             <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
             <ButtonIcon
+              secondary
+              onClick={() => alert('click')}
+              icon={<AlertIcon />}
+            />
+            <ButtonIcon
+              negative
+              onClick={() => alert('click')}
+              icon={<AlertIcon />}
+            />
+            <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
+            <ButtonIcon
               badgetsNumber={9}
               onClick={() => alert('click')}
               icon={<NotificationIcon />}
@@ -188,6 +203,7 @@ const App = () => {
           <Title>Icons</Title>
           <Grid>
             <AlertIcon />
+            <AndroidIcon />
             <ApplicationIcon />
             <ChevronDownIcon />
             <HamburguerIcon />
@@ -195,6 +211,9 @@ const App = () => {
             <MessageIcon />
             <NotificationIcon />
             <PlusIcon />
+            <TrashIcon />
+            <AppleIcon />
+            <CloseIcon />
             <SearchIcon />
             <WidgetIcon />
           </Grid>

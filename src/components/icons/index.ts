@@ -21,6 +21,9 @@ import PlusIcon from './plusIcon'
 import EditIcon from './editIcon'
 import TrashIcon from './trashIcon'
 import UpIcon from './upIcon'
+import AppleIcon from './appleIcon'
+import CloseIcon from './closeIcon'
+import AndroidIcon from './androidIcon'
 
 export {
   SearchIcon,
@@ -45,5 +48,8 @@ export {
   PlusIcon,
   EditIcon,
   TrashIcon,
-  UpIcon
+  UpIcon,
+  AppleIcon,
+  CloseIcon,
+  AndroidIcon
 }

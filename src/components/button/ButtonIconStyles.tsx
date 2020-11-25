@@ -6,6 +6,7 @@ import { Badgets } from '../badgets/Badgets'
 type IProps = {
   badgetsNumber?: number
   secondary?: boolean
+  negative?: boolean
 }
 
 export const ButtonIconStyle = styled.button<IProps>`
@@ -13,12 +14,23 @@ export const ButtonIconStyle = styled.button<IProps>`
   padding: 0;
   position: ${(props) => (props.badgetsNumber ? 'relative' : 'unset')};
   fill: ${(props) =>
-    props.secondary ? JoinbleTheme.lightestColor : JoinbleTheme.primaryColor};
+    props.negative
+      ? JoinbleTheme.lightestColor
+      : props.secondary
+      ? JoinbleTheme.fontColor
+      : JoinbleTheme.primaryColor};
 
-  &:focus,
+  &:active,
   &:hover {
     outline: none;
-    fill: ${darken(0.1, JoinbleTheme.primaryColor)};
+    fill: ${(props) =>
+      props.negative || props.secondary
+        ? JoinbleTheme.primaryColor
+        : darken(0.1, JoinbleTheme.primaryColor)};
+  }
+
+  &:focus {
+    outline: none;
   }
 
   svg {

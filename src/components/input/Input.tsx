@@ -86,7 +86,7 @@ export const Input: FunctionComponent<IProps> = forwardRef(
         {icon &&
           !errorLabel &&
           React.cloneElement(icon, { className: InputIcon })}
-        {errorLabel && <IconError />}
+        {errorLabel && type !== 'password' && <IconError />}
         {errorLabel && <ErrorLabelInput>{errorLabel}</ErrorLabelInput>}
         {helpLabel && <HelpLabelInput>{helpLabel}</HelpLabelInput>}
       </Wrapper>
