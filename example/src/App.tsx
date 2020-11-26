@@ -32,7 +32,8 @@ import {
   CloseIcon,
   AndroidIcon,
   CheckPlatform,
-  ICheckPlatform
+  ICheckPlatform,
+  Tooltip
 } from 'joinble-ui'
 
 type IGridProps = {
@@ -250,6 +251,23 @@ const App = () => {
           <Title>Link</Title>
           <Grid>
             <Link href=''>Links</Link>
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Tooltip</Title>
+          <Grid>
+            <Tooltip label='tooltip top' id='tooltip-test' place='top'>
+              <p>Tooltip top</p>
+            </Tooltip>
+            <Tooltip label='tooltip bottom' id='tooltip-test' place='bottom'>
+              <p>Tooltip bottom</p>
+            </Tooltip>
+            <Tooltip label='tooltip left' id='tooltip-test' place='left'>
+              <p>Tooltip left</p>
+            </Tooltip>
+            <Tooltip label='tooltip right' id='tooltip-test' place='right'>
+              <p>Tooltip right</p>
+            </Tooltip>
           </Grid>
         </Section>
         <Section>
