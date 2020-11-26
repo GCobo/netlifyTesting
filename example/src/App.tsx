@@ -30,7 +30,8 @@ import {
   TrashIcon,
   AppleIcon,
   CloseIcon,
-  AndroidIcon
+  AndroidIcon,
+  CheckPlatform
 } from 'joinble-ui'
 
 type IGridProps = {
@@ -216,6 +217,12 @@ const App = () => {
             <CloseIcon />
             <SearchIcon />
             <WidgetIcon />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Check platform</Title>
+          <Grid>
+            <CheckPlatform />
           </Grid>
         </Section>
         <Section>
