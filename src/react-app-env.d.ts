@@ -15,5 +15,6 @@ declare module 'rc-color-picker' {
     placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'
     prefixCls?: string
     style?: CSSStyleDeclaration
+    animation?: string
   }> {}
 }

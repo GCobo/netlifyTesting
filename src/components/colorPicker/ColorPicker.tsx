@@ -1,14 +1,12 @@
 import React, { useState, forwardRef, FunctionComponent, Ref } from 'react'
 import ColorPickerNative from 'rc-color-picker'
-
 import { JoinbleTheme } from '../../Theme'
 import {
   BoxColor,
   ColorPickerWrapper,
   InputColorPicker
 } from './ColorPickerStyles'
-
-import './ColorPicker.css'
+import 'rc-color-picker/assets/index.css'
 
 type IProps = {
   value?: string
@@ -17,6 +15,7 @@ type IProps = {
   label?: string
   className?: string
   testId?: string
+  placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'
 }
 
 export const ColorPicker: FunctionComponent<IProps> = forwardRef(
@@ -26,7 +25,8 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
       name,
       label = 'Select color',
       className,
-      testId
+      testId,
+      placement = 'bottomLeft'
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -45,10 +45,12 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
       <ColorPickerWrapper className={className}>
         <BoxColor
           style={{ backgroundColor: innerValue ? innerValue : value }}
-        ></BoxColor>
+        />
         <ColorPickerNative
           color={innerValue ? innerValue : ''}
           onChange={handleChangeComplete}
+          placement={placement}
+          animation='slide-up'
         >
           <InputColorPicker
             label={label}
