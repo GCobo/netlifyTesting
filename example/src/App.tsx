@@ -31,7 +31,8 @@ import {
   AppleIcon,
   CloseIcon,
   AndroidIcon,
-  CheckPlatform
+  CheckPlatform,
+  ICheckPlatform
 } from 'joinble-ui'
 
 type IGridProps = {
@@ -62,6 +63,17 @@ const App = () => {
       gridTemplateColumns: `repeat(auto-fit, minmax(${props.size}px, 1fr))`
     })
   )
+
+  const optionsPlatform: ICheckPlatform[] = [
+    {
+      id: 1,
+      icon: <AndroidIcon />
+    },
+    {
+      id: 2,
+      icon: <AppleIcon />
+    }
+  ]
 
   return (
     <>
@@ -222,7 +234,7 @@ const App = () => {
         <Section>
           <Title>Check platform</Title>
           <Grid>
-            <CheckPlatform />
+            <CheckPlatform options={optionsPlatform} />
           </Grid>
         </Section>
         <Section>

@@ -1,29 +1,23 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { ButtonIcon } from '../button'
-import { AndroidIcon, AppleIcon } from '../icons'
 import {
   CheckPlatformInput,
   CheckPlatformOption,
   CheckPlatformWrapper
 } from './CheckPlatformStyles'
 
-type IProps = {
-  className?: string
+export type ICheckPlatform = {
+  id: number
+  icon: ReactElement
 }
 
-export const CheckPlatform = ({ className }: IProps) => {
-  const [checkPlatform, setCheckPlatform] = useState<number[]>([])
+type IProps = {
+  className?: string
+  options: ICheckPlatform[]
+}
 
-  const options = [
-    {
-      id: 1,
-      icon: <AndroidIcon />
-    },
-    {
-      id: 2,
-      icon: <AppleIcon />
-    }
-  ]
+export const CheckPlatform = ({ className, options }: IProps) => {
+  const [checkPlatform, setCheckPlatform] = useState<number[]>([])
 
   const handleSetCheckPlatform = (id: number) => {
     setCheckPlatform((checkPlatform) =>
@@ -36,7 +30,6 @@ export const CheckPlatform = ({ className }: IProps) => {
   return (
     <CheckPlatformWrapper className={className}>
       {options.map((option: any) => {
-        console.log(checkPlatform)
         return (
           <CheckPlatformOption key={option.id}>
             <CheckPlatformInput
