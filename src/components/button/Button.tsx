@@ -18,31 +18,14 @@ type IProps = {
 }
 
 export const Button: React.FunctionComponent<IProps> = ({
-  secondary,
-  children,
-  disabled,
   type = 'button',
   icon,
   loading,
-  warning,
-  error,
-  success,
-  testId,
-  onClick,
-  className
+  children,
+  ...rest
 }) => {
   return (
-    <ButtonStyles
-      type={type}
-      disabled={disabled}
-      data-test={testId}
-      secondary={secondary}
-      warning={warning}
-      error={error}
-      success={success}
-      onClick={onClick}
-      className={className}
-    >
+    <ButtonStyles type={type} {...rest}>
       {!loading &&
         icon &&
         React.cloneElement(icon, {

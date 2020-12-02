@@ -8,24 +8,18 @@ type IProps = {
   badgetsNumber?: number
   secondary?: boolean
   negative?: boolean
+  type?: 'button' | 'submit' | 'reset'
+  tabIndex?: number
 }
 
 export const ButtonIcon = ({
   icon,
-  onClick,
-  className,
   badgetsNumber,
-  secondary,
-  negative
+  type = 'button',
+  ...rest
 }: IProps) => {
   return (
-    <ButtonIconStyle
-      badgetsNumber={badgetsNumber}
-      onClick={onClick}
-      className={className}
-      secondary={secondary}
-      negative={negative}
-    >
+    <ButtonIconStyle badgetsNumber={badgetsNumber} {...rest} type={type}>
       {badgetsNumber ? (
         <React.Fragment>
           {React.cloneElement(icon)}

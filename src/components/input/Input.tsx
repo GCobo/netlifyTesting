@@ -80,6 +80,8 @@ export const Input: FunctionComponent<IProps> = forwardRef(
         {type === 'password' && (
           <ButtonPassword
             icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
+            type='button'
+            tabIndex={-1}
             onClick={togglePasswordVisiblity}
           />
         )}
