@@ -22,10 +22,11 @@ export const Button: React.FunctionComponent<IProps> = ({
   icon,
   loading,
   children,
+  testId,
   ...rest
 }) => {
   return (
-    <ButtonStyles type={type} {...rest}>
+    <ButtonStyles type={type} {...rest} data-test={testId}>
       {!loading &&
         icon &&
         React.cloneElement(icon, {
