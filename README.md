@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save joinble-ui
+yarn addjoinble-ui
 ```
 
 ## Usage
@@ -15,12 +15,12 @@ npm install --save joinble-ui
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'joinble-ui'
+import { Button } from 'joinble-ui'
 import 'joinble-ui/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Button type='text' />
   }
 }
 ```
