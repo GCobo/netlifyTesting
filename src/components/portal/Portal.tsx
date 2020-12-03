@@ -10,9 +10,6 @@ import { createPortal } from 'react-dom'
 
 import { PortalContainer } from './styles'
 
-let popupRoot: HTMLElement | null = document.getElementById('popup-root')
-const el: HTMLDivElement = document.createElement('div')
-
 type IProps = {
   show?: boolean
   children: React.ReactNode
@@ -29,6 +26,8 @@ type IPosition = {
 }
 
 const createElement = () => {
+  let popupRoot: HTMLElement | null = document.getElementById('popup-root')
+
   if (!popupRoot) {
     var div = document.createElement('div')
     div.id = 'popup-root'
@@ -36,6 +35,8 @@ const createElement = () => {
 
     popupRoot = document.getElementById('popup-root')
   }
+
+  return popupRoot
 }
 
 export const Portal: FunctionComponent<IProps> = ({
@@ -45,6 +46,8 @@ export const Portal: FunctionComponent<IProps> = ({
   onClickOutside,
   widthAuto = false
 }) => {
+  const el: HTMLDivElement = document.createElement('div')
+
   const [position, setPosition] = useState<IPosition>({
     top: 0,
     left: 0,
@@ -73,7 +76,7 @@ export const Portal: FunctionComponent<IProps> = ({
   }, [actionRef])
 
   useEffect(() => {
-    createElement()
+    const popupRoot = createElement()
     popupRoot?.appendChild(el)
 
     if (actionRef) {

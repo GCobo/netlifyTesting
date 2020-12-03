@@ -6,7 +6,7 @@ import {
   ColorPickerWrapper,
   InputColorPicker
 } from './ColorPickerStyles'
-import 'rc-color-picker/assets/index.css'
+import './colorpicker.css'
 
 type IProps = {
   value?: string

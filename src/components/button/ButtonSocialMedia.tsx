@@ -27,37 +27,55 @@ type IProps = {
   social: socialMedia
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
   className?: string
+  testId?: string
 }
 
 export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
   social,
   onClick,
-  className
+  className,
+  testId
 }) => {
   return (
     <Fragment>
       {social === socialMedia.google && (
-        <GoogleButton className={className} onClick={onClick}>
+        <GoogleButton
+          className={className}
+          onClick={onClick}
+          data-test={testId}
+        >
           <GoogleIcon />
         </GoogleButton>
       )}
       {social === socialMedia.facebook && (
-        <FacebookButton className={className} onClick={onClick}>
+        <FacebookButton
+          className={className}
+          onClick={onClick}
+          data-test={testId}
+        >
           <FacebookIcon />
         </FacebookButton>
       )}
       {social === socialMedia.linkedin && (
-        <LinkedinButton className={className} onClick={onClick}>
+        <LinkedinButton
+          className={className}
+          onClick={onClick}
+          data-test={testId}
+        >
           <LinkedinIcon />
         </LinkedinButton>
       )}
       {social === socialMedia.twitter && (
-        <TwitterButton className={className} onClick={onClick}>
+        <TwitterButton
+          className={className}
+          onClick={onClick}
+          data-test={testId}
+        >
           <TwitterIcon />
         </TwitterButton>
       )}
       {social === socialMedia.github && (
-        <GithubButton onClick={onClick}>
+        <GithubButton onClick={onClick} data-test={testId}>
           <GithubIcon />
         </GithubButton>
       )}
