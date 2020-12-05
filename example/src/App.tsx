@@ -18,7 +18,6 @@ import {
   Link,
   Modal,
   ColorPicker,
-  JoinbleTheme,
   HamburguerIcon,
   NotificationIcon,
   Badgets,
@@ -33,7 +32,8 @@ import {
   AndroidIcon,
   CheckPlatform,
   ICheckPlatform,
-  Tooltip
+  Tooltip,
+  JoinbleTheme
 } from 'joinble-ui'
 
 type IGridProps = {
@@ -243,7 +243,7 @@ const App = () => {
           <Grid>
             <ColorPicker
               label='Select Primary color'
-              value={JoinbleTheme.primaryColor}
+              value={JoinbleTheme.colors.primaryColor}
             />
           </Grid>
         </Section>

@@ -1,11 +1,10 @@
 import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
 import { darken } from 'polished'
 
 export const LinkStyles = styled.a`
-  color: ${JoinbleTheme.primaryColor};
-  border-bottom: 1px solid ${JoinbleTheme.primaryColor};
-  font-size: ${JoinbleTheme.fontSizeSmall};
+  color: ${(props) => props.theme.colors.primaryColor};
+  border-bottom: 1px solid ${(props) => props.theme.colors.primaryColor};
+  font-size: ${(props) => props.theme.fonts.fontSizeSmall};
   font-weight: 700;
   padding-bottom: 1px;
   cursor: pointer;
@@ -14,7 +13,8 @@ export const LinkStyles = styled.a`
 
   &:hover,
   &:focus {
-    color: ${darken(0.1, `${JoinbleTheme.primaryColor}`)};
-    border-color: ${darken(0.1, `${JoinbleTheme.primaryColor}`)};
+    color: ${(props) => darken(0.1, `${props.theme.colors.primaryColor}`)};
+    border-color: ${(props) =>
+      darken(0.1, `${props.theme.colors.primaryColor}`)};
   }
 `

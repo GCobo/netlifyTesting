@@ -6,8 +6,8 @@ const BACKGROUND_COLOR = lighten(0.3, '#111112')
 
 export const TooltipStyles = css`
   background: ${BACKGROUND_COLOR} !important;
-  font-size: ${JoinbleTheme.fontSizeSmall} !important;
-  color: ${JoinbleTheme.lightestColor} !important;
+  font-size: ${JoinbleTheme.fonts.fontSizeSmall} !important;
+  color: ${JoinbleTheme.colors.lightestColor} !important;
   &.show {
     opacity: 1 !important;
   }

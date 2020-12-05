@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { JoinbleTheme } from '../../Theme'
 
 type IProps = {
   children: string
@@ -12,10 +11,10 @@ export const ErrorLabel: React.FunctionComponent<IProps> = ({
   className
 }) => {
   const Label = styled.p`
-    font-size: ${JoinbleTheme.fontSizeSmall};
+    font-size: ${(props) => props.theme.fonts.fontSizeSmall};
     font-weight: 500;
     line-height: 1.25rem;
-    color: ${JoinbleTheme.errorColor};
+    color: ${(props) => props.theme.colors.errorColor};
 
     &:first-letter {
       text-transform: capitalize;

@@ -1,12 +1,12 @@
 import React, { useState, forwardRef, FunctionComponent, Ref } from 'react'
 import ColorPickerNative from 'rc-color-picker'
-import { JoinbleTheme } from '../../Theme'
 import {
   BoxColor,
   ColorPickerWrapper,
   InputColorPicker
 } from './ColorPickerStyles'
 import './colorpicker.css'
+import { JoinbleTheme } from '../../Theme'
 
 type IProps = {
   value?: string
@@ -21,7 +21,7 @@ type IProps = {
 export const ColorPicker: FunctionComponent<IProps> = forwardRef(
   (
     {
-      value = JoinbleTheme.primaryColor,
+      value = JoinbleTheme.colors.primaryColor,
       name,
       label = 'Select color',
       className,

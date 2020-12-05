@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
 import { Input } from '../input/Input'
 
 export const ModalColor = styled.div`
@@ -12,7 +11,7 @@ export const ModalColor = styled.div`
     height: 2.5rem !important;
     padding: 0 0.75rem !important;
     font-weight: 500 !important;
-    font-family: ${JoinbleTheme.fontPrimary} !important;
+    font-family: ${(props) => props.theme.fonts.fontFamily} !important;
   }
 
   .block-picker {

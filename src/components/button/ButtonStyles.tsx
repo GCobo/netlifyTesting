@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
 import { darken } from 'polished'
 import { css } from '@emotion/css'
 
@@ -15,16 +14,17 @@ type IButtonProps = {
 export const ButtonStyles = styled.button<IButtonProps>`
   background-color: ${(props) =>
     props.secondary
-      ? JoinbleTheme.lightestColor
+      ? props.theme.colors.lightestColor
       : props.error
-      ? JoinbleTheme.errorColor
+      ? props.theme.colors.errorColor
       : props.success
-      ? JoinbleTheme.successColor
+      ? props.theme.colors.successColor
       : props.warning
-      ? JoinbleTheme.warningColor
-      : JoinbleTheme.primaryColor};
+      ? props.theme.colors.warningColor
+      : props.theme.colors.primaryColor};
   border: 1px solid
-    ${(props) => (props.secondary ? JoinbleTheme.primaryColor : 'transparent')};
+    ${(props) =>
+      props.secondary ? props.theme.colors.primaryColor : 'transparent'};
   font-size: 1rem;
   min-width: 7rem;
   height: 2.5rem;
@@ -35,9 +35,13 @@ export const ButtonStyles = styled.button<IButtonProps>`
   cursor: pointer;
   white-space: nowrap;
   color: ${(props) =>
-    props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
+    props.secondary
+      ? props.theme.colors.primaryColor
+      : props.theme.colors.lightestColor};
   fill: ${(props) =>
-    props.secondary ? JoinbleTheme.primaryColor : JoinbleTheme.lightestColor};
+    props.secondary
+      ? props.theme.colors.primaryColor
+      : props.theme.colors.lightestColor};
   transition: 0.2s all ease-in-out;
   padding: ${(props) => (props.icon ? '0 1rem 0 4.5rem' : '0 1rem')};
   position: relative;
@@ -49,38 +53,38 @@ export const ButtonStyles = styled.button<IButtonProps>`
     &:hover {
       background-color: ${(props) =>
         props.secondary
-          ? JoinbleTheme.lightestColor
-          : JoinbleTheme.primaryColor};
+          ? props.theme.colors.lightestColor
+          : props.theme.colors.primaryColor};
       color: ${(props) =>
         props.secondary
-          ? JoinbleTheme.primaryColor
-          : JoinbleTheme.lightestColor};
+          ? props.theme.colors.primaryColor
+          : props.theme.colors.lightestColor};
       fill: ${(props) =>
         props.secondary
-          ? JoinbleTheme.primaryColor
-          : JoinbleTheme.lightestColor};
+          ? props.theme.colors.primaryColor
+          : props.theme.colors.lightestColor};
     }
   }
 
   &:hover {
     background-color: ${(props) =>
       props.secondary
-        ? JoinbleTheme.primaryColor
+        ? props.theme.colors.primaryColor
         : props.error
-        ? darken(0.1, JoinbleTheme.errorColor)
+        ? darken(0.1, props.theme.colors.errorColor)
         : props.success
-        ? darken(0.1, JoinbleTheme.successColor)
+        ? darken(0.1, props.theme.colors.successColor)
         : props.warning
-        ? darken(0.1, JoinbleTheme.warningColor)
-        : darken(0.1, JoinbleTheme.primaryColor)};
-    color: ${JoinbleTheme.lightestColor};
-    fill: ${JoinbleTheme.lightestColor};
+        ? darken(0.1, props.theme.colors.warningColor)
+        : darken(0.1, props.theme.colors.primaryColor)};
+    color: ${(props) => props.theme.colors.lightestColor};
+    fill: ${(props) => props.theme.colors.lightestColor};
   }
 
   &:focus,
   &:active {
     outline: none;
-    box-shadow: 0 0 0 2px ${JoinbleTheme.focusShadow};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors.focusShadow};
   }
   &:first-letter {
     text-transform: capitalize;

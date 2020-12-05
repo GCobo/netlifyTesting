@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { JoinbleTheme } from '../../Theme'
 import { HelpIcon } from '../icons'
 
 type IProps = {
@@ -21,11 +20,11 @@ export const HelpLabel: React.FunctionComponent<IProps> = ({
       width: 1.5rem;
       min-width: 1.5rem;
       height: 1.5rem;
-      fill: ${JoinbleTheme.greyLight};
+      fill: ${(props) => props.theme.colors.greyLight};
     }
     p {
-      color: ${JoinbleTheme.greyLight};
-      font-size: ${JoinbleTheme.fontSizeSmall};
+      color: ${(props) => props.theme.colors.greyLight};
+      font-size: ${(props) => props.theme.fonts.fontSizeSmall};
       font-weight: 500;
       line-height: 1.25rem;
     }

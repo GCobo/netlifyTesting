@@ -27,11 +27,11 @@ type IInputProps = {
 
 export const InputStyle = styled.input<IInputProps>`
   border: none;
-  font-size: ${JoinbleTheme.fontSizeMedium};
-  color: ${JoinbleTheme.fontColor};
+  font-size: ${(props) => props.theme.fonts.fontSizeMedium};
+  color: ${(props) => props.theme.colors.fontColor};
   box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
-    props.errorLabel ? JoinbleTheme.errorColor : JoinbleTheme.grey
+    props.errorLabel ? props.theme.colors.errorColor : props.theme.colors.grey
   }
 `};
   border-radius: 0.25rem;
@@ -47,7 +47,7 @@ export const InputStyle = styled.input<IInputProps>`
       ? '2.5rem'
       : '0.75rem'};
   font-weight: 500;
-  font-family: ${JoinbleTheme.fontPrimary};
+  font-family: ${(props) => props.theme.fonts.fontFamily};
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -61,14 +61,15 @@ export const InputStyle = styled.input<IInputProps>`
   }
 
   &::placeholder {
-    color: ${JoinbleTheme.greyLight};
+    color: ${(props) => props.theme.colors.greyLight};
   }
 
   &:disabled {
     opacity: 0.5;
     &:hover,
     &:focus {
-      box-shadow: ${`inset 0px 0px 0px 1px ${JoinbleTheme.grey}`};
+      box-shadow: ${(props) =>
+        `inset 0px 0px 0px 1px ${props.theme.colors.grey}`};
       border: none;
       outline: none;
     }
@@ -76,19 +77,20 @@ export const InputStyle = styled.input<IInputProps>`
 
   &:hover,
   &:focus {
-    box-shadow: ${`inset 0px 0px 0px 1px ${JoinbleTheme.primaryColor}`};
+    box-shadow: ${(props) =>
+      `inset 0px 0px 0px 1px ${props.theme.colors.primaryColor}`};
     border: none;
     outline: none;
   }
 `
 
 export const Label = styled.label`
-  font-size: ${JoinbleTheme.fontSizeSmall};
+  font-size: ${(props) => props.theme.fonts.fontSizeSmall};
   font-weight: 500;
   line-height: 1.25rem;
   margin-bottom: 0.25rem;
-  color: ${JoinbleTheme.fontColor};
-  font-family: ${JoinbleTheme.fontPrimary};
+  color: ${(props) => props.theme.colors.fontColor};
+  font-family: ${(props) => props.theme.fonts.fontFamily};
 
   &:first-letter {
     text-transform: capitalize;
@@ -97,7 +99,7 @@ export const Label = styled.label`
 
 export const ButtonPassword = styled(ButtonIcon)`
   svg {
-    fill: ${JoinbleTheme.primaryColor};
+    fill: ${(props) => props.theme.colors.primaryColor};
     position: absolute;
     width: 1.25rem;
     right: 0.75rem;
@@ -106,7 +108,7 @@ export const ButtonPassword = styled(ButtonIcon)`
 `
 
 export const IconError = styled(AlertIcon)`
-  fill: ${JoinbleTheme.errorColor};
+  fill: ${(props) => props.theme.colors.errorColor};
   position: absolute;
   width: 1.25rem;
   right: 0.75rem;
@@ -118,7 +120,7 @@ export const InputIcon = css`
   width: 1.25rem;
   right: 0.75rem;
   top: 2rem;
-  fill: ${JoinbleTheme.primaryColor};
+  fill: ${JoinbleTheme.colors.primaryColor};
 `
 export const HelpLabelInput = styled(HelpLabel)`
   margin-top: 0.25rem;

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
 
 export const LoadingStyles = styled.div`
   width: 2rem;
@@ -20,9 +19,10 @@ export const Dot1 = styled.div`
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: ${JoinbleTheme.logoColor};
+  background-color: ${(props) => props.theme.colors.logoColor};
   border-radius: 100%;
-  box-shadow: ${`inset 0px 0px 0px 1px ${JoinbleTheme.lightestColor} `};
+  box-shadow: ${(props) =>
+    `inset 0px 0px 0px 1px ${props.theme.colors.lightestColor} `};
 
   @keyframes bounce {
     0%,

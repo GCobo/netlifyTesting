@@ -1,12 +1,11 @@
 import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
 
 type IProps = {
   number?: number
 }
 
 export const BadgetsStyle = styled.div<IProps>`
-  background-color: ${JoinbleTheme.errorColor};
+  background-color: ${(props) => props.theme.colors.errorColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +16,7 @@ export const BadgetsStyle = styled.div<IProps>`
     props.number && props.number > 9 ? '0.625rem' : '100%'};
 
   span {
-    color: ${JoinbleTheme.lightestColor};
+    color: ${(props) => props.theme.colors.lightestColor};
     font-size: 0.625rem;
     display: block;
   }

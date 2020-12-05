@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
 import { ChevronDownIcon } from '../icons'
 import { InputStyle, Label } from '../input/InputStyle'
 
@@ -22,7 +21,7 @@ export const DropdownStyle = styled(InputStyle)<IDropdownStyleProps>`
   padding-right: 0.75rem;
   box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
-    props.errorLabel ? JoinbleTheme.errorColor : JoinbleTheme.grey
+    props.errorLabel ? props.theme.colors.errorColor : props.theme.colors.grey
   }`};
 
   span {
@@ -37,7 +36,7 @@ type IChevronProps = {
 }
 
 export const Chevron = styled(ChevronDownIcon)<IChevronProps>`
-  fill: ${JoinbleTheme.primaryColor};
+  fill: ${(props) => props.theme.colors.primaryColor};
   transition: transform 0.2s ease-in-out;
   transform: ${(props) => (props.open ? 'rotate(180deg)' : 'rotate(0)')};
 `

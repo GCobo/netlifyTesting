@@ -1,5 +1,4 @@
 import styled from '@emotion/styled/macro'
-import { JoinbleTheme } from '../../Theme'
 import { darken } from 'polished'
 
 export const CheckPlatformWrapper = styled.ul`
@@ -15,13 +14,13 @@ export const CheckPlatformOption = styled.li`
   }
   > input:checked + button {
     svg {
-      fill: ${JoinbleTheme.primaryColor};
+      fill: ${(props) => props.theme.colors.primaryColor};
     }
   }
 
   > input:checked + button:hover {
     svg {
-      fill: ${darken(0.1, JoinbleTheme.primaryColor)};
+      fill: ${(props) => darken(0.1, props.theme.colors.primaryColor)};
     }
   }
 `

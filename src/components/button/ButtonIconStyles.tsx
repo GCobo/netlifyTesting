@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { darken } from 'polished'
-import { JoinbleTheme } from '../../Theme'
 import { Badgets } from '../badgets/Badgets'
 
 type IProps = {
@@ -15,18 +14,18 @@ export const ButtonIconStyle = styled.button<IProps>`
   position: ${(props) => (props.badgetsNumber ? 'relative' : 'unset')};
   fill: ${(props) =>
     props.negative
-      ? JoinbleTheme.lightestColor
+      ? props.theme.colors.lightestColor
       : props.secondary
-      ? JoinbleTheme.fontColor
-      : JoinbleTheme.primaryColor};
+      ? props.theme.colors.fontColor
+      : props.theme.colors.primaryColor};
 
   &:active,
   &:hover {
     outline: none;
     fill: ${(props) =>
       props.negative || props.secondary
-        ? JoinbleTheme.primaryColor
-        : darken(0.1, JoinbleTheme.primaryColor)};
+        ? props.theme.colors.primaryColor
+        : darken(0.1, props.theme.colors.primaryColor)};
   }
 
   &:focus {
