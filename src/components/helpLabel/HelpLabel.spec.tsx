@@ -10,7 +10,7 @@ describe('HelpLabel component', () => {
   it('works', () => {
     mount(
       <ThemeProvider theme={JoinbleTheme}>
-        <HelpLabel>This is a help</HelpLabel>
+        <HelpLabel label='This is a help' />
       </ThemeProvider>
     )
     cy.contains('This is a help').should('be.visible')

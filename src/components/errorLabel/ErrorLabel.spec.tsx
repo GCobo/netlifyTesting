@@ -10,7 +10,7 @@ describe('ErrorLabel component', () => {
   it('works', () => {
     mount(
       <ThemeProvider theme={JoinbleTheme}>
-        <ErrorLabel>This is a error</ErrorLabel>
+        <ErrorLabel label='This is a error' />
       </ThemeProvider>
     )
     cy.contains('This is a error').should('be.visible')

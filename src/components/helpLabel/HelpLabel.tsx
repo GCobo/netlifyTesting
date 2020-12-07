@@ -3,12 +3,12 @@ import React from 'react'
 import { HelpIcon } from '../icons'
 
 type IProps = {
-  children: string
+  label: string
   className?: string
 }
 
 export const HelpLabel: React.FunctionComponent<IProps> = ({
-  children,
+  label,
   className
 }) => {
   const HelpWrapper = styled.div`
@@ -33,7 +33,7 @@ export const HelpLabel: React.FunctionComponent<IProps> = ({
   return (
     <HelpWrapper className={className}>
       <HelpIcon />
-      <p>{children}</p>
+      <p>{label}</p>
     </HelpWrapper>
   )
 }

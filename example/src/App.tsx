@@ -279,10 +279,10 @@ const App = () => {
         <Section>
           <Title>Help label</Title>
           <Grid>
-            <HelpLabel>
-              A block of help text that breaks onto a new line and may extend
-              beyond one line.
-            </HelpLabel>
+            <HelpLabel
+              label='A block of help text that breaks onto a new line and may extend
+              beyond one line.'
+            />
           </Grid>
         </Section>
         <Section>

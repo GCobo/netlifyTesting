@@ -30,8 +30,8 @@ export const Dropdown: React.FunctionComponent<IProps> = ({
         <span> {value}</span>
         <Chevron open={open} />
       </DropdownStyle>
-      {errorLabel && <ErrorLabelInput>{errorLabel}</ErrorLabelInput>}
-      {helpLabel && <HelpLabelInput>{helpLabel}</HelpLabelInput>}
+      {errorLabel && <ErrorLabelInput label={errorLabel} />}
+      {helpLabel && <HelpLabelInput label={helpLabel} />}
     </Wrapper>
   )
 }
