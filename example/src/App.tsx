@@ -273,7 +273,7 @@ const App = () => {
         <Section>
           <Title>Error label</Title>
           <Grid>
-            <ErrorLabel>error label</ErrorLabel>
+            <ErrorLabel label='Error label' />
           </Grid>
         </Section>
         <Section>
@@ -293,6 +293,10 @@ const App = () => {
             <Checkbox labelLeft='Input checked' checked />
             <Checkbox labelLeft='Input disabled' disabled />
             <Checkbox labelLeft='Input checked and disabled' disabled checked />
+            <Checkbox
+              labelLeft='Input with error'
+              errorLabel='Field required'
+            />
           </Grid>
         </Section>
         <Section>

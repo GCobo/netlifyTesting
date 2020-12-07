@@ -8,8 +8,8 @@ const CheckboxCheckedIcon: React.FunctionComponent<IProps> = ({
   className
 }) => {
   return (
-    <svg width='16' height='16' viewBox='0 0 24 24' className={className}>
-      <path d='M20.571 24h-17.143c-1.894 0-3.429-1.535-3.429-3.429v-17.143c0-1.894 1.535-3.429 3.429-3.429h17.143c1.894 0 3.429 1.535 3.429 3.429v17.143c0 1.894-1.535 3.429-3.429 3.429zM3.429 3.429v17.143h17.143v-17.143h-17.143zM17.143 17.143h-10.286v-10.286h10.286v10.286z'></path>
+    <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
+      <path d='M24 4.797l-16.32 16.32-7.68-7.68 1.914-1.914 5.766 5.752 14.406-14.392 1.914 1.914z'></path>
     </svg>
   )
 }

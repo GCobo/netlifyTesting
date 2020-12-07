@@ -1,4 +1,5 @@
 import styled from '@emotion/styled/macro'
+import { ErrorLabel } from '../errorLabel/ErrorLabel'
 
 type ILabelProps = {
   disabled?: boolean
@@ -28,17 +29,25 @@ export const Label = styled.label<ILabelProps>`
 `
 type ICcheckboxContainerProps = {
   disabled?: boolean
+  checked?: boolean
+  errorLabel?: string
 }
 
 export const CheckboxContainer = styled.section<ICcheckboxContainerProps>`
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  flex-flow: ${(props) => (props.errorLabel ? 'column' : 'row')};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   opacity: ${(props) => (props.disabled ? '0.5' : 1)};
 
   svg {
-    fill: ${(props) => props.theme.colors.primaryColor};
+    fill: ${(props) =>
+      props.checked
+        ? props.theme.colors.lightestColor
+        : props.errorLabel
+        ? props.theme.colors.errorColor
+        : props.theme.colors.fontColor};
   }
+
   &:hover {
     ${Label} {
       color: ${(props) =>
@@ -46,5 +55,38 @@ export const CheckboxContainer = styled.section<ICcheckboxContainerProps>`
           ? props.theme.colors.primaryColor
           : props.theme.colors.fontColor};
     }
+    svg {
+      fill: ${(props) =>
+        props.checked
+          ? props.theme.colors.lightestColor
+          : props.disabled
+          ? props.theme.colors.fontColor
+          : props.theme.colors.primaryColor};
+    }
   }
+`
+
+export const CheckedBoxChecked = styled.div`
+  background-color: ${(props) => props.theme.colors.primaryColor};
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+
+  svg {
+    fill: ${(props) => props.theme.colors.lightestColor};
+    width: 1rem;
+    height: 0.75rem;
+  }
+`
+
+export const FlexCenter = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const ErrorLabelCheck = styled(ErrorLabel)`
+  margin-top: 0.25rem;
 `

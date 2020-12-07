@@ -2,12 +2,12 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 type IProps = {
-  children: string
+  label: string
   className?: string
 }
 
 export const ErrorLabel: React.FunctionComponent<IProps> = ({
-  children,
+  label,
   className
 }) => {
   const Label = styled.p`
@@ -21,5 +21,5 @@ export const ErrorLabel: React.FunctionComponent<IProps> = ({
     }
   `
 
-  return <Label className={className}>{children}</Label>
+  return <Label className={className}>{label}</Label>
 }
