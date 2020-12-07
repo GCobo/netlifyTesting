@@ -3,10 +3,16 @@
 import React from 'react'
 import { mount } from 'cypress-react-unit-test'
 import { HelpLabel } from './HelpLabel'
+import { ThemeProvider } from '@emotion/react'
+import { JoinbleTheme } from '../../Theme'
 
 describe('HelpLabel component', () => {
   it('works', () => {
-    mount(<HelpLabel>This is a help</HelpLabel>)
+    mount(
+      <ThemeProvider theme={JoinbleTheme}>
+        <HelpLabel>This is a help</HelpLabel>
+      </ThemeProvider>
+    )
     cy.contains('This is a help').should('be.visible')
   })
 })

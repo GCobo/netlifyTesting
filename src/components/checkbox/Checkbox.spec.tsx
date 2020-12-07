@@ -3,10 +3,16 @@
 import React from 'react'
 import { mount } from 'cypress-react-unit-test'
 import { Checkbox } from './Checkbox'
+import { ThemeProvider } from '@emotion/react'
+import { JoinbleTheme } from '../../Theme'
 
 describe('Button component', () => {
   it('works', () => {
-    mount(<Checkbox labelLeft='Label Example' />)
+    mount(
+      <ThemeProvider theme={JoinbleTheme}>
+        <Checkbox labelLeft='Label Example' />
+      </ThemeProvider>
+    )
     cy.contains('Label Example').should('be.visible')
   })
 })

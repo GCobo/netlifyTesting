@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.67% </span>
+                <span class="strong">41.18% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>7/17</span>
             </div>
         
             
@@ -152,7 +152,9 @@
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
 <a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,8 +191,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -247,6 +248,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {
   forwardRef,
   Ref,
@@ -255,17 +259,16 @@
   FunctionComponent,
   useState
 } from 'react'
-import { ButtonIcon } from '../button'
-&nbsp;
-import { HelpLabel } from '../helpLabel/HelpLabel'
 import { HiddenIcon, ShowIcon } from '../icons'
 import {
-  ErrorInputLabel,
   IconError,
   Label,
   Wrapper,
   InputStyle,
-  ShowPassWordIcon
+  InputIcon,
+  ButtonPassword,
+  HelpLabelInput,
+  ErrorLabelInput
 } from './InputStyle'
 &nbsp;
 type IProps = {
@@ -311,7 +314,7 @@ export const Input: FunctionComponent&lt;IProps&gt; = forwardRef(
     }
 &nbsp;
     return (
-      &lt;Wrapper icon={icon} className={className}&gt;
+      &lt;Wrapper className={className}&gt;
         &lt;Label htmlFor={id}&gt;{label}&lt;/Label&gt;
         &lt;InputStyle
           type={passwordShow ? <span class="branch-0 cbranch-no" title="branch not covered" >'text' </span>: type}
@@ -325,19 +328,22 @@ export const Input: FunctionComponent&lt;IProps&gt; = forwardRef(
           value={value}
           data-test={testId}
           icon={icon}
+          passwordShow={passwordShow}
         /&gt;
         {type === 'password' &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;ShowPassWordIcon&gt;</span>
-            &lt;ButtonIcon
-              icon={passwordShow ? &lt;HiddenIcon /&gt; : &lt;ShowIcon /&gt;}
-              onClick={togglePasswordVisiblity}
-            /&gt;
-          &lt;/ShowPassWordIcon&gt;
+<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;ButtonPassword</span>
+            icon={passwordShow ? &lt;HiddenIcon /&gt; : &lt;ShowIcon /&gt;}
+            type='button'
+            tabIndex={-1}
+            onClick={togglePasswordVisiblity}
+          /&gt;
         )}
-        {icon &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >React.cloneElement(icon)}</span>
-        {errorLabel &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;IconError /&gt;}</span>
-        {errorLabel &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;ErrorInputLabel&gt;{errorLabel}&lt;/ErrorInputLabel&gt;}</span>
-        {helpLabel &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;HelpLabel&gt;{helpLabel}&lt;/HelpLabel&gt;}</span>
+        {icon &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >          !errorLabel </span>&amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >          React.cloneElement(icon, { className: InputIcon })}</span>
+        {errorLabel &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >type !== 'password' </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >&lt;IconError /&gt;}</span>
+        {errorLabel &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;ErrorLabelInput&gt;{errorLabel}&lt;/ErrorLabelInput&gt;}</span>
+        {helpLabel &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;HelpLabelInput&gt;{helpLabel}&lt;/HelpLabelInput&gt;}</span>
       &lt;/Wrapper&gt;
     )
   }
@@ -349,7 +355,7 @@ export const Input: FunctionComponent&lt;IProps&gt; = forwardRef(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 23 2020 21:07:23 GMT+0100 (hora estándar de Europa central)
+                at Mon Dec 07 2020 17:14:20 GMT+0100 (hora estándar de Europa central)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
