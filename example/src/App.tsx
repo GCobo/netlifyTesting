@@ -33,7 +33,9 @@ import {
   CheckPlatform,
   ICheckPlatform,
   Tooltip,
-  JoinbleTheme
+  JoinbleTheme,
+  ExitIcon,
+  LockIcon
 } from 'joinble-ui'
 
 type IGridProps = {
@@ -230,6 +232,8 @@ const App = () => {
             <CloseIcon />
             <SearchIcon />
             <WidgetIcon />
+            <ExitIcon />
+            <LockIcon />
           </Grid>
         </Section>
         <Section>

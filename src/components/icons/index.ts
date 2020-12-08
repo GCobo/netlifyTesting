@@ -24,6 +24,8 @@ import UpIcon from './upIcon'
 import AppleIcon from './appleIcon'
 import CloseIcon from './closeIcon'
 import AndroidIcon from './androidIcon'
+import LockIcon from './lockIcon'
+import ExitIcon from './exitIcon'
 
 export {
   SearchIcon,
@@ -51,5 +53,7 @@ export {
   UpIcon,
   AppleIcon,
   CloseIcon,
-  AndroidIcon
+  AndroidIcon,
+  LockIcon,
+  ExitIcon
 }
