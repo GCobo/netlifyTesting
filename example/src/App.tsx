@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from 'react';
+import styled from '@emotion/styled';
 import {
   Button,
   ButtonIcon,
@@ -35,27 +35,28 @@ import {
   Tooltip,
   JoinbleTheme,
   ExitIcon,
-  LockIcon
-} from 'joinble-ui'
+  LockIcon,
+  InputUpload
+} from 'joinble-ui';
 
 type IGridProps = {
-  size?: number
-}
+  size?: number;
+};
 
 const App = () => {
   const Layout = styled.section`
     margin: 1rem;
-  `
+  `;
   const Section = styled.div`
     margin-bottom: 0.5rem;
     border-bottom: 1px solid black;
     padding-bottom: 2rem;
-  `
+  `;
   const Title = styled.h2`
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 0;
-  `
+  `;
   const Grid = styled.div<IGridProps>(
     {
       gridColumnGap: '1rem',
@@ -65,7 +66,7 @@ const App = () => {
       display: `${props.size ? 'grid' : 'flex'}`,
       gridTemplateColumns: `repeat(auto-fit, minmax(${props.size}px, 1fr))`
     })
-  )
+  );
 
   const optionsPlatform: ICheckPlatform[] = [
     {
@@ -76,7 +77,7 @@ const App = () => {
       id: 2,
       icon: <AppleIcon />
     }
-  ]
+  ];
 
   return (
     <>
@@ -323,9 +324,19 @@ const App = () => {
             <Modal>Modal</Modal>
           </Grid>
         </Section>
+        <Section>
+          <Title>Input Upload</Title>
+          <Grid>
+            <InputUpload label='Upload file' />
+            <InputUpload
+              label='Upload file with error'
+              errorLabel='This format is not supported'
+            />
+          </Grid>
+        </Section>
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

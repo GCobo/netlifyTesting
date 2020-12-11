@@ -33,6 +33,7 @@
   "dependencies": {
     "@emotion/css": "^11.0.0",
     "rc-color-picker": "1.2.6",
+    "react-dropzone": "^11.2.4",
     "react-tooltip": "^4.2.11"
   },
   "devDependencies": {
@@ -43,6 +44,7 @@
     "@emotion/styled-base": "11.0.0",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/github": "7.2.0",
+    "@testing-library/cypress": "^7.0.2",
     "@types/jest": "25.1.4",
     "@types/node": "12.12.38",
     "@types/react": "16.9.27",
