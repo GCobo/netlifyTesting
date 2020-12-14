@@ -5,38 +5,44 @@ import React, {
   useCallback,
   useRef,
   Fragment
-} from 'react'
-import { createPortal } from 'react-dom'
+} from 'react';
+import { createPortal } from 'react-dom';
 
-import { PortalContainer } from './styles'
+import { PortalContainer } from './styles';
 
 type IProps = {
-  show?: boolean
-  children: React.ReactNode
-  actionRef?: any
-  onClickOutside?(): void
-  widthAuto?: boolean
-}
+  show?: boolean;
+  children: React.ReactNode;
+  actionRef?: any;
+  onClickOutside?(): void;
+  widthAuto?: boolean;
+};
 
 type IPosition = {
-  top: number
-  left: number
-  right: number
-  width: number | string
-}
+  top: number;
+  left: number;
+  right: number;
+  width: number | string;
+};
 
 const createElement = () => {
-  let popupRoot: HTMLElement | null = document.getElementById('popup-root')
+  let popupRoot: HTMLElement | null = document.getElementById('popup-root');
 
   if (!popupRoot) {
-    var div = document.createElement('div')
-    div.id = 'popup-root'
-    document.body.appendChild(div)
+    var div = document.createElement('div');
+    div.id = 'popup-root';
+    document.body.appendChild(div);
 
-    popupRoot = document.getElementById('popup-root')
+    popupRoot = document.getElementById('popup-root');
   }
 
-  return popupRoot
+  return popupRoot;
+};
+
+let el: HTMLDivElement | null = null;
+
+if (document) {
+  el = document.createElement('div');
 }
 
 export const Portal: FunctionComponent<IProps> = ({
@@ -46,16 +52,14 @@ export const Portal: FunctionComponent<IProps> = ({
   onClickOutside,
   widthAuto = false
 }) => {
-  const el: HTMLDivElement = document.createElement('div')
-
   const [position, setPosition] = useState<IPosition>({
     top: 0,
     left: 0,
     right: 0,
     width: 0
-  })
+  });
 
-  const popupRef = useRef<HTMLDivElement>(null)
+  const popupRef = useRef<HTMLDivElement>(null);
 
   const getPosition = useCallback(() => {
     if (actionRef.current) {
@@ -64,58 +68,58 @@ export const Portal: FunctionComponent<IProps> = ({
         top,
         right,
         height
-      } = actionRef!.current.getBoundingClientRect()
+      } = actionRef!.current.getBoundingClientRect();
 
       setPosition({
         left,
         top: top + height - 1,
         right,
         width: widthAuto ? 'auto' : actionRef!.current.clientWidth
-      })
+      });
     }
-  }, [actionRef])
+  }, [actionRef]);
 
   useEffect(() => {
-    const popupRoot = createElement()
-    popupRoot?.appendChild(el)
+    const popupRoot = createElement();
+    popupRoot?.appendChild(el!);
 
     if (actionRef) {
-      getPosition()
+      getPosition();
     }
 
-    document.addEventListener('mousedown', handleClickOutside)
-    window.addEventListener('resize', handleWindowResize)
-    document.addEventListener('scroll', handleScroll)
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('resize', handleWindowResize);
+    document.addEventListener('scroll', handleScroll);
 
     return () => {
-      document.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleScroll = useCallback(() => {
-    let timeout
+    let timeout;
 
     if (timeout) {
-      window.cancelAnimationFrame(timeout)
+      window.cancelAnimationFrame(timeout);
     }
 
     timeout = window.requestAnimationFrame(() => {
-      actionRef && getPosition()
-    })
-  }, [actionRef])
+      actionRef && getPosition();
+    });
+  }, [actionRef]);
 
   const handleWindowResize = useCallback(() => {
-    actionRef && getPosition()
-  }, [actionRef])
+    actionRef && getPosition();
+  }, [actionRef]);
 
   const handleClickOutside = useCallback(
     (event: any) => {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
-        onClickOutside && onClickOutside()
+        onClickOutside && onClickOutside();
       }
     },
     [popupRef]
-  )
+  );
 
   return createPortal(
     <Fragment>
@@ -132,6 +136,6 @@ export const Portal: FunctionComponent<IProps> = ({
         </PortalContainer>
       )}
     </Fragment>,
-    el
-  )
-}
+    el!
+  );
+};
