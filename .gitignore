@@ -24,3 +24,6 @@ yarn-error.log*
 .nyc_output
 coverage
 debug.log
+
+cypress/videos/
+cypress/screenshots/

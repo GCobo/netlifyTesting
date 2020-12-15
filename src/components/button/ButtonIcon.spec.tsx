@@ -16,7 +16,7 @@ describe('Button Icon', () => {
     );
   });
 
-  it.only('should show a tooltip', () => {
+  it('should show a tooltip', () => {
     mount(
       <JoinbleThemeProvider>
         <ButtonIcon

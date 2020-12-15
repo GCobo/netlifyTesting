@@ -25,7 +25,7 @@ describe('Input Upload component', () => {
     cy.findByRole('img', { src: imageUrl }).should('exist');
   });
 
-  it('should delete the preview of the file', () => {
+  it.only('should delete the preview of the file', () => {
     mount(
       <JoinbleThemeProvider>
         <InputUpload label='Upload file' value={imageUrl} />

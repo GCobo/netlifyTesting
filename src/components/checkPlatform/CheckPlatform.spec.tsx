@@ -18,7 +18,7 @@ const options: ICheckPlatform[] = [
 ];
 
 describe('Input Upload component', () => {
-  it.only('should check checkbox android', () => {
+  it('should check checkbox android', () => {
     mount(
       <JoinbleThemeProvider>
         <CheckPlatform options={options} name='platforms' onChange={() => {}} />

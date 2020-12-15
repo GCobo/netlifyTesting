@@ -29,7 +29,7 @@ export const Tooltip = ({ label, children, id, type, place }: IProps) => {
         onMouseEnter={seeTooltip}
         onMouseLeave={hiddenTooltip}
       >
-        {children && React.cloneElement(children)}
+        {children}
       </span>
       {show && (
         <ReactTooltip

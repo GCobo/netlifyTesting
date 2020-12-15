@@ -23,7 +23,7 @@ export const ButtonIcon = ({
   tooltip,
   ...rest
 }: IProps) => {
-  const RenderButton = () => (
+  const renderButton = () => (
     <ButtonIconStyle
       badgetsNumber={badgetsNumber}
       {...rest}
@@ -43,9 +43,9 @@ export const ButtonIcon = ({
 
   return tooltip ? (
     <Tooltip id={tooltip} label={tooltip}>
-      <RenderButton />
+      {renderButton()}
     </Tooltip>
   ) : (
-    <RenderButton />
+    renderButton()
   );
 };
