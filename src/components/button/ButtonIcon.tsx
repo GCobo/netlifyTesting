@@ -1,5 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { BadgetsStyles, ButtonIconStyle } from './ButtonIconStyles';
+import { Tooltip } from '../tooltip/Tooltip';
 
 type IProps = {
   icon: React.ReactElement;
@@ -11,6 +12,7 @@ type IProps = {
   type?: 'button' | 'submit' | 'reset';
   tabIndex?: number;
   testId?: string;
+  tooltip?: string;
 };
 
 export const ButtonIcon = ({
@@ -18,9 +20,10 @@ export const ButtonIcon = ({
   badgetsNumber,
   type = 'button',
   testId,
+  tooltip,
   ...rest
 }: IProps) => {
-  return (
+  const RenderButton = () => (
     <ButtonIconStyle
       badgetsNumber={badgetsNumber}
       {...rest}
@@ -36,5 +39,13 @@ export const ButtonIcon = ({
         React.cloneElement(icon)
       )}
     </ButtonIconStyle>
+  );
+
+  return tooltip ? (
+    <Tooltip id={tooltip} label={tooltip}>
+      <RenderButton />
+    </Tooltip>
+  ) : (
+    <RenderButton />
   );
 };

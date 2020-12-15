@@ -66,6 +66,7 @@ export const CheckPlatform = ({
               icon={option.icon}
               onClick={() => handleSetCheckPlatform(option.id)}
               testId={`check-${option.name}`}
+              tooltip={option.name}
             />
           </CheckPlatformOption>
         );
