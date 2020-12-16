@@ -39,12 +39,6 @@ const createElement = () => {
   return popupRoot;
 };
 
-let el: HTMLDivElement | null = null;
-
-if (document) {
-  el = document.createElement('div');
-}
-
 export const Portal: FunctionComponent<IProps> = ({
   show = false,
   children,
@@ -58,6 +52,10 @@ export const Portal: FunctionComponent<IProps> = ({
     right: 0,
     width: 0
   });
+
+  const [element, setElement] = useState<HTMLElement | null>(null);
+
+  const [mounted, setMounted] = useState(false);
 
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -81,7 +79,6 @@ export const Portal: FunctionComponent<IProps> = ({
 
   useEffect(() => {
     const popupRoot = createElement();
-    popupRoot?.appendChild(el!);
 
     if (actionRef) {
       getPosition();
@@ -90,6 +87,9 @@ export const Portal: FunctionComponent<IProps> = ({
     document.addEventListener('mousedown', handleClickOutside);
     window.addEventListener('resize', handleWindowResize);
     document.addEventListener('scroll', handleScroll);
+
+    setElement(popupRoot);
+    setMounted(true);
 
     return () => {
       document.removeEventListener('scroll', handleScroll);
@@ -121,21 +121,23 @@ export const Portal: FunctionComponent<IProps> = ({
     [popupRef]
   );
 
-  return createPortal(
-    <Fragment>
-      {show && (
-        <PortalContainer
-          ref={popupRef}
-          style={{
-            left: position.left,
-            top: position.top,
-            width: position.width
-          }}
-        >
-          {children}
-        </PortalContainer>
-      )}
-    </Fragment>,
-    el!
-  );
+  return mounted
+    ? createPortal(
+        <Fragment>
+          {show && (
+            <PortalContainer
+              ref={popupRef}
+              style={{
+                left: position.left,
+                top: position.top,
+                width: position.width
+              }}
+            >
+              {children}
+            </PortalContainer>
+          )}
+        </Fragment>,
+        element!
+      )
+    : null;
 };
