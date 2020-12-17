@@ -62,7 +62,7 @@ export const CheckPlatform = ({
               aria-checked={checkPlatform.includes(option.id)}
             />
             <ButtonIcon
-              secondary
+              secondary={!checkPlatform.includes(option.id)}
               icon={option.icon}
               onClick={() => handleSetCheckPlatform(option.id)}
               testId={`check-${option.name}`}
