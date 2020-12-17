@@ -9,21 +9,7 @@ import React, {
 import { createPortal } from 'react-dom';
 
 import { PortalContainer } from './styles';
-
-type IProps = {
-  show?: boolean;
-  children: React.ReactNode;
-  actionRef?: any;
-  onClickOutside?(): void;
-  widthAuto?: boolean;
-};
-
-type IPosition = {
-  top: number;
-  left: number;
-  right: number;
-  width: number | string;
-};
+import { PortalProps, IPosition } from './PortalModel';
 
 const createElement = () => {
   let popupRoot: HTMLElement | null = document.getElementById('popup-root');
@@ -39,12 +25,13 @@ const createElement = () => {
   return popupRoot;
 };
 
-export const Portal: FunctionComponent<IProps> = ({
+export const Portal: FunctionComponent<PortalProps> = ({
   show = false,
   children,
   actionRef = null,
   onClickOutside,
-  widthAuto = false
+  widthAuto = false,
+  className
 }) => {
   const [position, setPosition] = useState<IPosition>({
     top: 0,
@@ -127,6 +114,7 @@ export const Portal: FunctionComponent<IProps> = ({
           {show && (
             <PortalContainer
               ref={popupRef}
+              className={className}
               style={{
                 left: position.left,
                 top: position.top,

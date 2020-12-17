@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { darken } from 'polished'
-import { css } from '@emotion/css'
+import React from 'react';
+import styled from '@emotion/styled';
+import { darken } from 'polished';
+import { css } from '@emotion/css';
 
 type IButtonProps = {
-  secondary?: boolean
-  icon?: React.ReactElement
-  warning?: boolean
-  error?: boolean
-  success?: boolean
-}
+  secondary?: boolean;
+  icon?: React.ReactElement;
+  warning?: boolean;
+  error?: boolean;
+  success?: boolean;
+};
 
 export const ButtonStyles = styled.button<IButtonProps>`
   background-color: ${(props) =>
@@ -89,10 +89,10 @@ export const ButtonStyles = styled.button<IButtonProps>`
   &:first-letter {
     text-transform: capitalize;
   }
-`
+`;
 
 export const IconButton = css`
   width: 1rem;
   margin-right: 1rem;
   fill: inherit;
-`
+`;
