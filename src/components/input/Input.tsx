@@ -5,8 +5,8 @@ import React, {
   MouseEvent,
   FunctionComponent,
   useState
-} from 'react'
-import { HiddenIcon, ShowIcon } from '../icons'
+} from 'react';
+import { HiddenIcon, ShowIcon } from '../icons';
 import {
   IconError,
   Label,
@@ -16,24 +16,24 @@ import {
   ButtonPassword,
   HelpLabelInput,
   ErrorLabelInput
-} from './InputStyle'
+} from './InputStyle';
 
 type IProps = {
-  errorLabel?: string
-  type?: 'text' | 'number' | 'password' | 'email'
-  disabled?: boolean
-  label: string
-  helpLabel?: string
-  id?: string
-  placeHolder?: string
-  icon?: ReactElement
-  name?: string
-  ref?: Ref<HTMLInputElement>
-  className?: string
-  onClick?: (event: MouseEvent<HTMLInputElement>) => void
-  value?: string | number | string[]
-  testId?: string
-}
+  errorLabel?: string;
+  type?: 'text' | 'number' | 'password' | 'email';
+  disabled?: boolean;
+  label?: string;
+  helpLabel?: string;
+  id?: string;
+  placeHolder?: string;
+  icon?: ReactElement;
+  name?: string;
+  ref?: Ref<HTMLInputElement>;
+  className?: string;
+  onClick?: (event: MouseEvent<HTMLInputElement>) => void;
+  value?: string | number | string[];
+  testId?: string;
+};
 
 export const Input: FunctionComponent<IProps> = forwardRef(
   (
@@ -54,15 +54,15 @@ export const Input: FunctionComponent<IProps> = forwardRef(
     },
     ref: Ref<HTMLInputElement>
   ) => {
-    const [passwordShow, setPasswordShow] = useState<boolean>(false)
+    const [passwordShow, setPasswordShow] = useState<boolean>(false);
 
     const togglePasswordVisiblity = () => {
-      setPasswordShow(!passwordShow)
-    }
+      setPasswordShow(!passwordShow);
+    };
 
     return (
       <Wrapper className={className}>
-        <Label htmlFor={id}>{label}</Label>
+        {label && <Label htmlFor={id}>{label}</Label>}
         <InputStyle
           type={passwordShow ? 'text' : type}
           id={id}
@@ -92,6 +92,6 @@ export const Input: FunctionComponent<IProps> = forwardRef(
         {errorLabel && <ErrorLabelInput label={errorLabel} />}
         {helpLabel && <HelpLabelInput label={helpLabel} />}
       </Wrapper>
-    )
+    );
   }
-)
+);
