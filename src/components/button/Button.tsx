@@ -1,23 +1,10 @@
-import React, { MouseEvent } from 'react'
-import { Loading } from '../loading/Loading'
-import { ButtonStyles, IconButton } from './ButtonStyles'
+import React from 'react';
+import { Loading } from '../loading/Loading';
+import { ButtonStyles, IconButton } from './ButtonStyles';
 
-type IProps = {
-  secondary?: boolean
-  disabled?: boolean
-  children?: React.ReactNode
-  type?: 'button' | 'reset' | 'submit'
-  icon?: React.ReactElement
-  testId?: string
-  loading?: boolean
-  warning?: boolean
-  error?: boolean
-  success?: boolean
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
-  className?: string
-}
+import { ButtonProps } from './ButtonModel';
 
-export const Button: React.FunctionComponent<IProps> = ({
+export const Button: React.FunctionComponent<ButtonProps> = ({
   type = 'button',
   icon,
   loading,
@@ -35,5 +22,5 @@ export const Button: React.FunctionComponent<IProps> = ({
       {!loading && children && children}
       {loading && <Loading />}
     </ButtonStyles>
-  )
-}
+  );
+};

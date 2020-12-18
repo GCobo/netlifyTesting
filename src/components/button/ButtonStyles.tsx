@@ -1,17 +1,10 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { darken } from 'polished';
 import { css } from '@emotion/css';
 
-type IButtonProps = {
-  secondary?: boolean;
-  icon?: React.ReactElement;
-  warning?: boolean;
-  error?: boolean;
-  success?: boolean;
-};
+import { ButtonTypeProps } from './ButtonModel';
 
-export const ButtonStyles = styled.button<IButtonProps>`
+export const ButtonStyles = styled.button<ButtonTypeProps>`
   background-color: ${(props) =>
     props.secondary
       ? props.theme.colors.lightestColor
@@ -21,10 +14,16 @@ export const ButtonStyles = styled.button<IButtonProps>`
       ? props.theme.colors.successColor
       : props.warning
       ? props.theme.colors.warningColor
+      : props.white
+      ? props.theme.colors.lightestColor
       : props.theme.colors.primaryColor};
   border: 1px solid
     ${(props) =>
-      props.secondary ? props.theme.colors.primaryColor : 'transparent'};
+      props.secondary
+        ? props.theme.colors.primaryColor
+        : props.white
+        ? props.theme.colors.greyLight
+        : 'transparent'};
   font-size: 1rem;
   min-width: 7rem;
   height: 2.5rem;
@@ -37,6 +36,8 @@ export const ButtonStyles = styled.button<IButtonProps>`
   color: ${(props) =>
     props.secondary
       ? props.theme.colors.primaryColor
+      : props.white
+      ? props.theme.colors.titleColor
       : props.theme.colors.lightestColor};
   fill: ${(props) =>
     props.secondary
@@ -76,8 +77,13 @@ export const ButtonStyles = styled.button<IButtonProps>`
         ? darken(0.1, props.theme.colors.successColor)
         : props.warning
         ? darken(0.1, props.theme.colors.warningColor)
+        : props.white
+        ? props.theme.colors.greyLight
         : darken(0.1, props.theme.colors.primaryColor)};
-    color: ${(props) => props.theme.colors.lightestColor};
+    color: ${(props) =>
+      props.white
+        ? props.theme.colors.titleColor
+        : props.theme.colors.lightestColor};
     fill: ${(props) => props.theme.colors.lightestColor};
   }
 
