@@ -4,7 +4,8 @@ import React, {
   ReactElement,
   MouseEvent,
   FunctionComponent,
-  useState
+  useState,
+  ChangeEvent
 } from 'react';
 import { HiddenIcon, ShowIcon } from '../icons';
 import {
@@ -33,6 +34,7 @@ type IProps = {
   onClick?: (event: MouseEvent<HTMLInputElement>) => void;
   value?: string | number | string[];
   testId?: string;
+  onChange?(event: ChangeEvent<HTMLInputElement>): void;
 };
 
 export const Input: FunctionComponent<IProps> = forwardRef(
@@ -50,7 +52,8 @@ export const Input: FunctionComponent<IProps> = forwardRef(
       className,
       onClick,
       value,
-      testId
+      testId,
+      onChange
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -72,6 +75,7 @@ export const Input: FunctionComponent<IProps> = forwardRef(
           name={name}
           ref={ref}
           onClick={onClick}
+          onChange={onChange}
           value={value}
           data-test={testId}
           icon={icon}
