@@ -1,11 +1,11 @@
-import React, { Fragment, MouseEvent } from 'react'
+import React, { Fragment, MouseEvent } from 'react';
 import {
   GoogleIcon,
   LinkedinIcon,
   TwitterIcon,
   FacebookIcon,
   GithubIcon
-} from '../icons'
+} from '../icons';
 
 import {
   FacebookButton,
@@ -13,7 +13,7 @@ import {
   GoogleButton,
   LinkedinButton,
   TwitterButton
-} from './ButtonSocialMediaStyles'
+} from './ButtonSocialMediaStyles';
 
 export enum socialMedia {
   google = 'google',
@@ -24,11 +24,11 @@ export enum socialMedia {
 }
 
 type IProps = {
-  social: socialMedia
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void
-  className?: string
-  testId?: string
-}
+  social: socialMedia;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  className?: string;
+  testId?: string;
+};
 
 export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
   social,
@@ -80,5 +80,5 @@ export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
         </GithubButton>
       )}
     </Fragment>
-  )
-}
+  );
+};

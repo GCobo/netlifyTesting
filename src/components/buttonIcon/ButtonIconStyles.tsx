@@ -1,12 +1,12 @@
-import styled from '@emotion/styled'
-import { darken } from 'polished'
-import { Badgets } from '../badgets/Badgets'
+import styled from '@emotion/styled';
+import { darken } from 'polished';
+import { Badgets } from '../badgets/Badgets';
 
 type IProps = {
-  badgetsNumber?: number
-  secondary?: boolean
-  negative?: boolean
-}
+  badgetsNumber?: number;
+  secondary?: boolean;
+  negative?: boolean;
+};
 
 export const ButtonIconStyle = styled.button<IProps>`
   cursor: pointer;
@@ -36,10 +36,10 @@ export const ButtonIconStyle = styled.button<IProps>`
     fill: inherit;
     width: 1.25rem;
   }
-`
+`;
 
 export const BadgetsStyles = styled(Badgets)`
   position: absolute;
   left: 1rem;
   bottom: 0;
-`
+`;

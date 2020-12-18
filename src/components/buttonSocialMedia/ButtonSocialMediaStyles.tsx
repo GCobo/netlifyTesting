@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 const Button = styled.button`
   width: 2.25rem;
@@ -15,29 +15,29 @@ const Button = styled.button`
   &:focus {
     outline: none;
   }
-`
+`;
 
 export const GoogleButton = styled(Button)`
   border-color: #ea4335;
-`
+`;
 export const FacebookButton = styled(Button)`
   border-color: #395a9a;
   svg {
     fill: #395a9a;
   }
-`
+`;
 export const TwitterButton = styled(Button)`
   border-color: #2aa9e0;
   svg {
     fill: #2aa9e0;
   }
-`
+`;
 export const LinkedinButton = styled(Button)`
   border-color: #0077b7;
   svg {
     fill: #0077b7;
   }
-`
+`;
 export const GithubButton = styled(Button)`
   border-color: transparent;
   padding: 0;
@@ -45,4 +45,4 @@ export const GithubButton = styled(Button)`
     width: 2.25rem;
     height: 2.25rem;
   }
-`
+`;

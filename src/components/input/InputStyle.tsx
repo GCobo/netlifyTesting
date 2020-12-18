@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { JoinbleTheme } from '../../Theme'
-import { AlertIcon } from '../icons'
-import { css } from '@emotion/css'
-import { ButtonIcon } from '../button/ButtonIcon'
-import { HelpLabel } from '../helpLabel/HelpLabel'
-import { ErrorLabel } from '../errorLabel/ErrorLabel'
+import React from 'react';
+import styled from '@emotion/styled';
+import { JoinbleTheme } from '../../Theme';
+import { AlertIcon } from '../icons';
+import { css } from '@emotion/css';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
+import { HelpLabel } from '../helpLabel/HelpLabel';
+import { ErrorLabel } from '../errorLabel/ErrorLabel';
 
 type IWrapperProps = {
-  icon?: React.ReactElement
-}
+  icon?: React.ReactElement;
+};
 
 export const Wrapper = styled.section<IWrapperProps>`
   display: flex;
@@ -17,13 +17,13 @@ export const Wrapper = styled.section<IWrapperProps>`
   position: relative;
   width: 100%;
   text-align: start;
-`
+`;
 type IInputProps = {
-  errorLabel?: string
-  icon?: React.ReactElement
-  type?: 'text' | 'number' | 'password' | 'email'
-  passwordShow?: boolean
-}
+  errorLabel?: string;
+  icon?: React.ReactElement;
+  type?: 'text' | 'number' | 'password' | 'email';
+  passwordShow?: boolean;
+};
 
 export const InputStyle = styled.input<IInputProps>`
   border: none;
@@ -82,7 +82,7 @@ export const InputStyle = styled.input<IInputProps>`
     border: none;
     outline: none;
   }
-`
+`;
 
 export const Label = styled.label`
   font-size: ${(props) => props.theme.fonts.fontSizeSmall};
@@ -95,7 +95,7 @@ export const Label = styled.label`
   &:first-letter {
     text-transform: capitalize;
   }
-`
+`;
 
 export const ButtonPassword = styled(ButtonIcon)`
   svg {
@@ -105,7 +105,7 @@ export const ButtonPassword = styled(ButtonIcon)`
     right: 0.75rem;
     top: 2rem;
   }
-`
+`;
 
 export const IconError = styled(AlertIcon)`
   fill: ${(props) => props.theme.colors.errorColor};
@@ -113,7 +113,7 @@ export const IconError = styled(AlertIcon)`
   width: 1.25rem;
   right: 0.75rem;
   top: 2rem;
-`
+`;
 
 export const InputIcon = css`
   position: absolute;
@@ -121,10 +121,10 @@ export const InputIcon = css`
   right: 0.75rem;
   top: 2rem;
   fill: ${JoinbleTheme.colors.primaryColor};
-`
+`;
 export const HelpLabelInput = styled(HelpLabel)`
   margin-top: 0.25rem;
-`
+`;
 export const ErrorLabelInput = styled(ErrorLabel)`
   margin-top: 0.25rem;
-`
+`;

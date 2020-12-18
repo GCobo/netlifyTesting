@@ -12,7 +12,7 @@ import {
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon } from '../icons';
-import { ButtonIcon } from '../button/ButtonIcon';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
 
 export const InputUpload = ({

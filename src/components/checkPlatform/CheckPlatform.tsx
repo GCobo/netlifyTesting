@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import { ButtonIcon } from '../button';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import {
   CheckPlatformInput,
   CheckPlatformOption,

@@ -41,7 +41,11 @@ import {
   SpainIcon,
   CreditCardIcon,
   LogOutIcon,
-  UserIcon
+  UserIcon,
+  OptionMenu,
+  OptionMenuItem,
+  OptionMenuSeparator,
+  OptionMenuHeader
 } from 'joinble-ui';
 
 type IGridProps = {
@@ -75,12 +79,14 @@ const App = () => {
 
   const optionsPlatform: ICheckPlatform[] = [
     {
-      id: 1,
-      icon: <AndroidIcon />
+      id: '1',
+      icon: <AndroidIcon />,
+      name: 'android'
     },
     {
-      id: 2,
-      icon: <AppleIcon />
+      id: '2',
+      icon: <AppleIcon />,
+      name: 'apple'
     }
   ];
 
@@ -251,6 +257,20 @@ const App = () => {
           <Title>Check platform</Title>
           <Grid>
             <CheckPlatform options={optionsPlatform} />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>ButtonMenu</Title>
+          <Grid>
+            <OptionMenu icon={<SearchIcon />}>
+              <OptionMenuHeader>Prueba</OptionMenuHeader>
+              <OptionMenuItem>item prueba</OptionMenuItem>
+              <OptionMenuSeparator />
+              <OptionMenuItem icon={<LockIcon />}>
+                item prueba icono
+              </OptionMenuItem>
+              <OptionMenuItem href='www.marca.com'>anchor</OptionMenuItem>
+            </OptionMenu>
           </Grid>
         </Section>
         <Section>
