@@ -7,7 +7,8 @@ import {
   ImagePreview,
   WrapperDrag,
   WrapperButtons,
-  IconError
+  IconError,
+  HelpLabelStyles
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon } from '../icons';
@@ -24,7 +25,8 @@ export const InputUpload = ({
   onChange,
   onDelete,
   value,
-  testId
+  testId,
+  helpLabel
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<string>();
 
@@ -94,8 +96,8 @@ export const InputUpload = ({
           </WrapperDrag>
         )}
       </ContainerDrag>
-
-      {errorLabel && <ErrorLabel label={errorLabel}></ErrorLabel>}
+      {helpLabel && <HelpLabelStyles label={helpLabel} />}
+      {errorLabel && <ErrorLabel label={errorLabel} />}
     </div>
   );
 };

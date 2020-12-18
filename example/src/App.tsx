@@ -332,6 +332,10 @@ const App = () => {
               label='Upload file with error'
               errorLabel='This format is not supported'
             />
+            <InputUpload
+              label='Upload file with help '
+              helpLabel='Recommended size: 92x92'
+            />
           </Grid>
         </Section>
       </Layout>

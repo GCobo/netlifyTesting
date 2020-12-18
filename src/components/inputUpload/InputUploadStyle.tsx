@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 import { DragZoneProps } from './InputUploadModel';
 import { AlertIcon } from '../icons';
+import { HelpLabel } from '../helpLabel/HelpLabel';
 
 const handleBorderColor = (props: any) => {
   if (props.errorLabel) {
@@ -101,4 +102,13 @@ export const IconError = styled(AlertIcon)`
   fill: ${(props) => props.theme.colors.errorColor};
   width: 2.5rem;
   height: 2.5rem;
+`;
+
+export const HelpLabelStyles = styled(HelpLabel)`
+  margin-top: 4px;
+  svg {
+    width: 1.25rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+  }
 `;

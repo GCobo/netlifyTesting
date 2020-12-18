@@ -10,6 +10,7 @@ export interface DragZoneProps extends ErrorLabelProps {
 export interface InputUploadProps extends ErrorLabelProps {
   label?: string;
   labelDrop?: string;
+  helpLabel?: string;
   id?: string;
   acceptFiles?: string[];
   maxSize?: number;
