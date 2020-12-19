@@ -1,5 +1,5 @@
-import React from 'react'
-import { Global, css } from '@emotion/react'
+import React from 'react';
+import { Global, css } from '@emotion/react';
 
 export const GlobalStyles: React.FunctionComponent = () => {
   return (
@@ -142,6 +142,9 @@ export const GlobalStyles: React.FunctionComponent = () => {
         button {
           background: none;
           border: 0;
+          &:focus {
+            outline: none;
+          }
         }
 
         body {
@@ -170,5 +173,5 @@ export const GlobalStyles: React.FunctionComponent = () => {
         }
       `}
     />
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
-import React, { FunctionComponent, forwardRef, Ref } from 'react'
-import { CheckboxIcon, CheckboxCheckedIcon } from '../icons'
+import React, { FunctionComponent, forwardRef, Ref, useState } from 'react';
+import { CheckboxIcon, CheckboxCheckedIcon } from '../icons';
 import {
   CheckboxContainer,
   CheckedBoxChecked,
@@ -7,21 +7,21 @@ import {
   FlexCenter,
   HiddenCheckbox,
   Label
-} from './CheckboxStyles'
+} from './CheckboxStyles';
 
 type IProps = {
-  labelRight?: string
-  labelLeft?: string
-  checked?: boolean
-  disabled?: boolean
-  id?: string
-  className?: string
-  testId?: string
-  ref?: Ref<HTMLInputElement>
-  name?: string
-  value?: number | string
-  errorLabel?: string
-}
+  labelRight?: string;
+  labelLeft?: string;
+  checked?: boolean;
+  disabled?: boolean;
+  id?: string;
+  className?: string;
+  testId?: string;
+  ref?: Ref<HTMLInputElement>;
+  name?: string;
+  value?: number | string;
+  errorLabel?: string;
+};
 
 export const Checkbox: FunctionComponent<IProps> = forwardRef(
   (
@@ -39,12 +39,18 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
     },
     ref: Ref<HTMLInputElement>
   ) => {
+    const [check, setCheck] = useState<boolean>(false);
+
+    const handleCheck = () => {
+      setCheck(!check);
+    };
     return (
       <CheckboxContainer
         disabled={disabled}
         className={className}
-        checked={checked}
+        checked={check}
         errorLabel={errorLabel}
+        onClick={handleCheck}
       >
         <FlexCenter>
           {labelLeft && (
@@ -56,13 +62,14 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
             type='checkbox'
             defaultChecked={checked}
             disabled={disabled}
+            checked={check}
             data-test={testId}
             id={id}
             name={name}
             ref={ref}
             value={value}
           />
-          {checked ? (
+          {check ? (
             <CheckedBoxChecked>
               <CheckboxCheckedIcon />
             </CheckedBoxChecked>
@@ -77,6 +84,6 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
         </FlexCenter>
         {errorLabel && <ErrorLabelCheck label={errorLabel} />}
       </CheckboxContainer>
-    )
+    );
   }
-)
+);
