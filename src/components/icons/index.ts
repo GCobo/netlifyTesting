@@ -27,6 +27,11 @@ import AndroidIcon from './androidIcon';
 import LockIcon from './lockIcon';
 import ExitIcon from './exitIcon';
 import UploadIcon from './uploadIcon';
+import EnglandIcon from './englandIcon';
+import SpainIcon from './spainIcon';
+import CreditCardIcon from './creditCardIcon';
+import LogOutIcon from './logOutIcon';
+import UserIcon from './userIcon';
 
 export {
   SearchIcon,
@@ -57,5 +62,10 @@ export {
   AndroidIcon,
   LockIcon,
   ExitIcon,
-  UploadIcon
+  UploadIcon,
+  EnglandIcon,
+  SpainIcon,
+  CreditCardIcon,
+  LogOutIcon,
+  UserIcon
 };

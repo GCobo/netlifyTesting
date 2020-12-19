@@ -36,7 +36,12 @@ import {
   JoinbleTheme,
   ExitIcon,
   LockIcon,
-  InputUpload
+  InputUpload,
+  EnglandIcon,
+  SpainIcon,
+  CreditCardIcon,
+  LogOutIcon,
+  UserIcon
 } from 'joinble-ui';
 
 type IGridProps = {
@@ -235,6 +240,11 @@ const App = () => {
             <WidgetIcon />
             <ExitIcon />
             <LockIcon />
+            <EnglandIcon />
+            <SpainIcon />
+            <CreditCardIcon />
+            <LogOutIcon />
+            <UserIcon />
           </Grid>
         </Section>
         <Section>
