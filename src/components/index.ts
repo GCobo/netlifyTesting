@@ -15,6 +15,6 @@ export * from './colorPicker/ColorPicker';
 export * from './badgets/Badgets';
 export * from './checkPlatform/CheckPlatform';
 export * from './tooltip/Tooltip';
-export * from './portal/Portal';
+export * from './portal';
 export * from './inputUpload/InputUpload';
 export * from './optionMenu';

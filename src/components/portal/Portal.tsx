@@ -4,12 +4,13 @@ import React, {
   useState,
   useCallback,
   useRef,
-  Fragment
+  Fragment,
+  useMemo
 } from 'react';
 import { createPortal } from 'react-dom';
 
 import { PortalContainer } from './styles';
-import { PortalProps, IPosition } from './PortalModel';
+import { PortalProps, IPosition, PositionMode } from './PortalModel';
 
 const createElement = () => {
   let popupRoot: HTMLElement | null = document.getElementById('popup-root');
@@ -31,7 +32,8 @@ export const Portal: FunctionComponent<PortalProps> = ({
   actionRef = null,
   onClickOutside,
   widthAuto = false,
-  className
+  className,
+  mode = PositionMode.left
 }) => {
   const [position, setPosition] = useState<IPosition>({
     top: 0,
@@ -57,7 +59,7 @@ export const Portal: FunctionComponent<PortalProps> = ({
 
       setPosition({
         left,
-        top: top + height - 1,
+        top: top + height,
         right,
         width: widthAuto ? 'auto' : actionRef!.current.clientWidth
       });
@@ -102,11 +104,38 @@ export const Portal: FunctionComponent<PortalProps> = ({
   const handleClickOutside = useCallback(
     (event: any) => {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
-        onClickOutside && onClickOutside();
+        if (actionRef) {
+          if (actionRef.current && !actionRef.current.contains(event.target)) {
+            onClickOutside && onClickOutside();
+          }
+        } else {
+          onClickOutside && onClickOutside();
+        }
       }
     },
     [popupRef]
   );
+
+  useEffect(() => {
+    console.log(popupRef.current);
+  }, [popupRef.current]);
+
+  const getStyles = useMemo(() => {
+    const styles: IPosition = {
+      top: position.top,
+      width: position.width
+    };
+
+    if (mode === PositionMode.left) {
+      styles.left = position.left;
+    }
+
+    if (mode === PositionMode.right) {
+      styles.right = window.innerWidth - position.right!;
+    }
+
+    return styles;
+  }, [mode, position]);
 
   return mounted
     ? createPortal(
@@ -115,11 +144,7 @@ export const Portal: FunctionComponent<PortalProps> = ({
             <PortalContainer
               ref={popupRef}
               className={className}
-              style={{
-                left: position.left,
-                top: position.top,
-                width: position.width
-              }}
+              style={getStyles}
             >
               {children}
             </PortalContainer>
