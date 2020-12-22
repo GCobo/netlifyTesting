@@ -24,11 +24,7 @@ describe('Option Menu component', () => {
   it('Should navigate', () => {
     mount(
       <JoinbleThemeProvider>
-        <OptionMenu
-          icon={<SearchIcon />}
-          testId='button-option-menu'
-          position={PositionMode.right}
-        >
+        <OptionMenu icon={<SearchIcon />} testId='button-option-menu'>
           <OptionMenuItem href='www.joinble.com'>List test</OptionMenuItem>
         </OptionMenu>
       </JoinbleThemeProvider>
