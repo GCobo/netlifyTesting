@@ -34,6 +34,7 @@
     "@emotion/css": "^11.0.0",
     "rc-color-picker": "1.2.6",
     "react-dropzone": "^11.2.4",
+    "react-spring": "^8.0.27",
     "react-tooltip": "^4.2.11"
   },
   "devDependencies": {

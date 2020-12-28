@@ -1,17 +1,17 @@
 import { ReactElement, ReactNode } from 'react';
-
 import { ButtonIconProps } from '../buttonIcon/ButtonIcon';
 import { PositionMode } from '../portal';
 
-export interface IOptionMenuProps extends ButtonIconProps {
-  children: ReactNode;
+export interface OptionMenuProps extends ButtonIconProps {
+  children: ReactElement<OptionMenuItemProps>;
   testId?: string;
   position?: PositionMode;
+  renderItem: ReactNode;
+  widthAuto?: boolean;
 }
 
-export type IOptionMenuItem = {
+export type OptionMenuItemProps = {
   id?: number;
-  icon?: ReactElement;
   className?: string;
   children: ReactNode;
   onClick?(): void;

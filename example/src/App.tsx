@@ -262,11 +262,12 @@ const App = () => {
         <Section>
           <Title>ButtonMenu</Title>
           <Grid>
-            <OptionMenu icon={<SearchIcon />}>
+            <OptionMenu renderItem={<ButtonIcon icon={<SearchIcon />} />}>
               <OptionMenuHeader>Prueba</OptionMenuHeader>
               <OptionMenuItem>item prueba</OptionMenuItem>
               <OptionMenuSeparator />
-              <OptionMenuItem icon={<LockIcon />}>
+              <OptionMenuItem>
+                <LockIcon />
                 item prueba icono
               </OptionMenuItem>
               <OptionMenuItem href='www.marca.com'>anchor</OptionMenuItem>

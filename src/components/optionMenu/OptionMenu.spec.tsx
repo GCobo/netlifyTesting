@@ -5,13 +5,16 @@ import { mount } from 'cypress-react-unit-test';
 import { JoinbleThemeProvider } from '../../providers';
 import { SearchIcon } from '../icons';
 import { PositionMode } from '../portal';
-import { FlexCenter } from '../checkbox/CheckboxStyles';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 describe('Option Menu component', () => {
   it('Click icon works', () => {
     mount(
       <JoinbleThemeProvider>
-        <OptionMenu icon={<SearchIcon />} testId='button-option-menu'>
+        <OptionMenu
+          testId='button-option-menu'
+          renderItem={<ButtonIcon icon={<SearchIcon />} />}
+        >
           <OptionMenuItem>List test</OptionMenuItem>
         </OptionMenu>
       </JoinbleThemeProvider>
@@ -24,7 +27,10 @@ describe('Option Menu component', () => {
   it('Should navigate', () => {
     mount(
       <JoinbleThemeProvider>
-        <OptionMenu icon={<SearchIcon />} testId='button-option-menu'>
+        <OptionMenu
+          testId='button-option-menu'
+          renderItem={<ButtonIcon icon={<SearchIcon />} />}
+        >
           <OptionMenuItem href='www.joinble.com'>List test</OptionMenuItem>
         </OptionMenu>
       </JoinbleThemeProvider>
@@ -37,27 +43,17 @@ describe('Option Menu component', () => {
   it('should be placed to the right of the icon', () => {
     mount(
       <JoinbleThemeProvider>
-        <div
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center'
-          }}
+        <OptionMenu
+          testId='button-option-menu'
+          renderItem={<ButtonIcon icon={<SearchIcon />} />}
+          position={PositionMode.right}
         >
-          <OptionMenu
-            icon={<SearchIcon />}
-            testId='button-option-menu'
-            position={PositionMode.right}
-          >
-            <OptionMenuItem>List test</OptionMenuItem>
-          </OptionMenu>
-        </div>
+          <OptionMenuItem>List test</OptionMenuItem>
+        </OptionMenu>
       </JoinbleThemeProvider>
     );
 
     cy.get('[data-test="button-option-menu"]').click();
-
     cy.get('#popup-root').find('div').should('have.css', 'right');
   });
 });

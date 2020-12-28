@@ -1,17 +1,16 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import {
   OptionMenuItemList,
   OptionMenuItemStyles
 } from './OptionMenuItemStyles';
-import { IOptionMenuItem } from './OptionMenuModel';
+import { OptionMenuItemProps } from './OptionMenuModel';
 
 export const OptionMenuItem = ({
   children,
-  icon,
   href,
   onClick,
   className
-}: IOptionMenuItem) => {
+}: OptionMenuItemProps) => {
   return (
     <OptionMenuItemList className={className}>
       <OptionMenuItemStyles
@@ -19,7 +18,6 @@ export const OptionMenuItem = ({
         onClick={onClick && onClick}
         href={href && href}
       >
-        {icon && cloneElement(icon)}
         {children}
       </OptionMenuItemStyles>
     </OptionMenuItemList>
