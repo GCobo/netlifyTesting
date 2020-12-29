@@ -1,9 +1,9 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { ButtonIconProps } from '../buttonIcon/ButtonIcon';
 import { PositionMode } from '../portal';
 
 export interface OptionMenuProps extends ButtonIconProps {
-  children: ReactElement<OptionMenuItemProps>;
+  children: ReactNode;
   testId?: string;
   position?: PositionMode;
   renderItem: ReactNode;
@@ -16,4 +16,5 @@ export type OptionMenuItemProps = {
   children: ReactNode;
   onClick?(): void;
   href?: string;
+  testId?: string;
 };

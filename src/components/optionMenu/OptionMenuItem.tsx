@@ -9,7 +9,8 @@ export const OptionMenuItem = ({
   children,
   href,
   onClick,
-  className
+  className,
+  testId
 }: OptionMenuItemProps) => {
   return (
     <OptionMenuItemList className={className}>
@@ -17,6 +18,7 @@ export const OptionMenuItem = ({
         as={href ? 'a' : 'button'}
         onClick={onClick && onClick}
         href={href && href}
+        data-test={testId}
       >
         {children}
       </OptionMenuItemStyles>

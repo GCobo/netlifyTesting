@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 
-const HEIGHT_ELEMENT = '2.5rem';
+export const HEIGHT_OPTION_ITEM = '2.5rem';
 
 export const OptionMenuItemList = styled.li`
   display: flex;
   align-items: center;
   width: 100%;
-  height: ${HEIGHT_ELEMENT};
+  height: ${HEIGHT_OPTION_ITEM};
 `;
 
 export const OptionMenuItemStyles = styled.a`
   width: 100%;
-  height: ${HEIGHT_ELEMENT};
+  height: ${HEIGHT_OPTION_ITEM};
   display: flex;
   align-items: center;
   font-size: ${(props) => props.theme.fonts.fontSizeMedium};

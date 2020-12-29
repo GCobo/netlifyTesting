@@ -47,6 +47,7 @@ import {
   OptionMenuSeparator,
   OptionMenuHeader
 } from 'joinble-ui';
+import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
 type IGridProps = {
   size?: number;
@@ -88,6 +89,11 @@ const App = () => {
       icon: <AppleIcon />,
       name: 'apple'
     }
+  ];
+
+  const optionsDropdown: OptionMenuItemProps[] = [
+    { children: 'test', id: 1 },
+    { children: 'test2', id: 2 }
   ];
 
   return (
@@ -222,9 +228,17 @@ const App = () => {
         <Section>
           <Title>Dropdown</Title>
           <Grid size={250}>
-            <Dropdown label='label' />
-            <Dropdown label='label' errorLabel='Error' />
-            <Dropdown label='label' helpLabel='help label' />
+            <Dropdown label='label' options={optionsDropdown} />
+            <Dropdown
+              label='label'
+              errorLabel='Error'
+              options={optionsDropdown}
+            />
+            <Dropdown
+              label='label'
+              helpLabel='help label'
+              options={optionsDropdown}
+            />
           </Grid>
         </Section>
         <Section>

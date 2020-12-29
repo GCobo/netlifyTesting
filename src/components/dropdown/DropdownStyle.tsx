@@ -1,19 +1,20 @@
-import styled from '@emotion/styled'
-import { ChevronDownIcon } from '../icons'
-import { InputStyle, Label } from '../input/InputStyle'
+import styled from '@emotion/styled';
+import { animated } from 'react-spring/renderprops';
+import { ChevronDownIcon } from '../icons';
+import { InputStyle } from '../input/InputStyle';
+import { HEIGHT_OPTION_ITEM } from '../optionMenu/OptionMenuItemStyles';
+import {
+  OptionsMenuWrapper,
+  PADDING_X_OPTION_MENU
+} from '../optionMenu/OptionMenuStyles';
+import { ChevronProps, DropdownStyleProps } from './model';
 
 export const Wrapper = styled.section`
   display: flex;
   flex-flow: column;
-  position: relative;
-`
+`;
 
-type IDropdownStyleProps = {
-  as?: React.ElementType
-  errorLabel?: string
-}
-
-export const DropdownStyle = styled(InputStyle)<IDropdownStyleProps>`
+export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,19 +30,24 @@ export const DropdownStyle = styled(InputStyle)<IDropdownStyleProps>`
     overflow: hidden;
     text-overflow: ellipsis;
   }
-`
+`;
 
-type IChevronProps = {
-  open?: boolean
-}
-
-export const Chevron = styled(ChevronDownIcon)<IChevronProps>`
-  fill: ${(props) => props.theme.colors.primaryColor};
+export const Chevron = styled(ChevronDownIcon)<ChevronProps>`
+  fill: #6e768e;
   transition: transform 0.2s ease-in-out;
   transform: ${(props) => (props.open ? 'rotate(180deg)' : 'rotate(0)')};
-`
-type ILabelProps = {
-  as?: React.ElementType
-}
+  min-width: 1.5rem;
+  height: 1rem;
+`;
 
-export const LabelDropdown = styled(Label)<ILabelProps>``
+export const AnimatedOptions = styled(animated.div)`
+  box-shadow: 0px 5px 35px rgba(154, 161, 171, 0.3);
+`;
+
+export const DropdownOptions = styled(OptionsMenuWrapper)`
+  overflow-y: auto;
+  max-height: calc(
+    (${PADDING_X_OPTION_MENU}) + (${HEIGHT_OPTION_ITEM} * 4) +
+      (${PADDING_X_OPTION_MENU})
+  );
+`;
