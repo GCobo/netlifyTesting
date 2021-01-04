@@ -45,7 +45,8 @@ import {
   OptionMenu,
   OptionMenuItem,
   OptionMenuSeparator,
-  OptionMenuHeader
+  OptionMenuHeader,
+  Switch
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -347,6 +348,17 @@ const App = () => {
               labelLeft='Input with error'
               errorLabel='Field required'
             />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Switch</Title>
+          <Grid size={250}>
+            <Switch labelLeft='label left' />
+            <Switch labelRight='label right' />
+            <Switch labelLeft='Input checked' checked />
+            <Switch labelLeft='Input disabled' disabled />
+            <Switch labelLeft='Input checked and disabled' disabled checked />
+            <Switch labelLeft='Input with error' errorLabel='Field required' />
           </Grid>
         </Section>
         <Section>

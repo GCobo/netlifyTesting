@@ -3,8 +3,6 @@ import { ErrorLabel } from '../errorLabel/ErrorLabel';
 
 type ILabelProps = {
   disabled?: boolean;
-  labelLeft?: string;
-  labelRight?: string;
 };
 
 export const HiddenCheckbox = styled.input`
@@ -16,17 +14,16 @@ export const HiddenCheckbox = styled.input`
   cursor: pointer;
 `;
 
-export const Label = styled.label<ILabelProps>`
+export const LabelCheckbox = styled.label<ILabelProps>`
   font-size: ${(props) => props.theme.fonts.fontSizeMedium};
   color: ${(props) => props.theme.colors.fontColor};
-  margin-right: ${(props) => (props.labelLeft ? '0.5rem' : 0)};
-  margin-left: ${(props) => (props.labelRight ? '0.5rem' : 0)};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
 
   &:first-letter {
     text-transform: uppercase;
   }
 `;
+
 type ICcheckboxContainerProps = {
   disabled?: boolean;
   checked?: boolean;
@@ -49,7 +46,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
   }
 
   &:hover {
-    ${Label} {
+    ${LabelCheckbox} {
       color: ${(props) =>
         !props.disabled
           ? props.theme.colors.primaryColor
@@ -85,6 +82,7 @@ export const CheckedBoxChecked = styled.div`
 export const FlexCenter = styled.div`
   display: flex;
   align-items: center;
+  grid-column-gap: 0.5rem;
 `;
 
 export const ErrorLabelCheck = styled(ErrorLabel)`

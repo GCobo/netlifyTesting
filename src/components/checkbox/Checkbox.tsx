@@ -6,7 +6,7 @@ import {
   ErrorLabelCheck,
   FlexCenter,
   HiddenCheckbox,
-  Label
+  LabelCheckbox
 } from './CheckboxStyles';
 
 type IProps = {
@@ -54,9 +54,9 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
       >
         <FlexCenter>
           {labelLeft && (
-            <Label id={id} labelLeft={labelLeft} disabled={disabled}>
+            <LabelCheckbox id={id} disabled={disabled}>
               {labelLeft}
-            </Label>
+            </LabelCheckbox>
           )}
           <HiddenCheckbox
             type='checkbox'
@@ -77,9 +77,9 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
             <CheckboxIcon />
           )}
           {labelRight && (
-            <Label id={id} labelRight={labelRight} disabled={disabled}>
+            <LabelCheckbox id={id} disabled={disabled}>
               {labelRight}
-            </Label>
+            </LabelCheckbox>
           )}
         </FlexCenter>
         {errorLabel && <ErrorLabelCheck label={errorLabel} />}

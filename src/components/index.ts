@@ -18,3 +18,4 @@ export * from './tooltip/Tooltip';
 export * from './portal';
 export * from './inputUpload/InputUpload';
 export * from './optionMenu';
+export * from './switch/Switch';
