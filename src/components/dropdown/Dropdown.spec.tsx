@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { JoinbleThemeProvider } from '../../providers';
-import { IOptionMenuItem } from '../optionMenu/OptionMenuModel';
+import { OptionMenuItemProps } from '../optionMenu/OptionMenuModel';
 import { Dropdown } from './Dropdown';
 
-const optionsDropdown: IOptionMenuItem[] = [
+const optionsDropdown: OptionMenuItemProps[] = [
   { children: 'test', id: 1 },
   { children: 'test2', id: 2 }
 ];
@@ -38,7 +38,7 @@ describe('Dropdown component', () => {
           label='label'
           options={optionsDropdown}
           testId='dropdown'
-          defaultValue='Default testing'
+          value='Default testing'
         />
       </JoinbleThemeProvider>
     );
