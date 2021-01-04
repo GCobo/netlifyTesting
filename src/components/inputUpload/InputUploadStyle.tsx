@@ -33,7 +33,7 @@ export const Label = styled.label`
 `;
 
 export const ContainerDrag = styled.div<DragZoneProps>`
-  border-radius: 0.25rem;
+  border-radius: ${(props) => (props.circle ? '100%' : '0.25rem')};
   width: 10.62rem;
   height: 9.56rem;
   border: 1px ${(props) => handleBorderColor(props)};

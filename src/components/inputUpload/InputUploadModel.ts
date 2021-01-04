@@ -2,12 +2,18 @@ export type ErrorLabelProps = {
   errorLabel?: string;
 };
 
-export interface DragZoneProps extends ErrorLabelProps {
+type InputUploadCircleProps = {
+  circle?: boolean;
+};
+
+export interface DragZoneProps extends ErrorLabelProps, InputUploadCircleProps {
   isDragActive: boolean;
   isActive: boolean;
 }
 
-export interface InputUploadProps extends ErrorLabelProps {
+export interface InputUploadProps
+  extends ErrorLabelProps,
+    InputUploadCircleProps {
   label?: string;
   labelDrop?: string;
   helpLabel?: string;

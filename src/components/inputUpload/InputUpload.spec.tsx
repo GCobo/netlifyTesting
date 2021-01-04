@@ -48,4 +48,18 @@ describe('Input Upload component', () => {
 
     cy.contains(errorLabel).should('exist');
   });
+
+  it('should hace circle props', () => {
+    mount(
+      <JoinbleThemeProvider>
+        <InputUpload circle testId='input-upload-circle' />
+      </JoinbleThemeProvider>
+    );
+
+    cy.get('[data-test="input-upload-circle"]').should(
+      'have.css',
+      'border-radius',
+      '100%'
+    );
+  });
 });

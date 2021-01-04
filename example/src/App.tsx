@@ -367,6 +367,7 @@ const App = () => {
               label='Upload file with help '
               helpLabel='Recommended size: 92x92'
             />
+            <InputUpload label='Upload file circle ' circle />
           </Grid>
         </Section>
       </Layout>

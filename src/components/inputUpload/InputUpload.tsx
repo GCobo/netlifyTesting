@@ -26,7 +26,8 @@ export const InputUpload = ({
   onDelete,
   value,
   testId,
-  helpLabel
+  helpLabel,
+  circle
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<string>();
 
@@ -64,6 +65,7 @@ export const InputUpload = ({
       {label && <Label htmlFor={id}>{label}</Label>}
 
       <ContainerDrag
+        circle={circle}
         {...getRootProps()}
         errorLabel={errorLabel}
         isDragActive={isDragActive}
