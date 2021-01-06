@@ -46,7 +46,9 @@ import {
   OptionMenuItem,
   OptionMenuSeparator,
   OptionMenuHeader,
-  Switch
+  Switch,
+  Card,
+  EditIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -373,6 +375,63 @@ const App = () => {
             <Badgets number={9} />
             <Badgets number={99} />
             <Badgets number={999} />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Cards</Title>
+          <Grid>
+            <Card
+              id='card-app'
+              title='title'
+              lastUpdate='06/01/21'
+              actions={
+                <ButtonIcon
+                  secondary
+                  icon={<EditIcon />}
+                  onClick={() => alert('click card action')}
+                />
+              }
+            />
+            <Card
+              id='card-app'
+              title='title'
+              lastUpdate='06/01/21'
+              logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              actions={
+                <ButtonIcon
+                  secondary
+                  icon={<EditIcon />}
+                  onClick={() => alert('click card action')}
+                />
+              }
+            />
+            <Card
+              id='card-app'
+              title='title'
+              lastUpdate='06/01/21'
+              imageBig
+              actions={
+                <ButtonIcon
+                  secondary
+                  icon={<EditIcon />}
+                  onClick={() => alert('click card action')}
+                />
+              }
+            />
+            <Card
+              id='card-app'
+              title='title'
+              lastUpdate='06/01/21'
+              imageBig
+              logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              actions={
+                <ButtonIcon
+                  secondary
+                  icon={<EditIcon />}
+                  onClick={() => alert('click card action')}
+                />
+              }
+            />
           </Grid>
         </Section>
         <Section>
