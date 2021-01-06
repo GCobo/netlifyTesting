@@ -1,8 +1,8 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 type IProps = {
-  number?: number
-}
+  number?: number;
+};
 
 export const BadgetsStyle = styled.div<IProps>`
   background-color: ${(props) => props.theme.colors.errorColor};
@@ -16,8 +16,8 @@ export const BadgetsStyle = styled.div<IProps>`
     props.number && props.number > 9 ? '0.625rem' : '100%'};
 
   span {
-    color: ${(props) => props.theme.colors.lightestColor};
+    color: ${(props) => props.theme.colors.white};
     font-size: 0.625rem;
     display: block;
   }
-`
+`;

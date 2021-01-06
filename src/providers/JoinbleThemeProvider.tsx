@@ -1,8 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@emotion/react';
-
-import { JoinbleTheme } from '../Theme';
-import { GlobalStyles } from '../GlobalStyles';
+import { GlobalStyles, JoinbleTheme } from '../styles';
 
 type IProps = {
   children: React.ReactNode;

@@ -1,10 +1,10 @@
-import styled from '@emotion/styled'
-import { darken } from 'polished'
+import styled from '@emotion/styled';
+import { darken } from 'polished';
 
 export const LinkStyles = styled.a`
   color: ${(props) => props.theme.colors.primaryColor};
   border-bottom: 1px solid ${(props) => props.theme.colors.primaryColor};
-  font-size: ${(props) => props.theme.fonts.fontSizeSmall};
+  ${(props) => props.theme.fonts.regularText('S')};
   font-weight: 700;
   padding-bottom: 1px;
   cursor: pointer;
@@ -17,4 +17,4 @@ export const LinkStyles = styled.a`
     border-color: ${(props) =>
       darken(0.1, `${props.theme.colors.primaryColor}`)};
   }
-`
+`;

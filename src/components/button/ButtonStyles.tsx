@@ -7,7 +7,7 @@ import { ButtonTypeProps } from './ButtonModel';
 export const ButtonStyles = styled.button<ButtonTypeProps>`
   background-color: ${(props) =>
     props.secondary
-      ? props.theme.colors.lightestColor
+      ? props.theme.colors.white
       : props.error
       ? props.theme.colors.errorColor
       : props.success
@@ -15,7 +15,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
       : props.warning
       ? props.theme.colors.warningColor
       : props.white
-      ? props.theme.colors.lightestColor
+      ? props.theme.colors.white
       : props.theme.colors.primaryColor};
   border: 1px solid
     ${(props) =>
@@ -38,11 +38,11 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
       ? props.theme.colors.primaryColor
       : props.white
       ? props.theme.colors.titleColor
-      : props.theme.colors.lightestColor};
+      : props.theme.colors.white};
   fill: ${(props) =>
     props.secondary
       ? props.theme.colors.primaryColor
-      : props.theme.colors.lightestColor};
+      : props.theme.colors.white};
   transition: 0.2s all ease-in-out;
   padding: ${(props) => (props.icon ? '0 1rem 0 4.5rem' : '0 1rem')};
   position: relative;
@@ -54,16 +54,16 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
     &:hover {
       background-color: ${(props) =>
         props.secondary
-          ? props.theme.colors.lightestColor
+          ? props.theme.colors.white
           : props.theme.colors.primaryColor};
       color: ${(props) =>
         props.secondary
           ? props.theme.colors.primaryColor
-          : props.theme.colors.lightestColor};
+          : props.theme.colors.white};
       fill: ${(props) =>
         props.secondary
           ? props.theme.colors.primaryColor
-          : props.theme.colors.lightestColor};
+          : props.theme.colors.white};
     }
   }
 
@@ -81,10 +81,8 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
         ? props.theme.colors.greyLight
         : darken(0.1, props.theme.colors.primaryColor)};
     color: ${(props) =>
-      props.white
-        ? props.theme.colors.titleColor
-        : props.theme.colors.lightestColor};
-    fill: ${(props) => props.theme.colors.lightestColor};
+      props.white ? props.theme.colors.titleColor : props.theme.colors.white};
+    fill: ${(props) => props.theme.colors.white};
   }
 
   &:focus,

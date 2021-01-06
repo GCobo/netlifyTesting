@@ -9,9 +9,7 @@ export const LabelSwitch = styled(LabelCheckbox)<DisabledProps>`
 export const SwitchBoxContainer = styled.div<SwitchBoxProps>`
   border: none;
   background-color: ${(props) =>
-    props.checked
-      ? props.theme.colors.primaryColor
-      : props.theme.colors.lightestColor};
+    props.checked ? props.theme.colors.primaryColor : props.theme.colors.white};
   width: 3.125rem;
   height: 1.625rem;
   border-radius: 100px;
@@ -31,7 +29,7 @@ export const SwitchBoxBox = styled.div<SwitchBoxProps>`
   height: 1.25rem;
   border-radius: 100%;
   background-color: ${(props) =>
-    props.checked ? props.theme.colors.lightestColor : '#ADB5BD'};
+    props.checked ? props.theme.colors.white : '#ADB5BD'};
   position: absolute;
   margin: 0.125rem;
   left: ${(props) => (props.checked ? '1.5625rem' : 0)};
@@ -51,8 +49,8 @@ export const SwitchContainer = styled(CheckboxContainer)<SwitchProps>`
         props.checked
           ? props.theme.colors.primaryColor
           : props.disabled
-          ? props.theme.colors.lightestColor
-          : props.theme.colors.lightestColor};
+          ? props.theme.colors.white
+          : props.theme.colors.white};
       border-color: ${(props) => props.theme.colors.primaryColor};
     }
   }

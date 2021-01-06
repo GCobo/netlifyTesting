@@ -14,7 +14,7 @@ export const ButtonIconStyle = styled.button<IProps>`
   position: ${(props) => (props.badgetsNumber ? 'relative' : 'unset')};
   fill: ${(props) =>
     props.negative
-      ? props.theme.colors.lightestColor
+      ? props.theme.colors.white
       : props.secondary
       ? props.theme.colors.fontColor
       : props.theme.colors.primaryColor};

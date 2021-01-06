@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { JoinbleTheme } from '../../Theme';
+import { JoinbleTheme } from '../../styles/Theme';
 import { AlertIcon } from '../icons';
 import { css } from '@emotion/css';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
@@ -27,7 +27,7 @@ type IInputProps = {
 
 export const InputStyle = styled.input<IInputProps>`
   border: none;
-  font-size: ${(props) => props.theme.fonts.fontSizeMedium};
+  ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.fontColor};
   box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
@@ -46,8 +46,6 @@ export const InputStyle = styled.input<IInputProps>`
     props.passwordShow
       ? '2.5rem'
       : '0.75rem'};
-  font-weight: 500;
-  font-family: ${(props) => props.theme.fonts.fontFamily};
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -85,12 +83,10 @@ export const InputStyle = styled.input<IInputProps>`
 `;
 
 export const Label = styled.label`
-  font-size: ${(props) => props.theme.fonts.fontSizeSmall};
-  font-weight: 500;
-  line-height: 1.25rem;
   margin-bottom: 0.25rem;
+  ${(props) => props.theme.fonts.regularText('S')};
+  font-weight: 500;
   color: ${(props) => props.theme.colors.fontColor};
-  font-family: ${(props) => props.theme.fonts.fontFamily};
 
   &:first-letter {
     text-transform: capitalize;

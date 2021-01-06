@@ -1,13 +1,13 @@
-import { css } from '@emotion/css'
-import { lighten } from 'polished'
-import { JoinbleTheme } from '../../Theme'
+import { css } from '@emotion/css';
+import { lighten } from 'polished';
+import { JoinbleTheme } from '../../styles/Theme';
 
-const BACKGROUND_COLOR = lighten(0.3, '#111112')
+const BACKGROUND_COLOR = lighten(0.3, '#111112');
 
 export const TooltipStyles = css`
   background: ${BACKGROUND_COLOR} !important;
-  font-size: ${JoinbleTheme.fonts.fontSizeSmall} !important;
-  color: ${JoinbleTheme.colors.lightestColor} !important;
+  ${JoinbleTheme.fonts.regularText('S')};
+  color: ${JoinbleTheme.colors.white} !important;
   &.show {
     opacity: 1 !important;
   }
@@ -31,4 +31,4 @@ export const TooltipStyles = css`
       border-right-color: ${BACKGROUND_COLOR} !important;
     }
   }
-`
+`;

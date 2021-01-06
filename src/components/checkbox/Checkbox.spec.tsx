@@ -4,7 +4,7 @@ import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { Checkbox } from './Checkbox';
 import { ThemeProvider } from '@emotion/react';
-import { JoinbleTheme } from '../../Theme';
+import { JoinbleTheme } from '../../styles/Theme';
 
 describe('Button component', () => {
   it('works', () => {

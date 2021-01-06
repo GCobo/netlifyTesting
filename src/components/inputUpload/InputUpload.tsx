@@ -2,13 +2,13 @@ import React, { useCallback, useState, useEffect, MouseEvent } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 import {
-  Label,
   ContainerDrag,
   ImagePreview,
   WrapperDrag,
   WrapperButtons,
   IconError,
-  HelpLabelStyles
+  HelpLabelStyles,
+  LabelInputUpload
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon } from '../icons';
@@ -62,7 +62,7 @@ export const InputUpload = ({
 
   return (
     <div>
-      {label && <Label htmlFor={id}>{label}</Label>}
+      {label && <LabelInputUpload htmlFor={id}>{label}</LabelInputUpload>}
 
       <ContainerDrag
         circle={circle}

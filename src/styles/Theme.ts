@@ -1,4 +1,5 @@
 import '@emotion/react';
+import { createFont, Font } from './fonts/font';
 
 export type IThemeProps = {
   colors: {
@@ -8,20 +9,16 @@ export type IThemeProps = {
     successColor: string;
     warningColor: string;
     errorColor: string;
-    lightestColor: string;
-    darkestColor: string;
+    white: string;
+    black: string;
     grey: string;
     greyLight: string;
     logoColor: string;
     focusShadow: string;
     titleColor: string;
+    activeLink: string;
   };
-  fonts: {
-    fontFamily: string;
-    fontSizeSmall: string;
-    fontSizeMedium: string;
-    fontSizeBig: string;
-  };
+  fonts: Font;
 };
 
 export const JoinbleTheme: IThemeProps = {
@@ -32,18 +29,37 @@ export const JoinbleTheme: IThemeProps = {
     successColor: '#1ABC9C',
     warningColor: '#F7B84B',
     errorColor: '#F1556C',
-    lightestColor: '#fff',
-    darkestColor: '#000',
+    white: '#fff',
+    black: '#000',
     grey: '#E1E4E8',
     greyLight: '#B0B7C3',
     logoColor: '#e6ec33',
     focusShadow: 'rgba(66, 153, 225, 0.6)',
-    titleColor: '#323A46'
+    titleColor: '#323A46',
+    activeLink: '#CDD31B'
   },
-  fonts: {
-    fontFamily: 'Inter',
-    fontSizeSmall: '0.75rem',
-    fontSizeMedium: '0.875rem',
-    fontSizeBig: '1rem'
-  }
+  fonts: createFont({
+    headline: {
+      L: 36,
+      M: 22,
+      S: 16
+    },
+    lineHeightHeadline: {
+      L: 40,
+      M: 28,
+      S: 24
+    },
+    text: {
+      XL: 18,
+      L: 16,
+      M: 14,
+      S: 12
+    },
+    lineHeightText: {
+      XL: 26,
+      L: 24,
+      M: 24,
+      S: 20
+    }
+  })
 };

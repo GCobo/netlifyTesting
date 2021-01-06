@@ -14,7 +14,7 @@ export const OptionMenuItemStyles = styled.a`
   height: ${HEIGHT_OPTION_ITEM};
   display: flex;
   align-items: center;
-  font-size: ${(props) => props.theme.fonts.fontSizeMedium};
+  ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.fontColor};
   white-space: nowrap;
   cursor: pointer;

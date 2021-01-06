@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const LoadingStyles = styled.div`
   width: 2rem;
@@ -11,7 +11,7 @@ export const LoadingStyles = styled.div`
     }
   }
   animation: rotate 2s infinite linear;
-`
+`;
 
 export const Dot1 = styled.div`
   width: 55%;
@@ -22,7 +22,7 @@ export const Dot1 = styled.div`
   background-color: ${(props) => props.theme.colors.logoColor};
   border-radius: 100%;
   box-shadow: ${(props) =>
-    `inset 0px 0px 0px 1px ${props.theme.colors.lightestColor} `};
+    `inset 0px 0px 0px 1px ${props.theme.colors.white} `};
 
   @keyframes bounce {
     0%,
@@ -34,10 +34,10 @@ export const Dot1 = styled.div`
     }
   }
   animation: bounce 2s infinite ease-in-out;
-`
+`;
 
 export const Dot2 = styled(Dot1)`
   top: auto;
   bottom: 0;
   animation-delay: -1s;
-`
+`;

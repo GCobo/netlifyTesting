@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { DragZoneProps } from './InputUploadModel';
 import { AlertIcon } from '../icons';
 import { HelpLabel } from '../helpLabel/HelpLabel';
+import { Label } from '../input/InputStyle';
 
 const handleBorderColor = (props: any) => {
   if (props.errorLabel) {
@@ -19,17 +20,8 @@ const handleBorderColor = (props: any) => {
   return `solid ${props.theme.colors.grey}`;
 };
 
-export const Label = styled.label`
-  font-size: ${(props) => props.theme.fonts.fontSizeSmall};
-  font-weight: 500;
-  line-height: 1.25rem;
-  margin-bottom: 0.25rem;
-  color: ${(props) => props.theme.colors.fontColor};
-  font-family: ${(props) => props.theme.fonts.fontFamily};
-
-  &:first-letter {
-    text-transform: capitalize;
-  }
+export const LabelInputUpload = styled(Label)`
+  display: block;
 `;
 
 export const ContainerDrag = styled.div<DragZoneProps>`

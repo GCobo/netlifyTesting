@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
-import { Input } from '../input/Input'
+import styled from '@emotion/styled';
+import { Input } from '../input/Input';
 
 export const ModalColor = styled.div`
   position: absolute;
@@ -10,14 +10,13 @@ export const ModalColor = styled.div`
     border-radius: 0.25rem !important;
     height: 2.5rem !important;
     padding: 0 0.75rem !important;
-    font-weight: 500 !important;
-    font-family: ${(props) => props.theme.fonts.fontFamily} !important;
+    ${(props) => props.theme.fonts.regularText('M')};
   }
 
   .block-picker {
     box-shadow: none !important;
   }
-`
+`;
 
 export const BoxColor = styled.span`
   position: absolute;
@@ -25,12 +24,14 @@ export const BoxColor = styled.span`
   height: 1.5rem;
   top: 2rem;
   left: 0.75rem;
-`
+`;
+
 export const ColorPickerWrapper = styled.div`
   position: relative;
-`
+`;
+
 export const InputColorPicker = styled(Input)`
   input {
     padding-left: calc(0.75rem + 1.5rem + 0.5rem);
   }
-`
+`;

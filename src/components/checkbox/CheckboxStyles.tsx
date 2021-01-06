@@ -15,7 +15,7 @@ export const HiddenCheckbox = styled.input`
 `;
 
 export const LabelCheckbox = styled.label<ILabelProps>`
-  font-size: ${(props) => props.theme.fonts.fontSizeMedium};
+  ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.fontColor};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
 
@@ -39,7 +39,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
   svg {
     fill: ${(props) =>
       props.checked
-        ? props.theme.colors.lightestColor
+        ? props.theme.colors.white
         : props.errorLabel
         ? props.theme.colors.errorColor
         : props.theme.colors.fontColor};
@@ -55,7 +55,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
     svg {
       fill: ${(props) =>
         props.checked
-          ? props.theme.colors.lightestColor
+          ? props.theme.colors.white
           : props.disabled
           ? props.theme.colors.fontColor
           : props.theme.colors.primaryColor};
@@ -73,7 +73,7 @@ export const CheckedBoxChecked = styled.div`
   border-radius: 2px;
 
   svg {
-    fill: ${(props) => props.theme.colors.lightestColor};
+    fill: ${(props) => props.theme.colors.white};
     width: 1rem;
     height: 0.75rem;
   }
