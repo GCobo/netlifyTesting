@@ -1,5 +1,5 @@
 import React, { Fragment, useRef, useState, MouseEvent } from 'react';
-import { animated, Transition } from 'react-spring/renderprops';
+import { animated, Transition } from 'react-spring/renderprops.cjs';
 import { PositionMode } from '../portal';
 import { Portal } from '../portal/Portal';
 import { OptionMenuProps } from './OptionMenuModel';

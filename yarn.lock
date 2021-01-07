@@ -1443,7 +1443,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-11.0.0.tgz#d075867e07864119de7cfd5268c15012bd2d6290"
   integrity sha512-w4sE3AmHmyG6RDKf6mIbtHpgJUSJ2uGvPQb8VXFL7hFjMPibE8IiehG8cMX3Ztm4svfCQV6KqusQbeIOkurBcA==
 
-"@emotion/css@^11.0.0":
+"@emotion/css@11.0.0":
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/@emotion/css/-/css-11.0.0.tgz#804dcec7e4990019a08e678c1145d34208923acb"
   integrity sha512-i7/uzTYcoP0hIW9V4YobD/mYAt6rjNySr9g6CS7JEFsRDfskg4nUczzIehALfacDaHbHaOQYaNDHBGuD/AtW5A==
@@ -2130,7 +2130,7 @@
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
-"@testing-library/cypress@^7.0.2":
+"@testing-library/cypress@7.0.2":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@testing-library/cypress/-/cypress-7.0.2.tgz#a97bc7dee8756aff195e5be57db2889fe292f923"
   integrity sha512-avBCbcCMPFHvWg4BBCA/pIh3MCwcKoJ+rc3XyZdKC5mFYPV7edjW3s4KZx/x3klXuttyuM/UesRhbSj4l5aQbw==
@@ -13110,7 +13110,7 @@ react-dom@17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
-react-dropzone@^11.2.4:
+react-dropzone@11.2.4:
   version "11.2.4"
   resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.2.4.tgz#391a8d2e41a8a974340f83524d306540192e3313"
   integrity sha512-EGSvK2CxFTuc28WxwuJCICyuYFX8b+sRumwU6Bs6sTbElV2HtQkT0d6C+HEee6XfbjiLIZ+Th9uji27rvo2wGw==
@@ -13199,7 +13199,7 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-spring@^8.0.27:
+react-spring@8.0.27:
   version "8.0.27"
   resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.27.tgz#97d4dee677f41e0b2adcb696f3839680a3aa356a"
   integrity sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g==
@@ -13207,7 +13207,7 @@ react-spring@^8.0.27:
     "@babel/runtime" "^7.3.1"
     prop-types "^15.5.8"
 
-react-tooltip@^4.2.11:
+react-tooltip@4.2.11:
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.2.11.tgz#244d4d1833c583160c4e6c95a8a89e0fb320e18a"
   integrity sha512-exREte3mK/qbeuQpFbEL3ImdF5/TSAb+x/T7pkVfKmgVcfQLZKHSgLN+Msv7ZOHxaWNJwuCrSsCAy/iTGoPigg==

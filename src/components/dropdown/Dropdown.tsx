@@ -10,7 +10,7 @@ import {
   Wrapper
 } from './DropdownStyle';
 import { DropdownProps } from './model';
-import { Spring } from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops.cjs';
 
 export const Dropdown = ({
   label,
