@@ -32,6 +32,8 @@ import SpainIcon from './spainIcon';
 import CreditCardIcon from './creditCardIcon';
 import LogOutIcon from './logOutIcon';
 import UserIcon from './userIcon';
+import ApplyIcon from './applyIcon';
+import SeeMoreIcon from './seeMoreIcon';
 
 export {
   SearchIcon,
@@ -67,5 +69,7 @@ export {
   SpainIcon,
   CreditCardIcon,
   LogOutIcon,
-  UserIcon
+  UserIcon,
+  ApplyIcon,
+  SeeMoreIcon
 };

@@ -46,9 +46,9 @@ export const OptionMenu = ({
       >
         <Transition
           items={openPortal}
-          from={{ opacity: 0, transform: 'translate3d(0%, -100%, 0px)' }}
+          from={{ opacity: 0, transform: 'translate3d(0%, 20px, 0px)' }}
           enter={{ opacity: 1, transform: 'translate3d(0%, 0%, 0px)' }}
-          leave={{ opacity: 0, transform: 'translate3d(0%, -100%, 0px)' }}
+          leave={{ opacity: 0, transform: 'translate3d(0%, 20px, 0px)' }}
         >
           {(openPortal) =>
             openPortal &&

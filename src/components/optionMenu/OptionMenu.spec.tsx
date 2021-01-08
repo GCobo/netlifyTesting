@@ -8,7 +8,7 @@ import { PositionMode } from '../portal';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 describe('Option Menu component', () => {
-  it('Click icon works', () => {
+  it.only('Click icon works', () => {
     mount(
       <JoinbleThemeProvider>
         <OptionMenu
