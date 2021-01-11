@@ -8,7 +8,7 @@ import { PositionMode } from '../portal';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 describe('Option Menu component', () => {
-  it.only('Click icon works', () => {
+  it('Click icon works', () => {
     mount(
       <JoinbleThemeProvider>
         <OptionMenu
@@ -55,5 +55,22 @@ describe('Option Menu component', () => {
 
     cy.get('[data-test="button-option-menu"]').click();
     cy.get('#popup-root').find('div').should('have.css', 'right');
+  });
+
+  it('should have an item activated', () => {
+    mount(
+      <JoinbleThemeProvider>
+        <OptionMenu
+          testId='button-option-menu'
+          renderItem={<ButtonIcon icon={<SearchIcon />} />}
+          position={PositionMode.right}
+        >
+          <OptionMenuItem active>List test</OptionMenuItem>
+        </OptionMenu>
+      </JoinbleThemeProvider>
+    );
+
+    cy.get('[data-test="button-option-menu"]').click();
+    cy.get('[aria-selected="true"]').should('be.exist');
   });
 });

@@ -1,20 +1,24 @@
 import { ReactNode } from 'react';
-import { ButtonIconProps } from '../buttonIcon/ButtonIcon';
 import { PositionMode } from '../portal';
 
-export interface OptionMenuProps extends ButtonIconProps {
+export interface OptionMenuProps {
   children: ReactNode;
   testId?: string;
   position?: PositionMode;
   renderItem: ReactNode;
   widthAuto?: boolean;
+  className?: string;
 }
 
-export type OptionMenuItemProps = {
+export interface ActiveProp {
+  active?: boolean;
+}
+
+export interface OptionMenuItemProps extends ActiveProp {
   id?: number;
   className?: string;
   children: ReactNode;
   onClick?(): void;
   href?: string;
   testId?: string;
-};
+}

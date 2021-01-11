@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
 
+import { ActiveProp } from './OptionMenuModel';
+
 export const HEIGHT_OPTION_ITEM = '2.5rem';
 
-export const OptionMenuItemList = styled.li`
+export const OptionMenuItemList = styled.li<ActiveProp>`
   display: flex;
   align-items: center;
   width: 100%;
   height: ${HEIGHT_OPTION_ITEM};
+  ${(props) => props.active && 'background-color: #f3f7f9'}
 `;
 
 export const OptionMenuItemStyles = styled.a`

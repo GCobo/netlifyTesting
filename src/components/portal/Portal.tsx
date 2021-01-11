@@ -116,9 +116,7 @@ export const Portal: FunctionComponent<PortalProps> = ({
     [popupRef]
   );
 
-  useEffect(() => {
-    console.log(popupRef.current);
-  }, [popupRef.current]);
+  useEffect(() => {}, [popupRef.current]);
 
   const getStyles = useMemo(() => {
     const styles: IPosition = {

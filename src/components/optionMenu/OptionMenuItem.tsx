@@ -10,10 +10,15 @@ export const OptionMenuItem = ({
   href,
   onClick,
   className,
-  testId
+  testId,
+  active = false
 }: OptionMenuItemProps) => {
   return (
-    <OptionMenuItemList className={className}>
+    <OptionMenuItemList
+      className={className}
+      active={active}
+      aria-selected={active}
+    >
       <OptionMenuItemStyles
         as={href ? 'a' : 'button'}
         onClick={onClick && onClick}
