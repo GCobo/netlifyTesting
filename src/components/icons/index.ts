@@ -34,6 +34,7 @@ import LogOutIcon from './logOutIcon';
 import UserIcon from './userIcon';
 import ApplyIcon from './applyIcon';
 import SeeMoreIcon from './seeMoreIcon';
+import ThemeIcon from './themeIcon';
 
 export {
   SearchIcon,
@@ -71,5 +72,6 @@ export {
   LogOutIcon,
   UserIcon,
   ApplyIcon,
-  SeeMoreIcon
+  SeeMoreIcon,
+  ThemeIcon
 };
