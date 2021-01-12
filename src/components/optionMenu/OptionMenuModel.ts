@@ -10,11 +10,12 @@ export interface OptionMenuProps {
   className?: string;
 }
 
-export interface ActiveProp {
+export interface ItemProps {
   active?: boolean;
+  disabled?: boolean;
 }
 
-export interface OptionMenuItemProps extends ActiveProp {
+export interface OptionMenuItemProps extends ItemProps {
   id?: number;
   className?: string;
   children: ReactNode;

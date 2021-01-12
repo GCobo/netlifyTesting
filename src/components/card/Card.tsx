@@ -10,7 +10,7 @@ import {
 } from './Styles';
 
 export const Card = ({
-  logo,
+  image,
   title,
   lastUpdate,
   actions,
@@ -24,11 +24,7 @@ export const Card = ({
       data-test={testId}
       imageBig={imageBig}
     >
-      <ApplicationBoxLogo
-        imageBig={imageBig}
-        src={logo}
-        as={logo ? 'img' : 'div'}
-      />
+      <ApplicationBoxLogo imageBig={imageBig}>{image}</ApplicationBoxLogo>
       <div>
         <ApplicationBoxTitle>{title}</ApplicationBoxTitle>
         <ApplicationBoxLastUpdate>{lastUpdate}</ApplicationBoxLastUpdate>

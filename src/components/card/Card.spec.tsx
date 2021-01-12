@@ -79,7 +79,7 @@ describe('HelpLabel component', () => {
           testId='card-test'
           title='title'
           lastUpdate='last update'
-          logo={imageUrl}
+          image={<img src={imageUrl} alt='Example' />}
           actions={
             <ButtonIcon
               secondary
@@ -100,7 +100,7 @@ describe('HelpLabel component', () => {
           testId='card-test'
           title='title'
           lastUpdate='last update'
-          logo={imageUrl}
+          image={<img src={imageUrl} alt='Example' />}
           actions={
             <ButtonIcon
               secondary

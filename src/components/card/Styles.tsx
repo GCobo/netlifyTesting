@@ -14,14 +14,19 @@ export const ApplicationBoxStyles = styled.div<ImageSizeCard>`
   padding: 0.75rem;
 `;
 
-export const ApplicationBoxLogo = styled.img<ImageStyleCard>`
+export const ApplicationBoxLogo = styled.div<ImageStyleCard>`
   width: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   height: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   border-radius: 1.5rem;
-  object-fit: cover;
   border: 3px solid ${(props) => props.theme.colors.grey};
   background-color: ${(props) => props.theme.colors.grey};
   margin-bottom: ${(props) => (props.imageBig ? '0.75rem' : 0)};
+  overflow: hidden;
+
+  > img {
+    object-fit: cover;
+    width: 100%;
+  }
 `;
 
 export const ApplicationBoxTitle = styled.h3`

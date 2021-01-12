@@ -11,19 +11,28 @@ export const OptionMenuItem = ({
   onClick,
   className,
   testId,
-  active = false
+  active = false,
+  disabled = false
 }: OptionMenuItemProps) => {
+  const handleClick = () => {
+    if (!disabled && onClick) {
+      onClick();
+    }
+  };
+
   return (
     <OptionMenuItemList
       className={className}
       active={active}
-      aria-selected={active}
+      disabled={disabled}
     >
       <OptionMenuItemStyles
         as={href ? 'a' : 'button'}
-        onClick={onClick && onClick}
+        onClick={handleClick}
         href={href && href}
         data-test={testId}
+        aria-selected={active}
+        aria-disabled={disabled}
       >
         {children}
       </OptionMenuItemStyles>

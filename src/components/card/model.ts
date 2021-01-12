@@ -5,7 +5,7 @@ export type ImageSizeCard = {
 };
 
 export interface ImageStyleCard extends ImageSizeCard {
-  logo?: string;
+  image?: ReactNode;
 }
 
 export interface CardsProps extends ImageStyleCard {
