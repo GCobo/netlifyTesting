@@ -6,6 +6,7 @@ type IProps = {
   badgetsNumber?: number;
   secondary?: boolean;
   negative?: boolean;
+  bigIcon?: boolean;
 };
 
 export const ButtonIconStyle = styled.button<IProps>`
@@ -34,7 +35,8 @@ export const ButtonIconStyle = styled.button<IProps>`
 
   svg {
     fill: inherit;
-    width: 1.25rem;
+    width: ${(props) => (props.bigIcon ? '2.25rem' : ' 1.25rem')};
+    height: ${(props) => (props.bigIcon ? '2.25rem' : ' 1.25rem')};
   }
 `;
 

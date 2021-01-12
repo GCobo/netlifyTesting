@@ -6,11 +6,7 @@ export const CheckPlatformWrapper = styled.ul`
 `;
 
 export const CheckPlatformOption = styled.li`
-  svg {
-    width: 2.25rem;
-    height: 2.25rem;
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 export const CheckPlatformInput = styled.input`

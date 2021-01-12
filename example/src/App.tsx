@@ -274,6 +274,7 @@ const App = () => {
           <Title>Check platform</Title>
           <Grid>
             <CheckPlatform options={optionsPlatform} />
+            <CheckPlatform options={optionsPlatform} bigIcon />
           </Grid>
         </Section>
         <Section>
