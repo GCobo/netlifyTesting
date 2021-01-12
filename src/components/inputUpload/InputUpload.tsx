@@ -27,7 +27,8 @@ export const InputUpload = ({
   value,
   testId,
   helpLabel,
-  circle
+  circle,
+  className
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<string>();
 
@@ -61,7 +62,7 @@ export const InputUpload = ({
   };
 
   return (
-    <div>
+    <div className={className}>
       {label && <LabelInputUpload htmlFor={id}>{label}</LabelInputUpload>}
 
       <ContainerDrag
