@@ -28,10 +28,10 @@ describe('Button Icon', () => {
     );
 
     cy.get('[data-test="button-alert"]').invoke('show').click();
-    cy.contains('alert').should('be.visible');
+    cy.get('span').should('be.visible');
   });
 
-  it('Button Primary macth with primary color ', () => {
+  it('Button Primary match with primary color ', () => {
     mount(
       <JoinbleThemeProvider>
         <ButtonIcon icon={<SearchIcon />} testId='button-primary' />
@@ -42,7 +42,7 @@ describe('Button Icon', () => {
     cy.should('have.css', 'fill', 'rgb(12, 102, 255)');
   });
 
-  it('Button Secondary macth with secondary color', () => {
+  it('Button Secondary match with secondary color', () => {
     mount(
       <JoinbleThemeProvider>
         <ButtonIcon icon={<SearchIcon />} testId='button-secondary' secondary />
@@ -53,7 +53,7 @@ describe('Button Icon', () => {
     cy.should('have.css', 'fill', 'rgb(110, 118, 142)');
   });
 
-  it('Button Negative macth with negative color', () => {
+  it('Button Negative match with negative color', () => {
     mount(
       <JoinbleThemeProvider>
         <ButtonIcon icon={<SearchIcon />} testId='button-secondary' negative />
