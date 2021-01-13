@@ -55,7 +55,8 @@ import {
   PlayIcon,
   AddIcon,
   UploadIcon,
-  PublishIcon
+  PublishIcon,
+  Alert
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -422,6 +423,15 @@ const App = () => {
             <Badgets number={9} />
             <Badgets number={99} />
             <Badgets number={999} />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Alert</Title>
+          <Grid>
+            <Alert id='1' title='title' message='lorem' />
+            <Alert id='2' title='title' message='lorem' success />
+            <Alert id='3' title='title' message='lorem' warning />
+            <Alert id='4' title='title' message='lorem' error />
           </Grid>
         </Section>
         <Section>

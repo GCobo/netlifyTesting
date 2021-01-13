@@ -9,6 +9,7 @@ export type IThemeProps = {
     successColor: string;
     warningColor: string;
     errorColor: string;
+    infoColor: string;
     white: string;
     black: string;
     grey: string;
@@ -29,6 +30,7 @@ export const JoinbleTheme: IThemeProps = {
     successColor: '#1ABC9C',
     warningColor: '#F7B84B',
     errorColor: '#F1556C',
+    infoColor: '#4FC6E1',
     white: '#fff',
     black: '#000',
     grey: '#E1E4E8',
@@ -42,24 +44,28 @@ export const JoinbleTheme: IThemeProps = {
     headline: {
       L: 36,
       M: 22,
-      S: 16
+      S: 16,
+      XS: 12
     },
     lineHeightHeadline: {
       L: 40,
       M: 28,
-      S: 24
+      S: 24,
+      XS: 15
     },
     text: {
       XL: 18,
       L: 16,
       M: 14,
-      S: 12
+      S: 12,
+      XS: 9
     },
     lineHeightText: {
       XL: 26,
       L: 24,
       M: 24,
-      S: 20
+      S: 20,
+      XS: 12
     }
   })
 };
