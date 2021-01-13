@@ -96,7 +96,8 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
 `;
 
 export const IconButton = css`
-  width: 1rem;
+  width: 1.5rem;
+  min-width: 1.5rem;
   margin-right: 1rem;
   fill: inherit;
 `;
