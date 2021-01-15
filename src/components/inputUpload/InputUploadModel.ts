@@ -2,7 +2,7 @@ export type ErrorLabelProps = {
   errorLabel?: string;
 };
 
-type InputUploadCircleProps = {
+export type InputUploadCircleProps = {
   circle?: boolean;
 };
 

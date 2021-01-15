@@ -1,13 +1,17 @@
 import React, { useRef, useState } from 'react';
-import { ErrorLabelInput, HelpLabelInput, Label } from '../input/InputStyle';
+import {
+  ErrorLabelInput,
+  HelpLabelInput,
+  Label,
+  Wrapper
+} from '../input/InputStyle';
 import { OptionMenuItem } from '../optionMenu';
 import { Portal, PositionMode } from '../portal';
 import {
   AnimatedOptions,
   Chevron,
   DropdownOptions,
-  DropdownStyle,
-  Wrapper
+  DropdownStyle
 } from './DropdownStyle';
 import { DropdownProps } from './model';
 import { Spring } from 'react-spring/renderprops.cjs';
@@ -19,7 +23,8 @@ export const Dropdown = ({
   value = 'Select option',
   className,
   options,
-  testId
+  testId,
+  disabled
 }: DropdownProps) => {
   const buttonMenuRef = useRef<HTMLInputElement>(null);
   const [innerValue, setInnerValue] = useState<string | undefined>('');
@@ -35,13 +40,14 @@ export const Dropdown = ({
 
   return (
     <Wrapper className={className}>
-      <Label as='p'>{label}</Label>
+      {label && <Label as='p'>{label}</Label>}
       <DropdownStyle
         as='button'
         onClick={handleOpen}
         errorLabel={errorLabel}
         data-test={testId}
         ref={buttonMenuRef}
+        disabled={disabled}
       >
         <span>{innerValue ? innerValue : value}</span>
         <Chevron open={open} />

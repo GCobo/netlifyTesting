@@ -77,10 +77,8 @@ export const InputUpload = ({
         <input {...getInputProps()} />
         {preview ? (
           <WrapperDrag>
-            <ImagePreview>
-              <img src={preview} />
-            </ImagePreview>
-            <WrapperButtons>
+            <ImagePreview src={preview} circle={circle} />
+            <WrapperButtons circle={circle}>
               <ButtonIcon
                 onClick={onUploadFile}
                 icon={<UploadIcon className='icon' />}

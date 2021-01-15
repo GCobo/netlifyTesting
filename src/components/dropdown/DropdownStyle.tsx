@@ -9,17 +9,14 @@ import {
 } from '../optionMenu/OptionMenuStyles';
 import { ChevronProps, DropdownStyleProps } from './model';
 
-export const Wrapper = styled.section`
-  display: flex;
-  flex-flow: column;
-`;
-
 export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   padding-right: 0.75rem;
+  border-radius: 0.25rem;
   box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
     props.errorLabel ? props.theme.colors.errorColor : props.theme.colors.grey
@@ -29,6 +26,16 @@ export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  &:hover {
+    box-shadow: ${(props) => `
+  inset 0px 0px 0px 1px ${props.theme.colors.primaryColor}`};
+  }
+  &:disabled {
+    &:hover {
+      box-shadow: ${(props) => `
+  inset 0px 0px 0px 1px ${props.theme.colors.grey}`};
+    }
   }
 `;
 

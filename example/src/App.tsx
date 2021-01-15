@@ -48,7 +48,8 @@ import {
   OptionMenuHeader,
   Switch,
   Card,
-  EditIcon
+  EditIcon,
+  ThemeIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -215,12 +216,15 @@ const App = () => {
             <Input label='Password' type='password' />
             <Input label='Email' type='email' />
             <Input label='with icon' icon={<SearchIcon />} />
+            <Input placeHolder='With icon' icon={<SearchIcon />} />
+
             <Input
               label='with icon and error'
               icon={<SearchIcon />}
               errorLabel='Error'
             />
             <Input label='with label and error' errorLabel='Error label' />
+            <Input errorLabel='Error label' />
             <Input label='Disabled' disabled />
             <Input
               label='Help label'
@@ -242,6 +246,7 @@ const App = () => {
               helpLabel='help label'
               options={optionsDropdown}
             />
+            <Dropdown label='disabled' options={optionsDropdown} disabled />
           </Grid>
         </Section>
         <Section>
@@ -268,6 +273,7 @@ const App = () => {
             <CreditCardIcon />
             <LogOutIcon />
             <UserIcon />
+            <ThemeIcon />
           </Grid>
         </Section>
         <Section>

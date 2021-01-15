@@ -47,6 +47,20 @@ describe('Dropdown component', () => {
       .should('be.visible');
   });
 
+  it('Should be disabled', () => {
+    mount(
+      <JoinbleThemeProvider>
+        <Dropdown
+          label='label'
+          options={optionsDropdown}
+          testId='dropdown'
+          disabled
+        />
+      </JoinbleThemeProvider>
+    );
+    cy.get('[data-test="dropdown"]').should('have.attr', 'disabled');
+  });
+
   it('Error label should be visible', () => {
     mount(
       <JoinbleThemeProvider>

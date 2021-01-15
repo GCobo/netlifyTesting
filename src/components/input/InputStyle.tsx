@@ -1,51 +1,66 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { JoinbleTheme } from '../../styles/Theme';
-import { AlertIcon } from '../icons';
-import { css } from '@emotion/css';
-import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
+import { InputContainerProps } from '..';
 
-type IWrapperProps = {
-  icon?: React.ReactElement;
-};
-
-export const Wrapper = styled.section<IWrapperProps>`
+export const Wrapper = styled.section`
   display: flex;
   flex-flow: column;
-  position: relative;
   width: 100%;
   text-align: start;
+  position: relative;
 `;
-type IInputProps = {
-  errorLabel?: string;
-  icon?: React.ReactElement;
-  type?: 'text' | 'number' | 'password' | 'email';
-  passwordShow?: boolean;
-};
 
-export const InputStyle = styled.input<IInputProps>`
-  border: none;
-  ${(props) => props.theme.fonts.regularText('M')};
-  color: ${(props) => props.theme.colors.fontColor};
-  box-shadow: ${(props) => `
+export const InputContainer = styled.div<InputContainerProps>`
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 100%;
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    position: absolute;
+    pointer-events: none;
+    box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
     props.errorLabel ? props.theme.colors.errorColor : props.theme.colors.grey
   }
 `};
-  border-radius: 0.25rem;
+  }
+  &:hover,
+  &:focus {
+    :before {
+      box-shadow: ${(props) =>
+        props.disabled
+          ? `inset 0px 0px 0px 1px ${props.theme.colors.grey}`
+          : `inset 0px 0px 0px 1px ${props.theme.colors.primaryColor}`};
+      border: none;
+      outline: none;
+    }
+  }
+  svg {
+    width: 1.25rem;
+    min-width: 1.25rem;
+    fill: ${(props) =>
+      props.errorLabel
+        ? props.theme.colors.errorColor
+        : props.theme.colors.primaryColor};
+    margin-right: 0.75rem;
+  }
+`;
+
+export const InputStyle = styled.input`
+  border: none;
+  ${(props) => props.theme.fonts.regularText('M')};
+  color: ${(props) => props.theme.colors.fontColor};
   background-color: transparent;
   height: 2.5rem;
   width: 100%;
   padding: 0 0.75rem;
-  padding-right: ${(props) =>
-    props.type === 'password' ||
-    props.icon ||
-    props.errorLabel ||
-    props.passwordShow
-      ? '2.5rem'
-      : '0.75rem'};
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -62,21 +77,7 @@ export const InputStyle = styled.input<IInputProps>`
     color: ${(props) => props.theme.colors.greyLight};
   }
 
-  &:disabled {
-    opacity: 0.5;
-    &:hover,
-    &:focus {
-      box-shadow: ${(props) =>
-        `inset 0px 0px 0px 1px ${props.theme.colors.grey}`};
-      border: none;
-      outline: none;
-    }
-  }
-
-  &:hover,
   &:focus {
-    box-shadow: ${(props) =>
-      `inset 0px 0px 0px 1px ${props.theme.colors.primaryColor}`};
     border: none;
     outline: none;
   }
@@ -93,31 +94,6 @@ export const Label = styled.label`
   }
 `;
 
-export const ButtonPassword = styled(ButtonIcon)`
-  svg {
-    fill: ${(props) => props.theme.colors.primaryColor};
-    position: absolute;
-    width: 1.25rem;
-    right: 0.75rem;
-    top: 2rem;
-  }
-`;
-
-export const IconError = styled(AlertIcon)`
-  fill: ${(props) => props.theme.colors.errorColor};
-  position: absolute;
-  width: 1.25rem;
-  right: 0.75rem;
-  top: 2rem;
-`;
-
-export const InputIcon = css`
-  position: absolute;
-  width: 1.25rem;
-  right: 0.75rem;
-  top: 2rem;
-  fill: ${JoinbleTheme.colors.primaryColor};
-`;
 export const HelpLabelInput = styled(HelpLabel)`
   margin-top: 0.25rem;
 `;

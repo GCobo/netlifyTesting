@@ -7,22 +7,24 @@ import React, {
   useState,
   ChangeEvent
 } from 'react';
-import { HiddenIcon, ShowIcon } from '../icons';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
+import { AlertIcon, HiddenIcon, ShowIcon } from '../icons';
 import {
-  IconError,
   Label,
   Wrapper,
   InputStyle,
-  InputIcon,
-  ButtonPassword,
   HelpLabelInput,
-  ErrorLabelInput
+  ErrorLabelInput,
+  InputContainer
 } from './InputStyle';
 
-type IProps = {
-  errorLabel?: string;
-  type?: 'text' | 'number' | 'password' | 'email';
+export type InputContainerProps = {
   disabled?: boolean;
+  errorLabel?: string;
+};
+
+interface InputProps extends InputContainerProps {
+  type?: 'text' | 'number' | 'password' | 'email';
   label?: string;
   helpLabel?: string;
   id?: string;
@@ -35,9 +37,9 @@ type IProps = {
   value?: string | number | string[];
   testId?: string;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
-};
+}
 
-export const Input: FunctionComponent<IProps> = forwardRef(
+export const Input: FunctionComponent<InputProps> = forwardRef(
   (
     {
       errorLabel,
@@ -66,33 +68,30 @@ export const Input: FunctionComponent<IProps> = forwardRef(
     return (
       <Wrapper className={className}>
         {label && <Label htmlFor={id}>{label}</Label>}
-        <InputStyle
-          type={passwordShow ? 'text' : type}
-          id={id}
-          disabled={disabled}
-          placeholder={placeHolder}
-          errorLabel={errorLabel}
-          name={name}
-          ref={ref}
-          onClick={onClick}
-          onChange={onChange}
-          value={value}
-          data-test={testId}
-          icon={icon}
-          passwordShow={passwordShow}
-        />
-        {type === 'password' && (
-          <ButtonPassword
-            icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
-            type='button'
-            tabIndex={-1}
-            onClick={togglePasswordVisiblity}
+        <InputContainer errorLabel={errorLabel} disabled={disabled}>
+          <InputStyle
+            type={passwordShow ? 'text' : type}
+            id={id}
+            disabled={disabled}
+            placeholder={placeHolder}
+            name={name}
+            ref={ref}
+            onClick={onClick}
+            onChange={onChange}
+            value={value}
+            data-test={testId}
           />
-        )}
-        {icon &&
-          !errorLabel &&
-          React.cloneElement(icon, { className: InputIcon })}
-        {errorLabel && type !== 'password' && <IconError />}
+          {type === 'password' && (
+            <ButtonIcon
+              icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
+              type='button'
+              tabIndex={-1}
+              onClick={togglePasswordVisiblity}
+            />
+          )}
+          {icon && !errorLabel && React.cloneElement(icon)}
+          {errorLabel && type !== 'password' && <AlertIcon />}
+        </InputContainer>
         {errorLabel && <ErrorLabelInput label={errorLabel} />}
         {helpLabel && <HelpLabelInput label={helpLabel} />}
       </Wrapper>

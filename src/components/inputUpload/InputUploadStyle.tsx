@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { DragZoneProps } from './InputUploadModel';
+import { DragZoneProps, InputUploadCircleProps } from './InputUploadModel';
 import { AlertIcon } from '../icons';
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { Label } from '../input/InputStyle';
@@ -26,7 +26,7 @@ export const LabelInputUpload = styled(Label)`
 
 export const ContainerDrag = styled.div<DragZoneProps>`
   border-radius: ${(props) => (props.circle ? '100%' : '0.25rem')};
-  width: 10.62rem;
+  width: ${(props) => (props.circle ? '9.56rem' : '10.62rem')};
   height: 9.56rem;
   border: 1px ${(props) => handleBorderColor(props)};
   cursor: pointer;
@@ -47,17 +47,11 @@ export const ContainerDrag = styled.div<DragZoneProps>`
   }
 `;
 
-export const ImagePreview = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+export const ImagePreview = styled.img<InputUploadCircleProps>`
   width: 4.4rem;
-  height: 4.4.rem;
-
-  > img {
-    max-width: 100%;
-  }
+  height: 4.4rem;
+  object-fit: cover;
+  border-radius: ${(props) => (props.circle ? '100%' : 0)};
 `;
 
 export const WrapperDrag = styled.div`
@@ -75,15 +69,13 @@ export const WrapperDrag = styled.div`
   }
 `;
 
-export const WrapperButtons = styled.div`
+export const WrapperButtons = styled.div<InputUploadCircleProps>`
   display: flex;
+  align-items: center;
+  grid-column-gap: 0.5rem;
   position: absolute;
-  bottom: 0;
-  right: 0.5rem;
-
-  > button {
-    margin: 0 0.2rem;
-  }
+  bottom: ${(props) => (props.circle ? '0.5rem' : 0)};
+  right: ${(props) => (props.circle ? '3rem' : '0.5rem')};
 
   .icon {
     fill: ${(props) => props.theme.colors.fontColor};
@@ -97,7 +89,7 @@ export const IconError = styled(AlertIcon)`
 `;
 
 export const HelpLabelStyles = styled(HelpLabel)`
-  margin-top: 4px;
+  margin-top: 0.5rem;
   svg {
     width: 1.25rem;
     min-width: 1.25rem;

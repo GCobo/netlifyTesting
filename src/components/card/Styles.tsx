@@ -22,10 +22,14 @@ export const ApplicationBoxLogo = styled.div<ImageStyleCard>`
   background-color: ${(props) => props.theme.colors.grey};
   margin-bottom: ${(props) => (props.imageBig ? '0.75rem' : 0)};
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   > img {
     object-fit: cover;
     width: 100%;
+    height: 100%;
   }
 `;
 
