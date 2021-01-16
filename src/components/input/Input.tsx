@@ -23,7 +23,7 @@ export type InputContainerProps = {
   errorLabel?: string;
 };
 
-interface InputProps extends InputContainerProps {
+export interface InputProps extends InputContainerProps {
   type?: 'text' | 'number' | 'password' | 'email';
   label?: string;
   helpLabel?: string;

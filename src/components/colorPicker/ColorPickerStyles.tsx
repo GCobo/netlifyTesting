@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Input } from '../input/Input';
+import { Input, InputProps } from '../input/Input';
 
 export const ModalColor = styled.div`
   position: absolute;
@@ -30,7 +30,7 @@ export const ColorPickerWrapper = styled.div`
   position: relative;
 `;
 
-export const InputColorPicker = styled(Input)`
+export const InputColorPicker = styled(Input)<InputProps>`
   input {
     padding-left: calc(0.75rem + 1.5rem + 0.5rem);
   }
