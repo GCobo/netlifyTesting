@@ -49,7 +49,9 @@ import {
   Switch,
   Card,
   EditIcon,
-  ThemeIcon
+  ThemeIcon,
+  Tabs,
+  TabPanel
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -247,6 +249,22 @@ const App = () => {
               options={optionsDropdown}
             />
             <Dropdown label='disabled' options={optionsDropdown} disabled />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Tabs</Title>
+          <Grid size={250}>
+            <Tabs active='1'>
+              <TabPanel name='Tab1' id='1'>
+                Hello Tab 1
+              </TabPanel>
+              <TabPanel name='Tab2 disabled' id='2' disabled>
+                Hello Tab 2
+              </TabPanel>
+              <TabPanel name='Tab3' id='3' icon={<WidgetIcon />}>
+                Hello Tab 3
+              </TabPanel>
+            </Tabs>
           </Grid>
         </Section>
         <Section>

@@ -20,3 +20,4 @@ export * from './inputUpload/InputUpload';
 export * from './optionMenu';
 export * from './switch/Switch';
 export * from './card/Card';
+export * from './tabs';
