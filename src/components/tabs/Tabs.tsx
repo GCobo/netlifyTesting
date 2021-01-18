@@ -7,9 +7,17 @@ type TabsProps = {
   children: React.ReactElement[];
   active?: string;
   onChangeActive?(active: string): void;
+  className?: string;
+  testId?: string;
 };
 
-export const Tabs = ({ children, active = '1', onChangeActive }: TabsProps) => {
+export const Tabs = ({
+  children,
+  active = '1',
+  onChangeActive,
+  className,
+  testId
+}: TabsProps) => {
   const [selected, setSelected] = useState<string>(active);
 
   useEffect(() => {
@@ -18,13 +26,14 @@ export const Tabs = ({ children, active = '1', onChangeActive }: TabsProps) => {
 
   return (
     <div>
-      <TabWrapper>
+      <TabWrapper className={className} data-test={testId}>
         {Children.map(
           children,
           (child: React.ReactElement) =>
             child.type === TabPanel && (
               <li role='tab' key={child.props.key}>
                 <TabsStyle
+                  data-test={child.props.testIdTab}
                   disabled={child.props.disabled}
                   active={child.props.id === selected}
                   onClick={() => setSelected(child.props.id)}

@@ -6,10 +6,12 @@ type TabPanelProps = {
   icon?: ReactElement;
   id?: string;
   disabled?: boolean;
+  testIdTab?: string;
+  testIdPanel?: string;
 };
 
-const TabPanel = ({ children }: TabPanelProps) => {
-  return <div>{children}</div>;
+const TabPanel = ({ children, testIdPanel }: TabPanelProps) => {
+  return <div data-test={testIdPanel}>{children}</div>;
 };
 
 TabPanel.displayName = 'TabPanel';
