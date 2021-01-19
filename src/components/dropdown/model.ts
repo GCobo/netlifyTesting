@@ -1,12 +1,12 @@
-import { OptionMenuItemProps } from '../optionMenu/OptionMenuModel';
-
 export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   label?: string;
   helpLabel?: string;
-  value?: string;
+  value?: string | number;
   className?: string;
-  options: OptionMenuItemProps[];
+  options: DropdownOption[];
   testId?: string;
+  onChange?(value: string | number): void;
+  placeholder?: string;
 }
 
 export type DropdownStyleProps = {
@@ -16,4 +16,9 @@ export type DropdownStyleProps = {
 
 export type ChevronProps = {
   open?: boolean;
+};
+
+export type DropdownOption = {
+  name: string;
+  value: number | string;
 };

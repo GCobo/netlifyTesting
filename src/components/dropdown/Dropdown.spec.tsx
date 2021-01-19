@@ -1,19 +1,24 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { JoinbleThemeProvider } from '../../providers';
-import { OptionMenuItemProps } from '../optionMenu/OptionMenuModel';
 import { Dropdown } from './Dropdown';
+import { DropdownOption } from './model';
 
-const optionsDropdown: OptionMenuItemProps[] = [
-  { children: 'test', id: 1 },
-  { children: 'test2', id: 2 }
+const optionsDropdown: DropdownOption[] = [
+  { name: 'test', value: 1 },
+  { name: 'test2', value: 2 }
 ];
 
 describe('Dropdown component', () => {
   it('Should be works', () => {
     mount(
       <JoinbleThemeProvider>
-        <Dropdown label='label' options={optionsDropdown} testId='dropdown' />
+        <Dropdown
+          label='label'
+          options={optionsDropdown}
+          testId='dropdown'
+          placeholder='Select option'
+        />
       </JoinbleThemeProvider>
     );
     cy.get('[data-test="dropdown"]').click();
@@ -38,13 +43,11 @@ describe('Dropdown component', () => {
           label='label'
           options={optionsDropdown}
           testId='dropdown'
-          value='Default testing'
+          value={1}
         />
       </JoinbleThemeProvider>
     );
-    cy.get('[data-test="dropdown"]')
-      .contains('Default testing')
-      .should('be.visible');
+    cy.get('[data-test="dropdown"]').contains('test').should('be.visible');
   });
 
   it('Should be disabled', () => {
