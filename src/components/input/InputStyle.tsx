@@ -57,7 +57,7 @@ export const InputStyle = styled.input`
   border: none;
   ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.fontColor};
-  background-color: transparent;
+  background-color: ${(props) => props.theme.colors.white};
   height: 2.5rem;
   width: 100%;
   padding: 0 0.75rem;
