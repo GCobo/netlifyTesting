@@ -17,6 +17,7 @@ export const InputContainer = styled.div<InputContainerProps>`
   height: 2.5rem;
   width: 100%;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  background-color: ${(props) => props.theme.colors.white};
 
   &:before {
     content: '';
@@ -57,7 +58,7 @@ export const InputStyle = styled.input`
   border: none;
   ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.fontColor};
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: transparent;
   height: 2.5rem;
   width: 100%;
   padding: 0 0.75rem;
