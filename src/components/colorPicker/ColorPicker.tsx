@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  forwardRef,
-  FunctionComponent,
-  Ref,
-  ChangeEvent
-} from 'react';
+import React, { useState, forwardRef, FunctionComponent, Ref } from 'react';
 import ColorPickerNative from 'rc-color-picker';
 
 import {
