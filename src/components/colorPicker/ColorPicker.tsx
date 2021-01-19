@@ -19,6 +19,7 @@ type IProps = {
   placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
   onChange?(value: string): void;
   disabled?: boolean;
+  ref?: Ref<HTMLInputElement>;
 };
 
 export const ColorPicker: FunctionComponent<IProps> = forwardRef(
