@@ -1,4 +1,4 @@
-import { Ref } from 'react';
+import { Ref, ChangeEvent } from 'react';
 
 export type DisabledProps = {
   disabled?: boolean;
@@ -21,4 +21,5 @@ export interface SwitchProps extends SwitchBoxProps, LabelProps {
   ref?: Ref<HTMLInputElement>;
   name?: string;
   value?: number | string;
+  onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }

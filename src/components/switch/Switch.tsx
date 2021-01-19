@@ -24,7 +24,8 @@ export const Switch = forwardRef(
       testId,
       name,
       value,
-      errorLabel
+      errorLabel,
+      onChange
     }: SwitchProps,
     ref: Ref<HTMLInputElement>
   ) => {
@@ -57,6 +58,7 @@ export const Switch = forwardRef(
             checked={check}
             id={id}
             name={name}
+            onChange={onChange}
             ref={ref}
             value={value}
           />
