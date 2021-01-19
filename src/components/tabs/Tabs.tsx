@@ -39,7 +39,6 @@ export const Tabs = ({
             setSelected(child.props.id);
             setActiveIndex(index);
           };
-          console.log(activeIndex);
           return (
             child.type === TabPanel && (
               <li role='tab' key={child.props.key}>
