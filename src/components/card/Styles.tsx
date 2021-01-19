@@ -21,6 +21,7 @@ export const CardBoxStyles = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.white};
   padding: 0.75rem;
+  height: 100%;
 `;
 
 export const CardBoxHeader = styled.div`
