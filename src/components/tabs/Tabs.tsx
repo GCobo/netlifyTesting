@@ -47,6 +47,7 @@ export const Tabs = ({
                   disabled={child.props.disabled}
                   active={child.props.id === selected}
                   onClick={onClickTab}
+                  type='button'
                 >
                   {child.props.icon}
                   {child.props.name}
