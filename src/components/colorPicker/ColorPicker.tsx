@@ -1,11 +1,12 @@
 import React, { useState, forwardRef, FunctionComponent, Ref } from 'react';
 import ColorPickerNative from 'rc-color-picker';
+
 import {
   BoxColor,
   ColorPickerWrapper,
-  InputColorPicker
+  InputColorPicker,
+  GlobalColorPicker
 } from './ColorPickerStyles';
-import './colorpicker.css';
 import { JoinbleTheme } from '../../styles/Theme';
 
 type IProps = {
@@ -16,6 +17,8 @@ type IProps = {
   className?: string;
   testId?: string;
   placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
+  onChange?(value: string): void;
+  disabled?: boolean;
 };
 
 export const ColorPicker: FunctionComponent<IProps> = forwardRef(
@@ -26,7 +29,9 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
       label = 'Select color',
       className,
       testId,
-      placement = 'bottomLeft'
+      placement = 'bottomLeft',
+      onChange,
+      disabled = false
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -35,14 +40,16 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
 
     const handleChangeComplete = (color: any) => {
       setInnerValue(color.color);
+      onChange && onChange(color.color);
     };
 
     const handleOpenColorPicker = () => {
-      setOpen(!open);
+      !disabled && setOpen(!open);
     };
 
     return (
       <ColorPickerWrapper className={className}>
+        <GlobalColorPicker />
         <BoxColor
           style={{ backgroundColor: innerValue ? innerValue : value }}
         />
@@ -57,8 +64,10 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
             onClick={handleOpenColorPicker}
             value={innerValue ? innerValue : value}
             name={name}
+            onChange={() => {}}
             ref={ref}
             data-test={testId}
+            disabled={disabled}
           />
         </ColorPickerNative>
       </ColorPickerWrapper>
