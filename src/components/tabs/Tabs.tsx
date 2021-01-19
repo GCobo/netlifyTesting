@@ -1,4 +1,4 @@
-import React, { Children, useEffect, useState } from 'react';
+import React, { Children, useEffect, useState, useCallback } from 'react';
 
 import { TabPanel } from './TabPanel';
 import {
@@ -29,7 +29,25 @@ export const Tabs = ({
 
   useEffect(() => {
     onChangeActive && active && onChangeActive(active);
+
+    if (active) {
+      getActiveIndex(active);
+    }
   }, [active]);
+
+  const getActiveIndex = useCallback(
+    (id: string) => {
+      const childs = Children.map(
+        children,
+        (child: React.ReactElement) => child
+      );
+      const findChildActive = childs.findIndex(
+        (child: React.ReactElement) => child.props.id === id
+      );
+      setActiveIndex(findChildActive);
+    },
+    [children]
+  );
 
   return (
     <TabStytles>
@@ -41,7 +59,7 @@ export const Tabs = ({
           };
           return (
             child.type === TabPanel && (
-              <li role='tab' key={child.props.key}>
+              <li role='tab' key={child.props.id}>
                 <TabsStyle
                   data-test={child.props.testIdTab}
                   disabled={child.props.disabled}

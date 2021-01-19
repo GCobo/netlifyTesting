@@ -3,23 +3,8 @@ import { mount } from 'cypress-react-unit-test';
 import { Tabs } from './Tabs';
 import { TabPanel } from './TabPanel';
 
-import { JoinbleThemeProvider } from '../../providers';
 import { ThemeIcon } from '../icons';
-
-const WrapperTheme = ({ children }: any) => (
-  <JoinbleThemeProvider>
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '500px'
-      }}
-    >
-      {children}
-    </div>
-  </JoinbleThemeProvider>
-);
+import { WrapperTheme } from '../../utils/test';
 
 describe('Tab Component', () => {
   it('Should be works', () => {
@@ -86,6 +71,27 @@ describe('Tab Component', () => {
       </WrapperTheme>
     );
     cy.get('[data-test="tab-2"]').click();
+    cy.get('[data-test="tab-2-panel"]')
+      .contains('Hello Tab 2')
+      .should('be.visible');
+  });
+
+  it('should change active to tab2', () => {
+    mount(
+      <WrapperTheme>
+        <Tabs active='2'>
+          <TabPanel name='Tab1' id='1' testIdTab='tab-1' icon={<ThemeIcon />}>
+            Hello Tab 1
+          </TabPanel>
+          <TabPanel name='Tab2' id='2' testIdPanel='tab-2-panel'>
+            Hello Tab 2
+          </TabPanel>
+        </Tabs>
+      </WrapperTheme>
+    );
+
+    cy.wait(300);
+
     cy.get('[data-test="tab-2-panel"]')
       .contains('Hello Tab 2')
       .should('be.visible');

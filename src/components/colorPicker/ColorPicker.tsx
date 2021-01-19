@@ -1,4 +1,10 @@
-import React, { useState, forwardRef, FunctionComponent, Ref } from 'react';
+import React, {
+  useState,
+  forwardRef,
+  FunctionComponent,
+  Ref,
+  ChangeEvent
+} from 'react';
 import ColorPickerNative from 'rc-color-picker';
 
 import {
@@ -17,7 +23,7 @@ type IProps = {
   className?: string;
   testId?: string;
   placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
-  onChange?(value: string): void;
+  onChange?(event: ChangeEvent<HTMLInputElement>): void;
   disabled?: boolean;
   ref?: Ref<HTMLInputElement>;
 };
@@ -41,7 +47,6 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
 
     const handleChangeComplete = (color: any) => {
       setInnerValue(color.color);
-      onChange && onChange(color.color);
     };
 
     const handleOpenColorPicker = () => {
@@ -65,7 +70,7 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
             onClick={handleOpenColorPicker}
             value={innerValue ? innerValue : value}
             name={name}
-            onChange={() => {}}
+            onChange={onChange}
             ref={ref}
             data-test={testId}
             disabled={disabled}
