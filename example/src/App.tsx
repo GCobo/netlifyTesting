@@ -141,7 +141,21 @@ const App = () => {
             >
               secondary with Icon disabled
             </Button>
-            <Button onClick={() => alert('click')} loading></Button>
+            <Button onClick={() => alert('click')} loading>
+              loading...
+            </Button>
+            <Button onClick={() => alert('click')} loading secondary>
+              saving...
+            </Button>
+            <Button onClick={() => alert('click')} loading error>
+              saving...
+            </Button>
+            <Button onClick={() => alert('click')} loading warning>
+              saving...
+            </Button>
+            <Button onClick={() => alert('click')} loading success>
+              saving...
+            </Button>
             <Button onClick={() => alert('click')} error>
               error
             </Button>

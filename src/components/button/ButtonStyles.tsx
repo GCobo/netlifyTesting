@@ -1,8 +1,30 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import { darken } from 'polished';
 import { css } from '@emotion/css';
 
 import { ButtonTypeProps } from './ButtonModel';
+import { Loading } from '../loading/Loading';
+
+export const LoadingButton = styled(Loading)<ButtonTypeProps>`
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+
+  div {
+    position: unset;
+    box-shadow: ${(props) =>
+      `inset 0px 0px 0px 1px ${
+        props.secondary
+          ? props.theme.colors.primaryColor
+          : props.theme.colors.white
+      } `};
+    background-color: ${(props) =>
+      props.secondary
+        ? props.theme.colors.primaryColor
+        : props.theme.colors.white};
+  }
+`;
 
 export const ButtonStyles = styled.button<ButtonTypeProps>`
   background-color: ${(props) =>
@@ -83,6 +105,14 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
     color: ${(props) =>
       props.white ? props.theme.colors.titleColor : props.theme.colors.white};
     fill: ${(props) => props.theme.colors.white};
+
+    ${LoadingButton} {
+      div {
+        box-shadow: ${(props) =>
+          `inset 0px 0px 0px 1px ${props.theme.colors.white} `};
+        background-color: ${(props) => props.theme.colors.white};
+      }
+    }
   }
 
   &:focus,

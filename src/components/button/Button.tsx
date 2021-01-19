@@ -1,26 +1,25 @@
 import React from 'react';
-import { Loading } from '../loading/Loading';
-import { ButtonStyles, IconButton } from './ButtonStyles';
+import { ButtonStyles, IconButton, LoadingButton } from './ButtonStyles';
 
 import { ButtonProps } from './ButtonModel';
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
+export const Button = ({
   type = 'button',
   icon,
   loading,
   children,
   testId,
   ...rest
-}) => {
+}: ButtonProps) => {
   return (
     <ButtonStyles type={type} {...rest} data-test={testId}>
+      {loading && <LoadingButton {...rest} />}
       {!loading &&
         icon &&
         React.cloneElement(icon, {
           className: IconButton
         })}
-      {!loading && children && children}
-      {loading && <Loading />}
+      {children && children}
     </ButtonStyles>
   );
 };
