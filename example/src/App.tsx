@@ -51,7 +51,8 @@ import {
   EditIcon,
   ThemeIcon,
   Tabs,
-  TabPanel
+  TabPanel,
+  PlayIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -292,6 +293,7 @@ const App = () => {
             <LogOutIcon />
             <UserIcon />
             <ThemeIcon />
+            <PlayIcon />
           </Grid>
         </Section>
         <Section>
@@ -449,6 +451,25 @@ const App = () => {
               lastUpdate='06/01/21'
               imageBig
               logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              actions={
+                <ButtonIcon
+                  secondary
+                  icon={<EditIcon />}
+                  onClick={() => alert('click card action')}
+                />
+              }
+            />
+            <Card
+              id='card-app'
+              title='title'
+              lastUpdate='06/01/21'
+              imageBig
+              logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              header={
+                <>
+                  <PlayIcon /> <p>Card Header </p>
+                </>
+              }
               actions={
                 <ButtonIcon
                   secondary

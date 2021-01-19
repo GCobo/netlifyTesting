@@ -1,20 +1,42 @@
 import styled from '@emotion/styled';
-import { ImageSizeCard, ImageStyleCard } from './model';
+import { ReactNode } from 'react';
 
-export const ApplicationBoxStyles = styled.div<ImageSizeCard>`
-  height: ${(props) => (props.imageBig ? '272px' : '208px')};
+export type CardBoxWrapperProps = {
+  imageBig?: boolean;
+  header?: ReactNode;
+};
+
+export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 2px rgba(56, 65, 74, 0.3);
+  height: ${(props) =>
+    props.header ? '20.5rem' : props.imageBig ? '17rem' : '13rem'};
   width: 100%;
+`;
+
+export const CardBoxStyles = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => props.theme.colors.white};
-  border-radius: 0.25rem;
-  box-shadow: 1px 1px 2px rgba(56, 65, 74, 0.3);
   padding: 0.75rem;
 `;
 
-export const ApplicationBoxLogo = styled.div<ImageStyleCard>`
+export const CardBoxHeader = styled.div`
+  height: 2.5rem;
+  background-color: #f3f7f9;
+  display: flex;
+  align-items: center;
+  grid-column-gap: 0.5rem;
+  padding: 0 0.5rem;
+  color: ${(props) => props.theme.colors.fontColor};
+  fill: ${(props) => props.theme.colors.fontColor};
+  ${(props) => props.theme.fonts.regularText('M')};
+  font-weight: 500;
+`;
+
+export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
   width: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   height: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   border-radius: 1.5rem;
@@ -33,19 +55,19 @@ export const ApplicationBoxLogo = styled.div<ImageStyleCard>`
   }
 `;
 
-export const ApplicationBoxTitle = styled.h3`
+export const CardBoxTitle = styled.h3`
   text-align: center;
   ${(props) => props.theme.fonts.titleText('S')};
 `;
 
-export const ApplicationBoxLastUpdate = styled.p`
+export const CardBoxLastUpdate = styled.p`
   ${(props) => props.theme.fonts.regularText('S')};
   text-align: center;
   margin-top: 0.5rem;
   font-weight: 300;
 `;
 
-export const ApplicationBoxActions = styled.div`
+export const CardBoxActions = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;

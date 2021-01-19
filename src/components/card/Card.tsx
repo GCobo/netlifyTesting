@@ -1,13 +1,25 @@
-import React from 'react';
-import { CardsProps } from './model';
+import React, { ReactNode } from 'react';
 
 import {
-  ApplicationBoxActions,
-  ApplicationBoxLastUpdate,
-  ApplicationBoxLogo,
-  ApplicationBoxStyles,
-  ApplicationBoxTitle
+  CardBoxActions,
+  CardBoxHeader,
+  CardBoxLastUpdate,
+  CardBoxLogo,
+  CardBoxStyles,
+  CardBoxTitle,
+  CardBoxWrapper,
+  CardBoxWrapperProps
 } from './Styles';
+
+export interface CardsProps extends CardBoxWrapperProps {
+  title: string;
+  lastUpdate: string;
+  id?: string;
+  actions: ReactNode;
+  testId?: string;
+  className?: string;
+  image?: ReactNode;
+}
 
 export const Card = ({
   image,
@@ -16,20 +28,25 @@ export const Card = ({
   actions,
   testId,
   className,
-  imageBig
+  imageBig,
+  header
 }: CardsProps) => {
   return (
-    <ApplicationBoxStyles
+    <CardBoxWrapper
+      imageBig={imageBig}
       className={className}
       data-test={testId}
-      imageBig={imageBig}
+      header={header}
     >
-      <ApplicationBoxLogo imageBig={imageBig}>{image}</ApplicationBoxLogo>
-      <div>
-        <ApplicationBoxTitle>{title}</ApplicationBoxTitle>
-        <ApplicationBoxLastUpdate>{lastUpdate}</ApplicationBoxLastUpdate>
-      </div>
-      <ApplicationBoxActions>{actions}</ApplicationBoxActions>
-    </ApplicationBoxStyles>
+      {header && <CardBoxHeader>{header}</CardBoxHeader>}
+      <CardBoxStyles>
+        <CardBoxLogo imageBig={imageBig}>{image}</CardBoxLogo>
+        <div>
+          <CardBoxTitle>{title}</CardBoxTitle>
+          <CardBoxLastUpdate>{lastUpdate}</CardBoxLastUpdate>
+        </div>
+        <CardBoxActions>{actions}</CardBoxActions>
+      </CardBoxStyles>
+    </CardBoxWrapper>
   );
 };
