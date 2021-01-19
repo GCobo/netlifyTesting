@@ -5,10 +5,15 @@ type TabsStyleProps = {
   disabled?: boolean;
 };
 
+export const TabStytles = styled.div`
+  width: 100%;
+`;
+
 export const TabWrapper = styled.ul`
   display: flex;
   box-shadow: inset 0px -2px 0px 0px ${(props) => props.theme.colors.grey};
   position: relative;
+  width: 100%;
 `;
 
 export const TabBar = styled.span`
@@ -63,4 +68,5 @@ export const TabsStyle = styled.button<TabsStyleProps>`
 
 export const TabPanelContent = styled.div`
   padding-top: 1.75rem;
+  width: 100%;
 `;

@@ -1,7 +1,13 @@
 import React, { Children, useEffect, useState } from 'react';
 
 import { TabPanel } from './TabPanel';
-import { TabBar, TabPanelContent, TabsStyle, TabWrapper } from './styles';
+import {
+  TabBar,
+  TabPanelContent,
+  TabsStyle,
+  TabStytles,
+  TabWrapper
+} from './styles';
 
 type TabsProps = {
   children: React.ReactElement[];
@@ -19,32 +25,38 @@ export const Tabs = ({
   testId
 }: TabsProps) => {
   const [selected, setSelected] = useState<string>(active);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   useEffect(() => {
     onChangeActive && active && onChangeActive(active);
   }, [active]);
 
   return (
-    <div>
+    <TabStytles>
       <TabWrapper className={className} data-test={testId}>
-        {Children.map(
-          children,
-          (child: React.ReactElement) =>
+        {Children.map(children, (child: React.ReactElement, index: number) => {
+          const onClickTab = () => {
+            setSelected(child.props.id);
+            setActiveIndex(index);
+          };
+          console.log(activeIndex);
+          return (
             child.type === TabPanel && (
               <li role='tab' key={child.props.key}>
                 <TabsStyle
                   data-test={child.props.testIdTab}
                   disabled={child.props.disabled}
                   active={child.props.id === selected}
-                  onClick={() => setSelected(child.props.id)}
+                  onClick={onClickTab}
                 >
                   {child.props.icon}
                   {child.props.name}
                 </TabsStyle>
               </li>
             )
-        )}
-        <TabBar style={{ left: parseInt(selected) * 100 - 100 }} />
+          );
+        })}
+        <TabBar style={{ left: activeIndex * 100 }} />
       </TabWrapper>
 
       {Children.map(children, (child: React.ReactElement) => {
@@ -52,6 +64,6 @@ export const Tabs = ({
           <TabPanelContent role='tabpanel'>{child}</TabPanelContent>
         ) : null;
       })}
-    </div>
+    </TabStytles>
   );
 };
