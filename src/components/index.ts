@@ -16,7 +16,7 @@ export * from './badgets/Badgets';
 export * from './checkPlatform/CheckPlatform';
 export * from './tooltip/Tooltip';
 export * from './portal';
-export * from './inputUpload/InputUpload';
+export * from './inputUpload';
 export * from './optionMenu';
 export * from './switch/Switch';
 export * from './card/Card';

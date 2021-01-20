@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref, useState } from 'react';
+import React, { forwardRef, Ref, useEffect, useState } from 'react';
 import {
   SwitchContainer,
   SwitchBoxContainer,
@@ -29,7 +29,11 @@ export const Switch = forwardRef(
     }: SwitchProps,
     ref: Ref<HTMLInputElement>
   ) => {
-    const [check, setCheck] = useState<boolean | undefined>(checked);
+    const [check, setCheck] = useState<boolean>(checked);
+
+    useEffect(() => {
+      onChange && onChange(check);
+    }, [check]);
 
     const handleCheck = () => {
       setCheck(!check);
@@ -58,7 +62,7 @@ export const Switch = forwardRef(
             checked={check}
             id={id}
             name={name}
-            onChange={onChange}
+            onChange={() => onChange && onChange(checked)}
             ref={ref}
             value={value}
           />

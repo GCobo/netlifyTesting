@@ -21,5 +21,5 @@ export interface SwitchProps extends SwitchBoxProps, LabelProps {
   ref?: Ref<HTMLInputElement>;
   name?: string;
   value?: number | string;
-  onChange?(event: ChangeEvent<HTMLInputElement>): void;
+  onChange?(value: boolean): void;
 }
