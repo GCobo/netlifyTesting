@@ -33,5 +33,6 @@ export enum TypeFiles {
   pdf = 'application/pdf',
   doc = 'application/msword',
   docx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  xls = '.xls'
+  xls = '.xls',
+  ttf = '.ttf'
 }
