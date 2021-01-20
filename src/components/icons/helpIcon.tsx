@@ -1,15 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string
-}
-
-const HelpIcon: React.FunctionComponent<IProps> = ({ className }) => {
+export const HelpIcon = ({ className }: IconProps) => {
   return (
     <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
       <path d='M12.001 24c-6.624-0.007-11.993-5.376-12-12v-0.24c0.132-6.595 5.562-11.846 12.157-11.759s11.884 5.482 11.84 12.077c-0.043 6.596-5.401 11.92-11.997 11.922zM11.982 21.6h0.019c5.3-0.005 9.593-4.305 9.59-9.605s-4.3-9.595-9.6-9.595c-5.3 0-9.597 4.295-9.6 9.595s4.29 9.599 9.59 9.605zM13.201 19.2h-2.4v-2.4h2.4v2.4zM13.201 15.6h-2.4c-0.038-1.563 0.775-3.023 2.124-3.814 0.792-0.607 1.476-1.13 1.476-2.186 0-1.325-1.074-2.4-2.4-2.4s-2.4 1.075-2.4 2.4h-2.4v-0.108c0.019-1.715 0.952-3.289 2.447-4.13s3.324-0.82 4.8 0.054c1.475 0.874 2.373 2.469 2.353 4.184-0.086 1.295-0.78 2.472-1.872 3.174-0.987 0.619-1.626 1.665-1.728 2.826z'></path>
     </svg>
-  )
-}
-
-export default HelpIcon
+  );
+};

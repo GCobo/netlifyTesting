@@ -1,20 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string
-}
-
-const uploadIcon = (props: IProps) => {
+export const UploadIcon = ({ className }: IconProps) => {
   return (
-    <svg
-      width='40px'
-      height='40px'
-      viewBox='0 0 40 40'
-      version='1.1'
-      xmlnsXlink='http://www.w3.org/1999/xlink'
-      xmlns='http://www.w3.org/2000/svg'
-      {...props}
-    >
+    <svg width='40px' height='40px' viewBox='0 0 40 40' className={className}>
       <defs>
         <path d='M0 0L40 0L40 40L0 40L0 0Z' id='path_1' />
         <clipPath id='mask_1'>
@@ -43,7 +32,5 @@ const uploadIcon = (props: IProps) => {
         </g>
       </g>
     </svg>
-  )
-}
-
-export default uploadIcon
+  );
+};

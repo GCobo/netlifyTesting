@@ -1,10 +1,7 @@
 import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string;
-};
-
-const SeeMoreIcon: React.FunctionComponent<IProps> = ({ className }) => {
+export const SeeMoreIcon = ({ className }: IconProps) => {
   return (
     <svg
       width='24px'
@@ -45,5 +42,3 @@ const SeeMoreIcon: React.FunctionComponent<IProps> = ({ className }) => {
     </svg>
   );
 };
-
-export default SeeMoreIcon;

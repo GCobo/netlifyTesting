@@ -1,15 +1,10 @@
 import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string;
-};
-
-const UserIcon = ({ className }: IProps) => {
+export const UserIcon = ({ className }: IconProps) => {
   return (
     <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
       <path d='M3.158 24h-2.526v-1.263c0.006-4.881 3.961-8.837 8.842-8.842h5.053c4.881 0.006 8.837 3.961 8.842 8.842v1.263h-2.526v-1.263c-0.004-3.486-2.829-6.312-6.316-6.316h-5.053c-3.486 0.004-6.312 2.829-6.316 6.316v1.263zM12 12.632c-3.488 0-6.316-2.828-6.316-6.316s2.828-6.316 6.316-6.316c3.488 0 6.316 2.828 6.316 6.316-0.004 3.486-2.829 6.312-6.316 6.316zM12 2.526c-2.093 0-3.789 1.697-3.789 3.789s1.697 3.789 3.789 3.789c2.093 0 3.789-1.697 3.789-3.789s-1.697-3.789-3.789-3.789z'></path>
     </svg>
   );
 };
-
-export default UserIcon;

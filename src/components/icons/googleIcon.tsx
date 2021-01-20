@@ -1,10 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string
-}
-
-const GoogleIcon: React.FunctionComponent<IProps> = ({ className }) => {
+export const GoogleIcon = ({ className }: IconProps) => {
   return (
     <svg width='20' height='20' viewBox='0 0 533.5 544.3' className={className}>
       <path
@@ -24,7 +21,5 @@ const GoogleIcon: React.FunctionComponent<IProps> = ({ className }) => {
         fill='#ea4335'
       />
     </svg>
-  )
-}
-
-export default GoogleIcon
+  );
+};

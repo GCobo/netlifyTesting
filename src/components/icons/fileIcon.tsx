@@ -1,10 +1,7 @@
 import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string;
-};
-
-const FileIcon: React.FunctionComponent<IProps> = ({ className }) => {
+export const FileIcon = ({ className }: IconProps) => {
   return (
     <svg
       width='66px'
@@ -44,5 +41,3 @@ const FileIcon: React.FunctionComponent<IProps> = ({ className }) => {
     </svg>
   );
 };
-
-export default FileIcon;

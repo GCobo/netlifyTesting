@@ -1,10 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string
-}
-
-export const JoinbleIcon: React.FunctionComponent<IProps> = ({ className }) => {
+export const JoinbleIcon = ({ className }: IconProps) => {
   return (
     <svg width='240px' height='75px' viewBox='0 0 240 75' className={className}>
       <defs>
@@ -22,7 +19,5 @@ export const JoinbleIcon: React.FunctionComponent<IProps> = ({ className }) => {
         transform='scale(0.06687118 0.06678922)'
       />
     </svg>
-  )
-}
-
-export default JoinbleIcon
+  );
+};

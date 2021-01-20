@@ -18,6 +18,7 @@ export const InputContainer = styled.div<InputContainerProps>`
   width: 100%;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   background-color: ${(props) => props.theme.colors.white};
+  border-radius: 0.25rem;
 
   &:before {
     content: '';

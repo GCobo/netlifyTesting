@@ -1,10 +1,7 @@
 import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string;
-};
-
-const EnglandIcon = ({ className }: IProps) => {
+export const EnglandIcon = ({ className }: IconProps) => {
   return (
     <svg className={className} width='24' height='24' viewBox='0 0 24 24'>
       <path
@@ -26,5 +23,3 @@ const EnglandIcon = ({ className }: IProps) => {
     </svg>
   );
 };
-
-export default EnglandIcon;

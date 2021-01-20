@@ -1,10 +1,7 @@
 import React from 'react';
+import { IconProps } from './model';
 
-type IProps = {
-  className?: string;
-};
-
-const ApplyIcon = ({ className }: IProps) => {
+export const ApplyIcon = ({ className }: IconProps) => {
   return (
     <svg
       width='24px'
@@ -44,5 +41,3 @@ const ApplyIcon = ({ className }: IProps) => {
     </svg>
   );
 };
-
-export default ApplyIcon;
