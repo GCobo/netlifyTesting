@@ -96,3 +96,20 @@ export const HelpLabelStyles = styled(HelpLabel)`
     height: 1.25rem;
   }
 `;
+
+export const PreviewFile = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > svg {
+    width: 3.9rem;
+    height: 3.9rem;
+  }
+
+  > p {
+    ${(props) => props.theme.fonts.regularText('M')};
+    color: ${(props) => props.theme.colors.fontColor};
+  }
+`;

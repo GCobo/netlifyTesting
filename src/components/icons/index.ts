@@ -37,6 +37,7 @@ import SeeMoreIcon from './seeMoreIcon';
 import ThemeIcon from './themeIcon';
 import CloudCheckIcon from './cloudCheckIcon';
 import PlayIcon from './playIcon';
+import FileIcon from './fileIcon';
 
 export {
   SearchIcon,
@@ -77,5 +78,6 @@ export {
   SeeMoreIcon,
   ThemeIcon,
   CloudCheckIcon,
-  PlayIcon
+  PlayIcon,
+  FileIcon
 };

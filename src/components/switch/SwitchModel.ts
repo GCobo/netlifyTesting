@@ -1,4 +1,4 @@
-import { Ref, ChangeEvent } from 'react';
+import { Ref } from 'react';
 
 export type DisabledProps = {
   disabled?: boolean;

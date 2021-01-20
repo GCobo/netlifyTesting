@@ -22,6 +22,7 @@ export interface InputUploadProps
   maxSize?: number;
   onChange?(file: File): void;
   value?: string;
+  fileName?: string;
   onDelete?(): void;
   testId?: string;
   className?: string;
@@ -34,5 +35,6 @@ export enum TypeFiles {
   doc = 'application/msword',
   docx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   xls = '.xls',
-  ttf = '.ttf'
+  ttf = '.ttf',
+  otf = '.otf'
 }

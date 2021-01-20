@@ -1,35 +1,51 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { InputUpload } from './InputUpload';
-import { JoinbleThemeProvider } from '../../providers';
+import { TypeFiles } from './InputUploadModel';
+import { WrapperTheme } from '../../utils/test';
 
 const imageUrl = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png';
+const fileUrl = 'http://www.africau.edu/images/default/sample.pdf';
 
 describe('Input Upload component', () => {
   it('works', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <InputUpload label='This is a label' />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.contains('This is a label').should('be.visible');
   });
 
-  it('should show the preview of the file with value', () => {
+  it('should show the preview of the image with value', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <InputUpload label='Upload file' value={imageUrl} />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.findByRole('img', { src: imageUrl }).should('exist');
   });
 
+  it('should show the preview of the file with value', () => {
+    mount(
+      <WrapperTheme>
+        <InputUpload
+          label='Upload file'
+          value={fileUrl}
+          fileName='sample.pdf'
+        />
+      </WrapperTheme>
+    );
+
+    cy.contains('sample.pdf').should('exist');
+  });
+
   it('should delete the preview of the file', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <InputUpload label='Upload file' value={imageUrl} />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.get('[data-test="delete-file"]').click();
@@ -41,9 +57,9 @@ describe('Input Upload component', () => {
     const errorLabel = 'This format is not supported';
 
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <InputUpload errorLabel={errorLabel} />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.contains(errorLabel).should('exist');
@@ -51,15 +67,23 @@ describe('Input Upload component', () => {
 
   it('should hace circle props', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <InputUpload circle testId='input-upload-circle' />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.get('[data-test="input-upload-circle"]').should(
       'have.css',
       'border-radius',
       '100%'
+    );
+  });
+
+  it('should accept only ttf files', () => {
+    mount(
+      <WrapperTheme>
+        <InputUpload acceptFiles={[TypeFiles.ttf, TypeFiles.otf]} />
+      </WrapperTheme>
     );
   });
 });

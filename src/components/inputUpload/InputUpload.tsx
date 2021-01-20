@@ -8,12 +8,33 @@ import {
   WrapperButtons,
   IconError,
   HelpLabelStyles,
-  LabelInputUpload
+  LabelInputUpload,
+  PreviewFile
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
-import { UploadIcon, TrashIcon } from '../icons';
+import { UploadIcon, TrashIcon, FileIcon } from '../icons';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
+
+type Preview = {
+  image?: string;
+  fileName?: string;
+};
+
+function isFileImage(file: File | Blob) {
+  return file && file['type'].split('/')[0] === 'image';
+}
+
+async function getFile(url: string, name?: string) {
+  const file = await fetch(url).then((res) => res.blob());
+
+  const isImage = isFileImage(file);
+
+  return {
+    image: isImage ? URL.createObjectURL(file) : undefined,
+    fileName: name
+  };
+}
 
 export const InputUpload = ({
   label,
@@ -25,23 +46,34 @@ export const InputUpload = ({
   onChange,
   onDelete,
   value,
+  fileName,
   testId,
   helpLabel,
   circle,
   className
 }: InputUploadProps) => {
-  const [preview, setPreview] = useState<string>();
+  const [preview, setPreview] = useState<Preview>();
+
+  const updateFile = async (url: string, name?: string) => {
+    const preview = await getFile(url, name);
+
+    setPreview(preview);
+  };
 
   useEffect(() => {
     if (value) {
-      setPreview(value);
+      updateFile(value, fileName);
     }
-  }, [value]);
+  }, [value, fileName]);
 
   const onDrop = useCallback((files: File[]) => {
     const file = files[0];
+    const isImage = isFileImage(file);
 
-    setPreview(URL.createObjectURL(file));
+    setPreview({
+      image: isImage ? URL.createObjectURL(file) : undefined,
+      fileName: file.name
+    });
     onChange && onChange(file);
   }, []);
   const { getRootProps, getInputProps, isDragActive, inputRef } = useDropzone({
@@ -77,7 +109,13 @@ export const InputUpload = ({
         <input {...getInputProps()} />
         {preview ? (
           <WrapperDrag>
-            <ImagePreview src={preview} circle={circle} />
+            {preview.image ? (
+              <ImagePreview src={preview.image} circle={circle} />
+            ) : (
+              <PreviewFile>
+                <FileIcon /> <p>{preview.fileName}</p>{' '}
+              </PreviewFile>
+            )}
             <WrapperButtons circle={circle}>
               <ButtonIcon
                 onClick={onUploadFile}
