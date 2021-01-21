@@ -53,7 +53,9 @@ import {
   Tabs,
   TabPanel,
   PlayIcon,
-  AddIcon
+  AddIcon,
+  UploadIcon,
+  PublishIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -310,6 +312,8 @@ const App = () => {
             <ThemeIcon />
             <PlayIcon />
             <AddIcon />
+            <PublishIcon />
+            <UploadIcon />
           </Grid>
         </Section>
         <Section>

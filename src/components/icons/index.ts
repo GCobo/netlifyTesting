@@ -44,3 +44,4 @@ export * from './upIcon';
 export * from './uploadIcon';
 export * from './userIcon';
 export * from './widgetIcon';
+export * from './publishIcon';
