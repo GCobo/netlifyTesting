@@ -21,4 +21,4 @@ export * from './optionMenu';
 export * from './switch/Switch';
 export * from './card/Card';
 export * from './tabs';
-export * from './alert/Alert';
+export * from './alert';
