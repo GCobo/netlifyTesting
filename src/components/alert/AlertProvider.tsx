@@ -4,6 +4,7 @@ import { useTransition, animated } from 'react-spring';
 
 import { Alert, StateAlert } from './Alert';
 import { AlertsContainer } from './Styles';
+import { Portal } from '../portal/Portal';
 
 type OptionsParams = {
   confirm?: string;
@@ -14,6 +15,7 @@ type OptionsParams = {
   type?: StateAlert;
   message?: string;
   testId?: string;
+  time?: number;
 };
 
 export type AlertModel = {
@@ -23,7 +25,7 @@ export type AlertModel = {
 };
 
 type ContextProps = {
-  addAlert(title: string, options?: OptionsParams): AlertModel;
+  addAlert(title: string, options?: OptionsParams): void;
   removeAlert(id: string): void;
   removeAllAlert(): void;
 };
@@ -45,14 +47,14 @@ const Ctx = createContext<ContextProps>({
 });
 
 export const AlertProvider: FunctionComponent<IProps> = ({ children }) => {
-  const [Alerts, setAlerts] = useState<AlertModel[]>([]);
+  const [alerts, setAlerts] = useState<AlertModel[]>([]);
 
   const addAlert = (
     title: string,
     options: OptionsParams = { unique: false, type: StateAlert.warning }
   ) => {
     const id = nanoid();
-    const Alert = {
+    const alert = {
       title,
       id,
       confirm: options.confirm,
@@ -63,14 +65,29 @@ export const AlertProvider: FunctionComponent<IProps> = ({ children }) => {
 
     if (options.delay) {
       setTimeout(() => {
-        setAlerts((Alerts: AlertModel[]) =>
-          options.unique ? [Alert] : [...Alerts, Alert]
+        setAlerts((alerts: AlertModel[]) =>
+          options.unique ? [alert] : [...alerts, alert]
         );
       }, options.delay);
     } else {
-      setAlerts((Alerts: AlertModel[]) =>
-        options.unique ? [Alert] : [...Alerts, Alert]
-      );
+      if (options.unique) {
+        if (alerts.length) {
+          setAlerts([]);
+          setTimeout(() => {
+            setAlerts([alert]);
+          }, 700);
+        } else {
+          setAlerts([alert]);
+        }
+      } else {
+        setAlerts((alerts: AlertModel[]) => [...alerts, alert]);
+      }
+    }
+
+    if (options.time) {
+      setTimeout(() => {
+        removeAlert(id);
+      }, options.time);
     }
 
     return Alert;
@@ -90,7 +107,7 @@ export const AlertProvider: FunctionComponent<IProps> = ({ children }) => {
     removeAlert(id);
   };
 
-  const transitions = useTransition(Alerts, (item: any) => item.id, {
+  const transitions = useTransition(alerts, (item: any) => item.id, {
     from: { transform: 'translate3d(600px,0,0)' },
     enter: { transform: 'translate3d(0,0px,0)' },
     leave: { transform: 'translate3d(500px,0,0)' }
@@ -99,20 +116,22 @@ export const AlertProvider: FunctionComponent<IProps> = ({ children }) => {
   return (
     <Ctx.Provider value={{ addAlert, removeAlert, removeAllAlert }}>
       {children}
-      <AlertsContainer>
-        {transitions.map(({ item, props, key }) => (
-          <animated.div key={key} style={props}>
-            <Alert
-              title={item.title}
-              message={item.options?.message}
-              onClick={onDismiss(item.id)}
-              id={item.id}
-              testId={item.options?.testId}
-              type={item.options?.type}
-            />
-          </animated.div>
-        ))}
-      </AlertsContainer>
+      <Portal show={true}>
+        <AlertsContainer>
+          {transitions.map(({ item, props, key }) => (
+            <animated.div key={key} style={props}>
+              <Alert
+                title={item.title}
+                message={item.options?.message}
+                onClick={onDismiss(item.id)}
+                id={item.id}
+                testId={item.options?.testId}
+                type={item.options?.type}
+              />
+            </animated.div>
+          ))}
+        </AlertsContainer>
+      </Portal>
     </Ctx.Provider>
   );
 };
