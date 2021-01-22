@@ -8,29 +8,38 @@ import {
 } from './Styles';
 
 export type AlertStylesProps = {
-  success?: boolean;
-  error?: boolean;
-  warning?: boolean;
+  type?: StateAlert;
 };
 
+export enum StateAlert {
+  warning = 'warning',
+  error = 'error',
+  success = 'success',
+  info = 'info'
+}
 export interface AlertProps extends AlertStylesProps {
   id: string;
   onClick?(): void;
   title: string;
   message?: string;
+  testId?: string;
 }
 
 export const Alert = ({
   onClick,
   title,
   message,
-  success,
-  error,
-  warning
+  type,
+  testId
 }: AlertProps) => {
   return (
-    <AlertWrapper success={success} error={error} warning={warning}>
-      <AlertButtonClose onClick={onClick} icon={<CloseIcon />} negative />
+    <AlertWrapper type={type} data-test={testId}>
+      <AlertButtonClose
+        onClick={onClick}
+        icon={<CloseIcon />}
+        negative
+        testId='alert-close'
+      />
       <AlertTitle>{title}</AlertTitle>
       <AlertMessage>{message}</AlertMessage>
     </AlertWrapper>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { animated } from 'react-spring/renderprops.cjs';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
-import { AlertStylesProps } from './Alert';
+import { AlertStylesProps, StateAlert } from './Alert';
 
 export const AlertWrapper = styled(animated.div)<AlertStylesProps>`
   position: relative;
@@ -9,11 +9,11 @@ export const AlertWrapper = styled(animated.div)<AlertStylesProps>`
   padding: 0.875rem 1rem;
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
-    props.success
+    props.type === StateAlert.success
       ? props.theme.colors.successColor
-      : props.warning
+      : props.type === StateAlert.warning
       ? props.theme.colors.warningColor
-      : props.error
+      : props.type === StateAlert.error
       ? props.theme.colors.errorColor
       : props.theme.colors.infoColor};
   border-radius: 4px;
@@ -44,10 +44,22 @@ export const AlertButtonClose = styled(ButtonIcon)`
   &:active {
     fill: ${(props) => props.theme.colors.white};
   }
+  cursor: pointer;
 
   svg {
     width: 0.5rem;
     min-width: 0.5rem;
     height: 0.5rem;
+  }
+`;
+
+export const AlertsContainer = styled.div`
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+
+  > div {
+    margin-bottom: 0.5rem;
   }
 `;

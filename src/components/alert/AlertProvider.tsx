@@ -1,6 +1,9 @@
 import React, { useState, createContext, FunctionComponent } from 'react';
+import { nanoid } from 'nanoid';
 import { useTransition, animated } from 'react-spring';
-import { Alert, AlertProps } from './Alert';
+
+import { Alert, StateAlert } from './Alert';
+import { AlertsContainer } from './Styles';
 
 type OptionsParams = {
   confirm?: string;
@@ -8,21 +11,21 @@ type OptionsParams = {
   delay?: number;
   unique?: boolean;
   debug?: string;
+  type?: StateAlert;
+  message?: string;
+  testId?: string;
+};
+
+export type AlertModel = {
+  title: string;
+  id: string;
+  options?: OptionsParams;
 };
 
 type ContextProps = {
-  addToast(
-    message: string,
-    title: string,
-    onClick?: void,
-    success?: boolean,
-    error?: boolean,
-    warning?: boolean,
-    options?: OptionsParams,
-    id?: string
-  ): AlertProps;
-  removeToast(id: string): void;
-  removeAllToast(): void;
+  addAlert(title: string, options?: OptionsParams): AlertModel;
+  removeAlert(id: string): void;
+  removeAllAlert(): void;
 };
 
 type IProps = {
@@ -30,85 +33,88 @@ type IProps = {
 };
 
 const Ctx = createContext<ContextProps>({
-  addToast: () => {
-    return { id: '0', title: 'Title', message: 'Example' };
+  addAlert: () => {
+    return {
+      id: '0',
+      title: 'Title',
+      message: 'Example'
+    };
   },
-  removeToast: () => {},
-  removeAllToast: () => {}
+  removeAlert: () => {},
+  removeAllAlert: () => {}
 });
 
-export const ToastProvider: FunctionComponent<IProps> = ({ children }) => {
-  const [toasts, setToasts] = useState<AlertProps[]>([]);
+export const AlertProvider: FunctionComponent<IProps> = ({ children }) => {
+  const [Alerts, setAlerts] = useState<AlertModel[]>([]);
 
-  const addToast = (
-    message: string,
+  const addAlert = (
     title: string,
-    success?: boolean,
-    error?: boolean,
-    warning?: boolean,
-    onClick?: boolean,
-    options: OptionsParams = { unique: false },
-    id?: string
+    options: OptionsParams = { unique: false, type: StateAlert.warning }
   ) => {
-    const toast = {
-      message,
+    const id = nanoid();
+    const Alert = {
       title,
       id,
-      success,
-      error,
-      warning,
-      onClick,
-      debug: options.debug
+      confirm: options.confirm,
+      onConfirm: options.onConfirm,
+      debug: options.debug,
+      options: options
     };
 
     if (options.delay) {
       setTimeout(() => {
-        setToasts((toasts: AlertProps[]) =>
-          options.unique ? [toast] : [...toasts, toast]
+        setAlerts((Alerts: AlertModel[]) =>
+          options.unique ? [Alert] : [...Alerts, Alert]
         );
       }, options.delay);
     } else {
-      setToasts((toasts: AlertProps[]) =>
-        options.unique ? [toast] : [...toasts, toast]
+      setAlerts((Alerts: AlertModel[]) =>
+        options.unique ? [Alert] : [...Alerts, Alert]
       );
     }
 
-    return toast;
+    return Alert;
   };
 
-  const removeToast = (id: string) => {
-    setToasts((toasts: AlertProps[]) =>
-      toasts.filter((toast: AlertProps) => toast.id !== id)
+  const removeAlert = (id: string) => {
+    setAlerts((Alerts: AlertModel[]) =>
+      Alerts.filter((Alert: AlertModel) => Alert.id !== id)
     );
   };
 
-  const removeAllToast = () => {
-    setToasts([]);
+  const removeAllAlert = () => {
+    setAlerts([]);
   };
 
-  const onDismiss = (id: string) => () => removeToast(id);
+  const onDismiss = (id: string) => () => {
+    removeAlert(id);
+  };
 
-  const transitions = useTransition(toasts, (item: any) => item.id, {
-    from: { transform: 'translate3d(0,-200px,0)' },
+  const transitions = useTransition(Alerts, (item: any) => item.id, {
+    from: { transform: 'translate3d(600px,0,0)' },
     enter: { transform: 'translate3d(0,0px,0)' },
-    leave: { transform: 'translate3d(0,-200px,0)' }
+    leave: { transform: 'translate3d(500px,0,0)' }
   });
 
   return (
-    <Ctx.Provider value={{ addToast, removeToast, removeAllToast }}>
+    <Ctx.Provider value={{ addAlert, removeAlert, removeAllAlert }}>
       {children}
-      {transitions.map(({ item, props, key }) => (
-        <animated.div key={key} style={props}>
-          <Alert
-            title={item.title}
-            message={item.message}
-            onClick={onDismiss(item.id)}
-            id={item.id}
-          />
-        </animated.div>
-      ))}
+      <AlertsContainer>
+        {transitions.map(({ item, props, key }) => (
+          <animated.div key={key} style={props}>
+            <Alert
+              title={item.title}
+              message={item.options?.message}
+              onClick={onDismiss(item.id)}
+              id={item.id}
+              testId={item.options?.testId}
+              type={item.options?.type}
+            />
+          </animated.div>
+        ))}
+      </AlertsContainer>
     </Ctx.Provider>
   );
 };
 
-export const useToast = () => React.useContext(Ctx);
+export const useAlert = () => React.useContext(Ctx);
