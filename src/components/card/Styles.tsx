@@ -12,6 +12,8 @@ export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
   height: ${(props) =>
     props.header ? '20.5rem' : props.imageBig ? '17rem' : '13rem'};
   width: 100%;
+  display: flex;
+  flex-flow: column;
 `;
 
 export const CardBoxStyles = styled.div`
@@ -21,7 +23,7 @@ export const CardBoxStyles = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.white};
   padding: 0.75rem;
-  height: 100%;
+  flex: 1;
 `;
 
 export const CardBoxHeader = styled.div`

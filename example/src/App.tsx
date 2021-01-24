@@ -56,7 +56,8 @@ import {
   AddIcon,
   UploadIcon,
   PublishIcon,
-  Alert
+  Alert,
+  StateAlert
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -428,10 +429,30 @@ const App = () => {
         <Section>
           <Title>Alert</Title>
           <Grid>
-            <Alert id='1' title='title' message='lorem' />
-            <Alert id='2' title='title' message='lorem' success />
-            <Alert id='3' title='title' message='lorem' warning />
-            <Alert id='4' title='title' message='lorem' error />
+            <Alert
+              id='1'
+              title='title'
+              message='lorem'
+              type={StateAlert.warning}
+            />
+            <Alert
+              id='2'
+              title='title'
+              message='lorem'
+              type={StateAlert.error}
+            />
+            <Alert
+              id='3'
+              title='title'
+              message='lorem'
+              type={StateAlert.info}
+            />
+            <Alert
+              id='4'
+              title='title'
+              message='lorem'
+              type={StateAlert.success}
+            />
           </Grid>
         </Section>
         <Section>

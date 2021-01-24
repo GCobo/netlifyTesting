@@ -9,7 +9,6 @@ export const LoadingButton = styled(Loading)<ButtonTypeProps>`
   width: 1.5rem;
   min-width: 1.5rem;
   height: 1.5rem;
-  margin-right: 1rem;
 
   div {
     position: unset;
@@ -53,6 +52,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  grid-column-gap: 1rem;
   cursor: pointer;
   white-space: nowrap;
   color: ${(props) =>
@@ -126,8 +126,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
 `;
 
 export const IconButton = css`
-  width: 1.5rem;
-  min-width: 1.5rem;
-  margin-right: 1rem;
+  width: 1.25rem;
+  min-width: 1.25rem;
   fill: inherit;
 `;
