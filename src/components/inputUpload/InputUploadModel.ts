@@ -26,6 +26,7 @@ export interface InputUploadProps
   onDelete?(): void;
   testId?: string;
   className?: string;
+  loading?: boolean;
 }
 
 export enum TypeFiles {

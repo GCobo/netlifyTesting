@@ -1,4 +1,6 @@
-import React from 'react';
+/// <reference types="Cypress" />
+
+import React, { useEffect, useState } from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { InputUpload } from './InputUpload';
 import { TypeFiles } from './InputUploadModel';
@@ -85,5 +87,37 @@ describe('Input Upload component', () => {
         <InputUpload acceptFiles={[TypeFiles.ttf, TypeFiles.otf]} />
       </WrapperTheme>
     );
+  });
+
+  it('should show loading', () => {
+    const UploadComponent = () => {
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }, []);
+
+      return (
+        <WrapperTheme>
+          <InputUpload loading={loading} />
+        </WrapperTheme>
+      );
+    };
+
+    mount(<UploadComponent />);
+
+    cy.get('input[type="file"]').attachFile({
+      fileContent: 'dummy',
+      fileName: 'testPicture.png',
+      mimeType: 'image/png'
+    });
+
+    cy.get('[data-test="upload-loader"]').should('be.visible');
+
+    cy.wait(1500);
+
+    cy.get('[data-test="upload-loader"]').should('not.exist');
   });
 });

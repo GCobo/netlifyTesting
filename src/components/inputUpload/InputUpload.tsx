@@ -15,6 +15,7 @@ import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon, FileIcon } from '../icons';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
+import { Loading } from '../loading/Loading';
 
 type Preview = {
   image?: string;
@@ -50,7 +51,8 @@ export const InputUpload = ({
   testId,
   helpLabel,
   circle,
-  className
+  className,
+  loading = false
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<Preview>();
 
@@ -108,26 +110,30 @@ export const InputUpload = ({
       >
         <input {...getInputProps()} />
         {preview ? (
-          <WrapperDrag>
-            {preview.image ? (
-              <ImagePreview src={preview.image} circle={circle} />
-            ) : (
-              <PreviewFile>
-                <FileIcon /> <p>{preview.fileName}</p>{' '}
-              </PreviewFile>
-            )}
-            <WrapperButtons circle={circle}>
-              <ButtonIcon
-                onClick={onUploadFile}
-                icon={<UploadIcon className='icon' />}
-              />
-              <ButtonIcon
-                icon={<TrashIcon className='icon' />}
-                onClick={onDeleteFile}
-                testId='delete-file'
-              />
-            </WrapperButtons>
-          </WrapperDrag>
+          loading ? (
+            <Loading testId='upload-loader' />
+          ) : (
+            <WrapperDrag>
+              {preview.image ? (
+                <ImagePreview src={preview.image} circle={circle} />
+              ) : (
+                <PreviewFile>
+                  <FileIcon /> <p>{preview.fileName}</p>{' '}
+                </PreviewFile>
+              )}
+              <WrapperButtons circle={circle}>
+                <ButtonIcon
+                  onClick={onUploadFile}
+                  icon={<UploadIcon className='icon' />}
+                />
+                <ButtonIcon
+                  icon={<TrashIcon className='icon' />}
+                  onClick={onDeleteFile}
+                  testId='delete-file'
+                />
+              </WrapperButtons>
+            </WrapperDrag>
+          )
         ) : (
           <WrapperDrag className='inActive'>
             {!errorLabel ? <UploadIcon /> : <IconError />}
