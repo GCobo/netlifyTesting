@@ -29,13 +29,13 @@ export const ContainerDrag = styled.div<DragZoneProps>`
   width: ${(props) => (props.circle ? '9.56rem' : '10.62rem')};
   height: 9.56rem;
   border: 1px ${(props) => handleBorderColor(props)};
+  background-color: ${(props) => props.theme.colors.white};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 0.87rem;
-  line-height: 1.5rem;
+  ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.greyLight};
   font-weight: 500;
   flex-direction: column;

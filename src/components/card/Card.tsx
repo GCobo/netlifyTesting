@@ -39,7 +39,7 @@ export const Card = ({
       header={header}
     >
       {header && <CardBoxHeader>{header}</CardBoxHeader>}
-      <CardBoxStyles>
+      <CardBoxStyles header={header}>
         <CardBoxLogo imageBig={imageBig}>{image}</CardBoxLogo>
         <div>
           <CardBoxTitle>{title}</CardBoxTitle>

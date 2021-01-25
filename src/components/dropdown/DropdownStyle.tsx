@@ -13,6 +13,7 @@ export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: ${(props) => props.theme.colors.white};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   padding-right: 0.75rem;
@@ -43,7 +44,8 @@ export const Chevron = styled(ChevronDownIcon)<ChevronProps>`
   fill: #6e768e;
   transition: transform 0.2s ease-in-out;
   transform: ${(props) => (props.open ? 'rotate(180deg)' : 'rotate(0)')};
-  min-width: 1.5rem;
+  width: 1.25rem;
+  min-width: 1.25rem;
   height: 1rem;
 `;
 

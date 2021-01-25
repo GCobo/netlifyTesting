@@ -9,11 +9,12 @@ export const GlobalStyles: React.FunctionComponent = () => {
         body {
           font-family: 'Inter';
           overflow-x: hidden;
+          background-color: #b3bdcd;
         }
 
         * {
           &::-webkit-scrollbar-track {
-            background-color: #dadde3;
+            background-color: #8f97a1;
             border-radius: 2px;
             box-shadow: none;
           }

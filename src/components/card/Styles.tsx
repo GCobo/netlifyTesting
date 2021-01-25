@@ -16,7 +16,7 @@ export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
   flex-flow: column;
 `;
 
-export const CardBoxStyles = styled.div`
+export const CardBoxStyles = styled.div<CardBoxWrapperProps>`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -24,6 +24,8 @@ export const CardBoxStyles = styled.div`
   background-color: ${(props) => props.theme.colors.white};
   padding: 0.75rem;
   flex: 1;
+  border-radius: ${(props) =>
+    props.header ? '0 0 0.25rem 0.25rem' : '0.25rem'};
 `;
 
 export const CardBoxHeader = styled.div`
