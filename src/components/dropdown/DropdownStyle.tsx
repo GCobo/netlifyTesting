@@ -13,8 +13,8 @@ export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${(props) => props.theme.colors.white};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  background-color: ${(props) => props.theme.colors.white};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   padding-right: 0.75rem;
   border-radius: 0.25rem;
