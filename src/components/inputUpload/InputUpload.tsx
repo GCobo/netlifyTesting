@@ -136,7 +136,7 @@ export const InputUpload = ({
           )
         ) : (
           <WrapperDrag className='inActive'>
-            {!errorLabel ? <UploadIcon /> : <IconError />}
+            {!errorLabel ? <UploadIcon className='icon' /> : <IconError />}
             <p>{labelDrop}</p>
           </WrapperDrag>
         )}

@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import styled from '@emotion/styled';
 import { lighten } from 'polished';
 import { JoinbleTheme } from '../../styles/Theme';
 
@@ -31,4 +32,9 @@ export const TooltipStyles = css`
       border-right-color: ${BACKGROUND_COLOR} !important;
     }
   }
+`;
+
+export const TooltipWrapper = styled.span`
+  display: block;
+  height: 100%;
 `;

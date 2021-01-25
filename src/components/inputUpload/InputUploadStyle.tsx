@@ -64,6 +64,10 @@ export const WrapperDrag = styled.div`
   position: relative;
   width: 100%;
 
+  .icon {
+    fill: ${(props) => props.theme.colors.fontColor};
+  }
+
   &.inActive {
     padding: 2rem;
   }

@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import ReactTooltip from 'react-tooltip';
-import { TooltipStyles } from './Tooltip.styles';
+import { TooltipStyles, TooltipWrapper } from './Tooltip.styles';
 
 type IProps = {
   label: string;
@@ -23,14 +23,14 @@ export const Tooltip = ({ label, children, id, type, place }: IProps) => {
 
   return (
     <Fragment>
-      <span
+      <TooltipWrapper
         data-tip
         data-for={id}
         onMouseEnter={seeTooltip}
         onMouseLeave={hiddenTooltip}
       >
         {children}
-      </span>
+      </TooltipWrapper>
       {show && (
         <ReactTooltip
           id={id}
