@@ -77,6 +77,14 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
       background-color: ${(props) =>
         props.secondary
           ? props.theme.colors.white
+          : props.error
+          ? props.theme.colors.errorColor
+          : props.success
+          ? props.theme.colors.successColor
+          : props.warning
+          ? props.theme.colors.warningColor
+          : props.white
+          ? props.theme.colors.white
           : props.theme.colors.primaryColor};
       color: ${(props) =>
         props.secondary
