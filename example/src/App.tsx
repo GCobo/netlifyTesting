@@ -170,6 +170,15 @@ const App = () => {
             <Button onClick={() => alert('click')} warning>
               warning
             </Button>
+            <Button onClick={() => alert('click')} disabled error>
+              error
+            </Button>
+            <Button onClick={() => alert('click')} disabled success>
+              success
+            </Button>
+            <Button onClick={() => alert('click')} disabled warning>
+              warning
+            </Button>
           </Grid>
         </Section>
         <Section>
@@ -474,7 +483,7 @@ const App = () => {
               id='card-app'
               title='title'
               lastUpdate='06/01/21'
-              logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              image='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
               actions={
                 <ButtonIcon
                   secondary
@@ -501,7 +510,7 @@ const App = () => {
               title='title'
               lastUpdate='06/01/21'
               imageBig
-              logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              image='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
               actions={
                 <ButtonIcon
                   secondary
@@ -515,7 +524,7 @@ const App = () => {
               title='title'
               lastUpdate='06/01/21'
               imageBig
-              logo='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              image='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
               header={
                 <>
                   <PlayIcon /> <p>Card Header </p>
