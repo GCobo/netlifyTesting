@@ -74,7 +74,11 @@ export const Portal: FunctionComponent<PortalProps> = ({
     }
 
     document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('resize', handleWindowResize);
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleWindowResize);
+    }
+
     document.addEventListener('scroll', handleScroll);
 
     setElement(popupRoot);
@@ -89,7 +93,9 @@ export const Portal: FunctionComponent<PortalProps> = ({
     let timeout;
 
     if (timeout) {
-      window.cancelAnimationFrame(timeout);
+      if (typeof window !== 'undefined') {
+        window.cancelAnimationFrame(timeout);
+      }
     }
 
     timeout = window.requestAnimationFrame(() => {
@@ -124,12 +130,14 @@ export const Portal: FunctionComponent<PortalProps> = ({
       width: position.width
     };
 
+    const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+
     if (mode === PositionMode.left) {
       styles.left = position.left;
     }
 
     if (mode === PositionMode.right) {
-      styles.right = window.innerWidth - position.right!;
+      styles.right = windowWidth - position.right!;
     }
 
     return styles;
