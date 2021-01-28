@@ -51,6 +51,7 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
         checked={check}
         errorLabel={errorLabel}
         onClick={handleCheck}
+        type='button'
       >
         <FlexCenter>
           {labelLeft && (
