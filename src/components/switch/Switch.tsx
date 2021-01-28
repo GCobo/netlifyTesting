@@ -48,6 +48,7 @@ export const Switch = forwardRef(
         onClick={handleCheck}
         data-test={testId}
         errorLabel={errorLabel}
+        type='button'
       >
         <FlexCenter>
           {labelLeft && (
