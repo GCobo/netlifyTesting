@@ -38,21 +38,21 @@ describe('Button component', () => {
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
-      JoinbleTheme.colors.primaryColor
+      JoinbleTheme.colors.primary.greenLight
     );
   });
 
-  it('Should be secondary', () => {
+  it('Should be outline', () => {
     mount(
       <ThemeProvider theme={JoinbleTheme}>
-        <Button testId='button' secondary>
+        <Button testId='button' outline>
           Hello World!
         </Button>
       </ThemeProvider>
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
-      JoinbleTheme.colors.white
+      'transparent'
     );
   });
 
@@ -66,7 +66,7 @@ describe('Button component', () => {
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
-      JoinbleTheme.colors.successColor
+      JoinbleTheme.colors.system.success
     );
   });
   it('Should be warning', () => {
@@ -79,7 +79,7 @@ describe('Button component', () => {
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
-      JoinbleTheme.colors.warningColor
+      JoinbleTheme.colors.system.warning
     );
   });
   it('Should be error', () => {
@@ -92,7 +92,7 @@ describe('Button component', () => {
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
-      JoinbleTheme.colors.errorColor
+      JoinbleTheme.colors.system.error
     );
   });
 

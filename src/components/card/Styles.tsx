@@ -21,7 +21,7 @@ export const CardBoxStyles = styled.div<CardBoxWrapperProps>`
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.system.white};
   padding: 0.75rem;
   flex: 1;
   border-radius: ${(props) =>
@@ -35,8 +35,8 @@ export const CardBoxHeader = styled.div`
   align-items: center;
   grid-column-gap: 0.5rem;
   padding: 0 0.5rem;
-  color: ${(props) => props.theme.colors.fontColor};
-  fill: ${(props) => props.theme.colors.fontColor};
+  color: ${(props) => props.theme.colors.primary.greyDark};
+  fill: ${(props) => props.theme.colors.primary.greyDark};
   ${(props) => props.theme.fonts.regularText('M')};
   font-weight: 500;
 `;
@@ -45,8 +45,8 @@ export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
   width: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   height: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   border-radius: 1.5rem;
-  border: 3px solid ${(props) => props.theme.colors.grey};
-  background-color: ${(props) => props.theme.colors.grey};
+  border: 3px solid ${(props) => props.theme.colors.primary.greyLight};
+  background-color: ${(props) => props.theme.colors.primary.greyLight};
   margin-bottom: ${(props) => (props.imageBig ? '0.75rem' : 0)};
   overflow: hidden;
   display: flex;

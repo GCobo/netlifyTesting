@@ -57,7 +57,10 @@ import {
   UploadIcon,
   PublishIcon,
   Alert,
-  StateAlert
+  StateAlert,
+  ApplyIcon,
+  SeeMoreIcon,
+  FileIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -116,24 +119,20 @@ const App = () => {
           <Title>Button</Title>
           <Grid size={300}>
             <Button onClick={() => alert('click')}>Primary</Button>
-            <Button onClick={() => alert('click')} secondary>
-              secondary
+            <Button onClick={() => alert('click')} outline>
+              outline
             </Button>
             <Button onClick={() => alert('click')} disabled>
               primary disabled
             </Button>
-            <Button onClick={() => alert('click')} secondary disabled>
-              secondary disabled
+            <Button onClick={() => alert('click')} outline disabled>
+              outline disabled
             </Button>
             <Button onClick={() => alert('click')} icon={<PlusIcon />}>
               with Icon
             </Button>
-            <Button
-              onClick={() => alert('click')}
-              secondary
-              icon={<PlusIcon />}
-            >
-              secondary with Icon
+            <Button onClick={() => alert('click')} outline icon={<PlusIcon />}>
+              outline with Icon
             </Button>
             <Button onClick={() => alert('click')} disabled icon={<PlusIcon />}>
               with Icon disabled
@@ -141,15 +140,15 @@ const App = () => {
             <Button
               onClick={() => alert('click')}
               disabled
-              secondary
+              outline
               icon={<PlusIcon />}
             >
-              secondary with Icon disabled
+              outline with Icon disabled
             </Button>
             <Button onClick={() => alert('click')} loading>
               loading...
             </Button>
-            <Button onClick={() => alert('click')} loading secondary>
+            <Button onClick={() => alert('click')} loading outline>
               saving...
             </Button>
             <Button onClick={() => alert('click')} loading error>
@@ -325,6 +324,9 @@ const App = () => {
             <AddIcon />
             <PublishIcon />
             <UploadIcon />
+            <ApplyIcon />
+            <SeeMoreIcon />
+            <FileIcon />
           </Grid>
         </Section>
         <Section>
@@ -354,7 +356,7 @@ const App = () => {
           <Grid>
             <ColorPicker
               label='Select Primary color'
-              value={JoinbleTheme.colors.primaryColor}
+              value={JoinbleTheme.colors.primary.greenLight}
             />
           </Grid>
         </Section>

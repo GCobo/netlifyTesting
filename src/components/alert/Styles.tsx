@@ -7,15 +7,15 @@ export const AlertWrapper = styled(animated.div)<AlertStylesProps>`
   position: relative;
   width: 450px;
   padding: 0.875rem 1rem;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.system.white};
   background-color: ${(props) =>
     props.type === StateAlert.success
-      ? props.theme.colors.successColor
+      ? props.theme.colors.system.success
       : props.type === StateAlert.warning
-      ? props.theme.colors.warningColor
+      ? props.theme.colors.system.warning
       : props.type === StateAlert.error
-      ? props.theme.colors.errorColor
-      : props.theme.colors.infoColor};
+      ? props.theme.colors.system.error
+      : props.theme.colors.system.info};
   border-radius: 4px;
 `;
 
@@ -42,7 +42,7 @@ export const AlertButtonClose = styled(ButtonIcon)`
   right: 0.625rem;
   &:hover,
   &:active {
-    fill: ${(props) => props.theme.colors.white};
+    fill: ${(props) => props.theme.colors.system.white};
   }
   cursor: pointer;
 

@@ -19,10 +19,10 @@ export const Dot1 = styled.div`
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: ${(props) => props.theme.colors.logoColor};
+  background-color: ${(props) => props.theme.colors.primary.greenLight};
   border-radius: 100%;
   box-shadow: ${(props) =>
-    `inset 0px 0px 0px 1px ${props.theme.colors.white} `};
+    `inset 0px 0px 0px 1px ${props.theme.colors.system.white} `};
 
   @keyframes bounce {
     0%,

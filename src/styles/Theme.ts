@@ -3,42 +3,42 @@ import { createFont, Font } from './fonts/font';
 
 export type IThemeProps = {
   colors: {
-    primaryColor: string;
-    secondaryColor: string;
-    fontColor: string;
-    successColor: string;
-    warningColor: string;
-    errorColor: string;
-    infoColor: string;
-    white: string;
-    black: string;
-    grey: string;
-    greyLight: string;
-    logoColor: string;
-    focusShadow: string;
-    titleColor: string;
-    activeLink: string;
+    primary: {
+      greenLight: string;
+      greenDark: string;
+      greyDark: string;
+      greyLight: string;
+      greyLighest: string;
+    };
+    system: {
+      success: string;
+      warning: string;
+      error: string;
+      info: string;
+      white: string;
+      black: string;
+    };
   };
   fonts: Font;
 };
 
 export const JoinbleTheme: IThemeProps = {
   colors: {
-    primaryColor: '#0C66FF',
-    secondaryColor: '#5bc0be',
-    fontColor: '#6E768E',
-    successColor: '#1ABC9C',
-    warningColor: '#F7B84B',
-    errorColor: '#F1556C',
-    infoColor: '#4FC6E1',
-    white: '#fff',
-    black: '#000',
-    grey: '#E1E4E8',
-    greyLight: '#B0B7C3',
-    logoColor: '#e6ec33',
-    focusShadow: 'rgba(66, 153, 225, 0.6)',
-    titleColor: '#323A46',
-    activeLink: '#CDD31B'
+    primary: {
+      greenLight: '#CDD31B',
+      greenDark: '#7A7E0A',
+      greyDark: '#6E768E',
+      greyLight: '#B0B7C3',
+      greyLighest: '#F3F7F9'
+    },
+    system: {
+      success: '#1ABC9C',
+      warning: '#F7B84B',
+      error: '#F1556C',
+      info: '#4FC6E1',
+      white: '#fff',
+      black: '#000'
+    }
   },
   fonts: createFont({
     headline: {

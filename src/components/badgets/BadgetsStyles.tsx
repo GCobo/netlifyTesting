@@ -5,7 +5,7 @@ type IProps = {
 };
 
 export const BadgetsStyle = styled.div<IProps>`
-  background-color: ${(props) => props.theme.colors.errorColor};
+  background-color: ${(props) => props.theme.colors.system.error};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ export const BadgetsStyle = styled.div<IProps>`
     props.number && props.number > 9 ? '0.625rem' : '100%'};
 
   span {
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.system.white};
     font-size: 0.625rem;
     display: block;
   }

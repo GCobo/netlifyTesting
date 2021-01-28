@@ -19,7 +19,7 @@ export const OptionMenuItemStyles = styled.a`
   display: flex;
   align-items: center;
   ${(props) => props.theme.fonts.regularText('M')};
-  color: ${(props) => props.theme.colors.fontColor};
+  color: ${(props) => props.theme.colors.primary.greyDark};
   white-space: nowrap;
   cursor: pointer;
   grid-column-gap: 0.5rem;

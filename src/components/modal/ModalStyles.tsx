@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Portal } from '../portal/Portal';
 
 export const ModalStyles = styled.div`
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.system.white};
   padding: 1.5rem;
   border-radius: 0.25rem;
   box-shadow: 0 8px 20px 0 rgba(6, 62, 91, 0.2);
@@ -22,7 +22,7 @@ export const PortalStyles = styled(Portal)`
 
 export const ModalHeader = styled.div`
   font-size: 1rem;
-  color: ${(props) => props.theme.colors.titleColor};
+  color: ${(props) => props.theme.colors.primary.greyDark};
   font-weight: bold;
   margin-bottom: 1rem;
   display: flex;
@@ -34,12 +34,12 @@ export const ButtonClose = styled.button`
 
   &:hover {
     > svg {
-      fill: ${(props) => props.theme.colors.primaryColor};
+      fill: ${(props) => props.theme.colors.primary.greenLight};
     }
   }
 
   > svg {
-    fill: ${(props) => props.theme.colors.fontColor};
+    fill: ${(props) => props.theme.colors.primary.greyDark};
     width: 10px;
     height: 10px;
   }

@@ -16,7 +16,7 @@ export const HiddenCheckbox = styled.input`
 
 export const LabelCheckbox = styled.label<ILabelProps>`
   ${(props) => props.theme.fonts.regularText('M')};
-  color: ${(props) => props.theme.colors.fontColor};
+  color: ${(props) => props.theme.colors.primary.greyDark};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
 
   &:first-letter {
@@ -39,32 +39,32 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
   svg {
     fill: ${(props) =>
       props.checked
-        ? props.theme.colors.white
+        ? props.theme.colors.system.white
         : props.errorLabel
-        ? props.theme.colors.errorColor
-        : props.theme.colors.fontColor};
+        ? props.theme.colors.system.error
+        : props.theme.colors.primary.greyDark};
   }
 
   &:hover {
     ${LabelCheckbox} {
       color: ${(props) =>
         !props.disabled
-          ? props.theme.colors.primaryColor
-          : props.theme.colors.fontColor};
+          ? props.theme.colors.primary.greenLight
+          : props.theme.colors.primary.greyDark};
     }
     svg {
       fill: ${(props) =>
         props.checked
-          ? props.theme.colors.white
+          ? props.theme.colors.system.white
           : props.disabled
-          ? props.theme.colors.fontColor
-          : props.theme.colors.primaryColor};
+          ? props.theme.colors.primary.greyDark
+          : props.theme.colors.primary.greenLight};
     }
   }
 `;
 
 export const CheckedBoxChecked = styled.div`
-  background-color: ${(props) => props.theme.colors.primaryColor};
+  background-color: ${(props) => props.theme.colors.primary.greenLight};
   width: 1rem;
   height: 1rem;
   display: flex;
@@ -73,7 +73,7 @@ export const CheckedBoxChecked = styled.div`
   border-radius: 2px;
 
   svg {
-    fill: ${(props) => props.theme.colors.white};
+    fill: ${(props) => props.theme.colors.system.white};
     width: 1rem;
     height: 0.75rem;
   }

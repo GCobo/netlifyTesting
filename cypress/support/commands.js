@@ -20,7 +20,8 @@ Cypress.Commands.overwrite(
   (originalFn, subject, expectation, ...args) => {
     const customMatchers = {
       'have.backgroundColor': compareColor(args[0], 'backgroundColor'),
-      'have.color': compareColor(args[0], 'color')
+      'have.color': compareColor(args[0], 'color'),
+      'have.fill': compareColor(args[0], 'fill')
     };
 
     // See if the expectation is a string and if it is a member of Jest's expect

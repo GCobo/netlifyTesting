@@ -13,7 +13,7 @@ export const ModalColor = styled.div`
     height: 2.5rem !important;
     padding: 0 0.75rem !important;
     ${(props) => props.theme.fonts.regularText('M')};
-    background: ${(props) => props.theme.colors.white};
+    background: ${(props) => props.theme.colors.system.white};
 
     .block-picker {
       box-shadow: none !important;

@@ -14,7 +14,7 @@ export const ErrorLabel: React.FunctionComponent<IProps> = ({
     ${(props) => props.theme.fonts.regularText('S')}
     font-weight: 500;
     line-height: 1.25rem;
-    color: ${(props) => props.theme.colors.errorColor};
+    color: ${(props) => props.theme.colors.system.error};
 
     &:first-letter {
       text-transform: capitalize;

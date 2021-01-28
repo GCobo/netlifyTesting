@@ -25,7 +25,7 @@ type IProps = {
 export const ColorPicker: FunctionComponent<IProps> = forwardRef(
   (
     {
-      value = JoinbleTheme.colors.primaryColor,
+      value = JoinbleTheme.colors.primary.greenLight,
       name,
       label = 'Select color',
       className,

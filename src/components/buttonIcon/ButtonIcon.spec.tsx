@@ -6,6 +6,7 @@ import { mount } from 'cypress-react-unit-test';
 import { ButtonIcon } from './ButtonIcon';
 import { JoinbleThemeProvider } from '../../providers';
 import { SearchIcon } from '../icons';
+import { JoinbleTheme } from '../../styles/Theme';
 
 describe('Button Icon', () => {
   it('works', () => {
@@ -39,7 +40,7 @@ describe('Button Icon', () => {
     );
 
     cy.get('[data-test="button-primary"]');
-    cy.should('have.css', 'fill', 'rgb(12, 102, 255)');
+    cy.should('have.fill', JoinbleTheme.colors.primary.greenLight);
   });
 
   it('Button Secondary match with secondary color', () => {
@@ -50,7 +51,7 @@ describe('Button Icon', () => {
     );
 
     cy.get('[data-test="button-secondary"]');
-    cy.should('have.css', 'fill', 'rgb(110, 118, 142)');
+    cy.should('have.fill', JoinbleTheme.colors.primary.greyDark);
   });
 
   it('Button Negative match with negative color', () => {
@@ -60,6 +61,6 @@ describe('Button Icon', () => {
       </JoinbleThemeProvider>
     );
     cy.get('[data-test="button-secondary"]');
-    cy.should('have.css', 'fill', 'rgb(255, 255, 255)');
+    cy.should('have.fill', JoinbleTheme.colors.system.white);
   });
 });

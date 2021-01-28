@@ -7,17 +7,17 @@ import { Label } from '../input/InputStyle';
 
 const handleBorderColor = (props: any) => {
   if (props.errorLabel) {
-    return `solid ${props.theme.colors.errorColor}`;
+    return `solid ${props.theme.colors.system.error}`;
   }
   if (props.isDragActive) {
-    return `dashed ${props.theme.colors.grey}`;
+    return `dashed ${props.theme.colors.primary.greyLight}`;
   }
 
   if (props.isActive) {
-    return `solid ${props.theme.colors.primaryColor}`;
+    return `solid ${props.theme.colors.primary.greenLight}`;
   }
 
-  return `solid ${props.theme.colors.grey}`;
+  return `solid ${props.theme.colors.primary.greyLight}`;
 };
 
 export const LabelInputUpload = styled(Label)`
@@ -29,20 +29,20 @@ export const ContainerDrag = styled.div<DragZoneProps>`
   width: ${(props) => (props.circle ? '9.56rem' : '10.62rem')};
   height: 9.56rem;
   border: 1px ${(props) => handleBorderColor(props)};
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.system.white};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   ${(props) => props.theme.fonts.regularText('M')};
-  color: ${(props) => props.theme.colors.greyLight};
+  color: ${(props) => props.theme.colors.primary.greyLight};
   font-weight: 500;
   flex-direction: column;
 
   &:hover,
   &:focus {
-    border: 1px solid ${(props) => props.theme.colors.primaryColor};
+    border: 1px solid ${(props) => props.theme.colors.primary.greenLight};
     outline: none;
   }
 `;
@@ -65,7 +65,7 @@ export const WrapperDrag = styled.div`
   width: 100%;
 
   .icon {
-    fill: ${(props) => props.theme.colors.fontColor};
+    fill: ${(props) => props.theme.colors.primary.greyDark};
   }
 
   &.inActive {
@@ -82,12 +82,12 @@ export const WrapperButtons = styled.div<InputUploadCircleProps>`
   right: ${(props) => (props.circle ? '3rem' : '0.5rem')};
 
   .icon {
-    fill: ${(props) => props.theme.colors.fontColor};
+    fill: ${(props) => props.theme.colors.primary.greyDark};
   }
 `;
 
 export const IconError = styled(AlertIcon)`
-  fill: ${(props) => props.theme.colors.errorColor};
+  fill: ${(props) => props.theme.colors.system.error};
   width: 2.5rem;
   height: 2.5rem;
 `;
@@ -114,6 +114,6 @@ export const PreviewFile = styled.div`
 
   > p {
     ${(props) => props.theme.fonts.regularText('M')};
-    color: ${(props) => props.theme.colors.fontColor};
+    color: ${(props) => props.theme.colors.primary.greyDark};
   }
 `;

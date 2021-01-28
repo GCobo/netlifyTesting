@@ -9,7 +9,7 @@ export const GlobalStyles: React.FunctionComponent = () => {
         body {
           font-family: 'Inter';
           overflow-x: hidden;
-          background-color: #b3bdcd;
+          background-color: #ffffff;
         }
 
         * {

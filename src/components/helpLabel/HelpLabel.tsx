@@ -20,10 +20,10 @@ export const HelpLabel: React.FunctionComponent<IProps> = ({
       width: 1.5rem;
       min-width: 1.5rem;
       height: 1.5rem;
-      fill: ${(props) => props.theme.colors.greyLight};
+      fill: ${(props) => props.theme.colors.primary.greyLight};
     }
     p {
-      color: ${(props) => props.theme.colors.greyLight};
+      color: ${(props) => props.theme.colors.primary.greyLight};
       ${(props) => props.theme.fonts.regularText('S')};
       font-weight: 500;
       line-height: 1.25rem;

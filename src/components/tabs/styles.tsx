@@ -11,7 +11,7 @@ export const TabStytles = styled.div`
 
 export const TabWrapper = styled.ul`
   display: flex;
-  box-shadow: inset 0px -2px 0px 0px ${(props) => props.theme.colors.grey};
+  box-shadow: inset 0px -2px 0px 0px ${(props) => props.theme.colors.primary.greyLight};
   position: relative;
   width: 100%;
 `;
@@ -21,23 +21,23 @@ export const TabBar = styled.span`
   bottom: 0;
   height: 2px;
   width: 6.25rem;
-  background-color: ${(props) => props.theme.colors.activeLink};
+  background-color: ${(props) => props.theme.colors.primary.greenLight};
   transition: left 0.2s ease-in-out;
 `;
 
 export const TabsStyle = styled.button<TabsStyleProps>`
   color: ${(props) =>
     props.disabled
-      ? props.theme.colors.grey
+      ? props.theme.colors.primary.greyLight
       : props.active
-      ? props.theme.colors.activeLink
-      : props.theme.colors.fontColor};
+      ? props.theme.colors.primary.greenLight
+      : props.theme.colors.primary.greyDark};
   fill: ${(props) =>
     props.disabled
-      ? props.theme.colors.grey
+      ? props.theme.colors.primary.greyLight
       : props.active
-      ? props.theme.colors.activeLink
-      : props.theme.colors.fontColor};
+      ? props.theme.colors.primary.greenLight
+      : props.theme.colors.primary.greyDark};
   ${(props) => props.theme.fonts.regularText('M')};
   display: flex;
   align-items: center;
@@ -54,9 +54,13 @@ export const TabsStyle = styled.button<TabsStyleProps>`
 
   &:hover {
     color: ${(props) =>
-      props.disabled ? props.theme.colors.grey : props.theme.colors.activeLink};
+      props.disabled
+        ? props.theme.colors.primary.greyLight
+        : props.theme.colors.primary.greenLight};
     fill: ${(props) =>
-      props.disabled ? props.theme.colors.grey : props.theme.colors.activeLink};
+      props.disabled
+        ? props.theme.colors.primary.greyLight
+        : props.theme.colors.primary.greenLight};
   }
 
   svg {

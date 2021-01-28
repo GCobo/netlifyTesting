@@ -17,7 +17,7 @@ export const InputContainer = styled.div<InputContainerProps>`
   height: 2.5rem;
   width: 100%;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.system.white};
   border-radius: 0.25rem;
 
   &:before {
@@ -29,7 +29,9 @@ export const InputContainer = styled.div<InputContainerProps>`
     pointer-events: none;
     box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
-    props.errorLabel ? props.theme.colors.errorColor : props.theme.colors.grey
+    props.errorLabel
+      ? props.theme.colors.system.error
+      : props.theme.colors.primary.greyLight
   }
 `};
   }
@@ -38,8 +40,8 @@ export const InputContainer = styled.div<InputContainerProps>`
     :before {
       box-shadow: ${(props) =>
         props.disabled
-          ? `inset 0px 0px 0px 1px ${props.theme.colors.grey}`
-          : `inset 0px 0px 0px 1px ${props.theme.colors.primaryColor}`};
+          ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
+          : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
       border: none;
       outline: none;
     }
@@ -49,8 +51,8 @@ export const InputContainer = styled.div<InputContainerProps>`
     min-width: 1.25rem;
     fill: ${(props) =>
       props.errorLabel
-        ? props.theme.colors.errorColor
-        : props.theme.colors.primaryColor};
+        ? props.theme.colors.system.error
+        : props.theme.colors.primary.greenLight};
     margin-right: 0.75rem;
   }
 `;
@@ -58,7 +60,7 @@ export const InputContainer = styled.div<InputContainerProps>`
 export const InputStyle = styled.input`
   border: none;
   ${(props) => props.theme.fonts.regularText('M')};
-  color: ${(props) => props.theme.colors.fontColor};
+  color: ${(props) => props.theme.colors.primary.greyDark};
   background-color: transparent;
   height: 2.5rem;
   width: 100%;
@@ -76,7 +78,7 @@ export const InputStyle = styled.input`
   }
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.greyLight};
+    color: ${(props) => props.theme.colors.primary.greyLight};
   }
 
   &:focus {
@@ -89,7 +91,7 @@ export const Label = styled.label`
   margin-bottom: 0.25rem;
   ${(props) => props.theme.fonts.regularText('S')};
   font-weight: 500;
-  color: ${(props) => props.theme.colors.fontColor};
+  color: ${(props) => props.theme.colors.primary.greyDark};
 
   &:first-letter {
     text-transform: capitalize;

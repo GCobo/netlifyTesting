@@ -15,18 +15,18 @@ export const ButtonIconStyle = styled.button<IProps>`
   position: ${(props) => (props.badgetsNumber ? 'relative' : 'unset')};
   fill: ${(props) =>
     props.negative
-      ? props.theme.colors.white
+      ? props.theme.colors.system.white
       : props.secondary
-      ? props.theme.colors.fontColor
-      : props.theme.colors.primaryColor};
+      ? props.theme.colors.primary.greyDark
+      : props.theme.colors.primary.greenLight};
 
   &:active,
   &:hover {
     outline: none;
     fill: ${(props) =>
       props.negative || props.secondary
-        ? props.theme.colors.primaryColor
-        : darken(0.1, props.theme.colors.primaryColor)};
+        ? props.theme.colors.primary.greenLight
+        : darken(0.1, props.theme.colors.primary.greenLight)};
   }
 
   &:focus {
