@@ -45,3 +45,4 @@ export * from './uploadIcon';
 export * from './userIcon';
 export * from './widgetIcon';
 export * from './publishIcon';
+export * from './goBackIcon';
