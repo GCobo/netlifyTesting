@@ -67,7 +67,7 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
             name={name}
             onChange={() => {}}
             ref={ref}
-            data-test={testId}
+            testId={testId}
             disabled={disabled}
           />
         </ColorPickerNative>
