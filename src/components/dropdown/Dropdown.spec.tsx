@@ -32,7 +32,7 @@ describe('Dropdown component', () => {
       </JoinbleThemeProvider>
     );
     cy.get('[data-test="dropdown"]').click();
-    cy.get('[data-test="dropdown-item-1"]').click();
+    cy.get('[data-test="dropdown-item-test"]').click();
     cy.get('[data-test="dropdown"]').contains('test').should('be.visible');
   });
 
