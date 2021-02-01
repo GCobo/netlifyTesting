@@ -33,6 +33,7 @@ export const OptionMenuItem = ({
         data-test={testId}
         aria-selected={active}
         aria-disabled={disabled}
+        type='button'
       >
         {children}
       </OptionMenuItemStyles>
