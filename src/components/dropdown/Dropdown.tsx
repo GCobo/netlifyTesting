@@ -67,6 +67,7 @@ export const Dropdown = ({
         data-test={testId}
         ref={buttonMenuRef}
         disabled={disabled}
+        type='button'
       >
         <span>{innerPlaceholder && innerPlaceholder}</span>
         <Chevron open={open} />
