@@ -85,7 +85,7 @@ export const Dropdown = ({
                   <OptionMenuItem
                     onClick={() => handleInnerValue(option.value)}
                     key={option.value}
-                    testId={`dropdown-item-${option.value}`}
+                    testId={`dropdown-item-${option.name}`}
                   >
                     {option.name}
                   </OptionMenuItem>
