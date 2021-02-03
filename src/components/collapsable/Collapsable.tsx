@@ -8,7 +8,7 @@ import React, {
 
 import { CollabsableItem } from './CollapsableItem';
 import { ChevronDownIcon } from '../icons';
-import { CollapseWrapper, CollapsableItemHeader } from './styles';
+import { CollapseWrapper, CollapsableItemHeader } from './Styles';
 
 type IProps = {
   children: React.ReactElement[];
