@@ -22,3 +22,4 @@ export * from './switch/Switch';
 export * from './card/Card';
 export * from './tabs';
 export * from './alert';
+export * from './collapsable';
