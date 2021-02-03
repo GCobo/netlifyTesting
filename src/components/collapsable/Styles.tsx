@@ -10,7 +10,6 @@ export const CollapseWrapper = styled.ul`
   > li {
     display: flex;
     flex-direction: column;
-    opacity: 0.4;
   }
 `;
 
