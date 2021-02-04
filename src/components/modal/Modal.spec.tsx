@@ -4,7 +4,7 @@ import { Modal } from './Modal';
 import { Button } from '../button/Button';
 import { JoinbleThemeProvider } from '../../providers';
 
-const ModalComponent = () => {
+const ModalComponent = ({ lateral = false }: any) => {
   const [show, setShow] = useState<boolean>(false);
 
   const onShowModal = () => {
@@ -17,6 +17,7 @@ const ModalComponent = () => {
       <Modal
         show={show}
         title='Title Modal'
+        lateral={lateral}
         onChangeShow={(s) => setShow(s)}
         actions={
           <>
@@ -34,6 +35,14 @@ const ModalComponent = () => {
 describe('Modal component', () => {
   it('works', () => {
     mount(<ModalComponent />);
+
+    cy.get('button').click();
+
+    cy.contains('This is the modal').should('be.visible');
+  });
+
+  it('should show modal lateral', () => {
+    mount(<ModalComponent lateral />);
 
     cy.get('button').click();
 
