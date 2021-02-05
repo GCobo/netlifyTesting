@@ -15,7 +15,7 @@ export const HiddenCheckbox = styled.input`
 `;
 
 export const LabelCheckbox = styled.label<ILabelProps>`
-  ${(props) => props.theme.fonts.regularText('M')};
+  ${(props) => props.theme.fonts.regularText('S')};
   color: ${(props) => props.theme.colors.primary.greyDark};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
 

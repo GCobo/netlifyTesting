@@ -6,6 +6,7 @@ export type IThemeProps = {
     primary: {
       greenLight: string;
       greenDark: string;
+      greyDarkest: string;
       greyDark: string;
       greyLight: string;
       greyLighest: string;
@@ -19,6 +20,7 @@ export type IThemeProps = {
       black: string;
     };
   };
+  mainShadow: string;
   fonts: Font;
 };
 
@@ -27,6 +29,7 @@ export const JoinbleTheme: IThemeProps = {
     primary: {
       greenLight: '#CDD31B',
       greenDark: '#7A7E0A',
+      greyDarkest: '#111112',
       greyDark: '#6E768E',
       greyLight: '#B0B7C3',
       greyLighest: '#F3F7F9'
@@ -40,6 +43,7 @@ export const JoinbleTheme: IThemeProps = {
       black: '#000'
     }
   },
+  mainShadow: '0 0.75rem 6rem rgb(17 17 18 / 3 %)',
   fonts: createFont({
     headline: {
       L: 36,

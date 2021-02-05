@@ -11,6 +11,9 @@ type IProps = {
 
 export const ButtonIconStyle = styled.button<IProps>`
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   position: ${(props) => (props.badgetsNumber ? 'relative' : 'unset')};
   fill: ${(props) =>
