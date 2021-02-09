@@ -12,8 +12,8 @@ import {
 } from './Styles';
 
 export interface CardsProps extends CardBoxWrapperProps {
-  title: string;
   lastUpdate: string;
+  title: string;
   id?: string;
   actions: ReactNode;
   testId?: string;
