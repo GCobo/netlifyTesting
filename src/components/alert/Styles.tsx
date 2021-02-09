@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { animated } from 'react-spring/renderprops.cjs';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
-import { AlertStylesProps, StateAlert } from './Alert';
+import { AlertStylesProps, StateAlert } from './AlertModel';
 
 export const AlertWrapper = styled(animated.div)<AlertStylesProps>`
   position: relative;

@@ -7,16 +7,8 @@ import {
   AlertWrapper
 } from './Styles';
 
-export type AlertStylesProps = {
-  type?: StateAlert;
-};
+import { AlertStylesProps } from './AlertModel';
 
-export enum StateAlert {
-  warning = 'warning',
-  error = 'error',
-  success = 'success',
-  info = 'info'
-}
 export interface AlertProps extends AlertStylesProps {
   id: string;
   onClick?(): void;

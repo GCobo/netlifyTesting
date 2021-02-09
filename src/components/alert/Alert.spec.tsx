@@ -4,7 +4,8 @@ import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { WrapperTheme } from '../../utils/test';
 
-import { Alert, StateAlert } from './Alert';
+import { Alert } from './Alert';
+import { StateAlert } from './AlertModel';
 import { AlertProvider, useAlert } from './AlertProvider';
 
 const titleAlert = 'This is a example de alert';

@@ -2,8 +2,9 @@ import React, { useState, createContext, FunctionComponent } from 'react';
 import { nanoid } from 'nanoid';
 import { useTransition, animated } from 'react-spring';
 
-import { Alert, StateAlert } from './Alert';
+import { Alert } from './Alert';
 import { AlertsContainer } from './Styles';
+import { StateAlert } from './AlertModel';
 import { Portal } from '../portal/Portal';
 
 type OptionsParams = {
