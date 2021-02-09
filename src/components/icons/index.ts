@@ -46,3 +46,4 @@ export * from './userIcon';
 export * from './widgetIcon';
 export * from './publishIcon';
 export * from './goBackIcon';
+export * from './shopingIcon';
