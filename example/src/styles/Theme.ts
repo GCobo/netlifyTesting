@@ -43,7 +43,7 @@ export const JoinbleTheme: IThemeProps = {
       black: '#000'
     }
   },
-  mainShadow: '0 0.75rem 6rem rgb(17 17 18 / 3 %)',
+  mainShadow: '0 0.75rem 6rem rgb(17 17 18 / 3%)',
   fonts: createFont({
     headline: {
       L: 36,

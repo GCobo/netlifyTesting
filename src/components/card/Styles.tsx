@@ -8,7 +8,7 @@ export type CardBoxWrapperProps = {
 
 export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
   border-radius: 0.25rem;
-  box-shadow: 1px 1px 2px rgba(56, 65, 74, 0.3);
+  box-shadow: ${(props) => props.theme.mainShadow};
   height: ${(props) =>
     props.header ? '20.5rem' : props.imageBig ? '17rem' : '13rem'};
   width: 100%;
@@ -45,8 +45,8 @@ export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
   width: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   height: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
   border-radius: 1.5rem;
-  border: 3px solid ${(props) => props.theme.colors.primary.greyLight};
-  background-color: ${(props) => props.theme.colors.primary.greyLight};
+  border: 3px solid ${(props) => props.theme.colors.primary.greyLighest};
+  background-color: ${(props) => props.theme.colors.primary.greyLighest};
   margin-bottom: ${(props) => (props.imageBig ? '0.75rem' : 0)};
   overflow: hidden;
   display: flex;

@@ -19,7 +19,7 @@ export * from './portal';
 export * from './inputUpload';
 export * from './optionMenu';
 export * from './switch/Switch';
-export * from './card/Card';
+export * from './card';
 export * from './tabs';
 export * from './alert';
 export * from './collapsable';
