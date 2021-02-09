@@ -44,7 +44,7 @@ export const Modal: React.FunctionComponent<IProps> = ({
 
   const onCloseModal = () => {
     setAnimationShow(false);
-    setTimeout(() => setInnerShow(false), 300);
+    setTimeout(() => setInnerShow(false), 400);
   };
 
   const { ...props } = useSpring({
@@ -72,7 +72,7 @@ export const Modal: React.FunctionComponent<IProps> = ({
       <ModalStyles
         className={className}
         style={{ ...otherProps }}
-        lateral={lateral}
+        lateral={lateral ? true : undefined}
       >
         <ModalHeader lateral={lateral}>
           {title && title}

@@ -2,11 +2,12 @@
 
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
-import { Map, Marker, Location } from './Map';
+import { Map } from './Map';
+import { Location, Point } from './model';
 import { WrapperTheme } from '../../utils/test';
 
 const position: Location = [40.42707293240109, -3.6970299207975854];
-const markers: Marker[] = [
+const markers: Point[] = [
   {
     id: 1,
     title: 'Example1',

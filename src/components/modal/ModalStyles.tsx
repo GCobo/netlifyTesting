@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Portal } from '../portal/Portal';
 import { animated } from 'react-spring';
 
-export const ModalStyles = styled(animated.div)<{ lateral: Boolean }>`
+export const ModalStyles = styled(animated.div)<{ lateral?: Boolean }>`
   background-color: ${(props) => props.theme.colors.system.white};
   padding: ${(props) => (props.lateral ? 0 : `1.5rem`)};
   border-radius: 0.25rem;

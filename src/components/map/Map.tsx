@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+
 import { iconMarker } from './Marker';
+import { MapEvent } from './MapEvents';
+import { Point, Location } from './model';
 
 const addDependencies = () => {
   var head = document.head;
@@ -22,23 +24,18 @@ const addDependencies = () => {
   }
 };
 
-export type Location = [number, number];
-export type Marker = {
-  id: string | number;
-  title?: string;
-  position: Location;
-};
-
 type IProps = {
   position?: Location;
-  markers?: Marker[];
+  markers?: Point[];
   zoom?: number;
+  onClickMap?(position: Location): void;
 };
 
 export const Map = ({
   position = [51.505, -0.09],
   markers = [],
-  zoom = 13
+  zoom = 13,
+  onClickMap
 }: IProps) => {
   useEffect(() => {
     addDependencies();
@@ -51,11 +48,12 @@ export const Map = ({
       scrollWheelZoom={true}
       style={{ width: '100%', height: '100%' }}
     >
+      <MapEvent onClickMap={onClickMap} />
       <TileLayer
         attribution={`<a href="http://osm.org/copyright">OpenStreetMap</a> contributors`}
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      {markers.map((marker: Marker) => (
+      {markers.map((marker: Point) => (
         <Marker key={marker.id} icon={iconMarker} position={marker.position}>
           {marker.title && <Popup>{marker.title}</Popup>}
         </Marker>

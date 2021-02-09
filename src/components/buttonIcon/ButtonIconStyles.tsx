@@ -10,7 +10,7 @@ type IProps = {
 };
 
 export const ButtonIconStyle = styled.button<IProps>`
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'inherit' : 'pointer')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +31,8 @@ export const ButtonIconStyle = styled.button<IProps>`
         ? props.theme.colors.primary.greenLight
         : darken(0.1, props.theme.colors.primary.greenLight)};
   }
+
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   &:focus {
     outline: none;

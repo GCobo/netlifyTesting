@@ -21,6 +21,7 @@ export type ButtonIconProps = {
   testId?: string;
   tooltip?: string;
   bigIcon?: boolean;
+  disabled?: boolean;
 };
 
 export const ButtonIcon = forwardRef(
@@ -32,6 +33,7 @@ export const ButtonIcon = forwardRef(
       testId,
       tooltip,
       bigIcon,
+      disabled,
       ...rest
     }: ButtonIconProps,
     ref: Ref<HTMLButtonElement>
@@ -44,6 +46,7 @@ export const ButtonIcon = forwardRef(
         ref={ref}
         data-test={testId}
         bigIcon={bigIcon}
+        disabled={disabled}
       >
         {badgetsNumber ? (
           <Fragment>
