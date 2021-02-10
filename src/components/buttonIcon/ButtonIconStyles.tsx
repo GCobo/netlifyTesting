@@ -10,7 +10,7 @@ type IProps = {
 };
 
 export const ButtonIconStyle = styled.button<IProps>`
-  cursor: ${(props) => (props.disabled ? 'inherit' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   display: flex;
   align-items: center;
   justify-content: center;
