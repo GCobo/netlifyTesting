@@ -58,6 +58,12 @@ export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
     width: 100%;
     height: 100%;
   }
+
+  svg {
+    width: 5rem;
+    height: 5rem;
+    fill: ${(props) => props.theme.colors.primary.greyDark};
+  }
 `;
 
 export const CardBoxTitle = styled.h3`

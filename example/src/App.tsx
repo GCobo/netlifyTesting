@@ -60,7 +60,8 @@ import {
   StateAlert,
   ApplyIcon,
   SeeMoreIcon,
-  FileIcon
+  FileIcon,
+  ShopingIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -473,6 +474,7 @@ const App = () => {
               id='card-app'
               title='title'
               lastUpdate='06/01/21'
+              image={<ShopingIcon />}
               actions={
                 <ButtonIcon
                   secondary
@@ -499,6 +501,7 @@ const App = () => {
               title='title'
               lastUpdate='06/01/21'
               imageBig
+              image={<ShopingIcon />}
               actions={
                 <ButtonIcon
                   secondary
