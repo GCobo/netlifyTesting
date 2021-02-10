@@ -1,4 +1,10 @@
-import React, { useState, ChangeEvent, useEffect, useMemo } from 'react';
+import React, {
+  useState,
+  ChangeEvent,
+  useEffect,
+  useMemo,
+  Fragment
+} from 'react';
 import { Button } from '../button';
 
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
@@ -178,7 +184,7 @@ export const InputMap = ({
         title={texts.titleMap}
         onChangeShow={(show) => setShowModal(show)}
         actions={
-          <>
+          <Fragment>
             <Button
               outline
               onClick={() => setShowModal((show) => !show)}
@@ -194,7 +200,7 @@ export const InputMap = ({
             >
               {texts.buttonSuccess}
             </Button>
-          </>
+          </Fragment>
         }
       >
         <MapContainer>
