@@ -23,5 +23,3 @@ export * from './card';
 export * from './tabs';
 export * from './alert';
 export * from './collapsable';
-export * from './map';
-export * from './inputMap/InputMap';
