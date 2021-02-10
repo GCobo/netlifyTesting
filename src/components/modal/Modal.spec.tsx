@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { Modal } from './Modal';
 import { Button } from '../button/Button';
@@ -20,10 +20,10 @@ const ModalComponent = ({ lateral = false }: any) => {
         lateral={lateral}
         onChangeShow={(s) => setShow(s)}
         actions={
-          <>
+          <Fragment>
             <Button>Cancel</Button>
             <Button>Delete</Button>
-          </>
+          </Fragment>
         }
       >
         This is the modal
