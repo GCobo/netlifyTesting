@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import {
   OptionMenuItemList,
   OptionMenuItemStyles
@@ -20,6 +20,12 @@ export const OptionMenuItem = ({
     }
   };
 
+  const handleMouseDown = (
+    event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    event.stopPropagation();
+  };
+
   return (
     <OptionMenuItemList
       className={className}
@@ -29,6 +35,7 @@ export const OptionMenuItem = ({
       <OptionMenuItemStyles
         as={href ? 'a' : 'button'}
         onClick={handleClick}
+        onMouseDown={handleMouseDown}
         href={href && href}
         data-test={testId}
         aria-selected={active}

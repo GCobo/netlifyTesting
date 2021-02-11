@@ -22,7 +22,7 @@ export const Dropdown = ({
   helpLabel,
   value,
   className,
-  options,
+  options = [],
   testId,
   disabled,
   onChange,
