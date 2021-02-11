@@ -9,10 +9,11 @@ export const Button = ({
   loading,
   children,
   testId,
+  ref,
   ...rest
 }: ButtonProps) => {
   return (
-    <ButtonStyles type={type} {...rest} data-test={testId}>
+    <ButtonStyles type={type} {...rest} data-test={testId} ref={ref}>
       {loading && <LoadingButton {...rest} />}
       {!loading &&
         icon &&

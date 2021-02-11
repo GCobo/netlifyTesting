@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, ReactNode } from 'react';
+import { MouseEvent, ReactElement, ReactNode, Ref } from 'react';
 
 export type ButtonTypeProps = {
   outline?: boolean;
@@ -16,4 +16,5 @@ export interface ButtonProps extends ButtonTypeProps {
   loading?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
+  ref?: Ref<HTMLButtonElement>;
 }
