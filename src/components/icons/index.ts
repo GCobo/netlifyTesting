@@ -47,3 +47,4 @@ export * from './widgetIcon';
 export * from './publishIcon';
 export * from './goBackIcon';
 export * from './shopingIcon';
+export * from './settingIcon';
