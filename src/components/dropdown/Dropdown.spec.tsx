@@ -25,7 +25,7 @@ describe('Dropdown component', () => {
     cy.get('[data-test="dropdown-menu"]').should('be.visible');
   });
 
-  it('Value should be change onclik', () => {
+  it('Value should be change onclick', () => {
     mount(
       <JoinbleThemeProvider>
         <Dropdown label='label' options={optionsDropdown} testId='dropdown' />
@@ -33,6 +33,7 @@ describe('Dropdown component', () => {
     );
     cy.get('[data-test="dropdown"]').click();
     cy.get('[data-test="dropdown-item-test"]').click();
+    cy.get('input').should('have.value', '1');
     cy.get('[data-test="dropdown"]').contains('test').should('be.visible');
   });
 

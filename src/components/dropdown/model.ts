@@ -1,3 +1,5 @@
+import { Ref } from 'react';
+
 export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   label?: string;
   helpLabel?: string;
@@ -7,6 +9,7 @@ export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   testId?: string;
   onChange?(value: string | number): void;
   placeholder?: string;
+  ref?: Ref<HTMLInputElement>;
 }
 
 export type DropdownStyleProps = {
