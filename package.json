@@ -20,7 +20,7 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "semantic-release": "semantic-release",
-    "publish:preview": "semanctic-release -d"
+    "publish:preview": "semantic-release -d"
   },
   "peerDependencies": {
     "@emotion/babel-preset-css-prop": "11.0.0",
