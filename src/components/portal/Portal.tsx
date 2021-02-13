@@ -5,7 +5,8 @@ import React, {
   useCallback,
   useRef,
   Fragment,
-  useMemo
+  useMemo,
+  MouseEvent
 } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -151,6 +152,9 @@ export const Portal: FunctionComponent<PortalProps> = ({
               ref={popupRef}
               className={className}
               style={getStyles}
+              onMouseDown={(event: MouseEvent<HTMLDivElement>) =>
+                event.stopPropagation()
+              }
             >
               {children}
             </PortalContainer>
