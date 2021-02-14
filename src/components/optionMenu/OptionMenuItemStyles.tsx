@@ -13,7 +13,7 @@ export const OptionMenuItemList = styled.li<ItemProps>`
   ${(props) => props.disabled && 'opacity: 0.5'}
 `;
 
-export const OptionMenuItemStyles = styled.a`
+export const OptionMenuItemStyles = styled.a<{ disabled?: boolean }>`
   width: 100%;
   height: ${HEIGHT_OPTION_ITEM};
   display: flex;
@@ -21,11 +21,12 @@ export const OptionMenuItemStyles = styled.a`
   ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.primary.greyDark};
   white-space: nowrap;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'hand' : 'pointer')};
   grid-column-gap: 0.5rem;
   padding: 0 0.25rem;
 
   &:hover {
-    background-color: #f3f7f9;
+    background-color: ${(props) =>
+      props.disabled ? 'transparent' : '#f3f7f9'};
   }
 `;
