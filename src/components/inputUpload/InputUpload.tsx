@@ -9,7 +9,8 @@ import {
   IconError,
   HelpLabelStyles,
   LabelInputUpload,
-  PreviewFile
+  PreviewFile,
+  Container
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon, FileIcon } from '../icons';
@@ -50,9 +51,10 @@ export const InputUpload = ({
   fileName,
   testId,
   helpLabel,
-  circle,
+  circle = false,
   className,
-  loading = false
+  loading = false,
+  horizontal = false
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<Preview>();
 
@@ -96,11 +98,12 @@ export const InputUpload = ({
   };
 
   return (
-    <div className={className}>
+    <Container className={className} horizontal={horizontal}>
       {label && <LabelInputUpload htmlFor={id}>{label}</LabelInputUpload>}
 
       <ContainerDrag
         circle={circle}
+        horizontal={horizontal}
         {...getRootProps()}
         errorLabel={errorLabel}
         isDragActive={isDragActive}
@@ -114,14 +117,14 @@ export const InputUpload = ({
             <Loading testId='upload-loader' />
           ) : (
             <WrapperDrag>
-              {preview.image ? (
+              {preview.image && !horizontal ? (
                 <ImagePreview src={preview.image} circle={circle} />
               ) : (
-                <PreviewFile>
+                <PreviewFile horizontal={horizontal}>
                   <FileIcon /> <p>{preview.fileName}</p>{' '}
                 </PreviewFile>
               )}
-              <WrapperButtons circle={circle}>
+              <WrapperButtons circle={circle} horizontal={horizontal}>
                 <ButtonIcon
                   onClick={onUploadFile}
                   icon={<UploadIcon className='icon' />}
@@ -135,7 +138,7 @@ export const InputUpload = ({
             </WrapperDrag>
           )
         ) : (
-          <WrapperDrag className='inActive'>
+          <WrapperDrag className={'inActive'} horizontal={horizontal}>
             {!errorLabel ? <UploadIcon className='icon' /> : <IconError />}
             <p>{labelDrop}</p>
           </WrapperDrag>
@@ -143,6 +146,6 @@ export const InputUpload = ({
       </ContainerDrag>
       {helpLabel && <HelpLabelStyles label={helpLabel} />}
       {errorLabel && <ErrorLabel label={errorLabel} />}
-    </div>
+    </Container>
   );
 };

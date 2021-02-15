@@ -41,6 +41,7 @@ export const OptionMenuItem = ({
         aria-selected={active}
         aria-disabled={disabled}
         type='button'
+        disabled={disabled}
       >
         {children}
       </OptionMenuItemStyles>

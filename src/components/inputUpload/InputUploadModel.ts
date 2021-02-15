@@ -4,6 +4,7 @@ export type ErrorLabelProps = {
 
 export type InputUploadCircleProps = {
   circle?: boolean;
+  horizontal?: boolean;
 };
 
 export interface DragZoneProps extends ErrorLabelProps, InputUploadCircleProps {

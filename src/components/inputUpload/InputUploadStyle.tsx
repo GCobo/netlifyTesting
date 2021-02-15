@@ -24,10 +24,31 @@ export const LabelInputUpload = styled(Label)`
   display: block;
 `;
 
+const getWidth = (props: DragZoneProps) => {
+  if (props.circle) {
+    return '9.56rem';
+  }
+
+  if (props.horizontal) {
+    return '100%';
+  }
+
+  return '10.62rem';
+};
+
+export const Container = styled.div<{ horizontal?: boolean }>`
+  ${(props) =>
+    props.horizontal &&
+    `
+   display: flex;
+   flex: 1; 
+  `}
+`;
+
 export const ContainerDrag = styled.div<DragZoneProps>`
   border-radius: ${(props) => (props.circle ? '100%' : '0.25rem')};
-  width: ${(props) => (props.circle ? '9.56rem' : '10.62rem')};
-  height: 9.56rem;
+  width: ${(props) => getWidth(props)};
+  height: ${(props) => (props.horizontal ? '2.5rem' : '9.56rem')};
   border: 1px ${(props) => handleBorderColor(props)};
   background-color: ${(props) => props.theme.colors.system.white};
   cursor: pointer;
@@ -54,7 +75,7 @@ export const ImagePreview = styled.img<InputUploadCircleProps>`
   border-radius: ${(props) => (props.circle ? '100%' : 0)};
 `;
 
-export const WrapperDrag = styled.div`
+export const WrapperDrag = styled.div<{ horizontal?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,13 +84,20 @@ export const WrapperDrag = styled.div`
   flex: 1;
   position: relative;
   width: 100%;
+  flex-direction: ${(props) => (props.horizontal ? 'row-reverse' : 'column')};
 
   .icon {
     fill: ${(props) => props.theme.colors.primary.greyDark};
+
+    ${(props) => props.horizontal && `margin-left: auto; position: relative`}
+  }
+
+  p {
+    ${(props) => props.horizontal && `margin-right: auto; padding-right: 1rem`}
   }
 
   &.inActive {
-    padding: 2rem;
+    padding: ${(props) => (props.horizontal ? '0 1rem' : '2rem')};
   }
 `;
 
@@ -78,7 +106,7 @@ export const WrapperButtons = styled.div<InputUploadCircleProps>`
   align-items: center;
   grid-column-gap: 0.5rem;
   position: absolute;
-  bottom: ${(props) => (props.circle ? '0.5rem' : 0)};
+  bottom: ${(props) => (props.circle || props.horizontal ? '0.5rem' : 0)};
   right: ${(props) => (props.circle ? '3rem' : '0.5rem')};
 
   .icon {
@@ -101,15 +129,25 @@ export const HelpLabelStyles = styled(HelpLabel)`
   }
 `;
 
-export const PreviewFile = styled.div`
+export const PreviewFile = styled.div<{ horizontal?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.horizontal ? 'row' : 'column')};
+
+  ${(props) =>
+    props.horizontal &&
+    `
+    margin-right: auto;
+    padding-left: 1rem;
+  
+  `}
 
   > svg {
     width: 3.9rem;
     height: 3.9rem;
+
+    ${(props) => props.horizontal && 'display: none'}
   }
 
   > p {

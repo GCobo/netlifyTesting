@@ -120,4 +120,16 @@ describe('Input Upload component', () => {
 
     cy.get('[data-test="upload-loader"]').should('not.exist');
   });
+
+  it('should show horizontal inpupt upload', () => {
+    const UploadComponent = () => {
+      return (
+        <WrapperTheme>
+          <InputUpload horizontal />
+        </WrapperTheme>
+      );
+    };
+
+    mount(<UploadComponent />);
+  });
 });
