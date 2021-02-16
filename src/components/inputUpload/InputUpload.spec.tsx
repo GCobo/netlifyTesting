@@ -121,15 +121,17 @@ describe('Input Upload component', () => {
     cy.get('[data-test="upload-loader"]').should('not.exist');
   });
 
-  it('should show horizontal inpupt upload', () => {
+  it('should show horizontal inpupt upload with value name', () => {
     const UploadComponent = () => {
       return (
         <WrapperTheme>
-          <InputUpload horizontal />
+          <InputUpload horizontal valueName='epfGUQNLL5EW8WzBewLte.json' />
         </WrapperTheme>
       );
     };
 
     mount(<UploadComponent />);
+
+    cy.contains('epfGUQNLL5EW8WzBewLte.json').should('be.visible');
   });
 });

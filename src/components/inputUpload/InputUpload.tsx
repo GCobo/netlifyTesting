@@ -30,6 +30,8 @@ function isFileImage(file: File | Blob) {
 async function getFile(url: string, name?: string) {
   const file = await fetch(url).then((res) => res.blob());
 
+  console.log(file);
+
   const isImage = isFileImage(file);
 
   return {
@@ -48,6 +50,7 @@ export const InputUpload = ({
   onChange,
   onDelete,
   value,
+  valueName,
   fileName,
   testId,
   helpLabel,
@@ -60,7 +63,6 @@ export const InputUpload = ({
 
   const updateFile = async (url: string, name?: string) => {
     const preview = await getFile(url, name);
-
     setPreview(preview);
   };
 
@@ -69,6 +71,13 @@ export const InputUpload = ({
       updateFile(value, fileName);
     }
   }, [value, fileName]);
+
+  useEffect(() => {
+    valueName &&
+      setPreview({
+        fileName: valueName
+      });
+  }, [valueName]);
 
   const onDrop = useCallback((files: File[]) => {
     const file = files[0];
