@@ -49,3 +49,5 @@ export * from './goBackIcon';
 export * from './shopingIcon';
 export * from './settingIcon';
 export * from './shoppingPurchasedIcon';
+export * from './arrowDownIcon';
+export * from './arrowUpIcon';
