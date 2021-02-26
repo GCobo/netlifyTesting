@@ -34,6 +34,15 @@ describe('Switch Component', () => {
     cy.get('[data-test="Switch" ] label').should('be.visible');
   });
 
+  it('Should have label', () => {
+    mount(
+      <ThemeProvider theme={JoinbleTheme}>
+        <Switch label='label Right' id='label' testId='Switch' />
+      </ThemeProvider>
+    );
+    cy.get('[data-test="Switch" ] label').should('be.visible');
+  });
+
   it('Should be checked', () => {
     mount(
       <ThemeProvider theme={JoinbleTheme}>

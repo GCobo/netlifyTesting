@@ -18,7 +18,7 @@ export * from './tooltip/Tooltip';
 export * from './portal';
 export * from './inputUpload';
 export * from './optionMenu';
-export * from './switch/Switch';
+export * from './switch';
 export * from './card';
 export * from './tabs';
 export * from './alert';

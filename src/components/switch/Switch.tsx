@@ -17,6 +17,7 @@ export const Switch = forwardRef(
     {
       labelLeft,
       labelRight,
+      label,
       checked = false,
       disabled,
       id,
@@ -38,6 +39,8 @@ export const Switch = forwardRef(
     const handleCheck = () => {
       setCheck(!check);
     };
+
+    const innerLabel = label || labelRight;
 
     return (
       <SwitchContainer
@@ -74,9 +77,9 @@ export const Switch = forwardRef(
           >
             <SwitchBoxBox checked={check} />
           </SwitchBoxContainer>
-          {labelRight && (
+          {innerLabel && (
             <LabelSwitch disabled={disabled} id={id}>
-              {labelRight}
+              {innerLabel}
             </LabelSwitch>
           )}
         </FlexCenter>

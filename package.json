@@ -17,6 +17,7 @@
     "prepare": "run-s build",
     "test": "cypress run --headless",
     "test:open": "cypress open",
+    "test:run": "node ./scripts/cyrun.js",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "semantic-release": "semantic-release",
@@ -60,7 +61,7 @@
     "@typescript-eslint/parser": "2.26.0",
     "babel-eslint": "10.1.0",
     "cross-env": "7.0.2",
-    "cypress": "6.1.0",
+    "cypress": "6.5.0",
     "cypress-file-upload": "^5.0.2",
     "cypress-react-unit-test": "4.16.10",
     "cz-customizable": "6.2.1",
@@ -84,8 +85,10 @@
     "react-dom": "17.0.1",
     "react-scripts": "3.4.1",
     "semantic-release": "17.1.1",
+    "shelljs": "^0.8.4",
     "tslint": "6.1.2",
-    "typescript": "3.7.5"
+    "typescript": "3.7.5",
+    "inquirer": "8.0.0"
   },
   "files": [
     "dist"

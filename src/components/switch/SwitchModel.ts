@@ -4,22 +4,24 @@ export type DisabledProps = {
   disabled?: boolean;
 };
 
-export interface LabelProps extends DisabledProps {
+export type LabelProps = DisabledProps & {
   labelLeft?: string;
   labelRight?: string;
+  label?: string;
   id: string;
-}
+};
 
-export interface SwitchBoxProps extends DisabledProps {
+export type SwitchBoxProps = DisabledProps & {
   checked?: boolean;
   errorLabel?: string;
-}
+};
 
-export interface SwitchProps extends SwitchBoxProps, LabelProps {
-  className?: string;
-  testId?: string;
-  ref?: Ref<HTMLInputElement>;
-  name?: string;
-  value?: number | string;
-  onChange?(value: boolean): void;
-}
+export type SwitchProps = SwitchBoxProps &
+  LabelProps & {
+    className?: string;
+    testId?: string;
+    ref?: Ref<HTMLInputElement>;
+    name?: string;
+    value?: number | string;
+    onChange?(value: boolean): void;
+  };
