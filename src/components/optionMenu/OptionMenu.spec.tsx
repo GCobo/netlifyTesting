@@ -2,25 +2,10 @@ import React from 'react';
 import { OptionMenu } from './OptionMenu';
 import { OptionMenuItem } from './OptionMenuItem';
 import { mount } from 'cypress-react-unit-test';
-import { JoinbleThemeProvider } from '../../providers';
 import { SearchIcon } from '../icons';
 import { PositionMode } from '../portal';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
-
-const WrapperTheme = ({ children }: any) => (
-  <JoinbleThemeProvider>
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '500px'
-      }}
-    >
-      {children}
-    </div>
-  </JoinbleThemeProvider>
-);
+import { WrapperTheme } from '../../utils/test';
 
 describe('Option Menu component', () => {
   it('Click icon works', () => {
@@ -118,5 +103,30 @@ describe('Option Menu component', () => {
       'aria-disabled',
       'true'
     );
+  });
+
+  it('should be disabled', () => {
+    mount(
+      <WrapperTheme>
+        <OptionMenu
+          testId='button-option-menu'
+          renderItem={<ButtonIcon icon={<SearchIcon />} disabled />}
+          position={PositionMode.right}
+        >
+          <OptionMenuItem
+            disabled
+            testId='disabled-option'
+            onClick={() => {
+              console.log('onclick');
+            }}
+          >
+            Example 1
+          </OptionMenuItem>
+          <OptionMenuItem>Example 2</OptionMenuItem>
+        </OptionMenu>
+      </WrapperTheme>
+    );
+
+    cy.get('[data-test="button-option-menu"]').should('be.disabled');
   });
 });

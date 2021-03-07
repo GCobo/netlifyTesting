@@ -4,28 +4,28 @@ import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 
 import { ButtonIcon } from './ButtonIcon';
-import { JoinbleThemeProvider } from '../../providers';
 import { SearchIcon } from '../icons';
 import { JoinbleTheme } from '../../styles/Theme';
+import { WrapperTheme } from '../../utils/test';
 
 describe('Button Icon', () => {
   it('works', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <ButtonIcon icon={<SearchIcon />} />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
   });
 
   it('should show a tooltip', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <ButtonIcon
           icon={<SearchIcon />}
           tooltip='alert'
           testId='button-alert'
         />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.get('[data-test="button-alert"]').invoke('show').click();
@@ -34,9 +34,9 @@ describe('Button Icon', () => {
 
   it('Button Primary match with primary color ', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <ButtonIcon icon={<SearchIcon />} testId='button-primary' />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.get('[data-test="button-primary"]');
@@ -45,9 +45,9 @@ describe('Button Icon', () => {
 
   it('Button Secondary match with secondary color', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <ButtonIcon icon={<SearchIcon />} testId='button-secondary' secondary />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
 
     cy.get('[data-test="button-secondary"]');
@@ -56,11 +56,21 @@ describe('Button Icon', () => {
 
   it('Button Negative match with negative color', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <ButtonIcon icon={<SearchIcon />} testId='button-secondary' negative />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button-secondary"]');
     cy.should('have.fill', JoinbleTheme.colors.system.white);
+  });
+
+  it('Button Should be disabled', () => {
+    mount(
+      <WrapperTheme>
+        <ButtonIcon icon={<SearchIcon />} testId='button-secondary' disabled />
+      </WrapperTheme>
+    );
+
+    cy.get('button').should('be.disabled');
   });
 });

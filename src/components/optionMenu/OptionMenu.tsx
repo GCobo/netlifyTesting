@@ -1,4 +1,10 @@
-import React, { Fragment, useRef, useState, MouseEvent } from 'react';
+import React, {
+  Fragment,
+  useRef,
+  useState,
+  MouseEvent,
+  cloneElement
+} from 'react';
 import { animated, Transition } from 'react-spring/renderprops.cjs';
 import { PositionMode } from '../portal';
 import { Portal } from '../portal/Portal';
@@ -13,11 +19,11 @@ export const OptionMenu = ({
   widthAuto = true,
   testId
 }: OptionMenuProps) => {
-  const buttonMenuRef = useRef<HTMLButtonElement>(null);
+  const buttonMenuRef = useRef<HTMLDivElement>(null);
 
   const [openPortal, setOpenPortal] = useState<boolean>(false);
 
-  const handleSetOpenPortal = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleSetOpenPortal = (event: MouseEvent<HTMLDivElement>) => {
     setOpenPortal(!openPortal);
     event.stopPropagation();
   };
@@ -27,16 +33,13 @@ export const OptionMenu = ({
 
   return (
     <Fragment>
-      <button
-        className={className}
-        onClick={handleSetOpenPortal}
-        data-test={testId}
-        ref={buttonMenuRef}
-        aria-controls='option-menu'
-        aria-haspopup='true'
-      >
-        {renderItem}
-      </button>
+      {cloneElement(renderItem as React.ReactElement, {
+        onClick: handleSetOpenPortal,
+        className,
+        testId,
+        buttonMenuRef,
+        ref: buttonMenuRef
+      })}
       <Portal
         mode={position}
         actionRef={buttonMenuRef}

@@ -27,7 +27,9 @@ export const ButtonIconStyle = styled.button<IProps>`
   &:hover {
     outline: none;
     fill: ${(props) =>
-      props.negative || props.secondary
+      props.disabled
+        ? 'auto'
+        : props.negative || props.secondary
         ? props.theme.colors.primary.greenLight
         : darken(0.1, props.theme.colors.primary.greenLight)};
   }
