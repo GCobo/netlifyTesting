@@ -138,6 +138,7 @@ describe('Option Menu component', () => {
         <OptionMenu
           testId='button-option-menu'
           open={open}
+          updateOpen={(open) => setOpen(open)}
           renderItem={<ButtonIcon icon={<SearchIcon />} />}
           position={PositionMode.right}
         >

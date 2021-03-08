@@ -19,11 +19,16 @@ export const OptionMenu = ({
   renderItem,
   widthAuto = true,
   open = false,
-  testId
+  testId,
+  updateOpen
 }: OptionMenuProps) => {
   const buttonMenuRef = useRef(null);
 
   const [openPortal, setOpenPortal] = useState<boolean>(open);
+
+  useEffect(() => {
+    updateOpen && updateOpen(openPortal);
+  }, [openPortal]);
 
   useEffect(() => {
     setOpenPortal(open);

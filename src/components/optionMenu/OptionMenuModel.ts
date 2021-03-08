@@ -9,6 +9,7 @@ export interface OptionMenuProps {
   widthAuto?: boolean;
   className?: string;
   open?: boolean;
+  updateOpen?(open: boolean): void;
 }
 
 export interface ItemProps {
