@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OptionMenu } from './OptionMenu';
 import { OptionMenuItem } from './OptionMenuItem';
 import { mount } from 'cypress-react-unit-test';
@@ -128,5 +128,38 @@ describe('Option Menu component', () => {
     );
 
     cy.get('[data-test="button-option-menu"]').should('be.disabled');
+  });
+
+  it('should enabed option menu from outside', () => {
+    const TestComponent = () => {
+      const [open, setOpen] = useState<boolean>(true);
+
+      return (
+        <OptionMenu
+          testId='button-option-menu'
+          open={open}
+          renderItem={<ButtonIcon icon={<SearchIcon />} />}
+          position={PositionMode.right}
+        >
+          <OptionMenuItem testId='option' onClick={() => setOpen(false)}>
+            Example 1
+          </OptionMenuItem>
+          <OptionMenuItem>Example 2</OptionMenuItem>
+        </OptionMenu>
+      );
+    };
+
+    mount(
+      <WrapperTheme>
+        <TestComponent />
+      </WrapperTheme>
+    );
+
+    cy.contains('Example 1').should('be.visible');
+    cy.contains('Example 2').should('be.visible');
+    cy.get('[data-test="option"]').click();
+
+    cy.contains('Example 1').should('not.exist');
+    cy.contains('Example 2').should('not.exist');
   });
 });

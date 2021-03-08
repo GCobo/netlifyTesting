@@ -3,7 +3,8 @@ import React, {
   useRef,
   useState,
   MouseEvent,
-  cloneElement
+  cloneElement,
+  useEffect
 } from 'react';
 import { animated, Transition } from 'react-spring/renderprops.cjs';
 import { PositionMode } from '../portal';
@@ -17,11 +18,16 @@ export const OptionMenu = ({
   position = PositionMode.left,
   renderItem,
   widthAuto = true,
+  open = false,
   testId
 }: OptionMenuProps) => {
-  const buttonMenuRef = useRef<HTMLDivElement>(null);
+  const buttonMenuRef = useRef(null);
 
-  const [openPortal, setOpenPortal] = useState<boolean>(false);
+  const [openPortal, setOpenPortal] = useState<boolean>(open);
+
+  useEffect(() => {
+    setOpenPortal(open);
+  }, [open]);
 
   const handleSetOpenPortal = (event: MouseEvent<HTMLDivElement>) => {
     setOpenPortal(!openPortal);

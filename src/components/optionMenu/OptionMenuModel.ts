@@ -8,6 +8,7 @@ export interface OptionMenuProps {
   renderItem: ReactNode;
   widthAuto?: boolean;
   className?: string;
+  open?: boolean;
 }
 
 export interface ItemProps {

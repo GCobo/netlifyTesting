@@ -22,6 +22,7 @@ export type ButtonIconProps = {
   tooltip?: string;
   bigIcon?: boolean;
   disabled?: boolean;
+  ref: Ref<HTMLButtonElement>;
 };
 
 export const ButtonIcon = forwardRef(
