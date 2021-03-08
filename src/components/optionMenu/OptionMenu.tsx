@@ -48,34 +48,35 @@ export const OptionMenu = ({
         onClick: handleSetOpenPortal,
         className,
         testId,
-        buttonMenuRef,
         ref: buttonMenuRef
       })}
-      <Portal
-        mode={position}
-        actionRef={buttonMenuRef}
-        onClickOutside={hiddenSetOpenPortal}
-        widthAuto={widthAuto}
-        show
-      >
-        <Transition
-          items={openPortal}
-          from={{ opacity: 0, transform: 'translate3d(0%, 20px, 0px)' }}
-          enter={{ opacity: 1, transform: 'translate3d(0%, 0%, 0px)' }}
-          leave={{ opacity: 0, transform: 'translate3d(0%, 20px, 0px)' }}
+      {openPortal && (
+        <Portal
+          mode={position}
+          actionRef={buttonMenuRef}
+          onClickOutside={hiddenSetOpenPortal}
+          widthAuto={widthAuto}
+          show
         >
-          {(openPortal) =>
-            openPortal &&
-            ((props) => (
-              <animated.div style={{ ...props }}>
-                <OptionsMenuWrapper id='option-menu'>
-                  {children}
-                </OptionsMenuWrapper>
-              </animated.div>
-            ))
-          }
-        </Transition>
-      </Portal>
+          <Transition
+            items={openPortal}
+            from={{ opacity: 0, transform: 'translate3d(0%, 20px, 0px)' }}
+            enter={{ opacity: 1, transform: 'translate3d(0%, 0%, 0px)' }}
+            leave={{ opacity: 0, transform: 'translate3d(0%, 20px, 0px)' }}
+          >
+            {(openPortal) =>
+              openPortal &&
+              ((props) => (
+                <animated.div style={{ ...props }}>
+                  <OptionsMenuWrapper id='option-menu'>
+                    {children}
+                  </OptionsMenuWrapper>
+                </animated.div>
+              ))
+            }
+          </Transition>
+        </Portal>
+      )}
     </Fragment>
   );
 };

@@ -133,20 +133,29 @@ describe('Option Menu component', () => {
   it('should enabed option menu from outside', () => {
     const TestComponent = () => {
       const [open, setOpen] = useState<boolean>(true);
+      const [height, setHeight] = useState<boolean>(false);
 
       return (
-        <OptionMenu
-          testId='button-option-menu'
-          open={open}
-          updateOpen={(open) => setOpen(open)}
-          renderItem={<ButtonIcon icon={<SearchIcon />} />}
-          position={PositionMode.right}
-        >
-          <OptionMenuItem testId='option' onClick={() => setOpen(false)}>
-            Example 1
-          </OptionMenuItem>
-          <OptionMenuItem>Example 2</OptionMenuItem>
-        </OptionMenu>
+        <div style={{ marginTop: height ? '300px' : '10px' }}>
+          <OptionMenu
+            testId='button-option-menu'
+            open={open}
+            updateOpen={(open) => setOpen(open)}
+            renderItem={<ButtonIcon icon={<SearchIcon />} />}
+            position={PositionMode.right}
+          >
+            <OptionMenuItem
+              testId='option'
+              onClick={() => {
+                setOpen(false);
+                setHeight(true);
+              }}
+            >
+              Example 1
+            </OptionMenuItem>
+            <OptionMenuItem>Example 2</OptionMenuItem>
+          </OptionMenu>
+        </div>
       );
     };
 
