@@ -1,4 +1,10 @@
-import React, { useState, forwardRef, FunctionComponent, Ref } from 'react';
+import React, {
+  useState,
+  forwardRef,
+  FunctionComponent,
+  Ref,
+  MouseEvent
+} from 'react';
 import ColorPickerNative from 'rc-color-picker';
 
 import {
@@ -54,23 +60,30 @@ export const ColorPicker: FunctionComponent<IProps> = forwardRef(
         <BoxColor
           style={{ backgroundColor: innerValue ? innerValue : value }}
         />
-        <ColorPickerNative
-          color={innerValue ? innerValue : ''}
-          onChange={handleChangeComplete}
-          placement={placement}
-          animation='slide-up'
+        <div
+          onMouseDown={(event: MouseEvent<HTMLDivElement>) =>
+            event.stopPropagation()
+          }
         >
-          <InputColorPicker
-            label={label}
-            onClick={handleOpenColorPicker}
-            value={innerValue ? innerValue : value}
-            name={name}
-            onChange={() => {}}
-            ref={ref}
-            testId={testId}
-            disabled={disabled}
-          />
-        </ColorPickerNative>
+          <ColorPickerNative
+            color={innerValue ? innerValue : ''}
+            onChange={handleChangeComplete}
+            placement={placement}
+            animation='slide-up'
+            style={{ zIndex: '9999999' } as any}
+          >
+            <InputColorPicker
+              label={label}
+              onClick={handleOpenColorPicker}
+              value={innerValue ? innerValue : value}
+              name={name}
+              onChange={() => {}}
+              ref={ref}
+              testId={testId}
+              disabled={disabled}
+            />
+          </ColorPickerNative>
+        </div>
       </ColorPickerWrapper>
     );
   }

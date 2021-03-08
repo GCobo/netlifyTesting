@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { mount } from 'cypress-react-unit-test';
 
 import { WrapperTheme } from '../../utils/test';
 import { ColorPicker } from './ColorPicker';
+import { Modal } from '../modal/Modal';
 
 describe('Color Picker Component', () => {
   it('Should be works', () => {
@@ -21,5 +22,22 @@ describe('Color Picker Component', () => {
     cy.get('body').click(0, 0);
 
     cy.get('input').should('have.value', `#${newColor}`);
+  });
+
+  it('should open from portal', () => {
+    const TestComponent = () => {
+      const [show, setShow] = useState<boolean>(false);
+
+      return (
+        <WrapperTheme>
+          <button onClick={() => setShow(true)}>Open Portal</button>
+          <Modal show={show} onChangeShow={(show: boolean) => setShow(show)}>
+            <ColorPicker />
+          </Modal>
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
   });
 });
