@@ -36,7 +36,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   opacity: ${(props) => (props.disabled ? '0.5' : 1)};
 
-  svg {
+  > svg {
     fill: ${(props) =>
       props.checked
         ? props.theme.colors.system.white
@@ -52,7 +52,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
           ? props.theme.colors.primary.greenLight
           : props.theme.colors.primary.greyDark};
     }
-    svg {
+    > svg {
       fill: ${(props) =>
         props.checked
           ? props.theme.colors.system.white

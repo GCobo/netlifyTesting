@@ -24,4 +24,5 @@ export type SwitchProps = SwitchBoxProps &
     name?: string;
     value?: number | string;
     onChange?(value: boolean): void;
+    helpLabel?: string;
   };

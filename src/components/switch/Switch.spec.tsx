@@ -3,67 +3,66 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { Switch } from './Switch';
-import { ThemeProvider } from '@emotion/react';
-import { JoinbleTheme } from '../..';
+import { WrapperTheme } from '../../utils/test';
 
 describe('Switch Component', () => {
   it('Should be Works', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch id='label' testId='Switch' />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch"]').should('be.visible');
   });
 
   it('Should have label Left', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch labelLeft='label Left' id='label' testId='Switch' />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch"] label').should('be.visible');
   });
 
   it('Should have label Right', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch labelRight='label Right' id='label' testId='Switch' />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch" ] label').should('be.visible');
   });
 
   it('Should have label', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch label='label Right' id='label' testId='Switch' />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch" ] label').should('be.visible');
   });
 
   it('Should be checked', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch labelRight='label' id='label' testId='Switch' checked />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch"] input').should('have.attr', 'checked');
   });
 
   it('Should be disabled', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch labelRight='label' id='label' testId='Switch' disabled />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch"] input').should('have.attr', 'disabled');
   });
 
   it('Should be checked and disabled', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Switch
           labelRight='label'
           id='label'
@@ -71,9 +70,23 @@ describe('Switch Component', () => {
           disabled
           checked
         />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="Switch"] input').should('have.attr', 'disabled');
     cy.get('[data-test="Switch"] input').should('have.attr', 'checked');
+  });
+
+  it('Should show the help label', () => {
+    mount(
+      <WrapperTheme>
+        <Switch
+          labelRight='label'
+          id='label'
+          testId='Switch'
+          helpLabel='This is the help'
+        />
+      </WrapperTheme>
+    );
+    cy.contains('This is the help').should('be.visible');
   });
 });

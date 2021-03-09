@@ -3,7 +3,8 @@ import {
   SwitchContainer,
   SwitchBoxContainer,
   SwitchBoxBox,
-  LabelSwitch
+  LabelSwitch,
+  HelpLabelInput
 } from './SwitchStyles';
 import { SwitchProps } from './SwitchModel';
 import {
@@ -26,7 +27,8 @@ export const Switch = forwardRef(
       name,
       value,
       errorLabel,
-      onChange
+      onChange,
+      helpLabel
     }: SwitchProps,
     ref: Ref<HTMLInputElement>
   ) => {
@@ -84,6 +86,7 @@ export const Switch = forwardRef(
           )}
         </FlexCenter>
         {errorLabel && <ErrorLabelCheck label={errorLabel} />}
+        {helpLabel && <HelpLabelInput label={helpLabel} />}
       </SwitchContainer>
     );
   }

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled/macro';
 import { CheckboxContainer, LabelCheckbox } from '../checkbox/CheckboxStyles';
 import { SwitchBoxProps, SwitchProps, DisabledProps } from './SwitchModel';
+import { HelpLabel } from '../helpLabel/HelpLabel';
 
 export const LabelSwitch = styled(LabelCheckbox)<DisabledProps>`
   margin-bottom: 0;
@@ -41,6 +42,8 @@ export const SwitchBoxBox = styled.div<SwitchBoxProps>`
 `;
 
 export const SwitchContainer = styled(CheckboxContainer)<SwitchProps>`
+  display: flex;
+  flex-direction: column;
   &:hover {
     ${LabelSwitch} {
       color: ${(props) =>
@@ -58,4 +61,10 @@ export const SwitchContainer = styled(CheckboxContainer)<SwitchProps>`
       border-color: ${(props) => props.theme.colors.primary.greenLight};
     }
   }
+`;
+
+export const HelpLabelInput = styled(HelpLabel)`
+  margin-top: 0.68rem;
+  display: flex;
+  flex: 1;
 `;
