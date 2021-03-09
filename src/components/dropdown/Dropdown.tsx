@@ -36,7 +36,8 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
       testId,
       disabled,
       onChange,
-      placeholder
+      placeholder,
+      multiple = false
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -44,12 +45,26 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
     const [innerValue, setInnerValue] = useState<string | number | undefined>(
       value
     );
+    const [innerValues, setInnerValues] = useState<any>([]);
+
     const [open, setOpen] = useState<boolean>(false);
 
-    const handleInnerValue = (value: string | number) => {
-      setInnerValue(value);
-      setOpen(false);
+    const handleInnerValue = (value: any) => {
+      if (multiple) {
+        setInnerValues((values: any) =>
+          values.includes(value)
+            ? values.filter((v: any) => v !== value)
+            : [...values, value]
+        );
+      } else {
+        setInnerValue(value);
+        setOpen(false);
+      }
     };
+
+    useEffect(() => {
+      onChange && innerValue && onChange(innerValues);
+    }, [innerValues]);
 
     useEffect(() => {
       onChange && innerValue && onChange(innerValue);
@@ -66,8 +81,17 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
         )?.name;
       }
 
+      if (multiple && innerValues.length) {
+        return options
+          .filter((option: DropdownOption) =>
+            innerValues.includes(option.value)
+          )
+          .map((item) => item.name)
+          .join(',');
+      }
+
       return placeholder;
-    }, [innerValue]);
+    }, [innerValue, multiple, innerValues]);
 
     return (
       <Wrapper className={className}>
@@ -83,7 +107,12 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
         >
           <span>{innerPlaceholder && innerPlaceholder}</span>
           <Chevron open={open} />
-          <input type='hidden' value={innerValue} readOnly ref={ref} />
+          <input
+            type='hidden'
+            value={innerValue as string}
+            readOnly
+            ref={ref}
+          />
         </DropdownStyle>
         <Portal
           actionRef={buttonMenuRef}
@@ -104,6 +133,9 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
                       onClick={() => handleInnerValue(option.value)}
                       key={option.value}
                       testId={`dropdown-item-${option.name}`}
+                      active={
+                        multiple ? innerValues.includes(option.value) : false
+                      }
                     >
                       {option.name}
                     </OptionMenuItem>

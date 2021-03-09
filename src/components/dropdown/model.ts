@@ -7,9 +7,10 @@ export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   className?: string;
   options: DropdownOption[];
   testId?: string;
-  onChange?(value: string | number): void;
+  onChange?(value: string | number | number[] | string[]): void;
   placeholder?: string;
   ref?: Ref<HTMLInputElement>;
+  multiple?: boolean;
 }
 
 export type DropdownStyleProps = {

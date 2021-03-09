@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
-import { JoinbleThemeProvider } from '../../providers';
 import { Dropdown } from './Dropdown';
 import { DropdownOption } from './model';
+import { WrapperTheme } from '../../utils/test';
 
 const optionsDropdown: DropdownOption[] = [
   { name: 'test', value: 1 },
@@ -12,14 +12,14 @@ const optionsDropdown: DropdownOption[] = [
 describe('Dropdown component', () => {
   it('Should be works', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <Dropdown
           label='label'
           options={optionsDropdown}
           testId='dropdown'
           placeholder='Select option'
         />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="dropdown"]').click();
     cy.get('[data-test="dropdown-menu"]').should('be.visible');
@@ -27,9 +27,9 @@ describe('Dropdown component', () => {
 
   it('Value should be change onclick', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <Dropdown label='label' options={optionsDropdown} testId='dropdown' />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="dropdown"]').click();
     cy.get('[data-test="dropdown-item-test"]').click();
@@ -39,57 +39,89 @@ describe('Dropdown component', () => {
 
   it('Default value should be visible', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <Dropdown
           label='label'
           options={optionsDropdown}
           testId='dropdown'
           value={1}
         />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="dropdown"]').contains('test').should('be.visible');
   });
 
   it('Should be disabled', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <Dropdown
           label='label'
           options={optionsDropdown}
           testId='dropdown'
           disabled
         />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="dropdown"]').should('have.attr', 'disabled');
   });
 
   it('Error label should be visible', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <Dropdown
           label='label'
           options={optionsDropdown}
           testId='dropdown'
           errorLabel='Error label testing'
         />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.contains('Error label testing').should('be.visible');
   });
 
   it('Help label should be visible', () => {
     mount(
-      <JoinbleThemeProvider>
+      <WrapperTheme>
         <Dropdown
           label='label'
           options={optionsDropdown}
           testId='dropdown'
           helpLabel='Help label testing'
         />
-      </JoinbleThemeProvider>
+      </WrapperTheme>
     );
     cy.contains('Help label testing').should('be.visible');
+  });
+
+  it('should be able to select multiple options', () => {
+    const TestComponent = () => {
+      const optionsDropdown: DropdownOption[] = [
+        { name: 'test1', value: 1 },
+        { name: 'test2', value: 2 },
+        { name: 'test3', value: 3 },
+        { name: 'test4', value: 4 }
+      ];
+
+      return (
+        <WrapperTheme>
+          <Dropdown
+            label='label'
+            options={optionsDropdown}
+            testId='dropdown'
+            helpLabel='Help label testing'
+            placeholder='Select various items'
+            multiple
+          />
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
+
+    cy.get('[data-test="dropdown"]').click();
+    cy.get('[data-test="dropdown-item-test1"]').click();
+    cy.get('[data-test="dropdown-item-test2"]').click();
+
+    cy.contains('test1,test2').should('be.visible');
   });
 });
