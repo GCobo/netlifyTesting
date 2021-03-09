@@ -20,7 +20,8 @@ export const OptionMenu = ({
   widthAuto = true,
   open = false,
   testId,
-  updateOpen
+  updateOpen,
+  offset
 }: OptionMenuProps) => {
   const buttonMenuRef = useRef(null);
 
@@ -57,6 +58,7 @@ export const OptionMenu = ({
           onClickOutside={hiddenSetOpenPortal}
           widthAuto={widthAuto}
           show
+          offset={offset}
         >
           <Transition
             items={openPortal}
