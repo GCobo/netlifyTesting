@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { AlertIcon, HiddenIcon, ShowIcon } from '../icons';
+import { FormContainerProps } from './model';
 import {
   Label,
   Wrapper,
@@ -16,14 +17,9 @@ import {
   HelpLabelInput,
   ErrorLabelInput,
   InputContainer
-} from './InputStyle';
+} from './Styles';
 
-export type InputContainerProps = {
-  disabled?: boolean;
-  errorLabel?: string;
-};
-
-export interface InputProps extends InputContainerProps {
+export interface InputProps extends FormContainerProps {
   type?: 'text' | 'number' | 'password' | 'email';
   label?: string;
   helpLabel?: string;

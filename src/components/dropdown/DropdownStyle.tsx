@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { animated } from 'react-spring/renderprops.cjs';
 import { ChevronDownIcon } from '../icons';
-import { InputStyle } from '../input/InputStyle';
+import { InputStyle } from '../form/Styles';
 import { HEIGHT_OPTION_ITEM } from '../optionMenu/OptionMenuItemStyles';
 import {
   OptionsMenuWrapper,

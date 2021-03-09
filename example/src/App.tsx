@@ -61,7 +61,8 @@ import {
   ApplyIcon,
   SeeMoreIcon,
   FileIcon,
-  ShopingIcon
+  ShopingIcon,
+  TextArea
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -260,6 +261,23 @@ const App = () => {
             <Input
               label='Help label'
               helpLabel='A block of help text that breaks onto a new line and may extend beyond one line.'
+            />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Textarea</Title>
+          <Grid size={300}>
+            <TextArea placeHolder='With label' />
+            <TextArea placeHolder='With label' label='TextArea' />
+            <TextArea
+              placeHolder='help label'
+              label='help label'
+              helpLabel='help label'
+            />
+            <TextArea
+              placeHolder='error label'
+              label='error label'
+              errorLabel='error label'
             />
           </Grid>
         </Section>

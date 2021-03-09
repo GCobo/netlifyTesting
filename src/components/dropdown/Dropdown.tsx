@@ -12,7 +12,7 @@ import {
   HelpLabelInput,
   Label,
   Wrapper
-} from '../input/InputStyle';
+} from '../form/Styles';
 import { OptionMenuItem } from '../optionMenu';
 import { Portal, PositionMode } from '../portal';
 import {

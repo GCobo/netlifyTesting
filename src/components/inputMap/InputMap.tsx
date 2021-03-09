@@ -9,7 +9,7 @@ import { Button } from '../button';
 
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { MapIcon } from '../icons';
-import { Input } from '../input/Input';
+import { Input } from '../form/Input';
 import { Map, Point, Location } from '../map';
 import { Modal } from '../modal/Modal';
 import {

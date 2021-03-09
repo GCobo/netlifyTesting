@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { DragZoneProps, InputUploadCircleProps } from './InputUploadModel';
 import { AlertIcon } from '../icons';
 import { HelpLabel } from '../helpLabel/HelpLabel';
-import { Label } from '../input/InputStyle';
+import { Label } from '../form/Styles';
 
 const handleBorderColor = (props: any) => {
   if (props.errorLabel) {
@@ -41,7 +41,7 @@ export const Container = styled.div<{ horizontal?: boolean }>`
     props.horizontal &&
     `
    display: flex;
-   flex: 1; 
+   flex: 1;
   `}
 `;
 
@@ -140,7 +140,7 @@ export const PreviewFile = styled.div<{ horizontal?: boolean }>`
     `
     margin-right: auto;
     padding-left: 1rem;
-  
+
   `}
 
   > svg {

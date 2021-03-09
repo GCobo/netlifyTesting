@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { Label } from '../input/InputStyle';
+import { Label } from '../form/Styles';
 
 export const InputMapWrapper = styled.div`
   display: flex;

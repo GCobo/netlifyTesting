@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
-import { InputContainerProps } from '..';
+import { FormContainerProps } from './model';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -11,7 +11,7 @@ export const Wrapper = styled.section`
   position: relative;
 `;
 
-export const InputContainer = styled.div<InputContainerProps>`
+export const InputContainer = styled.div<FormContainerProps>`
   display: flex;
   align-items: center;
   height: 2.5rem;
@@ -103,4 +103,33 @@ export const HelpLabelInput = styled(HelpLabel)`
 `;
 export const ErrorLabelInput = styled(ErrorLabel)`
   margin-top: 0.25rem;
+`;
+
+export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`
+  border-radius: 0.25rem;
+  background-color: ${(props) => props.theme.colors.system.white};
+  box-shadow: ${(props) =>
+    `inset 0px 0px 0px 1px ${
+      props.errorLabel
+        ? props.theme.colors.system.error
+        : props.theme.colors.primary.greyLight
+    }`};
+  border: none;
+  padding: 0.5rem 1rem;
+  ${(props) => props.theme.fonts.regularText('M')};
+  resize: none;
+
+  &::placeholder {
+    color: ${(props) => props.theme.colors.primary.greyLight};
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: ${(props) =>
+      props.disabled
+        ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
+        : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
+    border: none;
+    outline: none;
+  }
 `;

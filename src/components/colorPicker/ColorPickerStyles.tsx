@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Global, css } from '@emotion/react';
-import { Input, InputProps } from '../input/Input';
+import { Input, InputProps } from '../form/Input';
 
 export const ModalColor = styled.div`
   position: absolute;
