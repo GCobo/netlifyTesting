@@ -10,6 +10,7 @@ export interface OptionMenuProps {
   className?: string;
   open?: boolean;
   updateOpen?(open: boolean): void;
+  offset?: number;
 }
 
 export interface ItemProps {

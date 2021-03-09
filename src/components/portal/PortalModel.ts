@@ -6,13 +6,15 @@ export interface PortalProps {
   widthAuto?: boolean;
   className?: string;
   mode?: PositionMode;
+  offset?: number;
+  testId?: string;
 }
 
 export type IPosition = {
   top?: number;
   left?: number;
   right?: number;
-  width?: number | string;
+  width?: number;
 };
 
 export enum PositionMode {

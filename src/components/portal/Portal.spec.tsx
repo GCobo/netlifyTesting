@@ -2,21 +2,21 @@ import React, { useState, useRef } from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { Portal } from './Portal';
 
-import { JoinbleThemeProvider } from '../../providers';
+import { WrapperTheme } from '../../utils/test';
 
 const PortalComponent = () => {
   const [show, setShow] = useState<boolean>(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <JoinbleThemeProvider>
+    <WrapperTheme>
       <button onClick={() => setShow(!show)} ref={buttonRef}>
         Show portal
       </button>
       <Portal show={show} actionRef={buttonRef}>
         This is the portal
       </Portal>
-    </JoinbleThemeProvider>
+    </WrapperTheme>
   );
 };
 
@@ -26,7 +26,7 @@ const TwoPortalComponent = () => {
   const divRef2 = useRef<HTMLDivElement>(null);
 
   return (
-    <JoinbleThemeProvider>
+    <WrapperTheme>
       <div
         style={{ width: '50%', height: '10px', marginBottom: '200px' }}
         ref={divRef}
@@ -46,7 +46,7 @@ const TwoPortalComponent = () => {
       <Portal show={show === 2 || show === 3} actionRef={divRef2}>
         Portal 2
       </Portal>
-    </JoinbleThemeProvider>
+    </WrapperTheme>
   );
 };
 
@@ -66,5 +66,46 @@ describe('Portal Component', () => {
 
     cy.contains('Portal 2').should('be.visible');
     cy.contains('Portal 1').should('be.visible');
+  });
+
+  it('should recalculate position if the portal opens in a corner of the screen', () => {
+    const offset: number = 200;
+    const TestComponent = () => {
+      const [show, setShow] = useState<boolean>(false);
+      const buttonRef = useRef<HTMLButtonElement>(null);
+
+      return (
+        <WrapperTheme>
+          <div style={{ display: 'flex', marginLeft: 'auto ' }}>
+            <button onClick={() => setShow(!show)} ref={buttonRef}>
+              Show portal
+            </button>
+            <Portal
+              show={show}
+              actionRef={buttonRef}
+              offset={offset}
+              testId='modal'
+            >
+              <div style={{ width: `${offset}px`, backgroundColor: 'red' }}>
+                This is the portal
+              </div>
+            </Portal>
+          </div>
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
+
+    cy.get('button').click();
+
+    cy.contains('This is the portal').should('be.visible');
+
+    cy.get('[data-test="modal"]').then(($element) => {
+      const { left } = $element.position();
+      const windowWidth = Cypress.config('viewportWidth');
+      const position = left + offset;
+      expect(position).to.be.closeTo(windowWidth, position);
+    });
   });
 });

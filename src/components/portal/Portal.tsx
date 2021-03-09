@@ -34,7 +34,9 @@ export const Portal: FunctionComponent<PortalProps> = ({
   onClickOutside,
   widthAuto = false,
   className,
-  mode = PositionMode.left
+  mode = PositionMode.left,
+  offset,
+  testId
 }) => {
   const [position, setPosition] = useState<IPosition>({
     top: 0,
@@ -141,6 +143,12 @@ export const Portal: FunctionComponent<PortalProps> = ({
       styles.right = windowWidth - position.right!;
     }
 
+    if (styles.left && offset && styles.width) {
+      if (styles.left + offset > windowWidth) {
+        styles.left = styles.left + styles.width - offset;
+      }
+    }
+
     return styles;
   }, [mode, position]);
 
@@ -155,6 +163,7 @@ export const Portal: FunctionComponent<PortalProps> = ({
               onMouseDown={(event: MouseEvent<HTMLDivElement>) =>
                 event.stopPropagation()
               }
+              data-test={testId}
             >
               {children}
             </PortalContainer>
