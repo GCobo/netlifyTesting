@@ -8,6 +8,7 @@ export interface PortalProps {
   mode?: PositionMode;
   offset?: number;
   testId?: string;
+  overlay?: boolean;
 }
 
 export type IPosition = {

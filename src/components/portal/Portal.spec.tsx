@@ -108,4 +108,38 @@ describe('Portal Component', () => {
       expect(position).to.be.closeTo(windowWidth, position);
     });
   });
+
+  it('should show portal with overlay', () => {
+    const TestComponent = () => {
+      const [show, setShow] = useState<boolean>(false);
+      const buttonRef = useRef<HTMLButtonElement>(null);
+
+      return (
+        <WrapperTheme>
+          <button onClick={() => setShow(!show)} ref={buttonRef}>
+            Show portal
+          </button>
+          <Portal
+            show={show}
+            actionRef={buttonRef}
+            overlay
+            onClickOutside={() => setShow(false)}
+            testId='portal'
+          >
+            This is the portal
+          </Portal>
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
+
+    cy.get('button').click();
+
+    cy.contains('This is the portal').should('be.visible');
+
+    cy.get('[data-test="portal-overlay"]').click();
+
+    cy.contains('This is the portal').should('not.exist');
+  });
 });

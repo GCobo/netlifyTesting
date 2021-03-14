@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { PortalContainer } from './styles';
+import { PortalContainer, PortalOverlay } from './styles';
 import { PortalProps, IPosition, PositionMode } from './PortalModel';
 
 const createElement = () => {
@@ -36,7 +36,8 @@ export const Portal: FunctionComponent<PortalProps> = ({
   className,
   mode = PositionMode.left,
   offset,
-  testId
+  testId,
+  overlay = false
 }) => {
   const [position, setPosition] = useState<IPosition>({
     top: 0,
@@ -76,7 +77,9 @@ export const Portal: FunctionComponent<PortalProps> = ({
       getPosition();
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    if (!overlay) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
 
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleWindowResize);
@@ -89,6 +92,11 @@ export const Portal: FunctionComponent<PortalProps> = ({
 
     return () => {
       document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleWindowResize);
+      }
     };
   }, []);
 
@@ -156,17 +164,25 @@ export const Portal: FunctionComponent<PortalProps> = ({
     ? createPortal(
         <Fragment>
           {show && (
-            <PortalContainer
-              ref={popupRef}
-              className={className}
-              style={getStyles}
-              onMouseDown={(event: MouseEvent<HTMLDivElement>) =>
-                event.stopPropagation()
-              }
-              data-test={testId}
-            >
-              {children}
-            </PortalContainer>
+            <Fragment>
+              {overlay && (
+                <PortalOverlay
+                  data-test={`${testId}-overlay`}
+                  onMouseDown={onClickOutside}
+                />
+              )}
+              <PortalContainer
+                ref={popupRef}
+                className={className}
+                style={getStyles}
+                onMouseDown={(event: MouseEvent<HTMLDivElement>) =>
+                  event.stopPropagation()
+                }
+                data-test={testId}
+              >
+                {children}
+              </PortalContainer>
+            </Fragment>
           )}
         </Fragment>,
         element!
