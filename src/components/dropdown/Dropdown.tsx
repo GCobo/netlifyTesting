@@ -14,7 +14,7 @@ import {
   Wrapper
 } from '../form/Styles';
 import { OptionMenuItem } from '../optionMenu';
-import { Portal, PositionMode } from '../portal';
+import { Portal } from '../portal';
 import {
   AnimatedOptions,
   Chevron,
