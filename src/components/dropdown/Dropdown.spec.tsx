@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { mount } from 'cypress-react-unit-test';
+import styled from '@emotion/styled';
 import { Dropdown } from './Dropdown';
+import { Portal } from '../portal/Portal';
 import { DropdownOption } from './model';
 import { WrapperTheme } from '../../utils/test';
 
@@ -123,5 +125,55 @@ describe('Dropdown component', () => {
     cy.get('[data-test="dropdown-item-test2"]').click();
 
     cy.contains('test1,test2').should('be.visible');
+  });
+
+  it('should open dropdown in modal with height 0', () => {
+    const PortalStyled = styled.div<{ hidden?: boolean }>`
+      width: 500px;
+      margin-left: 500px;
+      height: ${(props) => (props.hidden ? 0 : 'auto')};
+    `;
+
+    const TestComponent = () => {
+      const [hidden, setHidden] = useState(true);
+
+      useEffect(() => {
+        setTimeout(() => setHidden(false), 100);
+      }, []);
+
+      const optionsDropdown: DropdownOption[] = [
+        { name: 'test1', value: 1 },
+        { name: 'test2', value: 2 },
+        { name: 'test3', value: 3 },
+        { name: 'test4', value: 4 }
+      ];
+
+      return (
+        <WrapperTheme>
+          <Portal overlay={true} show={true}>
+            <PortalStyled hidden={hidden}>
+              <Dropdown
+                label='label'
+                options={optionsDropdown}
+                testId='dropdown'
+                helpLabel='Help label testing'
+                placeholder='Select various items'
+                multiple
+              />
+            </PortalStyled>
+          </Portal>
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
+
+    cy.wait(100);
+
+    cy.get('[data-test="dropdown"]').click();
+
+    cy.get('[data-test="dropdown-item-test1"]').click();
+
+    cy.contains('test1').should('be.visible');
   });
 });

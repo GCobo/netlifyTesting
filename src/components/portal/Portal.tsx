@@ -52,7 +52,7 @@ export const Portal: FunctionComponent<PortalProps> = ({
 
   const popupRef = useRef<HTMLDivElement>(null);
 
-  const getPosition = useCallback(() => {
+  const getPosition = () => {
     if (actionRef.current) {
       const {
         left,
@@ -68,14 +68,10 @@ export const Portal: FunctionComponent<PortalProps> = ({
         width: widthAuto ? 'auto' : actionRef!.current.clientWidth
       });
     }
-  }, [actionRef]);
+  };
 
   useEffect(() => {
     const popupRoot = createElement();
-
-    if (actionRef) {
-      getPosition();
-    }
 
     if (!overlay) {
       document.addEventListener('mousedown', handleClickOutside);
@@ -99,6 +95,12 @@ export const Portal: FunctionComponent<PortalProps> = ({
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (actionRef) {
+      getPosition();
+    }
+  }, [show, actionRef]);
 
   const handleScroll = useCallback(() => {
     let timeout;

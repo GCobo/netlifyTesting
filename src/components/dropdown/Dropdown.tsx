@@ -48,6 +48,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
     const [innerValues, setInnerValues] = useState<any>([]);
 
     const [open, setOpen] = useState<boolean>(false);
+    const [openContent, setOpenContent] = useState<boolean>(false);
 
     const handleInnerValue = (value: any) => {
       if (multiple) {
@@ -71,7 +72,16 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
     }, [innerValue]);
 
     const handleOpen = () => {
+      setOpenContent(true);
       setOpen(!open);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+
+      setTimeout(() => {
+        setOpenContent(false);
+      }, 300);
     };
 
     const innerPlaceholder = useMemo(() => {
@@ -114,37 +124,38 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
             ref={ref}
           />
         </DropdownStyle>
-        <Portal
-          actionRef={buttonMenuRef}
-          mode={PositionMode.left}
-          show={true}
-          onClickOutside={() => setOpen(false)}
-        >
-          <Spring
-            native
-            from={{ height: 0 }}
-            to={{ height: open ? 'auto' : 0 }}
+        {openContent && (
+          <Portal
+            actionRef={buttonMenuRef}
+            show={true}
+            onClickOutside={handleClose}
           >
-            {({ height }) => (
-              <AnimatedOptions style={{ height, overflow: 'hidden' }}>
-                <DropdownOptions data-test={'dropdown-menu'}>
-                  {options.map((option: DropdownOption) => (
-                    <OptionMenuItem
-                      onClick={() => handleInnerValue(option.value)}
-                      key={option.value}
-                      testId={`dropdown-item-${option.name}`}
-                      active={
-                        multiple ? innerValues.includes(option.value) : false
-                      }
-                    >
-                      {option.name}
-                    </OptionMenuItem>
-                  ))}
-                </DropdownOptions>
-              </AnimatedOptions>
-            )}
-          </Spring>
-        </Portal>
+            <Spring
+              native
+              from={{ height: 0 }}
+              to={{ height: open ? 'auto' : 0 }}
+            >
+              {({ height }) => (
+                <AnimatedOptions style={{ height, overflow: 'hidden' }}>
+                  <DropdownOptions data-test={'dropdown-menu'}>
+                    {options.map((option: DropdownOption) => (
+                      <OptionMenuItem
+                        onClick={() => handleInnerValue(option.value)}
+                        key={option.value}
+                        testId={`dropdown-item-${option.name}`}
+                        active={
+                          multiple ? innerValues.includes(option.value) : false
+                        }
+                      >
+                        {option.name}
+                      </OptionMenuItem>
+                    ))}
+                  </DropdownOptions>
+                </AnimatedOptions>
+              )}
+            </Spring>
+          </Portal>
+        )}
         {errorLabel && <ErrorLabelInput label={errorLabel} />}
         {helpLabel && <HelpLabelInput label={helpLabel} />}
       </Wrapper>
