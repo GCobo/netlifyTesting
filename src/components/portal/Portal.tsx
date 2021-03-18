@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { PortalContainer, PortalOverlay } from './styles';
+import { PortalContainer, PortalOverlay, PortalContent } from './styles';
 import { PortalProps, IPosition, PositionMode } from './PortalModel';
 
 const createElement = () => {
@@ -167,12 +167,6 @@ export const Portal: FunctionComponent<PortalProps> = ({
         <Fragment>
           {show && (
             <Fragment>
-              {overlay && (
-                <PortalOverlay
-                  data-test={`${testId}-overlay`}
-                  onMouseDown={onClickOutside}
-                />
-              )}
               <PortalContainer
                 ref={popupRef}
                 className={className}
@@ -182,7 +176,13 @@ export const Portal: FunctionComponent<PortalProps> = ({
                 }
                 data-test={testId}
               >
-                {children}
+                {overlay && (
+                  <PortalOverlay
+                    data-test={`${testId}-overlay`}
+                    onMouseDown={onClickOutside}
+                  />
+                )}
+                <PortalContent>{children}</PortalContent>
               </PortalContainer>
             </Fragment>
           )}

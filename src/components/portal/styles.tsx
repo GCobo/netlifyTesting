@@ -5,6 +5,11 @@ export const PortalContainer = styled.div`
   z-index: 999999;
 `;
 
+export const PortalContent = styled.div`
+  position: relative;
+  z-index: 2;
+`;
+
 export const PortalOverlay = styled.div`
   height: 100vh;
   width: 100vw;
