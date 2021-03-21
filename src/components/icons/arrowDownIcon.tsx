@@ -26,7 +26,7 @@ export const ArrowDownIcon = ({ className }: IconProps) => {
             fillRule='evenodd'
             stroke='none'
           />
-          <g clip-path='url(#mask_1)'>
+          <g clipPath='url(#mask_1)'>
             <path
               d='M0 5L5 10L5 0L0 5Z'
               transform='matrix(-4.371139E-08 -1 1 -4.371139E-08 7 14.5)'
