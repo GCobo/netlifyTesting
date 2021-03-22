@@ -41,6 +41,7 @@ export const Container = styled.div<{ horizontal?: boolean }>`
     props.horizontal &&
     `
    display: flex;
+   flex-direction: column;
    flex: 1;
   `}
 `;
@@ -153,5 +154,29 @@ export const PreviewFile = styled.div<{ horizontal?: boolean }>`
   > p {
     ${(props) => props.theme.fonts.regularText('M')};
     color: ${(props) => props.theme.colors.primary.greyDark};
+  }
+`;
+
+export const MultipleFiles = styled.ul`
+  > li {
+    display: flex;
+    border-bottom: 1px solid
+      ${(props) => props.theme.colors.primary.greyLighest};
+    ${(props) => props.theme.fonts.regularText('M')};
+    color: ${(props) => props.theme.colors.primary.greyDark};
+    padding: 0.7rem 1.3rem;
+    margin: 0.2rem 0;
+
+    &:hover {
+      background-color: ${(props) => props.theme.colors.primary.greyLighest};
+    }
+
+    > button {
+      margin-left: auto;
+
+      svg {
+        fill: ${(props) => props.theme.colors.primary.greyDark};
+      }
+    }
   }
 `;

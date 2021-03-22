@@ -21,14 +21,16 @@ export interface InputUploadProps
   id?: string;
   acceptFiles?: string[];
   maxSize?: number;
-  onChange?(file: File): void;
+  onChange?(file: File | File[]): void;
   value?: string;
   valueName?: string;
   fileName?: string;
   onDelete?(): void;
+  onDeleteMultiple?(fileName: string): void;
   testId?: string;
   className?: string;
   loading?: boolean;
+  multiple?: boolean;
 }
 
 export enum TypeFiles {

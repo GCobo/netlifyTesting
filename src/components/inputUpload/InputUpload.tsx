@@ -10,7 +10,8 @@ import {
   HelpLabelStyles,
   LabelInputUpload,
   PreviewFile,
-  Container
+  Container,
+  MultipleFiles
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon, FileIcon } from '../icons';
@@ -29,9 +30,6 @@ function isFileImage(file: File | Blob) {
 
 async function getFile(url: string, name?: string) {
   const file = await fetch(url).then((res) => res.blob());
-
-  console.log(file);
-
   const isImage = isFileImage(file);
 
   return {
@@ -49,6 +47,7 @@ export const InputUpload = ({
   maxSize = 10485760,
   onChange,
   onDelete,
+  onDeleteMultiple,
   value,
   valueName,
   fileName,
@@ -57,9 +56,11 @@ export const InputUpload = ({
   circle = false,
   className,
   loading = false,
-  horizontal = false
+  horizontal = false,
+  multiple = false
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<Preview>();
+  const [files, setFiles] = useState<Preview[]>([]);
 
   const updateFile = async (url: string, name?: string) => {
     const preview = await getFile(url, name);
@@ -80,14 +81,31 @@ export const InputUpload = ({
   }, [valueName]);
 
   const onDrop = useCallback((files: File[]) => {
-    const file = files[0];
-    const isImage = isFileImage(file);
+    if (multiple) {
+      files.map((file: File) => {
+        const isImage = isFileImage(file);
 
-    setPreview({
-      image: isImage ? URL.createObjectURL(file) : undefined,
-      fileName: file.name
-    });
-    onChange && onChange(file);
+        setFiles((files) => [
+          ...files,
+          {
+            image: isImage ? URL.createObjectURL(file) : undefined,
+            fileName: file.name
+          }
+        ]);
+      });
+
+      onChange && onChange(files);
+    } else {
+      const file = files[0];
+      const isImage = isFileImage(file);
+
+      setPreview({
+        image: isImage ? URL.createObjectURL(file) : undefined,
+        fileName: file.name
+      });
+
+      onChange && onChange(file);
+    }
   }, []);
   const { getRootProps, getInputProps, isDragActive, inputRef } = useDropzone({
     onDrop,
@@ -99,6 +117,13 @@ export const InputUpload = ({
     setPreview(undefined);
     onDelete && onDelete();
     event.stopPropagation();
+  };
+
+  const onDeleteMultipleFile = (file: Preview) => {
+    const newFiles = files.filter((f: Preview) => f.fileName !== file.fileName);
+
+    setFiles(newFiles);
+    file.fileName && onDeleteMultiple && onDeleteMultiple(file.fileName);
   };
 
   const onUploadFile = (event: MouseEvent<HTMLButtonElement>) => {
@@ -153,6 +178,23 @@ export const InputUpload = ({
           </WrapperDrag>
         )}
       </ContainerDrag>
+      {multiple && files.length > 0 && (
+        <MultipleFiles>
+          {files.map((file: Preview, index: number) => (
+            <li
+              data-test={`file-${file.fileName}-${index}`}
+              key={file.fileName}
+            >
+              {file.fileName}{' '}
+              <ButtonIcon
+                testId='button-delete-file'
+                icon={<TrashIcon />}
+                onClick={() => onDeleteMultipleFile(file)}
+              />
+            </li>
+          ))}
+        </MultipleFiles>
+      )}
       {helpLabel && <HelpLabelStyles label={helpLabel} />}
       {errorLabel && <ErrorLabel label={errorLabel} />}
     </Container>

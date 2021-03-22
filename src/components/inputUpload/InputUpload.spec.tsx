@@ -134,4 +134,64 @@ describe('Input Upload component', () => {
 
     cy.contains('epfGUQNLL5EW8WzBewLte.json').should('be.visible');
   });
+
+  it('should add multiple files', () => {
+    const UploadComponent = () => {
+      return (
+        <WrapperTheme>
+          <InputUpload horizontal multiple />
+        </WrapperTheme>
+      );
+    };
+
+    mount(<UploadComponent />);
+
+    cy.get('input[type="file"]').attachFile({
+      fileContent: 'dummy',
+      fileName: 'testPicture.png',
+      mimeType: 'image/png'
+    });
+
+    cy.get('input[type="file"]').attachFile({
+      fileContent: 'dummy',
+      fileName: 'testPicture2.png',
+      mimeType: 'image/png'
+    });
+
+    cy.contains('testPicture.png').should('be.visible');
+    cy.contains('testPicture2.png').should('be.visible');
+  });
+
+  it('should be able to delete multiple files', () => {
+    const UploadComponent = () => {
+      return (
+        <WrapperTheme>
+          <InputUpload horizontal multiple />
+        </WrapperTheme>
+      );
+    };
+
+    mount(<UploadComponent />);
+
+    cy.get('input[type="file"]').attachFile({
+      fileContent: 'dummy',
+      fileName: 'testPicture.png',
+      mimeType: 'image/png'
+    });
+
+    cy.get('input[type="file"]').attachFile({
+      fileContent: 'dummy',
+      fileName: 'testPicture2.png',
+      mimeType: 'image/png'
+    });
+
+    cy.contains('testPicture.png').should('be.visible');
+    cy.contains('testPicture2.png').should('be.visible');
+
+    cy.get('[data-test="file-testPicture.png-0"]')
+      .find('[data-test="button-delete-file"]')
+      .click();
+
+    cy.contains('testPicture.png').should('not.exist');
+  });
 });
