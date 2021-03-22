@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/css';
+
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
 import { FormContainerProps } from './model';
@@ -131,5 +133,41 @@ export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`
         : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
     border: none;
     outline: none;
+  }
+`;
+
+export const EditorStyles = (props: any) => css`
+  width: 100%;
+  border: 0;
+  padding: 0;
+  min-height: 10rem;
+  background-color: ${props.colors.system.white};
+  ${props.fonts.regularText('M')};
+  box-shadow: inset 0px 0px 0px 1px
+    ${props.errorLabel
+      ? props.colors.system.error
+      : props.colors.primary.greyLight};
+
+  > div {
+    margin: 0;
+    padding: 0.5rem 1rem 0.3rem 1rem;
+  }
+
+  &::placeholder {
+    color: ${props.colors.primary.greyLight};
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: ${props.disabled
+      ? `inset 0px 0px 0px 1px ${props.colors.primary.greyLight}`
+      : `inset 0px 0px 0px 1px ${props.colors.primary.greenLight}`};
+    border: none;
+    outline: none;
+  }
+
+  button {
+    border: 0;
+    background: transparent;
   }
 `;
