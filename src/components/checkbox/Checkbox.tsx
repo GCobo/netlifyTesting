@@ -27,6 +27,7 @@ type IProps = {
   name?: string;
   value?: number | string;
   errorLabel?: string;
+  onChange?(checked: boolean): void;
 };
 
 export const Checkbox: FunctionComponent<IProps> = forwardRef(
@@ -41,7 +42,8 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
       testId,
       name,
       value,
-      errorLabel
+      errorLabel,
+      onChange
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -53,6 +55,7 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
 
     const handleCheck = () => {
       setCheck(!check);
+      onChange && onChange(!check);
     };
     return (
       <CheckboxContainer
