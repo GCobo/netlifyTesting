@@ -1,6 +1,6 @@
 {
   "name": "joinble-ui",
-  "version": "0.0.0-development",
+  "version": "1.54.5",
   "description": "Joinble UI is a set of React Components that implements theming of Joinble Creator",
   "author": "joinble",
   "license": "MIT",

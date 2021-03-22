@@ -1,3 +1,10 @@
+## [1.54.5](https://github.com/joinble/joinble-ui/compare/v1.54.4...v1.54.5) (2021-03-21)
+
+
+### Bug Fixes
+
+* **general:** [#323](https://github.com/joinble/joinble-ui/issues/323) add link icon ([7433696](https://github.com/joinble/joinble-ui/commit/7433696795e56c70a9cd2b7feda93a57083cb4ed))
+
 ## [1.10.1](https://github.com/joinble/joinble-ui/compare/v1.10.0...v1.10.1) (2020-11-21)
 
 

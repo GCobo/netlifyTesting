@@ -63,15 +63,21 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
   }
 `;
 
-export const CheckedBoxChecked = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.greenLight};
-  width: 1rem;
-  height: 1rem;
+export const CheckboxStyles = styled.div<{ checked: boolean }>`
+  background-color: ${(props) =>
+    props.checked ? props.theme.colors.primary.greenLight : 'transparent'};
+  width: 1.25rem;
+  height: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 2px;
-
+  box-shadow: ${(props) =>
+    `inset 0px 0px 0px 1px ${
+      props.checked
+        ? props.theme.colors.primary.greenLight
+        : props.theme.colors.primary.greyLight
+    }`};
   svg {
     fill: ${(props) => props.theme.colors.system.white};
     width: 1rem;

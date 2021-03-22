@@ -3,24 +3,23 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { Checkbox } from './Checkbox';
-import { ThemeProvider } from '@emotion/react';
-import { JoinbleTheme } from '../../styles/Theme';
+import { WrapperTheme } from '../../utils/test';
 
 describe('Button component', () => {
   it('works', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Checkbox labelLeft='Label Example' />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.contains('Label Example').should('be.visible');
   });
 
   it('should be checked ', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Checkbox labelLeft='Label Example' />
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('button').click();
     cy.get('input[type=checkbox]').should('be.checked');

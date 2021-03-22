@@ -1,8 +1,14 @@
-import React, { FunctionComponent, forwardRef, Ref, useState } from 'react';
-import { CheckboxIcon, CheckboxCheckedIcon } from '../icons';
+import React, {
+  FunctionComponent,
+  forwardRef,
+  Ref,
+  useState,
+  useEffect
+} from 'react';
+import { CheckboxCheckedIcon } from '../icons';
 import {
   CheckboxContainer,
-  CheckedBoxChecked,
+  CheckboxStyles,
   ErrorLabelCheck,
   FlexCenter,
   HiddenCheckbox,
@@ -28,7 +34,7 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
     {
       labelLeft,
       labelRight,
-      checked,
+      checked = false,
       disabled,
       id,
       className,
@@ -39,7 +45,11 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
     },
     ref: Ref<HTMLInputElement>
   ) => {
-    const [check, setCheck] = useState<boolean>(false);
+    const [check, setCheck] = useState<boolean>(checked);
+
+    useEffect(() => {
+      setCheck(checked);
+    }, [checked]);
 
     const handleCheck = () => {
       setCheck(!check);
@@ -69,14 +79,11 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
             name={name}
             ref={ref}
             value={value}
+            onChange={() => {}}
           />
-          {check ? (
-            <CheckedBoxChecked>
-              <CheckboxCheckedIcon />
-            </CheckedBoxChecked>
-          ) : (
-            <CheckboxIcon />
-          )}
+          <CheckboxStyles checked={check}>
+            {check && <CheckboxCheckedIcon />}
+          </CheckboxStyles>
           {labelRight && (
             <LabelCheckbox id={id} disabled={disabled}>
               {labelRight}
