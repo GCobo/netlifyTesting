@@ -23,7 +23,7 @@ export interface InputUploadProps
   maxSize?: number;
   onChange?(file: File | File[]): void;
   value?: string;
-  valueName?: string;
+  valueName?: string | string[];
   fileName?: string;
   onDelete?(): void;
   onDeleteMultiple?(fileName: string): void;

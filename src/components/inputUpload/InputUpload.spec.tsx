@@ -194,4 +194,23 @@ describe('Input Upload component', () => {
 
     cy.contains('testPicture.png').should('not.exist');
   });
+
+  it('should show several uploaded files', () => {
+    const valueName = ['example.png', 'example2.png'];
+
+    const UploadComponent = () => {
+      return (
+        <WrapperTheme>
+          <div style={{ width: 300 }}>
+            <InputUpload horizontal multiple valueName={valueName} />
+          </div>
+        </WrapperTheme>
+      );
+    };
+
+    mount(<UploadComponent />);
+
+    cy.contains('example.png').should('be.visible');
+    cy.contains('example2.png').should('be.visible');
+  });
 });

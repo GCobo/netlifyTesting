@@ -74,10 +74,15 @@ export const InputUpload = ({
   }, [value, fileName]);
 
   useEffect(() => {
-    valueName &&
-      setPreview({
-        fileName: valueName
-      });
+    if (valueName) {
+      if (typeof valueName === 'string') {
+        setPreview({
+          fileName: valueName
+        });
+      } else {
+        setFiles(() => valueName.map((item) => ({ fileName: item })));
+      }
+    }
   }, [valueName]);
 
   const onDrop = useCallback((files: File[]) => {
@@ -185,7 +190,7 @@ export const InputUpload = ({
               data-test={`file-${file.fileName}-${index}`}
               key={file.fileName}
             >
-              {file.fileName}{' '}
+              <p>{file.fileName} </p>
               <ButtonIcon
                 testId='button-delete-file'
                 icon={<TrashIcon />}

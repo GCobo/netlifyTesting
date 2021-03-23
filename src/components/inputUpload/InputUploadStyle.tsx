@@ -166,6 +166,11 @@ export const MultipleFiles = styled.ul`
     color: ${(props) => props.theme.colors.primary.greyDark};
     padding: 0.7rem 1.3rem;
     margin: 0.2rem 0;
+    > p {
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     &:hover {
       background-color: ${(props) => props.theme.colors.primary.greyLighest};
