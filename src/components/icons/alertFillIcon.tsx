@@ -3,25 +3,8 @@ import { IconProps } from './model';
 
 export const AlertFillIcon = ({ className }: IconProps) => {
   return (
-    <svg width='24' height='24' viewBox='0 0 94 94' className={className}>
-      <mask
-        id='mask0'
-        mask-type='alpha'
-        maskUnits='userSpaceOnUse'
-        x='0'
-        y='0'
-        width='94'
-        height='94'
-      >
-        <rect width='94' height='94' fill='white' />
-      </mask>
-      <g mask='url(#mask0)'>
-        <path
-          fillRule='evenodd'
-          clipRule='evenodd'
-          d='M46.9999 7.83334C25.3799 7.83334 7.83325 25.38 7.83325 47C7.83325 68.62 25.3799 86.1667 46.9999 86.1667C68.6199 86.1667 86.1666 68.62 86.1666 47C86.1666 25.38 68.6199 7.83334 46.9999 7.83334C25.3799 7.83334 46.9999 7.83334 46.9999 7.83334ZM43.0833 66.5833V58.75H50.9166V66.5833H43.0833V66.5833ZM43.0833 27.4167V50.9167H50.9166V27.4167H43.0833V27.4167Z'
-        />
-      </g>
+    <svg width='24' height='24' viewBox='0 0 24 24' className={className}>
+      <path d='M12 24c-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12-0.007 6.624-5.376 11.993-12 12zM10.8 15.6v2.4h2.4v-2.4h-2.4zM10.8 6v7.2h2.4v-7.2h-2.4z'></path>
     </svg>
   );
 };
