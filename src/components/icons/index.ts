@@ -53,3 +53,4 @@ export * from './arrowDownIcon';
 export * from './arrowUpIcon';
 export * from './resizeIcon';
 export * from './linkIcon';
+export * from './alertFillIcon';

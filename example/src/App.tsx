@@ -62,7 +62,8 @@ import {
   SeeMoreIcon,
   FileIcon,
   ShopingIcon,
-  TextArea
+  TextArea,
+  AlertFillIcon
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -317,6 +318,7 @@ const App = () => {
         <Section>
           <Title>Icons</Title>
           <Grid>
+            <AlertFillIcon />
             <AlertIcon />
             <AndroidIcon />
             <ApplicationIcon />
