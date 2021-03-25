@@ -52,8 +52,6 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
       value ? value : defaultValue
     );
 
-    console.log(testId);
-
     const onAddValue = () => {
       const number = innerValue + 1;
       setInnerValue(number);
