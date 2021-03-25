@@ -4,6 +4,7 @@ import { css } from '@emotion/css';
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
 import { FormContainerProps } from './model';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -170,4 +171,26 @@ export const EditorStyles = (props: any) => css`
     border: 0;
     background: transparent;
   }
+`;
+
+export const ButtonNumeric = styled(ButtonIcon)`
+  background: ${(props) => props.theme.colors.primary.greenLight};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 36px;
+  width: 42px;
+  border-radius: 5px;
+  margin: 0 2px;
+
+  > svg {
+    display: inline-block;
+    fill: ${(props) => props.theme.colors.primary.greenDark};
+    margin: 0;
+  }
+`;
+
+export const InputNumericStyles = styled(InputStyle)`
+  text-align: center;
 `;
