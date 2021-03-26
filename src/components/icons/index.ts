@@ -56,3 +56,5 @@ export * from './linkIcon';
 export * from './alertFillIcon';
 export * from './warningIcon';
 export * from './minusIcon';
+export * from './plusCircleIcon';
+export * from './closeCircleIcon';

@@ -32,7 +32,7 @@ const createFont = (fontSize: FontType): Font => ({
   titleText: (size: SizeTitleText): string => `
             font-family: 'Inter';
             font-size: ${fontSize.headline[size] / 16}rem;
-            line-height: ${fontSize.lineHeightHeadline[size] / 16}rem;}
+            line-height: ${fontSize.lineHeightHeadline[size] / 16}rem;
             font-weight: 700;
         `,
   regularText: (size: SizeRegularText): string => `
