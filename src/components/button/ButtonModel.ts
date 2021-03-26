@@ -17,4 +17,5 @@ export interface ButtonProps extends ButtonTypeProps {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
   ref?: Ref<HTMLButtonElement>;
+  id?: string;
 }
