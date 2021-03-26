@@ -176,4 +176,34 @@ describe('Dropdown component', () => {
 
     cy.contains('test1').should('be.visible');
   });
+
+  it('should receive multiple values', () => {
+    const TestComponent = () => {
+      const optionsDropdown: DropdownOption[] = [
+        { name: 'test1', value: 1 },
+        { name: 'test2', value: 2 },
+        { name: 'test3', value: 3 },
+        { name: 'test4', value: 4 }
+      ];
+
+      return (
+        <WrapperTheme>
+          <Dropdown
+            label='label'
+            options={optionsDropdown}
+            testId='dropdown'
+            helpLabel='Help label testing'
+            placeholder='Select various items'
+            multiple
+            value={[1, 2]}
+            overlay
+          />
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
+
+    cy.contains('test1,test2').should('be.visible');
+  });
 });

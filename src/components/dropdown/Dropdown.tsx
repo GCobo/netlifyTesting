@@ -37,15 +37,17 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
       disabled,
       onChange,
       placeholder,
-      multiple = false
+      multiple = false,
+      overlay = false
     },
     ref: Ref<HTMLInputElement>
   ) => {
     const buttonMenuRef = useRef<HTMLInputElement>(null);
-    const [innerValue, setInnerValue] = useState<string | number | undefined>(
-      value
-    );
-    const [innerValues, setInnerValues] = useState<any>([]);
+    const [innerValue, setInnerValue] = useState<
+      string | number | string[] | number[] | undefined
+    >(value);
+
+    const [innerValues, setInnerValues] = useState<any>(value ? value : []);
 
     const [open, setOpen] = useState<boolean>(false);
     const [openContent, setOpenContent] = useState<boolean>(false);
@@ -85,7 +87,16 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
     };
 
     const innerPlaceholder = useMemo(() => {
-      if (innerValue) {
+      if (innerValues.length && multiple) {
+        return options
+          .filter((option: DropdownOption) =>
+            innerValues.includes(option.value)
+          )
+          .map((item) => item.name)
+          .join(',');
+      }
+
+      if (innerValue && !multiple) {
         return options.find(
           (option: DropdownOption) => option.value === innerValue
         )?.name;
@@ -129,6 +140,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
             actionRef={buttonMenuRef}
             show={true}
             onClickOutside={handleClose}
+            overlay={overlay}
           >
             <Spring
               native

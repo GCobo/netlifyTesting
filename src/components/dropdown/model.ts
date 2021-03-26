@@ -3,7 +3,7 @@ import { Ref } from 'react';
 export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   label?: string;
   helpLabel?: string;
-  value?: string | number;
+  value?: string | number | string[] | number[];
   className?: string;
   options: DropdownOption[];
   testId?: string;
@@ -11,6 +11,7 @@ export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   placeholder?: string;
   ref?: Ref<HTMLInputElement>;
   multiple?: boolean;
+  overlay?: boolean;
 }
 
 export type DropdownStyleProps = {
