@@ -32,41 +32,6 @@ const ModalComponent = ({ lateral = false }: any) => {
   );
 };
 
-const ModalonModal = () => {
-  const [show, setShow] = useState<boolean>(false);
-  const [show2, setShow2] = useState<boolean>(false);
-
-  const onShowModal = () => {
-    setShow((show) => !show);
-  };
-
-  return (
-    <WrapperTheme>
-      <button onClick={onShowModal} data-test='button-open-modal1'>
-        Show Modal
-      </button>
-      <Modal
-        show={show}
-        title='Title Modal'
-        onChangeShow={(s) => setShow(s)}
-        actions={
-          <Fragment>
-            <Button>Cancel</Button>
-            <Button onClick={() => setShow2(true)} testId='button-open-modal2'>
-              Show Modal2
-            </Button>
-          </Fragment>
-        }
-      >
-        This is the modal
-      </Modal>
-      <Modal show={show2} onChangeShow={(show: boolean) => setShow2(show)}>
-        Modal two
-      </Modal>
-    </WrapperTheme>
-  );
-};
-
 describe('Modal component', () => {
   it('works', () => {
     mount(<ModalComponent />);
