@@ -176,13 +176,17 @@ export const Portal: FunctionComponent<PortalProps> = ({
                 }
                 data-test={testId}
               >
-                {overlay && (
-                  <PortalOverlay
-                    data-test={`${testId}-overlay`}
-                    onMouseDown={onClickOutside}
-                  />
+                {overlay ? (
+                  <>
+                    <PortalOverlay
+                      data-test={`${testId}-overlay`}
+                      onMouseDown={onClickOutside}
+                    />
+                    <PortalContent>{children}</PortalContent>
+                  </>
+                ) : (
+                  children
                 )}
-                <PortalContent>{children}</PortalContent>
               </PortalContainer>
             </Fragment>
           )}
