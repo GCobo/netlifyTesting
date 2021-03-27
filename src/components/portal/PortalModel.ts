@@ -9,6 +9,7 @@ export interface PortalProps {
   offset?: number;
   testId?: string;
   overlay?: boolean;
+  style?: React.CSSProperties;
 }
 
 export type IPosition = {

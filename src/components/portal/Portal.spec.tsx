@@ -142,4 +142,37 @@ describe('Portal Component', () => {
 
     cy.contains('This is the portal').should('not.exist');
   });
+
+  it('should show portal with custom styles', () => {
+    const TestComponent = () => {
+      const [show, setShow] = useState<boolean>(false);
+      const buttonRef = useRef<HTMLButtonElement>(null);
+
+      return (
+        <WrapperTheme>
+          <button onClick={() => setShow(!show)} ref={buttonRef}>
+            Show portal
+          </button>
+          <Portal
+            show={show}
+            actionRef={buttonRef}
+            onClickOutside={() => setShow(false)}
+            testId='portal'
+            style={{ background: 'red', width: '250px' }}
+          >
+            This is the portal with
+          </Portal>
+        </WrapperTheme>
+      );
+    };
+
+    mount(<TestComponent />);
+
+    cy.get('button').click();
+    cy.get('[data-test="portal"]').should(
+      'have.css',
+      'background-color',
+      'rgb(255, 0, 0)'
+    );
+  });
 });

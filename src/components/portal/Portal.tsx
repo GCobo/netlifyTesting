@@ -37,7 +37,8 @@ export const Portal: FunctionComponent<PortalProps> = ({
   mode = PositionMode.left,
   offset,
   testId,
-  overlay = false
+  overlay = false,
+  style
 }) => {
   const [position, setPosition] = useState<IPosition>({
     top: 0,
@@ -170,7 +171,7 @@ export const Portal: FunctionComponent<PortalProps> = ({
               <PortalContainer
                 ref={popupRef}
                 className={className}
-                style={getStyles}
+                style={{ ...getStyles, ...style }}
                 onMouseDown={(event: MouseEvent<HTMLDivElement>) =>
                   event.stopPropagation()
                 }
