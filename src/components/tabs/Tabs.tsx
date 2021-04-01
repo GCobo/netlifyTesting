@@ -59,7 +59,7 @@ export const Tabs = ({
           };
           return (
             child.type === TabPanel && (
-              <li role='tab' key={child.props.id}>
+              <li role='tab' key={child.props.id} id={child.props.testIdTab}>
                 <TabsStyle
                   data-test={child.props.testIdTab}
                   disabled={child.props.disabled}
