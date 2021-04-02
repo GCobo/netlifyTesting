@@ -24,7 +24,7 @@ describe('Input Map component', () => {
       </WrapperTheme>
     );
 
-    cy.get('[data-test="button-show-map"]').click();
+    cy.get('[data-test="button-show-map"]').click({ force: true });
     cy.wait(300);
 
     cy.get('.leaflet-container').click('center');
@@ -40,8 +40,8 @@ describe('Input Map component', () => {
       </WrapperTheme>
     );
 
-    cy.get('[name="lat"]').type('-91');
-    cy.get('[name="lng"]').type('200');
+    cy.get('[name="lat"]').type('-91', { force: true });
+    cy.get('[name="lng"]').type('200', { force: true });
 
     cy.contains('Invalid latitude').should('be.visible');
     cy.contains('Invalid longitude').should('be.visible');
