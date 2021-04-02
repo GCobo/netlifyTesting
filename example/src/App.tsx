@@ -569,9 +569,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Modal</Title>
-          <Grid>
-            <Modal>Modal</Modal>
-          </Grid>
+          <Grid></Grid>
         </Section>
         <Section>
           <Title>Input Upload</Title>
