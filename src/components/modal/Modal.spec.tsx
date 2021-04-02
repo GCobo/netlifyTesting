@@ -26,7 +26,7 @@ const ModalComponent = ({ lateral = false }: any) => {
           </Fragment>
         }
       >
-        This is the modal
+        <p>This is the modal</p>
       </Modal>
     </WrapperTheme>
   );
@@ -36,7 +36,7 @@ describe('Modal component', () => {
   it('works', () => {
     mount(<ModalComponent />);
 
-    cy.get('button').click();
+    cy.get('button').click({ force: true });
 
     cy.contains('This is the modal').should('be.visible');
   });
@@ -44,7 +44,7 @@ describe('Modal component', () => {
   it('should show modal lateral', () => {
     mount(<ModalComponent lateral />);
 
-    cy.get('button').click();
+    cy.get('button').click({ force: true });
     cy.contains('This is the modal').should('be.visible');
   });
 });
