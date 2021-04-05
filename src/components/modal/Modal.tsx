@@ -89,8 +89,8 @@ export const Modal: React.FunctionComponent<IProps> = ({
 
           {actions && <ModalActions lateral={lateral}>{actions}</ModalActions>}
         </ModalStyles>
+        {overlay && <Overlay onClick={onCloseModal} style={{ ...props }} />}
       </PortalStyles>
-      {overlay && <Overlay onClick={onCloseModal} style={{ ...props }} />}
     </Fragment>
   );
 };
