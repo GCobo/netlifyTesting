@@ -19,6 +19,7 @@ type IProps = {
   onChangeShow?(show: boolean): void;
   actions?: React.ReactNode;
   lateral?: boolean;
+  overlay?: boolean;
 };
 
 export const Modal: React.FunctionComponent<IProps> = ({
@@ -28,7 +29,8 @@ export const Modal: React.FunctionComponent<IProps> = ({
   title,
   onChangeShow,
   actions,
-  lateral = false
+  lateral = false,
+  overlay = true
 }) => {
   const [innerShow, setInnerShow] = useState<boolean>(show);
   const [animationShow, setAnimationShow] = useState<boolean>(show);
@@ -88,7 +90,7 @@ export const Modal: React.FunctionComponent<IProps> = ({
           {actions && <ModalActions lateral={lateral}>{actions}</ModalActions>}
         </ModalStyles>
       </PortalStyles>
-      <Overlay onClick={onCloseModal} style={{ ...props }} />
+      {overlay && <Overlay onClick={onCloseModal} style={{ ...props }} />}
     </Fragment>
   );
 };

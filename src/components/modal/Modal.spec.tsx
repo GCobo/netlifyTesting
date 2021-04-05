@@ -13,12 +13,15 @@ const ModalComponent = ({ lateral = false }: any) => {
 
   return (
     <WrapperTheme>
-      <button onClick={onShowModal}>Show Modal</button>
+      <button onClick={onShowModal} data-test='button-modal'>
+        Show Modal
+      </button>
       <Modal
         show={show}
         title='Title Modal'
         lateral={lateral}
         onChangeShow={(s) => setShow(s)}
+        overlay={false}
         actions={
           <Fragment>
             <Button>Cancel</Button>
@@ -36,15 +39,14 @@ describe('Modal component', () => {
   it('works', () => {
     mount(<ModalComponent />);
 
-    cy.get('button').click({ force: true });
-
+    cy.get('[data-test="button-modal"]').click();
     cy.contains('This is the modal').should('be.visible');
   });
 
   it('should show modal lateral', () => {
     mount(<ModalComponent lateral />);
 
-    cy.get('button').click({ force: true });
+    cy.get('[data-test="button-modal"]').click();
     cy.contains('This is the modal').should('be.visible');
   });
 });

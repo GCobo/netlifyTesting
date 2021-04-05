@@ -9,7 +9,7 @@ describe('Input Map component', () => {
   it('should assign the added value to the component', () => {
     mount(
       <WrapperTheme>
-        <InputMap label='Position' value={[12, 24]} />
+        <InputMap overlay={false} label='Position' value={[12, 24]} />
       </WrapperTheme>
     );
 
@@ -20,11 +20,11 @@ describe('Input Map component', () => {
   it('should click on the map button and choose a point on the map', () => {
     mount(
       <WrapperTheme>
-        <InputMap label='Position' />
+        <InputMap overlay={false} label='Position' />
       </WrapperTheme>
     );
 
-    cy.get('[data-test="button-show-map"]').click({ force: true });
+    cy.get('[data-test="button-show-map"]').click();
     cy.wait(300);
 
     cy.get('.leaflet-container').click('center');
@@ -36,12 +36,12 @@ describe('Input Map component', () => {
   it('should add erroneous values', () => {
     mount(
       <WrapperTheme>
-        <InputMap label='Position' />
+        <InputMap overlay={false} label='Position' />
       </WrapperTheme>
     );
 
-    cy.get('[name="lat"]').type('-91', { force: true });
-    cy.get('[name="lng"]').type('200', { force: true });
+    cy.get('[name="lat"]').type('-91');
+    cy.get('[name="lng"]').type('200');
 
     cy.contains('Invalid latitude').should('be.visible');
     cy.contains('Invalid longitude').should('be.visible');
@@ -50,7 +50,7 @@ describe('Input Map component', () => {
   it('should disabled the field', () => {
     mount(
       <WrapperTheme>
-        <InputMap label='Position' disabled />
+        <InputMap overlay={false} label='Position' disabled />
       </WrapperTheme>
     );
 

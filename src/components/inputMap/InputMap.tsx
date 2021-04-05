@@ -37,6 +37,7 @@ type IProps = {
   testId?: string;
   texts?: MapLiterals;
   disabled?: boolean;
+  overlay?: boolean;
 };
 
 type InputError = {
@@ -61,7 +62,8 @@ export const InputMap = ({
   onChange,
   testId,
   texts = literals,
-  disabled = false
+  disabled = false,
+  overlay = true
 }: IProps) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [marker, setMarker] = useState<Point>();
@@ -183,6 +185,7 @@ export const InputMap = ({
         show={showModal}
         title={texts.titleMap}
         onChangeShow={(show) => setShowModal(show)}
+        overlay={overlay}
         actions={
           <Fragment>
             <Button
