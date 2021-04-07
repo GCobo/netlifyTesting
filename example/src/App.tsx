@@ -64,7 +64,8 @@ import {
   ShopingIcon,
   TextArea,
   AlertFillIcon,
-  WarningIcon
+  WarningIcon,
+  Tag
 } from 'joinble-ui';
 import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
 
@@ -380,6 +381,37 @@ const App = () => {
             <ColorPicker
               label='Select Primary color'
               value={JoinbleTheme.colors.primary.greenLight}
+            />
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Tags</Title>
+          <Grid>
+            <Tag label='android' />
+            <Tag label='android' withTooltip />
+            <Tag
+              label='android'
+              withTooltip
+              onClick={() => alert('click tag')}
+            />
+            <Tag label='android' type='warning' />
+            <Tag label='android' withTooltip type='warning' />
+            <Tag
+              label='android'
+              withTooltip
+              onClick={() => alert('click tag')}
+              type='warning'
+            />
+            <Tag
+              label='tag with a label very very very very very very very very very large'
+              type='success'
+              withTooltip
+            />
+            <Tag
+              label='tag with a label very very very very very very very very very large'
+              type='success'
+              onClick={() => alert('click tag')}
+              withTooltip
             />
           </Grid>
         </Section>

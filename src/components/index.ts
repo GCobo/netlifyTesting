@@ -23,3 +23,4 @@ export * from './tabs';
 export * from './alert';
 export * from './collapsable';
 export * from './form';
+export * from './tags/Tag';

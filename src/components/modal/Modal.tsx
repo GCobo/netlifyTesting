@@ -12,7 +12,7 @@ import {
 import { CloseIcon } from '../icons';
 
 type IProps = {
-  children: React.ReactElement;
+  children: React.ReactNode;
   className?: string;
   show?: boolean;
   title?: string;
@@ -85,8 +85,7 @@ export const Modal: React.FunctionComponent<IProps> = ({
             </ButtonClose>
           </ModalHeader>
 
-          {React.cloneElement(children, { className: 'modal-content' })}
-
+          {children}
           {actions && <ModalActions lateral={lateral}>{actions}</ModalActions>}
         </ModalStyles>
         {overlay && <Overlay onClick={onCloseModal} style={{ ...props }} />}
