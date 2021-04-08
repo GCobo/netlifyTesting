@@ -3,7 +3,8 @@ import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 export const TagStyles = styled.div<{
   type?: 'success' | 'warning';
-  onClick?(): void;
+  withButton?: boolean;
+  isDisabled?: boolean;
 }>`
   border-radius: 0.5rem;
   height: 1.125rem;
@@ -11,12 +12,18 @@ export const TagStyles = styled.div<{
   justify-content: center;
   align-items: center;
   grid-column-gap: 0.5rem;
-  padding: 0 ${(props) => (props.onClick ? '0.5rem' : '0.875rem')} 0 0.875rem;
+  padding: 0 ${(props) => (props.withButton ? '0.5rem' : '0.875rem')} 0 0.875rem;
   background-color: ${(props) =>
     props.type === 'success'
       ? props.theme.colors.system.success
       : props.theme.colors.system.warning};
   max-width: 18rem;
+
+  ${(props) =>
+    props.isDisabled &&
+    `
+      opacity: 0.5;
+  `}
 
   p {
     ${(props) => props.theme.fonts.regularText('S')};

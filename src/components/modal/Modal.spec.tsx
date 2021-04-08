@@ -21,7 +21,6 @@ const ModalComponent = ({ lateral = false }: any) => {
         title='Title Modal'
         lateral={lateral}
         onChangeShow={(s) => setShow(s)}
-        overlay={false}
         actions={
           <Fragment>
             <Button>Cancel</Button>

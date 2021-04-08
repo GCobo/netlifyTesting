@@ -39,4 +39,19 @@ describe('Tag component', () => {
     cy.get('[data-test="tag"]').invoke('show').click();
     cy.get('span').should('be.visible');
   });
+
+  it('Should be disabled', () => {
+    mount(
+      <ThemeProvider theme={JoinbleTheme}>
+        <Tag
+          label='This is a help'
+          testId='tag'
+          withTooltip
+          disabled
+          onClick={() => alert('disabled')}
+        />
+      </ThemeProvider>
+    );
+    cy.get('[data-test="tag"] button').should('have.attr', 'disabled');
+  });
 });

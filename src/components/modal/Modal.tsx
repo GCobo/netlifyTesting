@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, Fragment } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useSpring } from 'react-spring';
 
 import { ModalStyles } from './ModalStyles';
@@ -12,7 +12,7 @@ import {
 import { CloseIcon } from '../icons';
 
 type IProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   show?: boolean;
   title?: string;
@@ -70,26 +70,25 @@ export const Modal: React.FunctionComponent<IProps> = ({
   });
 
   return (
-    <Fragment>
-      <PortalStyles show={innerShow}>
-        <ModalStyles
-          className={className}
-          style={{ ...otherProps }}
-          lateral={lateral ? true : undefined}
-        >
-          <ModalHeader lateral={lateral}>
-            {title && title}
+    <PortalStyles show={innerShow}>
+      <ModalStyles
+        className={className}
+        style={{ ...otherProps }}
+        lateral={lateral ? true : undefined}
+      >
+        <ModalHeader lateral={lateral}>
+          {title && title}
 
-            <ButtonClose onClick={onCloseModal}>
-              <CloseIcon />
-            </ButtonClose>
-          </ModalHeader>
+          <ButtonClose onClick={onCloseModal}>
+            <CloseIcon />
+          </ButtonClose>
+        </ModalHeader>
 
-          {children}
-          {actions && <ModalActions lateral={lateral}>{actions}</ModalActions>}
-        </ModalStyles>
-        {overlay && <Overlay onClick={onCloseModal} style={{ ...props }} />}
-      </PortalStyles>
-    </Fragment>
+        {children}
+
+        {actions && <ModalActions lateral={lateral}>{actions}</ModalActions>}
+      </ModalStyles>
+      {overlay && <Overlay onClick={onCloseModal} style={{ ...props }} />}
+    </PortalStyles>
   );
 };

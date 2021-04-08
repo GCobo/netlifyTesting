@@ -388,11 +388,18 @@ const App = () => {
           <Title>Tags</Title>
           <Grid>
             <Tag label='android' />
+            <Tag label='android' disabled />
             <Tag label='android' withTooltip />
             <Tag
               label='android'
               withTooltip
               onClick={() => alert('click tag')}
+            />
+            <Tag
+              label='android'
+              withTooltip
+              onClick={() => alert('click tag')}
+              disabled
             />
             <Tag label='android' type='warning' />
             <Tag label='android' withTooltip type='warning' />

@@ -10,6 +10,7 @@ type Props = {
   type?: 'success' | 'warning';
   className?: string;
   testId?: string;
+  disabled?: boolean;
 };
 
 export const Tag = ({
@@ -18,17 +19,26 @@ export const Tag = ({
   withTooltip,
   type = 'success',
   className,
-  testId
+  testId,
+  disabled
 }: Props) => {
   const renderTag = () => (
     <TagStyles
       type={type}
-      onClick={onClick}
       className={className}
       data-test={testId}
+      withButton={onClick ? true : false}
+      isDisabled={disabled}
     >
       <p>{label}</p>
-      {onClick && <TagButtonIcon icon={<CloseIcon />} negative />}
+      {onClick && (
+        <TagButtonIcon
+          icon={<CloseIcon />}
+          onClick={onClick}
+          disabled={disabled}
+          negative
+        />
+      )}
     </TagStyles>
   );
 
