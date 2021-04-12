@@ -4,11 +4,12 @@ import { TableContent, TableElement, TableHeader, TableStyles } from './Styles';
 
 type Props = {
   className?: string;
+  testId?: string;
 };
 
-export const Table = ({ className }: Props) => {
+export const Table = ({ className, testId }: Props) => {
   return (
-    <TableStyles className={className}>
+    <TableStyles className={className} data-test={testId}>
       <TableHeader>
         <Checkbox />
         <span>header</span>
