@@ -16,7 +16,6 @@ import {
   socialMedia,
   Loading,
   Link,
-  Modal,
   ColorPicker,
   HamburguerIcon,
   NotificationIcon,
@@ -65,7 +64,8 @@ import {
   TextArea,
   AlertFillIcon,
   WarningIcon,
-  Tag
+  Tag,
+  Table
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -77,26 +77,29 @@ const App = () => {
   const Layout = styled.section`
     margin: 1rem;
   `;
+
   const Section = styled.div`
     margin-bottom: 0.5rem;
     border-bottom: 1px solid black;
     padding-bottom: 2rem;
   `;
+
   const Title = styled.h2`
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 0;
   `;
-  const Grid = styled.div<IGridProps>(
-    {
-      gridColumnGap: '1rem',
-      gridRowGap: '1rem'
-    },
-    (props: IGridProps) => ({
-      display: `${props.size ? 'grid' : 'flex'}`,
-      gridTemplateColumns: `repeat(auto-fit, minmax(${props.size}px, 1fr))`
-    })
-  );
+
+  const Grid = styled.div<IGridProps>`
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    display: ${(props) => (props.size ? 'grid' : 'flex')};
+    ${(props) =>
+      props.size &&
+      `
+    grid-template-columns: repeat(auto-fit, minmax(${props.size}px, 1fr))
+    `}
+  `;
 
   const optionsPlatform: ICheckPlatform[] = [
     {
@@ -316,6 +319,12 @@ const App = () => {
                 Hello Tab 3
               </TabPanel>
             </Tabs>
+          </Grid>
+        </Section>
+        <Section>
+          <Title>Table</Title>
+          <Grid>
+            <Table />
           </Grid>
         </Section>
         <Section>
