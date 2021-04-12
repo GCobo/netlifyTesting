@@ -72,7 +72,7 @@ export const ContainerDrag = styled.div<DragZoneProps>`
 export const ImagePreview = styled.img<InputUploadCircleProps>`
   width: 4.4rem;
   height: 4.4rem;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: ${(props) => (props.circle ? '100%' : 0)};
 `;
 
@@ -107,7 +107,7 @@ export const WrapperButtons = styled.div<InputUploadCircleProps>`
   align-items: center;
   grid-column-gap: 0.5rem;
   position: absolute;
-  bottom: ${(props) => (props.circle || props.horizontal ? '0.5rem' : 0)};
+  bottom: 0.5rem;
   right: ${(props) => (props.circle ? '3rem' : '0.5rem')};
 
   .icon {

@@ -102,10 +102,10 @@ export const Label = styled.label`
 `;
 
 export const HelpLabelInput = styled(HelpLabel)`
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 `;
 export const ErrorLabelInput = styled(ErrorLabel)`
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 `;
 
 export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`

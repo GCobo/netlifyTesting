@@ -67,7 +67,7 @@ import {
   WarningIcon,
   Tag
 } from 'joinble-ui';
-import { OptionMenuItemProps } from '../../dist/components/optionMenu/OptionMenuModel';
+import { DropdownOption } from '../../dist/components/dropdown/model';
 
 type IGridProps = {
   size?: number;
@@ -111,9 +111,10 @@ const App = () => {
     }
   ];
 
-  const optionsDropdown: OptionMenuItemProps[] = [
-    { children: 'test', id: 1 },
-    { children: 'test2', id: 2 }
+  const optionsDropdown: DropdownOption[] = [
+    { name: 'name-1', value: 'name-1' },
+    { name: 'name-2', value: 'name-2' },
+    { name: 'name-3', value: 'name-3' }
   ];
 
   return (

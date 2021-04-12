@@ -156,7 +156,9 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
                         key={option.value}
                         testId={`dropdown-item-${option.name}`}
                         active={
-                          multiple ? innerValues.includes(option.value) : false
+                          multiple
+                            ? innerValues.includes(option.value)
+                            : innerValue === option.value
                         }
                       >
                         {option.name}
