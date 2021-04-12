@@ -96,4 +96,31 @@ describe('Tab Component', () => {
       .contains('Hello Tab 2')
       .should('be.visible');
   });
+
+  it('TabPanel should have another styles', () => {
+    mount(
+      <WrapperTheme>
+        <Tabs active='1'>
+          <TabPanel
+            name='Tab1'
+            id='1'
+            className='test-tabPanel-1'
+            testIdPanel='tab-1-panel'
+          >
+            <p>Hello Tab 1</p>
+          </TabPanel>
+          <TabPanel name='Tab2' id='2' testIdPanel='tab-2-panel'>
+            Hello Tab 2
+          </TabPanel>
+        </Tabs>
+      </WrapperTheme>
+    );
+
+    cy.wait(300);
+    cy.get('[data-test="tab-1-panel"]').should(
+      'have.attr',
+      'class',
+      'test-tabPanel-1'
+    );
+  });
 });

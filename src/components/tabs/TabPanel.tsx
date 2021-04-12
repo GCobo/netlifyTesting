@@ -8,10 +8,15 @@ type TabPanelProps = {
   disabled?: boolean;
   testIdTab?: string;
   testIdPanel?: string;
+  className?: string;
 };
 
-const TabPanel = ({ children, testIdPanel }: TabPanelProps) => {
-  return <div data-test={testIdPanel}>{children}</div>;
+const TabPanel = ({ children, testIdPanel, className }: TabPanelProps) => {
+  return (
+    <div data-test={testIdPanel} className={className}>
+      {children}
+    </div>
+  );
 };
 
 TabPanel.displayName = 'TabPanel';
