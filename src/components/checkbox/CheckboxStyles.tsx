@@ -35,6 +35,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
   flex-flow: ${(props) => (props.errorLabel ? 'column' : 'row')};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   opacity: ${(props) => (props.disabled ? '0.5' : 1)};
+  padding: 0;
 
   > svg {
     fill: ${(props) =>
@@ -65,7 +66,9 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
 
 export const CheckboxStyles = styled.div<{ checked: boolean }>`
   background-color: ${(props) =>
-    props.checked ? props.theme.colors.primary.greenLight : 'transparent'};
+    props.checked
+      ? props.theme.colors.primary.greenLight
+      : props.theme.colors.system.white};
   width: 1.25rem;
   height: 1.25rem;
   display: flex;

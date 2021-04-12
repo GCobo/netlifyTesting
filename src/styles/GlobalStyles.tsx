@@ -20,7 +20,7 @@ export const GlobalStyles: React.FunctionComponent = () => {
           }
 
           &::-webkit-scrollbar {
-            width: 7px;
+            width: 8px;
           }
 
           &::-webkit-scrollbar-thumb {
