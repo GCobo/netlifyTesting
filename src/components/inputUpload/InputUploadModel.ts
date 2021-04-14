@@ -1,3 +1,5 @@
+import { FileRejection } from 'react-dropzone';
+
 export type ErrorLabelProps = {
   errorLabel?: string;
 };
@@ -31,6 +33,7 @@ export interface InputUploadProps
   className?: string;
   loading?: boolean;
   multiple?: boolean;
+  onErrors?(errorFiles: FileRejection[]): void;
 }
 
 export enum TypeFiles {

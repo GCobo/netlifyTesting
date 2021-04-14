@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect, MouseEvent } from 'react';
-import { useDropzone } from 'react-dropzone';
+import { FileRejection, useDropzone } from 'react-dropzone';
 
 import {
   ContainerDrag,
@@ -47,6 +47,7 @@ export const InputUpload = ({
   maxSize = 10485760,
   onChange,
   onDelete,
+  onErrors,
   onDeleteMultiple,
   value,
   valueName,
@@ -85,35 +86,50 @@ export const InputUpload = ({
     }
   }, [valueName]);
 
-  const onDrop = useCallback((files: File[]) => {
-    if (multiple) {
-      files.map((file: File) => {
-        const isImage = isFileImage(file);
+  const onDrop = useCallback(
+    (files: File[], filesRejection: FileRejection[]) => {
+      if (filesRejection.length) {
+        onErrors && onErrors(filesRejection);
+      }
 
-        setFiles((files) => [
-          ...files,
-          {
+      if (files.length) {
+        if (multiple) {
+          files.map((file: File) => {
+            const isImage = isFileImage(file);
+
+            setFiles((files) => [
+              ...files,
+              {
+                image: isImage ? URL.createObjectURL(file) : undefined,
+                fileName: file.name
+              }
+            ]);
+          });
+
+          onChange && onChange(files);
+        } else {
+          const file = files[0];
+          const isImage = isFileImage(file);
+
+          setPreview({
             image: isImage ? URL.createObjectURL(file) : undefined,
             fileName: file.name
-          }
-        ]);
-      });
+          });
 
-      onChange && onChange(files);
-    } else {
-      const file = files[0];
-      const isImage = isFileImage(file);
+          onChange && onChange(file);
+        }
+      }
+    },
+    []
+  );
 
-      setPreview({
-        image: isImage ? URL.createObjectURL(file) : undefined,
-        fileName: file.name
-      });
+  const onDropRejected = (name: any) => {
+    console.log(name);
+  };
 
-      onChange && onChange(file);
-    }
-  }, []);
   const { getRootProps, getInputProps, isDragActive, inputRef } = useDropzone({
     onDrop,
+    onDropRejected,
     accept: acceptFiles,
     maxSize
   });
