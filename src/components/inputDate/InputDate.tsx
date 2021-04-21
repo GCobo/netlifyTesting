@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import flatpickr from 'flatpickr';
+import confirmDatePlugin from 'flatpickr/dist/plugins/confirmDate/confirmDate';
 
 import { Input, InputPropsBasic } from '../form';
 import { CalendarIcon } from '../icons';
@@ -23,6 +24,7 @@ type IProps = InputPropsBasic & {
   multiple?: boolean;
   range?: boolean;
   onChange?(date: Date[]): void;
+  confirmText?: string;
 };
 
 export const InputDate = ({
@@ -33,6 +35,7 @@ export const InputDate = ({
   range = false,
   onChange = () => {},
   label,
+  confirmText = 'OK',
   ...rest
 }: IProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -60,7 +63,15 @@ export const InputDate = ({
         mode: mode(),
         onChange: (dates) => {
           onChange && onChange(dates);
-        }
+        },
+        plugins: withTime
+          ? [
+              confirmDatePlugin({
+                confirmText,
+                confirmIcon: ''
+              })
+            ]
+          : []
       });
     }
   }, [inputRef]);
