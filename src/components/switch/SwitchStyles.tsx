@@ -68,3 +68,7 @@ export const HelpLabelInput = styled(HelpLabel)`
   display: flex;
   flex: 1;
 `;
+
+export const InputRequired = styled.span`
+  color: ${(props) => props.theme.colors.system.error};
+`;

@@ -54,4 +54,14 @@ describe('Input Date component', () => {
 
     cy.get('[data-test="input-date"]').should('be.disabled');
   });
+
+  it('should show the required label', () => {
+    mount(
+      <WrapperTheme>
+        <InputDate label='This is a label' required />
+      </WrapperTheme>
+    );
+
+    cy.get('label').should('contain', '*');
+  });
 });

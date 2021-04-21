@@ -44,4 +44,14 @@ describe('Input component', () => {
     cy.get('[data-test="numeric"]').should('have.value', 2);
     cy.get('[data-test="button-add-numeric"]').should('be.disabled');
   });
+
+  it('should show the required label', () => {
+    mount(
+      <WrapperTheme>
+        <InputNumeric label='This is a label' required />
+      </WrapperTheme>
+    );
+
+    cy.get('label').should('contain', '*');
+  });
 });

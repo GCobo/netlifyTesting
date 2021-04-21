@@ -194,3 +194,7 @@ export const ButtonNumeric = styled(ButtonIcon)`
 export const InputNumericStyles = styled(InputStyle)`
   text-align: center;
 `;
+
+export const InputRequired = styled.span`
+  color: ${(props) => props.theme.colors.system.error};
+`;

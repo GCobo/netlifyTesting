@@ -19,7 +19,8 @@ import {
   AnimatedOptions,
   Chevron,
   DropdownOptions,
-  DropdownStyle
+  DropdownStyle,
+  InputRequired
 } from './DropdownStyle';
 import { DropdownOption, DropdownProps } from './model';
 import { Spring } from 'react-spring/renderprops.cjs';
@@ -38,7 +39,8 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
       onChange,
       placeholder,
       multiple = false,
-      overlay = false
+      overlay = false,
+      required = false
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -116,7 +118,11 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
 
     return (
       <Wrapper className={className}>
-        {label && <Label as='p'>{label}</Label>}
+        {label && (
+          <Label as='label'>
+            {label} {required && <InputRequired>*</InputRequired>}
+          </Label>
+        )}
         <DropdownStyle
           as='button'
           onClick={handleOpen}

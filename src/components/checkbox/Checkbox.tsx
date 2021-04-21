@@ -12,7 +12,8 @@ import {
   ErrorLabelCheck,
   FlexCenter,
   HiddenCheckbox,
-  LabelCheckbox
+  LabelCheckbox,
+  InputRequired
 } from './CheckboxStyles';
 
 type IProps = {
@@ -28,6 +29,7 @@ type IProps = {
   value?: number | string;
   errorLabel?: string;
   onChange?(checked: boolean): void;
+  required?: boolean;
 };
 
 export const Checkbox: FunctionComponent<IProps> = forwardRef(
@@ -43,7 +45,8 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
       name,
       value,
       errorLabel,
-      onChange
+      onChange,
+      required = false
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -69,7 +72,7 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
         <FlexCenter>
           {labelLeft && (
             <LabelCheckbox id={id} disabled={disabled}>
-              {labelLeft}
+              {labelLeft} {required && <InputRequired>*</InputRequired>}
             </LabelCheckbox>
           )}
           <HiddenCheckbox
@@ -89,7 +92,7 @@ export const Checkbox: FunctionComponent<IProps> = forwardRef(
           </CheckboxStyles>
           {labelRight && (
             <LabelCheckbox id={id} disabled={disabled}>
-              {labelRight}
+              {labelRight} {required && <InputRequired>*</InputRequired>}
             </LabelCheckbox>
           )}
         </FlexCenter>

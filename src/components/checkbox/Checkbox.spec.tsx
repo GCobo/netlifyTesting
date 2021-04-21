@@ -24,4 +24,14 @@ describe('Button component', () => {
     cy.get('button').click();
     cy.get('input[type=checkbox]').should('be.checked');
   });
+
+  it('should show the required label', () => {
+    mount(
+      <WrapperTheme>
+        <Checkbox labelLeft='Label Example' required />
+      </WrapperTheme>
+    );
+
+    cy.get('label').should('contain', '*');
+  });
 });

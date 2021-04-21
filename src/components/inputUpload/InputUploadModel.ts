@@ -34,6 +34,7 @@ export interface InputUploadProps
   loading?: boolean;
   multiple?: boolean;
   onErrors?(errorFiles: FileRejection[]): void;
+  required?: boolean;
 }
 
 export enum TypeFiles {

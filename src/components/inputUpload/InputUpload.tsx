@@ -11,7 +11,8 @@ import {
   LabelInputUpload,
   PreviewFile,
   Container,
-  MultipleFiles
+  MultipleFiles,
+  InputRequired
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon, FileIcon } from '../icons';
@@ -58,7 +59,8 @@ export const InputUpload = ({
   className,
   loading = false,
   horizontal = false,
-  multiple = false
+  multiple = false,
+  required = false
 }: InputUploadProps) => {
   const [preview, setPreview] = useState<Preview>();
   const [files, setFiles] = useState<Preview[]>([]);
@@ -154,7 +156,11 @@ export const InputUpload = ({
 
   return (
     <Container className={className} horizontal={horizontal}>
-      {label && <LabelInputUpload htmlFor={id}>{label}</LabelInputUpload>}
+      {label && (
+        <LabelInputUpload htmlFor={id}>
+          {label} {required && <InputRequired>*</InputRequired>}
+        </LabelInputUpload>
+      )}
 
       <ContainerDrag
         circle={circle}

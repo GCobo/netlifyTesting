@@ -94,3 +94,7 @@ export const FlexCenter = styled.div`
 export const ErrorLabelCheck = styled(ErrorLabel)`
   margin-top: 0.25rem;
 `;
+
+export const InputRequired = styled.span`
+  color: ${(props) => props.theme.colors.system.error};
+`;

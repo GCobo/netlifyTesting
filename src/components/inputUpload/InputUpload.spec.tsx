@@ -213,4 +213,14 @@ describe('Input Upload component', () => {
     cy.contains('example.png').should('be.visible');
     cy.contains('example2.png').should('be.visible');
   });
+
+  it('should show the required label', () => {
+    mount(
+      <WrapperTheme>
+        <InputUpload horizontal required label='Upload file' />
+      </WrapperTheme>
+    );
+
+    cy.get('label').should('contain', '*');
+  });
 });

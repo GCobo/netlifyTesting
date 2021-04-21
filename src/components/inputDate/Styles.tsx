@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const InputCalendarWrapper = styled.div`
+export const InputCalendarWrapper = styled.div<{ withLabel: boolean }>`
   display: flex;
   width: 100%;
   flex: 1;
@@ -12,7 +12,7 @@ export const InputCalendarWrapper = styled.div`
   svg {
     position: absolute;
     right: 10px;
-    top: 6px;
+    top: ${(props) => (props.withLabel ? '1.8rem' : '0.3rem')};
     fill: ${(props) => props.theme.colors.primary.greenLight};
     pointer-events: none;
   }

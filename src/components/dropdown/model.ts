@@ -12,6 +12,7 @@ export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   ref?: Ref<HTMLInputElement>;
   multiple?: boolean;
   overlay?: boolean;
+  required?: boolean;
 }
 
 export type DropdownStyleProps = {

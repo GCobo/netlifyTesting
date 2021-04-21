@@ -89,4 +89,20 @@ describe('Switch Component', () => {
     );
     cy.contains('This is the help').should('be.visible');
   });
+
+  it('should show the required label', () => {
+    mount(
+      <WrapperTheme>
+        <Switch
+          labelRight='label'
+          id='label'
+          testId='Switch'
+          helpLabel='This is the help'
+          required
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('label').should('contain', '*');
+  });
 });

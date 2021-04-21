@@ -9,6 +9,10 @@ import {
 } from '../optionMenu/OptionMenuStyles';
 import { ChevronProps, DropdownStyleProps } from './model';
 
+export const InputRequired = styled.span`
+  color: ${(props) => props.theme.colors.system.error};
+`;
+
 export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   display: flex;
   align-items: center;

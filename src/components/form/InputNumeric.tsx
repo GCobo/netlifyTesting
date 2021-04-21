@@ -14,7 +14,8 @@ import {
   InputNumericStyles,
   ErrorLabelInput,
   HelpLabelInput,
-  ButtonNumeric
+  ButtonNumeric,
+  InputRequired
 } from './Styles';
 import { PlusIcon, MinusIcon } from '../icons';
 
@@ -44,7 +45,8 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
       onChange,
       defaultValue = 0,
       max,
-      min
+      min,
+      required
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -88,7 +90,11 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
 
     return (
       <Wrapper className={className}>
-        {label && <Label htmlFor={id}>{label}</Label>}
+        {label && (
+          <Label htmlFor={id}>
+            {label} {required && <InputRequired>*</InputRequired>}
+          </Label>
+        )}
         <InputContainer errorLabel={errorLabel} disabled={disabled}>
           <ButtonNumeric
             icon={<MinusIcon />}

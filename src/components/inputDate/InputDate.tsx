@@ -32,6 +32,7 @@ export const InputDate = ({
   multiple = false,
   range = false,
   onChange = () => {},
+  label,
   ...rest
 }: IProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -65,8 +66,14 @@ export const InputDate = ({
   }, [inputRef]);
 
   return (
-    <InputCalendarWrapper>
-      <Input type='text' {...rest} ref={inputRef} onChange={() => {}} />
+    <InputCalendarWrapper withLabel={label ? true : false}>
+      <Input
+        type='text'
+        {...rest}
+        ref={inputRef}
+        onChange={() => {}}
+        label={label}
+      />
       <CalendarIcon />
     </InputCalendarWrapper>
   );

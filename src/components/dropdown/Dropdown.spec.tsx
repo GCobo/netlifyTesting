@@ -206,4 +206,14 @@ describe('Dropdown component', () => {
 
     cy.contains('test1,test2').should('be.visible');
   });
+
+  it('should show the required label', () => {
+    mount(
+      <WrapperTheme>
+        <Dropdown options={[]} label='This is a label' required />
+      </WrapperTheme>
+    );
+
+    cy.get('label').should('contain', '*');
+  });
 });

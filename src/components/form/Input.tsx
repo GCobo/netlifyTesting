@@ -16,7 +16,8 @@ import {
   InputStyle,
   HelpLabelInput,
   ErrorLabelInput,
-  InputContainer
+  InputContainer,
+  InputRequired
 } from './Styles';
 
 export type InputPropsBasic = FormContainerProps & {
@@ -29,6 +30,7 @@ export type InputPropsBasic = FormContainerProps & {
   className?: string;
   value?: string | number | string[];
   testId?: string;
+  required?: boolean;
 };
 
 export type InputProps = InputPropsBasic & {
@@ -63,7 +65,8 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
       onClick,
       value,
       testId,
-      onChange
+      onChange,
+      required = false
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -75,7 +78,11 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
 
     return (
       <Wrapper className={className}>
-        {label && <Label htmlFor={id}>{label}</Label>}
+        {label && (
+          <Label htmlFor={id}>
+            {label} {required && <InputRequired>*</InputRequired>}
+          </Label>
+        )}
         <InputContainer errorLabel={errorLabel} disabled={disabled}>
           <InputStyle
             type={passwordShow ? 'text' : type}

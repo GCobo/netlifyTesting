@@ -4,7 +4,8 @@ import {
   SwitchBoxContainer,
   SwitchBoxBox,
   LabelSwitch,
-  HelpLabelInput
+  HelpLabelInput,
+  InputRequired
 } from './SwitchStyles';
 import { SwitchProps } from './SwitchModel';
 import {
@@ -28,7 +29,8 @@ export const Switch = forwardRef(
       value,
       errorLabel,
       onChange,
-      helpLabel
+      helpLabel,
+      required = false
     }: SwitchProps,
     ref: Ref<HTMLInputElement>
   ) => {
@@ -58,7 +60,7 @@ export const Switch = forwardRef(
         <FlexCenter>
           {labelLeft && (
             <LabelSwitch disabled={disabled} id={id}>
-              {labelLeft}
+              {labelLeft} {required && <InputRequired>*</InputRequired>}
             </LabelSwitch>
           )}
           <HiddenCheckbox
@@ -81,7 +83,7 @@ export const Switch = forwardRef(
           </SwitchBoxContainer>
           {innerLabel && (
             <LabelSwitch disabled={disabled} id={id}>
-              {innerLabel}
+              {innerLabel} {required && <InputRequired>*</InputRequired>}
             </LabelSwitch>
           )}
         </FlexCenter>

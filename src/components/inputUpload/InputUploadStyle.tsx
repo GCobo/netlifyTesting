@@ -185,3 +185,7 @@ export const MultipleFiles = styled.ul`
     }
   }
 `;
+
+export const InputRequired = styled.span`
+  color: ${(props) => props.theme.colors.system.error};
+`;
