@@ -19,7 +19,19 @@ import {
   InputContainer
 } from './Styles';
 
-export interface InputProps extends FormContainerProps {
+export type InputPropsBasic = FormContainerProps & {
+  label?: string;
+  helpLabel?: string;
+  id?: string;
+  placeHolder?: string;
+  name?: string;
+  ref?: Ref<HTMLInputElement>;
+  className?: string;
+  value?: string | number | string[];
+  testId?: string;
+};
+
+export type InputProps = InputPropsBasic & {
   type?: 'text' | 'number' | 'password' | 'email';
   label?: string;
   helpLabel?: string;
@@ -33,7 +45,7 @@ export interface InputProps extends FormContainerProps {
   value?: string | number | string[];
   testId?: string;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
-}
+};
 
 export const Input: FunctionComponent<InputProps> = forwardRef(
   (
