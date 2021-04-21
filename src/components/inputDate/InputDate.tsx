@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 
 import { Input, InputPropsBasic } from '../form';
 import { CalendarIcon } from '../icons';
-import { InputCalendarWrapper } from './Styles';
+import { InputCalendarWrapper, DateGlobalStyles } from './Styles';
 
 const addCss = () => {
   var head = document.head;
@@ -67,6 +67,7 @@ export const InputDate = ({
 
   return (
     <InputCalendarWrapper withLabel={label ? true : false}>
+      <DateGlobalStyles />
       <Input
         type='text'
         {...rest}
