@@ -288,6 +288,18 @@ export const DatePickerGlobalStyles = () => {
           transform: perspective(1000px) rotateX(-15deg);
         }
 
+        .-selected & {
+          &:before {
+            width: 100% !important;
+            height: 100% !important;
+            background-color: ${theme.colors.primary.greyDark} !important;
+            transform: translate(0, 0) !important;
+            left: 0 !important;
+            top: 0 !important;
+            z-index: 0 !important;
+          }
+        }
+
         .nice-dates-day {
           &.day-with-event {
             &:before {

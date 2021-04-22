@@ -1,5 +1,11 @@
-import React, { Fragment, useCallback, useMemo } from 'react';
-import { Calendar } from 'react-nice-dates';
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
+import { DatePickerCalendar } from 'react-nice-dates';
 import { es, enGB as en } from 'date-fns/locale';
 
 import { DatePickerGlobalStyles, DatePickerWrapper } from './Styles';
@@ -12,14 +18,24 @@ export enum LanguageDate {
 type IProps = {
   locale?: LanguageDate;
   selectedDates?: Date[];
-  onClickDay?(date: Date | null): void;
+  date?: Date;
+  onChange?(date: Date): void;
 };
 
 export const DatePicker = ({
   locale = LanguageDate.en,
   selectedDates = [],
-  onClickDay
+  date: dateProp = new Date(),
+  onChange
 }: IProps) => {
+  const [date, setDate] = useState<Date>(dateProp);
+
+  useEffect(() => {
+    if (date) {
+      onChange && onChange(date);
+    }
+  }, [date]);
+
   const compareDates = useCallback(
     (date) => {
       const findDate = selectedDates.find((d) => {
@@ -52,11 +68,12 @@ export const DatePicker = ({
     <Fragment>
       <DatePickerGlobalStyles />
       <DatePickerWrapper>
-        <Calendar
+        <DatePickerCalendar
           modifiers={modifiers}
           locale={language}
           modifiersClassNames={modifiersClassNames}
-          onDayClick={onClickDay}
+          date={date}
+          onDateChange={(date: Date | null) => date && setDate(date)}
         />
       </DatePickerWrapper>
     </Fragment>
