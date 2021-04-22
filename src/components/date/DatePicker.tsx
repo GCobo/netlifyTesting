@@ -1,7 +1,6 @@
 import React, { Fragment, useCallback, useMemo } from 'react';
 import { Calendar } from 'react-nice-dates';
-import * as es from 'date-fns/locale/es';
-import * as en from 'date-fns/locale/en-GB';
+import { es, enGB as en } from 'date-fns/locale';
 
 import { DatePickerGlobalStyles, DatePickerWrapper } from './Styles';
 
@@ -55,7 +54,7 @@ export const DatePicker = ({
       <DatePickerWrapper>
         <Calendar
           modifiers={modifiers}
-          locale={language as any}
+          locale={language}
           modifiersClassNames={modifiersClassNames}
           onDayClick={onClickDay}
         />
