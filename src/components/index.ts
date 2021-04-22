@@ -24,4 +24,5 @@ export * from './alert';
 export * from './collapsable';
 export * from './form';
 export * from './tags/Tag';
-export * from './inputDate/InputDate';
+export * from './date/InputDate';
+export * from './date/DatePicker';

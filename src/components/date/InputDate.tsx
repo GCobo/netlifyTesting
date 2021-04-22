@@ -6,15 +6,18 @@ import { Input, InputPropsBasic } from '../form';
 import { CalendarIcon } from '../icons';
 import { InputCalendarWrapper, DateGlobalStyles } from './Styles';
 
-const addCss = () => {
+export const addCss = () => {
   var head = document.head;
   var link = document.createElement('link');
 
-  link.type = 'text/css';
-  link.rel = 'stylesheet';
-  link.href = 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css';
+  if (!head.querySelector('#flatpickr')) {
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+    link.id = 'flatpickr';
+    link.href = 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css';
 
-  head.appendChild(link);
+    head.appendChild(link);
+  }
 };
 
 type IProps = InputPropsBasic & {
