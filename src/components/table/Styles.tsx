@@ -17,7 +17,7 @@ export const TableStyles = styled.div`
   flex-flow: column;
 `;
 
-export const TableHeader = styled.div<TableOptionSize>`
+export const TableHeaderStyles = styled.div<TableOptionSize>`
   display: flex;
   align-items: center;
   grid-column-gap: ${GAP_COLUMN};
@@ -41,7 +41,7 @@ export const TableContent = styled.ul`
   overflow-y: auto;
 `;
 
-export const TableElement = styled.li<TableOptionSize>`
+export const TableList = styled.li<TableOptionSize>`
   display: flex;
   align-items: flex-start;
   grid-column-gap: ${GAP_COLUMN};
@@ -59,4 +59,13 @@ export const TableElement = styled.li<TableOptionSize>`
     ${(props) => props.small && `flex: 9rem`};
     ${(props) => !props.small && !props.medium && !props.big && `flex: 1`}
   }
+`;
+
+export const TableListItemLabel = styled.span<TableOptionSize>`
+  padding-left: 1.6rem;
+  ${(props) => props.theme.fonts.regularText('M')};
+  flex: 1;
+  ${(props) => props.small && `flex: 0 0 8rem`};
+  ${(props) => props.medium && `flex: 0 0 12rem`};
+  ${(props) => props.big && `flex: 0 0 20rem`};
 `;
