@@ -59,3 +59,4 @@ export * from './minusIcon';
 export * from './plusCircleIcon';
 export * from './closeCircleIcon';
 export * from './calendarIcon';
+export * from './arrowShortUpIcon';
