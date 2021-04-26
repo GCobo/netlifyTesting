@@ -18,4 +18,5 @@ export interface ButtonProps extends ButtonTypeProps {
   className?: string;
   ref?: Ref<HTMLButtonElement>;
   id?: string;
+  as?: React.ElementType<any> | undefined;
 }

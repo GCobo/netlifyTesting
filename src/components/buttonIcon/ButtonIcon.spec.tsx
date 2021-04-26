@@ -73,4 +73,18 @@ describe('Button Icon', () => {
 
     cy.get('button').should('be.disabled');
   });
+
+  it('Button Should have Id', () => {
+    mount(
+      <WrapperTheme>
+        <ButtonIcon
+          icon={<SearchIcon />}
+          testId='button-secondary'
+          id='testing'
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('button').should('have.attr', 'id', 'testing');
+  });
 });

@@ -128,4 +128,15 @@ describe('Button component', () => {
     );
     cy.get('[data-test="button"]').should('have.attr', 'type', 'reset');
   });
+
+  it('Should be an A ', () => {
+    mount(
+      <ThemeProvider theme={JoinbleTheme}>
+        <Button testId='button' type='reset' as='a'>
+          Hello World!
+        </Button>
+      </ThemeProvider>
+    );
+    cy.get('a').should('be.visible');
+  });
 });

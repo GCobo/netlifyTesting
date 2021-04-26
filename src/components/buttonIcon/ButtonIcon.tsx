@@ -23,6 +23,7 @@ export type ButtonIconProps = {
   bigIcon?: boolean;
   disabled?: boolean;
   ref: Ref<HTMLButtonElement>;
+  id?: string;
 };
 
 export const ButtonIcon = forwardRef(
