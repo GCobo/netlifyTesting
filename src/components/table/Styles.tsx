@@ -27,15 +27,6 @@ export const TableHeaderStyles = styled.div`
   border-radius: 0.25rem 0.25rem 0 0;
 `;
 
-export const TableHeaderTitle = styled.span<TableOptionSize>`
-  ${(props) => props.theme.fonts.regularText('M')};
-  color: ${(props) => props.theme.colors.system.white};
-  ${(props) => props.isSmall && `flex: 5.5rem`};
-  ${(props) => props.isMedium && `flex: 7.5rem`};
-  ${(props) => props.isSmall && `flex: 9rem`};
-  ${(props) => !props.isSmall && !props.isMedium && !props.isLarge && `flex: 1`}
-`;
-
 export const TableContent = styled.ul`
   flex: 1;
   overflow-y: auto;
@@ -59,5 +50,10 @@ export const TableListItemLabel = styled.span<TableOptionSize>`
   ${(props) => props.isSmall && `flex: 5.5rem`};
   ${(props) => props.isMedium && `flex: 7.5rem`};
   ${(props) => props.isSmall && `flex: 9rem`};
-  ${(props) => !props.isSmall && !props.isMedium && !props.isLarge && `flex: 1`}
+  ${(props) =>
+    !props.isSmall && !props.isMedium && !props.isLarge && `flex: 1`};
+`;
+
+export const TableHeaderTitle = styled(TableListItemLabel)`
+  color: ${(props) => props.theme.colors.system.white};
 `;
