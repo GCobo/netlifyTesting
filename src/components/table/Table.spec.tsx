@@ -14,7 +14,7 @@ const TableTestComponent = () => {
 
   const [items, setItems] = useState<any>([]);
 
-  const generateItems = (length: number = 100) => {
+  const generateItems = (length: number = 5) => {
     const newItems = [];
 
     for (let i = 0; i < length; i++) {
