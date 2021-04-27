@@ -14,7 +14,7 @@ export const GlobalStyles: React.FunctionComponent = () => {
 
         * {
           &::-webkit-scrollbar-track {
-            background-color: #8f97a1;
+            background-color: #fff;
             border-radius: 2px;
             box-shadow: none;
           }
@@ -25,9 +25,7 @@ export const GlobalStyles: React.FunctionComponent = () => {
 
           &::-webkit-scrollbar-thumb {
             background-color: #b3bdcd;
-            border-bottom: 2px solid #fff;
-            border-radius: 2px;
-            border-top: 2px solid #fff;
+            border-radius: 8px;
             box-shadow: none;
           }
         }
