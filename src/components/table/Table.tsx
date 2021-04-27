@@ -1,8 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, Fragment } from 'react';
 import { Virtuoso } from 'react-virtuoso';
 
 import { THeader, TPagination, TData, TChange } from './model';
-import { TableStyles, TableHeaderStyles, TableList } from './Styles';
+import {
+  TableStyles,
+  TableHeaderStyles,
+  TableList,
+  TableListElement,
+  TableHeaderTitle
+} from './Styles';
 import { Checkbox } from '../checkbox/Checkbox';
 import { TableItem } from './TableItem';
 
@@ -51,11 +57,11 @@ export const TablePortal = ({
   const [itemsSelect, setItemsSelect] = useState<Array<string | number>>([]);
   const [allItemsSelected, setAllItemsSelected] = useState<boolean>(false);
   const [isEdit, setIsEdit] = useState<number | string | undefined>();
-  const [heightTable, _] = useState(height ? `${height}px` : '100%');
+  const [heightTable] = useState(height ? `${height}px` : '100%');
 
   const customHeaders = headers.map((h: THeader) => ({ options: {}, ...h }));
 
-  const [innerHeaders, setInnerHeader] = useState<THeader[]>(customHeaders);
+  const [innerHeaders] = useState<THeader[]>(customHeaders);
 
   useEffect(() => {
     onSelectedItemsChange && onSelectedItemsChange(itemsSelect);
@@ -91,15 +97,21 @@ export const TablePortal = ({
   };
 
   return (
-    <>
+    <Fragment>
       <TableStyles ref={tableRef} className={className} data-test={testId}>
         <TableHeaderStyles data-test={`${testId}-table-header`}>
           {hasCheckBox && <Checkbox value='1' onChange={onSelectAll} />}
           {innerHeaders.map((header: THeader) => {
             return (
-              <span key={header.value} data-test={`header-${header.value}`}>
+              <TableHeaderTitle
+                key={header.value}
+                data-test={`header-${header.value}`}
+                isLarge={header.options && header.options.isLarge}
+                isMedium={header.options && header.options.isMedium}
+                isSmall={header.options && header.options.isSmall}
+              >
                 {header.value}
-              </span>
+              </TableHeaderTitle>
             );
           })}
         </TableHeaderStyles>
@@ -119,7 +131,7 @@ export const TablePortal = ({
                 }
               }}
               itemContent={(index: number) => (
-                <span
+                <TableListElement
                   data-test={
                     data[index].testId
                       ? `table-element-${data[index].testId}`
@@ -145,6 +157,7 @@ export const TablePortal = ({
                         name={innerHeaders[i].key}
                         item={item}
                         {...options}
+                        isSmall={options?.isSmall}
                         testId={`row-${innerHeaders[i].value}`}
                         isEdit={isEdit === data[index].id}
                         onChange={(name: string, value: any) =>
@@ -168,12 +181,12 @@ export const TablePortal = ({
                       />
                     );
                   })}
-                </span>
+                </TableListElement>
               )}
             ></Virtuoso>
           )}
         </TableList>
       </TableStyles>
-    </>
+    </Fragment>
   );
 };

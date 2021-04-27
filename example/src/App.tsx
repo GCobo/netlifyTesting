@@ -65,7 +65,7 @@ import {
   AlertFillIcon,
   WarningIcon,
   Tag,
-  Table
+  TablePortal
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -324,7 +324,7 @@ const App = () => {
         <Section>
           <Title>Table</Title>
           <Grid>
-            <Table />
+            <TablePortal />
           </Grid>
         </Section>
         <Section>

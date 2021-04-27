@@ -40,5 +40,14 @@ export const TableItem: FunctionComponent<IProps> = ({
 
   const fieldValue = useMemo(() => getField(), [item, searchText, isEdit]);
 
-  return <div>{fieldValue}</div>;
+  return (
+    <TableListItemLabel
+      isSmall={isSmall}
+      isMedium={isMedium}
+      isLarge={isLarge}
+      data-test={testId}
+    >
+      {fieldValue}
+    </TableListItemLabel>
+  );
 };
