@@ -28,12 +28,14 @@ export const Tabs = ({
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   useEffect(() => {
-    onChangeActive && active && onChangeActive(active);
-
     if (active) {
       getActiveIndex(active);
     }
   }, [active]);
+
+  useEffect(() => {
+    onChangeActive && onChangeActive(selected);
+  }, [selected]);
 
   const getActiveIndex = useCallback(
     (id: string) => {
