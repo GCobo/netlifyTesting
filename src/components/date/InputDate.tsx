@@ -28,6 +28,7 @@ type IProps = InputPropsBasic & {
   range?: boolean;
   onChange?(date: Date[]): void;
   confirmText?: string;
+  errorLabel?: string;
 };
 
 export const InputDate = ({
@@ -39,6 +40,7 @@ export const InputDate = ({
   onChange = () => {},
   label,
   confirmText = 'OK',
+  errorLabel,
   ...rest
 }: IProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -80,7 +82,10 @@ export const InputDate = ({
   }, [inputRef]);
 
   return (
-    <InputCalendarWrapper withLabel={label ? true : false}>
+    <InputCalendarWrapper
+      withLabel={label ? true : false}
+      errorLabel={errorLabel}
+    >
       <DateGlobalStyles />
       <Input
         type='text'
@@ -88,8 +93,9 @@ export const InputDate = ({
         ref={inputRef}
         onChange={() => {}}
         label={label}
+        errorLabel={errorLabel}
       />
-      <CalendarIcon />
+      {!errorLabel && <CalendarIcon />}
     </InputCalendarWrapper>
   );
 };

@@ -76,6 +76,16 @@ describe('Input Date component', () => {
     cy.get('label').should('contain', '*');
   });
 
+  it('should show error label', () => {
+    mount(
+      <WrapperTheme>
+        <InputDate label='This is a label' required errorLabel='error' />
+      </WrapperTheme>
+    );
+
+    cy.get('p').should('contain', 'error');
+  });
+
   it('should works in a modal', () => {
     mount(<TestComponent />);
 

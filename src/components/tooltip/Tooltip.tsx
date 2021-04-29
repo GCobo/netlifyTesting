@@ -8,9 +8,17 @@ type IProps = {
   children: React.ReactElement;
   type?: 'dark' | 'success' | 'warning' | 'error' | 'info' | 'light';
   place?: 'top' | 'right' | 'bottom' | 'left';
+  className?: string;
 };
 
-export const Tooltip = ({ label, children, id, type, place }: IProps) => {
+export const Tooltip = ({
+  label,
+  children,
+  id,
+  type,
+  place,
+  className
+}: IProps) => {
   const [show, setShow] = useState<boolean>(false);
 
   const hiddenTooltip = () => {
@@ -28,6 +36,7 @@ export const Tooltip = ({ label, children, id, type, place }: IProps) => {
         data-for={id}
         onMouseEnter={seeTooltip}
         onMouseLeave={hiddenTooltip}
+        className={className}
       >
         {children}
       </TooltipWrapper>
