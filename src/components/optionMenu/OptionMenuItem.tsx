@@ -27,11 +27,7 @@ export const OptionMenuItem = ({
   };
 
   return (
-    <OptionMenuItemList
-      className={className}
-      active={active}
-      disabled={disabled}
-    >
+    <OptionMenuItemList className={className} active={active}>
       <OptionMenuItemStyles
         as={href ? 'a' : 'button'}
         onClick={handleClick}
