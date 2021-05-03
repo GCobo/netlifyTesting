@@ -27,3 +27,4 @@ export * from './tags/Tag';
 export * from './date/InputDate';
 export * from './date/DatePicker';
 export * from './table';
+export * from './logo/JoinbleLogo';

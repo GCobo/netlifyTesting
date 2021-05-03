@@ -65,7 +65,7 @@ import {
   AlertFillIcon,
   WarningIcon,
   Tag,
-  TablePortal
+  JoinbleLogo
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -322,11 +322,12 @@ const App = () => {
           </Grid>
         </Section>
         <Section>
-          <Title>Table</Title>
-          <Grid>
-            <TablePortal />
-          </Grid>
+          <Title>Logo</Title>
+          <JoinbleLogo />
+          <JoinbleLogo secondary />
+          <JoinbleLogo secondary width={250} height={80} />
         </Section>
+
         <Section>
           <Title>Icons</Title>
           <Grid>
