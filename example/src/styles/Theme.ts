@@ -27,11 +27,11 @@ export type IThemeProps = {
 export const JoinbleTheme: IThemeProps = {
   colors: {
     primary: {
-      greenLight: '#CDD31B',
-      greenDark: '#7A7E0A',
-      greyDarkest: '#111112',
+      greenLight: '#1CD8D2',
+      greenDark: '#0D837F',
+      greyDarkest: '#021514',
       greyDark: '#6E768E',
-      greyLight: '#B0B7C3',
+      greyLight: '#E1E4E8',
       greyLighest: '#F3F7F9'
     },
     system: {

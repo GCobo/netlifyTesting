@@ -1,19 +1,18 @@
 import React, {
   cloneElement,
   forwardRef,
-  Fragment,
   MouseEvent,
   ReactElement,
   Ref
 } from 'react';
-import { BadgetsStyles, ButtonIconStyle } from './ButtonIconStyles';
+import { ButtonIconBadget, ButtonIconStyle } from './ButtonIconStyles';
 import { Tooltip } from '../tooltip/Tooltip';
 
 export type ButtonIconProps = {
   icon: ReactElement;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
-  badgetsNumber?: number;
+  badgets?: boolean;
   secondary?: boolean;
   negative?: boolean;
   type?: 'button' | 'submit' | 'reset';
@@ -30,7 +29,7 @@ export const ButtonIcon = forwardRef(
   (
     {
       icon,
-      badgetsNumber,
+      badgets,
       type = 'button',
       testId,
       tooltip,
@@ -43,7 +42,7 @@ export const ButtonIcon = forwardRef(
   ) => {
     const renderButton = () => (
       <ButtonIconStyle
-        badgetsNumber={badgetsNumber}
+        badgets={badgets}
         {...rest}
         type={type}
         ref={ref}
@@ -52,14 +51,8 @@ export const ButtonIcon = forwardRef(
         disabled={disabled}
         onClick={disabled ? undefined : onClick}
       >
-        {badgetsNumber ? (
-          <Fragment>
-            {cloneElement(icon)}
-            <BadgetsStyles number={badgetsNumber} />
-          </Fragment>
-        ) : (
-          cloneElement(icon)
-        )}
+        {cloneElement(icon)}
+        {badgets && <ButtonIconBadget />}
       </ButtonIconStyle>
     );
 

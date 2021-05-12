@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { darken } from 'polished';
-import { Badgets } from '../badgets/Badgets';
+import { keyframes } from '@emotion/react';
+import { darken, rem } from 'polished';
 
 type IProps = {
-  badgetsNumber?: number;
+  badgets?: boolean;
   secondary?: boolean;
   negative?: boolean;
   bigIcon?: boolean;
@@ -15,7 +15,7 @@ export const ButtonIconStyle = styled.button<IProps>`
   align-items: center;
   justify-content: center;
   padding: 0;
-  position: ${(props) => (props.badgetsNumber ? 'relative' : 'unset')};
+  position: ${(props) => props.badgets && 'relative'};
   fill: ${(props) =>
     props.negative
       ? props.theme.colors.system.white
@@ -42,13 +42,31 @@ export const ButtonIconStyle = styled.button<IProps>`
 
   svg {
     fill: inherit;
-    width: ${(props) => (props.bigIcon ? '2.25rem' : ' 1.25rem')};
-    height: ${(props) => (props.bigIcon ? '2.25rem' : ' 1.25rem')};
+    width: ${(props) => (props.bigIcon ? `${rem(36)}` : `${rem(20)}`)};
+    height: ${(props) => (props.bigIcon ? `${rem(36)}` : `${rem(20)}`)};
   }
 `;
 
-export const BadgetsStyles = styled(Badgets)`
+const scale = keyframes`
+  0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+
+  100% {
+      transform: scale(1.25);
+      opacity: 1;
+    }
+`;
+
+export const ButtonIconBadget = styled.span`
+  width: ${rem(6)};
+  height: ${rem(6)};
+  background-color: ${(props) => props.theme.colors.system.error};
   position: absolute;
-  left: 1rem;
-  bottom: 0;
+
+  right: 0;
+  top: 0;
+  animation: ${scale} 0.5s ease-in-out infinite;
+  border-radius: 100%;
 `;

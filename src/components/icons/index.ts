@@ -61,4 +61,4 @@ export * from './closeCircleIcon';
 export * from './calendarIcon';
 export * from './arrowShortUpIcon';
 export * from './sendIcon';
-export * from './browserNotSupport';
+export * from './browserNoSupport';

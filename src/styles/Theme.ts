@@ -31,7 +31,7 @@ export const JoinbleTheme: IThemeProps = {
       greenDark: '#0D837F',
       greyDarkest: '#021514',
       greyDark: '#6E768E',
-      greyLight: '#B0B7C3',
+      greyLight: '#E1E4E8',
       greyLighest: '#F3F7F9'
     },
     system: {

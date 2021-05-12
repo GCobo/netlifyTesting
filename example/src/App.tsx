@@ -75,7 +75,7 @@ type IGridProps = {
 
 const App = () => {
   const Layout = styled.section`
-    margin: 1rem;
+    margin: 1.6rem;
   `;
 
   const Section = styled.div`
@@ -86,19 +86,35 @@ const App = () => {
 
   const Title = styled.h2`
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
     margin-top: 0;
   `;
 
   const Grid = styled.div<IGridProps>`
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    column-gap: 1.6rem;
+    row-gap: 1.6rem;
     display: ${(props) => (props.size ? 'grid' : 'flex')};
+
+    ${(props) => !props.size && `flex-wrap: wrap`};
     ${(props) =>
       props.size &&
       `
     grid-template-columns: repeat(auto-fit, minmax(${props.size}px, 1fr))
     `}
+  `;
+
+  const PaletteBoxColor = styled.div<{ background: string }>`
+    width: 18.75rem;
+    height: 6.25rem;
+    background-color: ${(props) => props.background};
+    border-radius: 1.6rem;
+    display: grid;
+    place-items: center;
+
+    p {
+      ${JoinbleTheme.fonts.regularText('L')};
+      color: ${JoinbleTheme.colors.system.white};
+    }
   `;
 
   const optionsPlatform: ICheckPlatform[] = [
@@ -124,6 +140,58 @@ const App = () => {
     <>
       <GlobalStyles />
       <Layout>
+        <Section>
+          <Title>Colour Palette</Title>
+          <Grid>
+            <PaletteBoxColor
+              background={JoinbleTheme.colors.primary.greenLight}
+            >
+              <p>Green Light</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.primary.greenDark}>
+              <p>Green Dark</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor
+              background={JoinbleTheme.colors.primary.greyDarkest}
+            >
+              <p>Grey Darkest</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.primary.greyDark}>
+              <p>Grey Dark</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.primary.greyLight}>
+              <p>Grey Light</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor
+              background={JoinbleTheme.colors.primary.greyLighest}
+            >
+              <p style={{ color: JoinbleTheme.colors.primary.greyDarkest }}>
+                Grey Lighest
+              </p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.system.success}>
+              <p>Success</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.system.warning}>
+              <p>Warning</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.system.error}>
+              <p>Error</p>
+            </PaletteBoxColor>
+
+            <PaletteBoxColor background={JoinbleTheme.colors.system.info}>
+              <p>Info</p>
+            </PaletteBoxColor>
+          </Grid>
+        </Section>
         <Section>
           <Title>Button</Title>
           <Grid size={300}>
@@ -206,17 +274,7 @@ const App = () => {
             />
             <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
             <ButtonIcon
-              badgetsNumber={9}
-              onClick={() => alert('click')}
-              icon={<NotificationIcon />}
-            />
-            <ButtonIcon
-              badgetsNumber={99}
-              onClick={() => alert('click')}
-              icon={<NotificationIcon />}
-            />
-            <ButtonIcon
-              badgetsNumber={999}
+              badgets
               onClick={() => alert('click')}
               icon={<NotificationIcon />}
             />
@@ -325,7 +383,7 @@ const App = () => {
           <Title>Logo</Title>
           <JoinbleLogo />
           <JoinbleLogo secondary />
-          <JoinbleLogo secondary width={250} height={80} />
+          <JoinbleLogo width={250} height={80} />
         </Section>
 
         <Section>
@@ -443,16 +501,16 @@ const App = () => {
           <Title>Tooltip</Title>
           <Grid>
             <Tooltip label='tooltip top' id='tooltip-test' place='top'>
-              <p>Tooltip top</p>
+              <p style={{ fontSize: '1.6rem' }}>Tooltip top</p>
             </Tooltip>
             <Tooltip label='tooltip bottom' id='tooltip-test' place='bottom'>
-              <p>Tooltip bottom</p>
+              <p style={{ fontSize: '1.6rem' }}>Tooltip bottom</p>
             </Tooltip>
             <Tooltip label='tooltip left' id='tooltip-test' place='left'>
-              <p>Tooltip left</p>
+              <p style={{ fontSize: '1.6rem' }}>Tooltip left</p>
             </Tooltip>
             <Tooltip label='tooltip right' id='tooltip-test' place='right'>
-              <p>Tooltip right</p>
+              <p style={{ fontSize: '1.6rem' }}>Tooltip right</p>
             </Tooltip>
           </Grid>
         </Section>

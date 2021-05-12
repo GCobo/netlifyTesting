@@ -3,16 +3,16 @@
 import React from 'react';
 import { mount } from 'cypress-react-unit-test';
 import { Button } from './Button';
-import { ThemeProvider } from '@emotion/react';
 import { JoinbleTheme } from '../../styles/Theme';
 import { PlusIcon } from '../icons';
+import { WrapperTheme } from '../../utils/test';
 
 describe('Button component', () => {
   it('Should be works', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button'>Hello World!</Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]')
       .contains('Hello World!')
@@ -21,20 +21,20 @@ describe('Button component', () => {
 
   it('Should be disabled', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' disabled>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should('have.attr', 'disabled');
   });
 
   it('Should be primary', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button'>Hello World!</Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
@@ -44,11 +44,11 @@ describe('Button component', () => {
 
   it('Should be outline', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' outline>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
@@ -58,11 +58,11 @@ describe('Button component', () => {
 
   it('Should be success', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' success>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
@@ -71,11 +71,11 @@ describe('Button component', () => {
   });
   it('Should be warning', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' warning>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
@@ -84,11 +84,11 @@ describe('Button component', () => {
   });
   it('Should be error', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' error>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
@@ -98,44 +98,44 @@ describe('Button component', () => {
 
   it('Should have icon', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' icon={<PlusIcon />}>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"] svg').should('be.visible');
   });
 
   it('Should be type submit', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' type='submit'>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should('have.attr', 'type', 'submit');
   });
 
   it('Should be type reset', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' type='reset'>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('[data-test="button"]').should('have.attr', 'type', 'reset');
   });
 
   it('Should be an A ', () => {
     mount(
-      <ThemeProvider theme={JoinbleTheme}>
+      <WrapperTheme>
         <Button testId='button' type='reset' as='a'>
           Hello World!
         </Button>
-      </ThemeProvider>
+      </WrapperTheme>
     );
     cy.get('a').should('be.visible');
   });
