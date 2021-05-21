@@ -4,27 +4,7 @@ import { IconProps } from './model';
 export const SendIcon = ({ className }: IconProps) => {
   return (
     <svg width='24px' height='24px' viewBox='0 0 24 24' className={className}>
-      <g id='basic--external_link'>
-        <g id='basic--external_link'>
-          <path
-            d='M0 0L24 0L24 24L0 24L0 0Z'
-            id='basic--external_link-(BackgroundMask)'
-            fill='none'
-            fillRule='evenodd'
-            stroke='none'
-          />
-          <g clipPath='url(#mask_1)'>
-            <path
-              d='M13.9971 3.41421L13.9971 7L15.9971 7L15.9971 0L8.9971 0L8.9971 2L12.5829 2L6.28999 8.29289L7.70421 9.70711L13.9971 3.41421ZM15 10L13 10L13 14L2 14L2 3L6 3L6 1L2 1C0.89543 1 0 1.89543 0 3L0 14C0 15.1046 0.89543 16 2 16L13 16C14.1046 16 15 15.1046 15 14L15 10Z'
-              transform='translate(4.001465 4)'
-              id='basic--external_link'
-              fill='#2E3A59'
-              fillRule='evenodd'
-              stroke='none'
-            />
-          </g>
-        </g>
-      </g>
+      <path d='M23.322 0.698c-0.6-0.616-1.489-0.846-2.317-0.604l-19.316 5.617c-0.874 0.243-1.493 0.94-1.66 1.825-0.17 0.901 0.425 2.045 1.203 2.523l6.040 3.712c0.619 0.38 1.419 0.285 1.932-0.232l6.916-6.959c0.348-0.362 0.924-0.362 1.273 0 0.348 0.35 0.348 0.918 0 1.28l-6.928 6.96c-0.514 0.516-0.61 1.319-0.232 1.942l3.69 6.1c0.432 0.725 1.176 1.135 1.993 1.135 0.096 0 0.204 0 0.3-0.012 0.936-0.121 1.68-0.761 1.957-1.667l5.726-19.291c0.252-0.821 0.024-1.715-0.576-2.331z'></path>
     </svg>
   );
 };

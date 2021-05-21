@@ -9,25 +9,20 @@ import {
   AlertIcon,
   ErrorLabel,
   HelpLabel,
-  HelpIcon,
   Dropdown,
-  ChevronDownIcon,
   ButtonSocialMedia,
   socialMedia,
   Loading,
   Link,
   ColorPicker,
-  HamburguerIcon,
   NotificationIcon,
   Badgets,
   ApplicationIcon,
   WidgetIcon,
-  MessageIcon,
   Checkbox,
   PlusIcon,
   TrashIcon,
   AppleIcon,
-  CloseIcon,
   AndroidIcon,
   CheckPlatform,
   ICheckPlatform,
@@ -36,9 +31,6 @@ import {
   ExitIcon,
   LockIcon,
   InputUpload,
-  EnglandIcon,
-  SpainIcon,
-  CreditCardIcon,
   LogOutIcon,
   UserIcon,
   OptionMenu,
@@ -52,20 +44,22 @@ import {
   Tabs,
   TabPanel,
   PlayIcon,
-  AddIcon,
   UploadIcon,
   PublishIcon,
   Alert,
   StateAlert,
-  ApplyIcon,
   SeeMoreIcon,
-  FileIcon,
   ShopingIcon,
   TextArea,
-  AlertFillIcon,
-  WarningIcon,
   Tag,
-  JoinbleLogo
+  JoinbleLogo,
+  CalendarIcon,
+  CloudCheckIcon,
+  CopyIcon,
+  BellIcon,
+  SendIcon,
+  PlusCircleIcon,
+  BagIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -91,8 +85,7 @@ const App = () => {
   `;
 
   const Grid = styled.div<IGridProps>`
-    column-gap: 1.6rem;
-    row-gap: 1.6rem;
+    grid-gap: 1rem;
     display: ${(props) => (props.size ? 'grid' : 'flex')};
 
     ${(props) => !props.size && `flex-wrap: wrap`};
@@ -101,6 +94,13 @@ const App = () => {
       `
     grid-template-columns: repeat(auto-fit, minmax(${props.size}px, 1fr))
     `}
+  `;
+
+  const IconWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
   `;
 
   const PaletteBoxColor = styled.div<{ background: string }>`
@@ -276,7 +276,7 @@ const App = () => {
             <ButtonIcon
               badgets
               onClick={() => alert('click')}
-              icon={<NotificationIcon />}
+              icon={<BellIcon />}
             />
           </Grid>
         </Section>
@@ -389,37 +389,94 @@ const App = () => {
         <Section>
           <Title>Icons</Title>
           <Grid>
-            <WarningIcon />
-            <AlertFillIcon />
-            <AlertIcon />
-            <AndroidIcon />
-            <ApplicationIcon />
-            <ChevronDownIcon />
-            <HamburguerIcon />
-            <HelpIcon />
-            <MessageIcon />
-            <NotificationIcon />
-            <PlusIcon />
-            <TrashIcon />
-            <AppleIcon />
-            <CloseIcon />
-            <SearchIcon />
-            <WidgetIcon />
-            <ExitIcon />
-            <LockIcon />
-            <EnglandIcon />
-            <SpainIcon />
-            <CreditCardIcon />
-            <LogOutIcon />
-            <UserIcon />
-            <ThemeIcon />
-            <PlayIcon />
-            <AddIcon />
-            <PublishIcon />
-            <UploadIcon />
-            <ApplyIcon />
-            <SeeMoreIcon />
-            <FileIcon />
+            <IconWrapper>
+              <p>CalendarIcon</p>
+              <CalendarIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>Trashicon</p>
+              <TrashIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>NotificationIcon</p>
+              <NotificationIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CloudCheckIcon</p>
+              <CloudCheckIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>UploadIcon</p>
+              <UploadIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>EditIcon</p>
+              <EditIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ThemeIcon</p>
+              <ThemeIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CopyIcon</p>
+              <CopyIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ExitIcon</p>
+              <ExitIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>LogOutIcon</p>
+              <LogOutIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>BellIcon</p>
+              <BellIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>UserIcon</p>
+              <UserIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>PublishIcon</p>
+              <PublishIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>SearchIcon</p>
+              <SearchIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>SeeMoreIcon</p>
+              <SeeMoreIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>PlusIcon</p>
+              <PlusIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>SendIcon</p>
+              <SendIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ShopingIcon</p>
+              <ShopingIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>PlusCircleIcon</p>
+              <PlusCircleIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ApplicationIcon</p>
+              <ApplicationIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>LockIcon</p>
+              <LockIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>BagIcon</p>
+              <BagIcon />
+            </IconWrapper>
           </Grid>
         </Section>
         <Section>
@@ -501,16 +558,16 @@ const App = () => {
           <Title>Tooltip</Title>
           <Grid>
             <Tooltip label='tooltip top' id='tooltip-test' place='top'>
-              <p style={{ fontSize: '1.6rem' }}>Tooltip top</p>
+              <p style={{ fontSize: '1em' }}>Tooltip top</p>
             </Tooltip>
             <Tooltip label='tooltip bottom' id='tooltip-test' place='bottom'>
-              <p style={{ fontSize: '1.6rem' }}>Tooltip bottom</p>
+              <p style={{ fontSize: '1em' }}>Tooltip bottom</p>
             </Tooltip>
             <Tooltip label='tooltip left' id='tooltip-test' place='left'>
-              <p style={{ fontSize: '1.6rem' }}>Tooltip left</p>
+              <p style={{ fontSize: '1em' }}>Tooltip left</p>
             </Tooltip>
             <Tooltip label='tooltip right' id='tooltip-test' place='right'>
-              <p style={{ fontSize: '1.6rem' }}>Tooltip right</p>
+              <p style={{ fontSize: '1em' }}>Tooltip right</p>
             </Tooltip>
           </Grid>
         </Section>

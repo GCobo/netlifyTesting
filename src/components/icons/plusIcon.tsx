@@ -4,32 +4,7 @@ import { IconProps } from './model';
 export const PlusIcon = ({ className }: IconProps) => {
   return (
     <svg width='24px' height='24px' viewBox='0 0 24 24' className={className}>
-      <defs>
-        <path d='M0 0L24 0L24 24L0 24L0 0Z' id='path_1' />
-        <clipPath id='mask_1'>
-          <use xlinkHref='#path_1' />
-        </clipPath>
-      </defs>
-      <g id='edit--plus'>
-        <g id='edit--plus'>
-          <path
-            d='M0 0L24 0L24 24L0 24L0 0Z'
-            id='edit--plus-(BackgroundMask)'
-            fill='none'
-            fillRule='evenodd'
-            stroke='none'
-          />
-          <g clipPath='url(#mask_1)'>
-            <path
-              d='M8 8L8 14L6 14L6 8L0 8L0 6L6 6L6 0L8 0L8 6L14 6L14 8L8 8Z'
-              transform='translate(5 5)'
-              id='edit--plus'
-              fillRule='evenodd'
-              stroke='none'
-            />
-          </g>
-        </g>
-      </g>
+      <path d='M14.203 14.236h7.582c1.228-0.027 2.216-1.016 2.216-2.245s-0.988-2.218-2.216-2.218h-7.582v-7.537c0-1.229-0.988-2.218-2.216-2.218s-2.216 0.989-2.216 2.218v7.537h-7.555c-0.587 0-1.148 0.241-1.575 0.641-0.4 0.428-0.641 0.986-0.641 1.577 0 1.229 0.988 2.218 2.216 2.245h7.555v7.563c0 1.229 0.988 2.218 2.216 2.218s2.216-0.989 2.216-2.218v-7.563z'></path>
     </svg>
   );
 };

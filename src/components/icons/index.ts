@@ -62,3 +62,5 @@ export * from './calendarIcon';
 export * from './arrowShortUpIcon';
 export * from './sendIcon';
 export * from './browserNoSupport';
+export * from './bellIcon';
+export * from './bagIcon';
