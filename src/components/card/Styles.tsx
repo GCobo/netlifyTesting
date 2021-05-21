@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 import { ReactNode } from 'react';
 
 export type CardBoxWrapperProps = {
@@ -7,7 +8,7 @@ export type CardBoxWrapperProps = {
 };
 
 export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
-  border-radius: 0.25rem;
+  border-radius: ${rem(10)};
   box-shadow: ${(props) => props.theme.mainShadow};
   height: ${(props) =>
     props.header ? '20.5rem' : props.imageBig ? '17rem' : '13rem'};
