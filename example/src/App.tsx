@@ -59,7 +59,10 @@ import {
   BellIcon,
   SendIcon,
   PlusCircleIcon,
-  BagIcon
+  BagIcon,
+  PlusSquareIcon,
+  MenuIcon,
+  CreditCardIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -476,6 +479,22 @@ const App = () => {
             <IconWrapper>
               <p>BagIcon</p>
               <BagIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>PlusSquareIcon</p>
+              <PlusSquareIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>MenuIcon</p>
+              <MenuIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>PlayIcon</p>
+              <PlayIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CreditCardIcon</p>
+              <CreditCardIcon />
             </IconWrapper>
           </Grid>
         </Section>

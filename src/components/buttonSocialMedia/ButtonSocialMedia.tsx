@@ -75,7 +75,11 @@ export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
         </TwitterButton>
       )}
       {social === socialMedia.github && (
-        <GithubButton onClick={onClick} data-test={testId}>
+        <GithubButton
+          className={className}
+          onClick={onClick}
+          data-test={testId}
+        >
           <GithubIcon />
         </GithubButton>
       )}

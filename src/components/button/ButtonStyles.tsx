@@ -1,5 +1,5 @@
 import styled from '@emotion/styled/macro';
-import { darken } from 'polished';
+import { darken, rem } from 'polished';
 import { css } from '@emotion/css';
 
 import { ButtonTypeProps } from './ButtonModel';
@@ -8,9 +8,9 @@ import { Loading } from '../loading/Loading';
 const TRANSITION = 'all 0.3s ease-in-out';
 
 export const LoadingButton = styled(Loading)<ButtonTypeProps>`
-  width: 1.5rem;
-  min-width: 1.5rem;
-  height: 1.5rem;
+  width: ${rem(24)};
+  min-width: ${rem(24)};
+  height: ${rem(24)};
 
   div {
     position: unset;
@@ -43,13 +43,13 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
     props.outline &&
     ` inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`};
   ${(props) => props.theme.fonts.regularText('L')};
-  min-width: 7rem;
-  height: 2.5rem;
-  border-radius: 0.25rem;
+  min-width: ${rem(110)};
+  height: ${rem(40)};
+  border-radius: ${rem(4)};
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  column-gap: 0.5rem;
+  column-gap: ${rem(4)};
   cursor: pointer;
   white-space: nowrap;
   color: ${(props) =>
@@ -151,7 +151,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
 `;
 
 export const IconButton = css`
-  width: 1.25rem;
-  min-width: 1.25rem;
+  width: ${rem(20)};
+  min-width: ${rem(20)};
   fill: inherit;
 `;

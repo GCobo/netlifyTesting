@@ -64,3 +64,5 @@ export * from './sendIcon';
 export * from './browserNoSupport';
 export * from './bellIcon';
 export * from './bagIcon';
+export * from './plusSquareIcon';
+export * from './menuIcon';

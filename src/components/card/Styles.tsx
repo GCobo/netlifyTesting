@@ -26,16 +26,16 @@ export const CardBoxStyles = styled.div<CardBoxWrapperProps>`
   padding: 0.75rem;
   flex: 1;
   border-radius: ${(props) =>
-    props.header ? '0 0 0.25rem 0.25rem' : '0.25rem'};
+    props.header ? `0 0 ${rem(10)} ${rem(10)}` : `${rem(10)}`};
 `;
 
 export const CardBoxHeader = styled.div`
-  height: 2.5rem;
+  height: ${rem(40)};
   background-color: #f3f7f9;
   display: flex;
   align-items: center;
-  grid-column-gap: 0.5rem;
-  padding: 0 0.5rem;
+  grid-column-gap: ${rem(8)};
+  padding: 0 ${rem(8)};
   color: ${(props) => props.theme.colors.primary.greyDark};
   fill: ${(props) => props.theme.colors.primary.greyDark};
   ${(props) => props.theme.fonts.regularText('M')};
@@ -43,9 +43,9 @@ export const CardBoxHeader = styled.div`
 `;
 
 export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
-  width: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
-  height: ${(props) => (props.imageBig ? '9rem' : '4.5rem')};
-  border-radius: 1.5rem;
+  width: ${(props) => (props.imageBig ? `${rem(144)}` : `${rem(72)}`)};
+  height: ${(props) => (props.imageBig ? `${rem(144)}` : `${rem(72)}`)};
+  border-radius: ${rem(24)};
   border: 3px solid ${(props) => props.theme.colors.primary.greyLighest};
   background-color: ${(props) => props.theme.colors.primary.greyLighest};
   margin-bottom: ${(props) => (props.imageBig ? '0.75rem' : 0)};
@@ -75,7 +75,7 @@ export const CardBoxTitle = styled.h3`
 export const CardBoxLastUpdate = styled.p`
   ${(props) => props.theme.fonts.regularText('S')};
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: ${rem(8)};
   font-weight: 300;
 `;
 
@@ -85,4 +85,8 @@ export const CardBoxActions = styled.div`
   width: 100%;
   grid-column-gap: 1rem;
   margin-top: 1rem;
+
+  svg {
+    fill: ${(props) => props.theme.colors.primary.greyDarkest};
+  }
 `;
