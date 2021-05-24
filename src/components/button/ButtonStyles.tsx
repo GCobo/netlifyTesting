@@ -39,10 +39,10 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
       : props.warning
       ? props.theme.colors.system.warning
       : props.theme.colors.primary.greenLight};
-  box-shadow: ${(props) =>
+  ${(props) =>
     props.outline &&
-    ` inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`};
-  ${(props) => props.theme.fonts.regularText('L')};
+    `box-shadow:  inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`};
+  ${(props) => props.theme.fonts.regularText('M')};
   min-width: ${rem(110)};
   height: ${rem(40)};
   border-radius: ${rem(4)};
@@ -152,7 +152,8 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
 `;
 
 export const IconButton = css`
-  width: ${rem(16)};
-  min-width: ${rem(16)};
+  width: ${rem(14)};
+  min-width: ${rem(14)};
+  height: ${rem(14)};
   fill: inherit;
 `;
