@@ -91,6 +91,6 @@ export const CardBoxActions = styled.div`
   margin-top: ${rem(16)};
 
   svg {
-    fill: ${(props) => props.theme.colors.primary.greyDarkest};
+    fill: ${(props) => props.theme.colors.primary.greyDarkest} !important;
   }
 `;
