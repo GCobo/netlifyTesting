@@ -11,7 +11,11 @@ export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
   border-radius: ${rem(10)};
   box-shadow: ${(props) => props.theme.mainShadow};
   height: ${(props) =>
-    props.header ? '20.5rem' : props.imageBig ? '17rem' : '13rem'};
+    props.header
+      ? `${rem(328)}`
+      : props.imageBig
+      ? `${rem(272)}`
+      : `${rem(208)}`};
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -23,7 +27,7 @@ export const CardBoxStyles = styled.div<CardBoxWrapperProps>`
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => props.theme.colors.system.white};
-  padding: 0.75rem;
+  padding: ${rem(12)};
   flex: 1;
   border-radius: ${(props) =>
     props.header ? `0 0 ${rem(10)} ${rem(10)}` : `${rem(10)}`};
@@ -48,7 +52,7 @@ export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
   border-radius: ${rem(24)};
   border: 3px solid ${(props) => props.theme.colors.primary.greyLighest};
   background-color: ${(props) => props.theme.colors.primary.greyLighest};
-  margin-bottom: ${(props) => (props.imageBig ? '0.75rem' : 0)};
+  margin-bottom: ${(props) => (props.imageBig ? `${rem(12)}` : 0)};
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -61,8 +65,8 @@ export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
   }
 
   svg {
-    width: 5rem;
-    height: 5rem;
+    width: ${rem(80)};
+    height: ${rem(80)};
     fill: ${(props) => props.theme.colors.primary.greyDarkest};
   }
 `;
@@ -81,10 +85,10 @@ export const CardBoxLastUpdate = styled.p`
 
 export const CardBoxActions = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
-  grid-column-gap: 1rem;
-  margin-top: 1rem;
+  grid-column-gap: ${rem(16)};
+  margin-top: ${rem(16)};
 
   svg {
     fill: ${(props) => props.theme.colors.primary.greyDarkest};
