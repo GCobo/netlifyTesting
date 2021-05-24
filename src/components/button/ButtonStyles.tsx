@@ -49,7 +49,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  column-gap: ${rem(4)};
+  column-gap: ${rem(10)};
   cursor: pointer;
   white-space: nowrap;
   color: ${(props) =>
@@ -61,7 +61,8 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
       ? props.theme.colors.primary.greyDark
       : props.theme.colors.system.white};
   transition: 0.2s all ease-in-out;
-  padding: ${(props) => (props.icon ? '0 1rem 0 4.5rem' : '0 1rem')};
+  padding: ${(props) =>
+    props.icon ? `0 ${rem(16)} 0 ${rem(72)}` : `0 ${rem(16)}`};
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -151,7 +152,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
 `;
 
 export const IconButton = css`
-  width: ${rem(20)};
-  min-width: ${rem(20)};
+  width: ${rem(16)};
+  min-width: ${rem(16)};
   fill: inherit;
 `;

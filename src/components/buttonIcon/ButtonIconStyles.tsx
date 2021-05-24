@@ -15,13 +15,13 @@ export const ButtonIconStyle = styled.button<IProps>`
   align-items: center;
   justify-content: center;
   padding: 0;
-  position: ${(props) => props.badgets && 'relative'};
   fill: ${(props) =>
     props.negative
       ? props.theme.colors.system.white
       : props.secondary
       ? props.theme.colors.primary.greyDark
       : props.theme.colors.primary.greenLight};
+  ${(props) => props.badgets && `position: relative`};
 
   &:active,
   &:hover {

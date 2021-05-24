@@ -62,7 +62,8 @@ import {
   BagIcon,
   PlusSquareIcon,
   MenuIcon,
-  CreditCardIcon
+  CreditCardIcon,
+  MessageIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -495,6 +496,10 @@ const App = () => {
             <IconWrapper>
               <p>CreditCardIcon</p>
               <CreditCardIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>MessageIcon</p>
+              <MessageIcon />
             </IconWrapper>
           </Grid>
         </Section>

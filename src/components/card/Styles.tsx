@@ -31,7 +31,7 @@ export const CardBoxStyles = styled.div<CardBoxWrapperProps>`
 
 export const CardBoxHeader = styled.div`
   height: ${rem(40)};
-  background-color: #f3f7f9;
+  background-color: ${(props) => props.theme.colors.primary.greyLighest};
   display: flex;
   align-items: center;
   grid-column-gap: ${rem(8)};
