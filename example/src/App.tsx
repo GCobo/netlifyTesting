@@ -64,7 +64,8 @@ import {
   MenuIcon,
   CreditCardIcon,
   MessageIcon,
-  ShopingPurchasedIcon
+  ShopingPurchasedIcon,
+  ChevronDownIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -506,13 +507,26 @@ const App = () => {
               <p>ShopingPurchasedIcon</p>
               <ShopingPurchasedIcon />
             </IconWrapper>
+            <IconWrapper>
+              <p>ChevronDownIcon</p>
+              <ChevronDownIcon />
+            </IconWrapper>
           </Grid>
         </Section>
         <Section>
           <Title>Check platform</Title>
           <Grid>
-            <CheckPlatform options={optionsPlatform} />
-            <CheckPlatform options={optionsPlatform} bigIcon />
+            <CheckPlatform
+              options={optionsPlatform}
+              name='check-platform'
+              onChange={() => {}}
+            />
+            <CheckPlatform
+              options={optionsPlatform}
+              bigIcon
+              name='check-platform'
+              onChange={() => {}}
+            />
           </Grid>
         </Section>
         <Section>
@@ -632,12 +646,21 @@ const App = () => {
         <Section>
           <Title>Switch</Title>
           <Grid size={250}>
-            <Switch labelLeft='label left' />
-            <Switch labelRight='label right' />
-            <Switch labelLeft='Input checked' checked />
-            <Switch labelLeft='Input disabled' disabled />
-            <Switch labelLeft='Input checked and disabled' disabled checked />
-            <Switch labelLeft='Input with error' errorLabel='Field required' />
+            <Switch labelLeft='label left' id='switch-app' />
+            <Switch labelRight='label right' id='switch-app' />
+            <Switch labelLeft='Input checked' checked id='switch-app' />
+            <Switch labelLeft='Input disabled' disabled id='switch-app' />
+            <Switch
+              labelLeft='Input checked and disabled'
+              disabled
+              checked
+              id='switch-app'
+            />
+            <Switch
+              labelLeft='Input with error'
+              errorLabel='Field required'
+              id='switch-app'
+            />
           </Grid>
         </Section>
         <Section>
