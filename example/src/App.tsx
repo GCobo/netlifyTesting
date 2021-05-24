@@ -65,7 +65,10 @@ import {
   CreditCardIcon,
   MessageIcon,
   ShopingPurchasedIcon,
-  ChevronDownIcon
+  ChevronDownIcon,
+  ShowIcon,
+  HiddenIcon,
+  HelpIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -510,6 +513,18 @@ const App = () => {
             <IconWrapper>
               <p>ChevronDownIcon</p>
               <ChevronDownIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ShowIcon</p>
+              <ShowIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>HiddenIcon</p>
+              <HiddenIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>HelpIcon</p>
+              <HelpIcon />
             </IconWrapper>
           </Grid>
         </Section>

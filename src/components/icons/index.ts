@@ -24,7 +24,6 @@ export * from './hamburguerIcon';
 export * from './helpIcon';
 export * from './hiddenIcon';
 export * from './homeIcon';
-export * from './joinbleIcon';
 export * from './linkedinIcon';
 export * from './lockIcon';
 export * from './logOutIcon';
