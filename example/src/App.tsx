@@ -122,8 +122,11 @@ const App = () => {
     height: 6.25rem;
     background-color: ${(props) => props.background};
     border-radius: 1.6rem;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 0.8rem;
 
     p {
       ${JoinbleTheme.fonts.regularText('L')};
@@ -161,24 +164,33 @@ const App = () => {
               background={JoinbleTheme.colors.primary.greenLight}
             >
               <p>Green Light</p>
+              <p>#1CD8D2</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.primary.greenDark}>
               <p>Green Dark</p>
+              <p>#0D837F</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor
               background={JoinbleTheme.colors.primary.greyDarkest}
             >
               <p>Grey Darkest</p>
+              <p>#021514</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.primary.greyDark}>
               <p>Grey Dark</p>
+              <p>#6E768E</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.primary.greyLight}>
-              <p>Grey Light</p>
+              <p style={{ color: JoinbleTheme.colors.primary.greyDarkest }}>
+                Grey Light
+              </p>
+              <p style={{ color: JoinbleTheme.colors.primary.greyDarkest }}>
+                #E1E4E8
+              </p>
             </PaletteBoxColor>
 
             <PaletteBoxColor
@@ -187,22 +199,29 @@ const App = () => {
               <p style={{ color: JoinbleTheme.colors.primary.greyDarkest }}>
                 Grey Lighest
               </p>
+              <p style={{ color: JoinbleTheme.colors.primary.greyDarkest }}>
+                #F3F7F9
+              </p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.system.success}>
               <p>Success</p>
+              <p>#1ABC9C</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.system.warning}>
               <p>Warning</p>
+              <p>#F7B84B</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.system.error}>
               <p>Error</p>
+              <p>#F1556C</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor background={JoinbleTheme.colors.system.info}>
               <p>Info</p>
+              <p>#4FC6E1</p>
             </PaletteBoxColor>
           </Grid>
         </Section>
