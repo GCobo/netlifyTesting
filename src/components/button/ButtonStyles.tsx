@@ -42,7 +42,8 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
   ${(props) =>
     props.outline &&
     `box-shadow:  inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`};
-  ${(props) => props.theme.fonts.regularText('M')};
+  font-size: ${rem(14)};
+  line-height: ${rem(24)};
   min-width: ${rem(110)};
   height: ${rem(40)};
   border-radius: ${rem(4)};
@@ -66,6 +67,8 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
   position: relative;
   overflow: hidden;
   z-index: 2;
+  border: none;
+
   &:before {
     content: '';
     position: absolute;

@@ -68,7 +68,12 @@ import {
   ChevronDownIcon,
   ShowIcon,
   HiddenIcon,
-  HelpIcon
+  HelpIcon,
+  CloseIcon,
+  SettingIcon,
+  ArrowUpIcon,
+  ArrowDownIcon,
+  LinkIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -475,6 +480,10 @@ const App = () => {
               <PlusCircleIcon />
             </IconWrapper>
             <IconWrapper>
+              <p>PlusSquareIcon</p>
+              <PlusSquareIcon />
+            </IconWrapper>
+            <IconWrapper>
               <p>ApplicationIcon</p>
               <ApplicationIcon />
             </IconWrapper>
@@ -485,10 +494,6 @@ const App = () => {
             <IconWrapper>
               <p>BagIcon</p>
               <BagIcon />
-            </IconWrapper>
-            <IconWrapper>
-              <p>PlusSquareIcon</p>
-              <PlusSquareIcon />
             </IconWrapper>
             <IconWrapper>
               <p>MenuIcon</p>
@@ -525,6 +530,26 @@ const App = () => {
             <IconWrapper>
               <p>HelpIcon</p>
               <HelpIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CloseIcon</p>
+              <CloseIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>SettingIcon</p>
+              <SettingIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ArrowUpIcon</p>
+              <ArrowUpIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>ArrowDownIcon</p>
+              <ArrowDownIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>LinkIcon</p>
+              <LinkIcon />
             </IconWrapper>
           </Grid>
         </Section>

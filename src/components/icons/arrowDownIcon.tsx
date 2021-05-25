@@ -3,41 +3,8 @@ import { IconProps } from './model';
 
 export const ArrowDownIcon = ({ className }: IconProps) => {
   return (
-    <svg
-      width='24px'
-      height='24px'
-      viewBox='0 0 24 24'
-      version='1.1'
-      className={className}
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <defs>
-        <path d='M0 0L24 0L24 24L0 24L0 0Z' id='path_1' />
-        <clipPath id='mask_1'>
-          <use xlinkHref='#path_1' />
-        </clipPath>
-      </defs>
-      <g id='arrow--caret_down'>
-        <g id='arrow--caret_down'>
-          <path
-            d='M0 0L24 0L24 24L0 24L0 0Z'
-            id='arrow--caret_down-(BackgroundMask)'
-            fill='none'
-            fillRule='evenodd'
-            stroke='none'
-          />
-          <g clipPath='url(#mask_1)'>
-            <path
-              d='M0 5L5 10L5 0L0 5Z'
-              transform='matrix(-4.371139E-08 -1 1 -4.371139E-08 7 14.5)'
-              id='arrow--caret_down'
-              fill='#6E768E'
-              fillRule='evenodd'
-              stroke='none'
-            />
-          </g>
-        </g>
-      </g>
+    <svg width='24px' height='24px' viewBox='0 0 24 24' className={className}>
+      <path d='M9.738 21.262c-0.116-0.113-0.612-0.54-1.020-0.937-2.566-2.33-6.766-8.409-8.048-11.591-0.206-0.483-0.642-1.705-0.67-2.358 0-0.625 0.144-1.222 0.436-1.791 0.408-0.709 1.050-1.278 1.808-1.59 0.526-0.201 2.1-0.512 2.128-0.512 1.722-0.312 4.52-0.483 7.612-0.483 2.946 0 5.63 0.171 7.378 0.427 0.028 0.029 1.984 0.341 2.654 0.682 1.224 0.625 1.984 1.847 1.984 3.154v0.113c-0.030 0.851-0.79 2.642-0.818 2.642-1.284 3.010-5.278 8.949-7.932 11.336 0 0-0.682 0.672-1.108 0.964-0.612 0.456-1.37 0.682-2.128 0.682-0.846 0-1.634-0.255-2.276-0.738v0z'></path>
     </svg>
   );
 };
