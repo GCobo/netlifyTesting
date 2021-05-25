@@ -848,6 +848,17 @@ const App = () => {
               label='Upload file with help '
               helpLabel='Recommended size: 92x92'
             />
+            <InputUpload label='Upload file circle ' horizontal />
+            <InputUpload
+              horizontal
+              label='Upload file with help '
+              helpLabel='Recommended size: 92x92'
+            />
+            <InputUpload
+              label='Upload file circle '
+              horizontal
+              errorLabel='This format is not supported'
+            />
             <InputUpload label='Upload file circle ' circle />
           </Grid>
         </Section>

@@ -91,13 +91,19 @@ export const WrapperDrag = styled.div<{ horizontal?: boolean }>`
 
   .icon {
     fill: ${(props) => props.theme.colors.primary.greyDark};
-
     ${(props) => props.horizontal && `margin-left: auto; position: relative`}
   }
 
   p {
+    font-size: ${rem(14)};
+    line-height: ${rem(24)};
+
     ${(props) =>
-      props.horizontal && `margin-right: auto; padding-right: ${rem(16)}`}
+      props.horizontal &&
+      `
+        margin-right: auto;
+        padding-right: ${rem(16)};
+    `}
   }
 
   &.inActive {
@@ -118,15 +124,17 @@ export const WrapperButtons = styled.div<InputUploadCircleProps>`
   }
 `;
 
-export const IconError = styled(AlertIcon)`
+export const IconError = styled(AlertIcon)<{ horizontal?: boolean }>`
   fill: ${(props) => props.theme.colors.system.error};
-  width: ${rem(40)};
-  height: ${rem(40)};
+  width: ${(props) => (props.horizontal ? rem(20) : rem(40))};
+  min-width: ${(props) => (props.horizontal ? rem(20) : rem(40))};
+  height: ${(props) => (props.horizontal ? rem(20) : rem(40))};
 `;
 
-export const IconUpload = styled(UploadIcon)`
-  width: ${rem(40)};
-  height: ${rem(40)};
+export const IconUpload = styled(UploadIcon)<{ horizontal?: boolean }>`
+  width: ${(props) => (props.horizontal ? rem(20) : rem(40))};
+  min-width: ${(props) => (props.horizontal ? rem(20) : rem(40))};
+  height: ${(props) => (props.horizontal ? rem(20) : rem(40))};
 `;
 
 export const HelpLabelStyles = styled(HelpLabel)`
