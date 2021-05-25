@@ -7,8 +7,6 @@
     "runMode": 2,
     "openMode": 0
   },
-  "viewportWidth": 1000,
-  "viewportHeight": 660,
   "experimentalComponentTesting": true,
   "componentFolder": "src"
 }
