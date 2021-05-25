@@ -5,6 +5,7 @@ import { HelpLabel } from '../helpLabel/HelpLabel';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
 import { FormContainerProps } from './model';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';
+import { rem } from 'polished';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -17,17 +18,17 @@ export const Wrapper = styled.section`
 export const InputContainer = styled.div<FormContainerProps>`
   display: flex;
   align-items: center;
-  height: 2.5rem;
+  height: ${rem(40)};
   width: 100%;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   background-color: ${(props) => props.theme.colors.system.white};
-  border-radius: 0.25rem;
+  border-radius: ${rem(4)};
 
   &:before {
     content: '';
     width: 100%;
-    height: 2.5rem;
-    border-radius: 0.25rem;
+    height: ${rem(40)};
+    border-radius: ${rem(4)};
     position: absolute;
     pointer-events: none;
     box-shadow: ${(props) => `
@@ -50,24 +51,25 @@ export const InputContainer = styled.div<FormContainerProps>`
     }
   }
   svg {
-    width: 1.25rem;
-    min-width: 1.25rem;
+    width: ${rem(20)};
+    min-width: ${rem(20)};
     fill: ${(props) =>
       props.errorLabel
         ? props.theme.colors.system.error
         : props.theme.colors.primary.greenLight};
-    margin-right: 0.75rem;
+    margin-right: ${rem(12)};
   }
 `;
 
 export const InputStyle = styled.input`
   border: none;
-  ${(props) => props.theme.fonts.regularText('M')};
+  font-size: ${rem(14)};
+  line-height: ${rem(24)};
   color: ${(props) => props.theme.colors.primary.greyDark};
   background-color: transparent;
-  height: 2.5rem;
+  height: ${rem(40)};
   width: 100%;
-  padding: 0 0.75rem;
+  padding: 0 ${rem(12)};
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -91,8 +93,9 @@ export const InputStyle = styled.input`
 `;
 
 export const Label = styled.label`
-  margin-bottom: 0.25rem;
-  ${(props) => props.theme.fonts.regularText('S')};
+  margin-bottom: ${rem(4)};
+  font-size: ${rem(12)};
+  line-height: ${rem(20)};
   font-weight: 500;
   color: ${(props) => props.theme.colors.primary.greyDark};
 
@@ -102,14 +105,14 @@ export const Label = styled.label`
 `;
 
 export const HelpLabelInput = styled(HelpLabel)`
-  margin-top: 0.5rem;
+  margin-top: ${rem(8)};
 `;
 export const ErrorLabelInput = styled(ErrorLabel)`
-  margin-top: 0.5rem;
+  margin-top: ${rem(8)};
 `;
 
 export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`
-  border-radius: 0.25rem;
+  border-radius: ${rem(4)};
   background-color: ${(props) => props.theme.colors.system.white};
   box-shadow: ${(props) =>
     `inset 0px 0px 0px 1px ${
@@ -118,7 +121,7 @@ export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`
         : props.theme.colors.primary.greyLight
     }`};
   border: none;
-  padding: 0.5rem 1rem;
+  padding: ${rem(8)} ${rem(16)};
   ${(props) => props.theme.fonts.regularText('M')};
   resize: none;
 
@@ -151,7 +154,7 @@ export const EditorStyles = (props: any) => css`
 
   > div {
     margin: 0;
-    padding: 0.5rem 1rem 0.3rem 1rem;
+    padding: ${rem(8)} ${rem(16)} 0.3rem ${rem(16)};
   }
 
   &::placeholder {
