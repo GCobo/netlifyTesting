@@ -9,9 +9,7 @@ import { WrapperTheme } from '../../utils/test';
 
 describe('Button component', () => {
   beforeEach(() => {
-    // run these tests as if in a desktop
-    // browser with a 720p monitor
-    cy.viewport(1280, 720);
+    cy.viewport(1920, 1080);
   });
 
   it('Should be works', () => {

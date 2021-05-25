@@ -23,7 +23,13 @@ const {
 module.exports = (on, config) => {
   require('cypress-react-unit-test/plugins/react-scripts')(on, config);
   addMatchImageSnapshotPlugin(on, config);
-
+  on('before:browser:launch', (browser = {}, launchOptions) => {
+    if (browser.name === 'chrome') {
+      launchOptions.args.push('--disable-dev-shm-usage');
+      launchOptions.args.push('--window-size=1920,1080');
+      return launchOptions;
+    }
+  });
   // IMPORTANT to return the config object
   // with the any changed environment variables
   return config;
