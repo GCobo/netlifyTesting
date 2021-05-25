@@ -8,7 +8,9 @@ export const WrapperTheme = ({ children }: any) => (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '500px'
+        height: '100vh',
+        maxWidth: '70vw',
+        margin: '0 auto'
       }}
     >
       {children}

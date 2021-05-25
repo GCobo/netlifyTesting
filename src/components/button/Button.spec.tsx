@@ -17,6 +17,7 @@ describe('Button component', () => {
     cy.get('[data-test="button"]')
       .contains('Hello World!')
       .should('be.visible');
+    cy.matchImageSnapshot('Button');
   });
 
   it('Should be disabled', () => {
@@ -28,6 +29,7 @@ describe('Button component', () => {
       </WrapperTheme>
     );
     cy.get('[data-test="button"]').should('have.attr', 'disabled');
+    cy.matchImageSnapshot('Button disabled');
   });
 
   it('Should be primary', () => {
@@ -40,6 +42,7 @@ describe('Button component', () => {
       'have.backgroundColor',
       JoinbleTheme.colors.primary.greenLight
     );
+    cy.matchImageSnapshot('Button primary');
   });
 
   it('Should be outline', () => {
@@ -54,6 +57,7 @@ describe('Button component', () => {
       'have.backgroundColor',
       'transparent'
     );
+    cy.matchImageSnapshot('Button outline');
   });
 
   it('Should be success', () => {
@@ -68,6 +72,7 @@ describe('Button component', () => {
       'have.backgroundColor',
       JoinbleTheme.colors.system.success
     );
+    cy.matchImageSnapshot('Button success');
   });
   it('Should be warning', () => {
     mount(
@@ -81,6 +86,7 @@ describe('Button component', () => {
       'have.backgroundColor',
       JoinbleTheme.colors.system.warning
     );
+    cy.matchImageSnapshot('Button warning');
   });
   it('Should be error', () => {
     mount(
@@ -94,6 +100,7 @@ describe('Button component', () => {
       'have.backgroundColor',
       JoinbleTheme.colors.system.error
     );
+    cy.matchImageSnapshot('Button error');
   });
 
   it('Should have icon', () => {
@@ -105,6 +112,7 @@ describe('Button component', () => {
       </WrapperTheme>
     );
     cy.get('[data-test="button"] svg').should('be.visible');
+    cy.matchImageSnapshot('Button icon');
   });
 
   it('Should be type submit', () => {

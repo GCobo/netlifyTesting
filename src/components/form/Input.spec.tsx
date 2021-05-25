@@ -13,6 +13,7 @@ describe('Input component', () => {
       </WrapperTheme>
     );
     cy.contains('This is a label').should('be.visible');
+    cy.matchImageSnapshot('Input');
   });
 
   it('should show the required label', () => {

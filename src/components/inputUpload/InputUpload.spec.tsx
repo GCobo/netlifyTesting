@@ -17,6 +17,7 @@ describe('Input Upload component', () => {
       </WrapperTheme>
     );
     cy.contains('This is a label').should('be.visible');
+    cy.matchImageSnapshot('InputUpload');
   });
 
   it('should show the preview of the image with value', () => {
@@ -53,6 +54,7 @@ describe('Input Upload component', () => {
     cy.get('[data-test="delete-file"]').click();
 
     cy.contains('Drap and Drop your file here').should('exist');
+    cy.matchImageSnapshot('InputUpload Delete');
   });
 
   it('should show the error label', () => {
@@ -65,6 +67,7 @@ describe('Input Upload component', () => {
     );
 
     cy.contains(errorLabel).should('exist');
+    cy.matchImageSnapshot('InputUpload Error label');
   });
 
   it('should hace circle props', () => {
@@ -79,6 +82,7 @@ describe('Input Upload component', () => {
       'border-radius',
       '100%'
     );
+    cy.matchImageSnapshot('InputUpload Circle');
   });
 
   it('should accept only ttf files', () => {
@@ -115,6 +119,7 @@ describe('Input Upload component', () => {
     });
 
     cy.get('[data-test="upload-loader"]').should('be.visible');
+    cy.matchImageSnapshot('InputUpload Loading');
 
     cy.wait(1500);
 
@@ -133,6 +138,7 @@ describe('Input Upload component', () => {
     mount(<UploadComponent />);
 
     cy.contains('epfGUQNLL5EW8WzBewLte.json').should('be.visible');
+    cy.matchImageSnapshot('InputUpload Horizontal');
   });
 
   it('should add multiple files', () => {
@@ -160,6 +166,7 @@ describe('Input Upload component', () => {
 
     cy.contains('testPicture.png').should('be.visible');
     cy.contains('testPicture2.png').should('be.visible');
+    cy.matchImageSnapshot('InputUpload Multiple Files');
   });
 
   it('should be able to delete multiple files', () => {
