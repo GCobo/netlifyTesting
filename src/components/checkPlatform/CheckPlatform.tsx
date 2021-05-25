@@ -18,7 +18,7 @@ type IProps = {
   name: string;
   onChange(values: string[]): void;
   value?: string[];
-  bigIcon?: boolean;
+  size?: 'XL' | 'L' | 'M' | 'S';
 };
 
 export const CheckPlatform = ({
@@ -27,7 +27,7 @@ export const CheckPlatform = ({
   onChange,
   name,
   value = [],
-  bigIcon
+  size = 'XL'
 }: IProps) => {
   const [checkPlatform, setCheckPlatform] = useState<string[]>([]);
 
@@ -64,7 +64,7 @@ export const CheckPlatform = ({
               aria-checked={checkPlatform.includes(option.id)}
             />
             <ButtonIcon
-              bigIcon={bigIcon}
+              size={size}
               secondary={!checkPlatform.includes(option.id)}
               icon={option.icon}
               onClick={() => handleSetCheckPlatform(option.id)}

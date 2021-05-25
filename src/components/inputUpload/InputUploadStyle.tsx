@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
 import { DragZoneProps, InputUploadCircleProps } from './InputUploadModel';
-import { AlertIcon } from '../icons';
+import { AlertIcon, UploadIcon } from '../icons';
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { Label } from '../form/Styles';
+import { rem } from 'polished';
 
 const handleBorderColor = (props: any) => {
   if (props.errorLabel) {
@@ -26,14 +27,14 @@ export const LabelInputUpload = styled(Label)`
 
 const getWidth = (props: DragZoneProps) => {
   if (props.circle) {
-    return '9.56rem';
+    return `${rem(152)}`;
   }
 
   if (props.horizontal) {
     return '100%';
   }
 
-  return '10.62rem';
+  return `${rem(170)}`;
 };
 
 export const Container = styled.div<{ horizontal?: boolean }>`
@@ -47,9 +48,9 @@ export const Container = styled.div<{ horizontal?: boolean }>`
 `;
 
 export const ContainerDrag = styled.div<DragZoneProps>`
-  border-radius: ${(props) => (props.circle ? '100%' : '0.25rem')};
+  border-radius: ${(props) => (props.circle ? '100%' : `${rem(4)}`)};
   width: ${(props) => getWidth(props)};
-  height: ${(props) => (props.horizontal ? '2.5rem' : '9.56rem')};
+  height: ${(props) => (props.horizontal ? `${rem(40)}` : `${rem(152)}`)};
   border: 1px ${(props) => handleBorderColor(props)};
   background-color: ${(props) => props.theme.colors.system.white};
   cursor: pointer;
@@ -70,8 +71,8 @@ export const ContainerDrag = styled.div<DragZoneProps>`
 `;
 
 export const ImagePreview = styled.img<InputUploadCircleProps>`
-  width: 4.4rem;
-  height: 4.4rem;
+  width: ${rem(70)};
+  height: ${rem(70)};
   object-fit: contain;
   border-radius: ${(props) => (props.circle ? '100%' : 0)};
 `;
@@ -86,6 +87,7 @@ export const WrapperDrag = styled.div<{ horizontal?: boolean }>`
   position: relative;
   width: 100%;
   flex-direction: ${(props) => (props.horizontal ? 'row-reverse' : 'column')};
+  row-gap: ${rem(8)};
 
   .icon {
     fill: ${(props) => props.theme.colors.primary.greyDark};
@@ -94,21 +96,22 @@ export const WrapperDrag = styled.div<{ horizontal?: boolean }>`
   }
 
   p {
-    ${(props) => props.horizontal && `margin-right: auto; padding-right: 1rem`}
+    ${(props) =>
+      props.horizontal && `margin-right: auto; padding-right: ${rem(16)}`}
   }
 
   &.inActive {
-    padding: ${(props) => (props.horizontal ? '0 1rem' : '2rem')};
+    padding: ${(props) => (props.horizontal ? `0 ${rem(16)}` : `${rem(32)}`)};
   }
 `;
 
 export const WrapperButtons = styled.div<InputUploadCircleProps>`
   display: flex;
   align-items: center;
-  grid-column-gap: 0.5rem;
+  column-gap: ${rem(8)};
   position: absolute;
-  bottom: 0.5rem;
-  right: ${(props) => (props.circle ? '3rem' : '0.5rem')};
+  bottom: ${rem(8)};
+  right: ${(props) => (props.circle ? `${rem(48)}` : `${rem(8)}`)};
 
   .icon {
     fill: ${(props) => props.theme.colors.primary.greyDark};
@@ -117,16 +120,21 @@ export const WrapperButtons = styled.div<InputUploadCircleProps>`
 
 export const IconError = styled(AlertIcon)`
   fill: ${(props) => props.theme.colors.system.error};
-  width: 2.5rem;
-  height: 2.5rem;
+  width: ${rem(40)};
+  height: ${rem(40)};
+`;
+
+export const IconUpload = styled(UploadIcon)`
+  width: ${rem(40)};
+  height: ${rem(40)};
 `;
 
 export const HelpLabelStyles = styled(HelpLabel)`
-  margin-top: 0.5rem;
+  margin-top: ${rem(8)};
   svg {
-    width: 1.25rem;
-    min-width: 1.25rem;
-    height: 1.25rem;
+    width: ${rem(20)};
+    min-width: ${rem(20)};
+    height: ${rem(20)};
   }
 `;
 
@@ -140,13 +148,13 @@ export const PreviewFile = styled.div<{ horizontal?: boolean }>`
     props.horizontal &&
     `
     margin-right: auto;
-    padding-left: 1rem;
+    padding-left: ${rem(16)};
 
   `}
 
   > svg {
-    width: 3.9rem;
-    height: 3.9rem;
+    width: ${rem(62)};
+    height: ${rem(62)};
 
     ${(props) => props.horizontal && 'display: none'}
   }
@@ -164,8 +172,8 @@ export const MultipleFiles = styled.ul`
       ${(props) => props.theme.colors.primary.greyLighest};
     ${(props) => props.theme.fonts.regularText('M')};
     color: ${(props) => props.theme.colors.primary.greyDark};
-    padding: 0.7rem 1.3rem;
-    margin: 0.2rem 0;
+    padding: ${rem(11)} ${rem(21)};
+    margin: ${rem(3)} 0;
     > p {
       position: relative;
       overflow: hidden;

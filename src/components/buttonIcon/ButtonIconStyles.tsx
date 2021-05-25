@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/react';
 import { darken, rem } from 'polished';
 
 type IProps = {
@@ -7,6 +6,7 @@ type IProps = {
   secondary?: boolean;
   negative?: boolean;
   bigIcon?: boolean;
+  size?: 'XL' | 'L' | 'M' | 'S';
 };
 
 export const ButtonIconStyle = styled.button<IProps>`
@@ -21,6 +21,31 @@ export const ButtonIconStyle = styled.button<IProps>`
       : props.secondary
       ? props.theme.colors.primary.greyDark
       : props.theme.colors.primary.greenLight};
+  width: ${(props) =>
+    props.size === 'XL'
+      ? `${rem(36)}`
+      : props.size === 'L'
+      ? `${rem(24)} `
+      : props.size === 'M'
+      ? `${rem(20)}`
+      : `${rem(16)}`};
+  min-width: ${(props) =>
+    props.size === 'XL'
+      ? `${rem(36)}`
+      : props.size === 'L'
+      ? `${rem(24)} `
+      : props.size === 'M'
+      ? `${rem(20)}`
+      : `${rem(16)}`};
+  height: ${(props) =>
+    props.size === 'XL'
+      ? `${rem(36)}`
+      : props.size === 'L'
+      ? `${rem(24)} `
+      : props.size === 'M'
+      ? `${rem(20)}`
+      : `${rem(16)}`};
+
   ${(props) => props.badgets && `position: relative`};
 
   &:active,
@@ -42,31 +67,18 @@ export const ButtonIconStyle = styled.button<IProps>`
 
   svg {
     fill: inherit;
-    width: ${(props) => (props.bigIcon ? `${rem(36)}` : `${rem(20)}`)};
-    height: ${(props) => (props.bigIcon ? `${rem(36)}` : `${rem(20)}`)};
+    width: inherit;
+    min-width: inherit;
+    height: inherit;
   }
 `;
 
-const scale = keyframes`
-  0% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-
-  100% {
-      transform: scale(1.25);
-      opacity: 1;
-    }
-`;
-
 export const ButtonIconBadget = styled.span`
-  width: ${rem(6)};
-  height: ${rem(6)};
+  width: ${rem(8)};
+  height: ${rem(8)};
   background-color: ${(props) => props.theme.colors.system.error};
   position: absolute;
-
   right: 0;
   top: 0;
-  animation: ${scale} 0.5s ease-in-out infinite;
   border-radius: 100%;
 `;
