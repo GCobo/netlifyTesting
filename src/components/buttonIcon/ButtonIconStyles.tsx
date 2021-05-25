@@ -9,6 +9,19 @@ type IProps = {
   size?: 'XL' | 'L' | 'M' | 'S';
 };
 
+export const getSize = (size?: 'XL' | 'L' | 'M' | 'S') => {
+  switch (size) {
+    case (size = 'XL'):
+      return `${rem(36)}`;
+    case (size = 'L'):
+      return `${rem(24)}`;
+    case (size = 'S'):
+      return `${rem(16)}`;
+    default:
+      return `${rem(20)}`;
+  }
+};
+
 export const ButtonIconStyle = styled.button<IProps>`
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   display: flex;
@@ -21,33 +34,10 @@ export const ButtonIconStyle = styled.button<IProps>`
       : props.secondary
       ? props.theme.colors.primary.greyDark
       : props.theme.colors.primary.greenLight};
-  width: ${(props) =>
-    props.size === 'XL'
-      ? `${rem(36)}`
-      : props.size === 'L'
-      ? `${rem(24)} `
-      : props.size === 'M'
-      ? `${rem(20)}`
-      : `${rem(16)}`};
-  min-width: ${(props) =>
-    props.size === 'XL'
-      ? `${rem(36)}`
-      : props.size === 'L'
-      ? `${rem(24)} `
-      : props.size === 'M'
-      ? `${rem(20)}`
-      : `${rem(16)}`};
-  height: ${(props) =>
-    props.size === 'XL'
-      ? `${rem(36)}`
-      : props.size === 'L'
-      ? `${rem(24)} `
-      : props.size === 'M'
-      ? `${rem(20)}`
-      : `${rem(16)}`};
-
+  width: ${(props) => getSize(props.size)};
+  min-width: ${(props) => getSize(props.size)};
+  height: ${(props) => getSize(props.size)};
   ${(props) => props.badgets && `position: relative`};
-
   &:active,
   &:hover {
     outline: none;
@@ -58,13 +48,10 @@ export const ButtonIconStyle = styled.button<IProps>`
         ? props.theme.colors.primary.greenLight
         : darken(0.1, props.theme.colors.primary.greenLight)};
   }
-
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-
   &:focus {
     outline: none;
   }
-
   svg {
     fill: inherit;
     width: inherit;

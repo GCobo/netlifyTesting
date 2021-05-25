@@ -87,4 +87,74 @@ describe('Button Icon', () => {
 
     cy.get('button').should('have.attr', 'id', 'testing');
   });
+
+  it('Button Should have size XL', () => {
+    mount(
+      <WrapperTheme>
+        <ButtonIcon
+          size='XL'
+          icon={<SearchIcon />}
+          testId='button-secondary'
+          id='testing'
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('button')
+      .should('have.css', 'width', '36px')
+      .and('have.css', 'min-width', '36px')
+      .and('have.css', 'height', '36px');
+  });
+
+  it('Button Should have size L', () => {
+    mount(
+      <WrapperTheme>
+        <ButtonIcon
+          size='L'
+          icon={<SearchIcon />}
+          testId='button-secondary'
+          id='testing'
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('button')
+      .should('have.css', 'width', '24px')
+      .and('have.css', 'min-width', '24px')
+      .and('have.css', 'height', '24px');
+  });
+  it('Button Should have size M', () => {
+    mount(
+      <WrapperTheme>
+        <ButtonIcon
+          size='M'
+          icon={<SearchIcon />}
+          testId='button-secondary'
+          id='testing'
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('button')
+      .should('have.css', 'width', '20px')
+      .and('have.css', 'min-width', '20px')
+      .and('have.css', 'height', '20px');
+  });
+  it('Button Should have size S', () => {
+    mount(
+      <WrapperTheme>
+        <ButtonIcon
+          size='S'
+          icon={<SearchIcon />}
+          testId='button-secondary'
+          id='testing'
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('button')
+      .should('have.css', 'width', '16px')
+      .and('have.css', 'min-width', '16px')
+      .and('have.css', 'height', '16px');
+  });
 });
