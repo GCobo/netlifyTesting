@@ -274,19 +274,27 @@ const App = () => {
         <Section>
           <Title>Button Icon</Title>
           <Grid>
-            <ButtonIcon onClick={() => alert('click')} icon={<AlertIcon />} />
-            <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
+            <ButtonIcon
+              size='XL'
+              onClick={() => alert('click')}
+              icon={<AlertIcon />}
+            />
+            <ButtonIcon
+              size='L'
+              onClick={() => alert('click')}
+              icon={<SearchIcon />}
+            />
             <ButtonIcon
               secondary
+              size='M'
               onClick={() => alert('click')}
               icon={<AlertIcon />}
             />
             <ButtonIcon
-              negative
+              size='S'
               onClick={() => alert('click')}
-              icon={<AlertIcon />}
+              icon={<SearchIcon />}
             />
-            <ButtonIcon onClick={() => alert('click')} icon={<SearchIcon />} />
             <ButtonIcon
               badgets
               onClick={() => alert('click')}
@@ -563,7 +571,7 @@ const App = () => {
             />
             <CheckPlatform
               options={optionsPlatform}
-              bigIcon
+              size='M'
               name='check-platform'
               onChange={() => {}}
             />

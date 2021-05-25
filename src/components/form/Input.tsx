@@ -98,6 +98,7 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
           />
           {type === 'password' && (
             <ButtonIcon
+              size='M'
               icon={passwordShow ? <HiddenIcon /> : <ShowIcon />}
               type='button'
               tabIndex={-1}

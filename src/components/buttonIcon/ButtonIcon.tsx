@@ -19,10 +19,10 @@ export type ButtonIconProps = {
   tabIndex?: number;
   testId?: string;
   tooltip?: string;
-  bigIcon?: boolean;
   disabled?: boolean;
   ref: Ref<HTMLButtonElement>;
   id?: string;
+  size?: 'XL' | 'L' | 'M' | 'S';
 };
 
 export const ButtonIcon = forwardRef(
@@ -33,9 +33,9 @@ export const ButtonIcon = forwardRef(
       type = 'button',
       testId,
       tooltip,
-      bigIcon,
       disabled,
       onClick,
+      size = 'M',
       ...rest
     }: ButtonIconProps,
     ref: Ref<HTMLButtonElement>
@@ -47,7 +47,7 @@ export const ButtonIcon = forwardRef(
         type={type}
         ref={ref}
         data-test={testId}
-        bigIcon={bigIcon}
+        size={size}
         disabled={disabled}
         onClick={disabled ? undefined : onClick}
       >

@@ -12,7 +12,8 @@ import {
   PreviewFile,
   Container,
   MultipleFiles,
-  InputRequired
+  InputRequired,
+  IconUpload
 } from './InputUploadStyle';
 import { InputUploadProps, TypeFiles } from './InputUploadModel';
 import { UploadIcon, TrashIcon, FileIcon } from '../icons';
@@ -200,7 +201,7 @@ export const InputUpload = ({
           )
         ) : (
           <WrapperDrag className={'inActive'} horizontal={horizontal}>
-            {!errorLabel ? <UploadIcon className='icon' /> : <IconError />}
+            {!errorLabel ? <IconUpload className='icon' /> : <IconError />}
             <p>{labelDrop}</p>
           </WrapperDrag>
         )}
