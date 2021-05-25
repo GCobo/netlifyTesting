@@ -27,3 +27,4 @@ debug.log
 
 cypress/videos/
 cypress/screenshots/
+cypress/snapshots/**/**/__diff_output__/*

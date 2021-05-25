@@ -5,7 +5,7 @@ import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 addMatchImageSnapshotCommand({
   failureThreshold: 0.03, // threshold for entire image
   customDiffConfig: { threshold: 0.1 }, // threshold for each pixel
-  capture: 'fullPage' // capture viewport in screenshot
+  capture: 'viewport' // capture viewport in screenshot
 });
 
 const compareColor = (color, property) => (targetElement) => {
