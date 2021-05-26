@@ -95,8 +95,7 @@ export const WrapperDrag = styled.div<{ horizontal?: boolean }>`
   }
 
   p {
-    font-size: ${rem(14)};
-    line-height: ${rem(24)};
+    ${(props) => props.theme.fonts.regularText('M')};
 
     ${(props) =>
       props.horizontal &&

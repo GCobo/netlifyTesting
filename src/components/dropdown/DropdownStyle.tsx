@@ -21,8 +21,9 @@ export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   background-color: ${(props) => props.theme.colors.system.white};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
-  padding-right: ${rem(12)};
+  padding: ${rem(12)};
   border-radius: ${rem(4)};
+  column-gap: ${rem(8)};
   box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
     props.errorLabel

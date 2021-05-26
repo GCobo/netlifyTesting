@@ -23,32 +23,24 @@ export const InputContainer = styled.div<FormContainerProps>`
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   background-color: ${(props) => props.theme.colors.system.white};
   border-radius: ${rem(4)};
-
-  &:before {
-    content: '';
-    width: 100%;
-    height: ${rem(40)};
-    border-radius: ${rem(4)};
-    position: absolute;
-    pointer-events: none;
-    box-shadow: ${(props) => `
+  padding: 0 ${rem(12)};
+  column-gap: ${rem(8)};
+  box-shadow: ${(props) => `
   inset 0px 0px 0px 1px ${
     props.errorLabel
       ? props.theme.colors.system.error
       : props.theme.colors.primary.greyLight
   }
 `};
-  }
+
   &:hover,
   &:focus {
-    :before {
-      box-shadow: ${(props) =>
-        props.disabled
-          ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
-          : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
-      border: none;
-      outline: none;
-    }
+    box-shadow: ${(props) =>
+      props.disabled
+        ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
+        : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
+    border: none;
+    outline: none;
   }
   svg {
     width: ${rem(20)};
@@ -57,19 +49,17 @@ export const InputContainer = styled.div<FormContainerProps>`
       props.errorLabel
         ? props.theme.colors.system.error
         : props.theme.colors.primary.greenLight};
-    margin-right: ${rem(12)};
   }
 `;
 
 export const InputStyle = styled.input`
   border: none;
-  font-size: ${rem(14)};
-  line-height: ${rem(24)};
+  ${(props) => props.theme.fonts.regularText('M')};
   color: ${(props) => props.theme.colors.primary.greyDark};
   background-color: transparent;
   height: ${rem(40)};
   width: 100%;
-  padding: 0 ${rem(12)};
+  padding: 0;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -94,8 +84,7 @@ export const InputStyle = styled.input`
 
 export const Label = styled.label`
   margin-bottom: ${rem(4)};
-  font-size: ${rem(12)};
-  line-height: ${rem(20)};
+  ${(props) => props.theme.fonts.regularText('S')};
   font-weight: 500;
   color: ${(props) => props.theme.colors.primary.greyDark};
 

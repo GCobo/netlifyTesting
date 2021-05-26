@@ -32,11 +32,10 @@ export const PortalStyles = styled(Portal)`
 `;
 
 export const ModalHeader = styled.div<{ lateral: boolean }>`
-  font-size: 1rem;
+  ${(props) => props.theme.fonts.titleText('S')};
   color: ${(props) => props.theme.colors.primary.greyDark};
   height: ${(props) => (props.lateral ? '3.8rem' : 'auto')};
   padding: ${(props) => (props.lateral ? '1rem' : 'auto')};
-  font-weight: bold;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
