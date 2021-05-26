@@ -42,8 +42,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
   ${(props) =>
     props.outline &&
     `box-shadow:  inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`};
-  font-size: ${rem(14)};
-  line-height: ${rem(24)};
+  ${(props) => props.theme.fonts.regularText('M')};
   min-width: ${rem(110)};
   height: ${rem(40)};
   border-radius: ${rem(4)};
