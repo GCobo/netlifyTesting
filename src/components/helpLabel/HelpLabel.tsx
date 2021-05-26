@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import React from 'react';
 import { HelpIcon } from '../icons';
+import { HelpLabelStyles } from './Styles';
 
 type IProps = {
   label: string;
@@ -11,29 +11,10 @@ export const HelpLabel: React.FunctionComponent<IProps> = ({
   label,
   className
 }) => {
-  const HelpWrapper = styled.div`
-    display: flex;
-    align-items: flex-start;
-
-    svg {
-      margin-right: 0.5rem;
-      width: 1.5rem;
-      min-width: 1.5rem;
-      height: 1.5rem;
-      fill: ${(props) => props.theme.colors.primary.greyLight};
-    }
-    p {
-      color: ${(props) => props.theme.colors.primary.greyLight};
-      ${(props) => props.theme.fonts.regularText('S')};
-      font-weight: 500;
-      line-height: 1.25rem;
-    }
-  `;
-
   return (
-    <HelpWrapper className={className}>
+    <HelpLabelStyles className={className}>
       <HelpIcon />
       <p>{label}</p>
-    </HelpWrapper>
+    </HelpLabelStyles>
   );
 };
