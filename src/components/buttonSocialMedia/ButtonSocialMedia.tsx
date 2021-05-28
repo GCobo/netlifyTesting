@@ -4,10 +4,12 @@ import {
   LinkedinIcon,
   TwitterIcon,
   FacebookIcon,
-  GithubIcon
+  GithubIcon,
+  AppleIcon
 } from '../icons';
 
 import {
+  AppleButton,
   FacebookButton,
   GithubButton,
   GoogleButton,
@@ -20,7 +22,8 @@ export enum socialMedia {
   facebook = 'facebook',
   twitter = 'twitter',
   linkedin = 'linkedin',
-  github = 'github'
+  github = 'github',
+  apple = 'apple'
 }
 
 type IProps = {
@@ -82,6 +85,15 @@ export const ButtonSocialMedia: React.FunctionComponent<IProps> = ({
         >
           <GithubIcon />
         </GithubButton>
+      )}
+      {social === socialMedia.apple && (
+        <AppleButton
+          className={className}
+          onClick={onClick}
+          data-test={testId}
+        >
+          <AppleIcon />
+        </AppleButton>
       )}
     </Fragment>
   );
