@@ -109,3 +109,17 @@ export const GithubButton = styled(Button)`
     }
   }
 `;
+
+export const AppleButton = styled(Button)`
+  svg {
+    fill: #000;
+  }
+  &:before {
+    box-shadow: inset 0 0 0 1px #000;
+  }
+  &:hover {
+    &:before {
+      box-shadow: inset 0 0 0 ${BUTTON_SIZE} #000;
+    }
+  }
+`;
