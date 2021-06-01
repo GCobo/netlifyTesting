@@ -559,6 +559,10 @@ const App = () => {
               <p>LinkIcon</p>
               <LinkIcon />
             </IconWrapper>
+            <IconWrapper>
+              <p>BookingIcon</p>
+              <BookingIcon />
+            </IconWrapper>
           </Grid>
         </Section>
         <Section>

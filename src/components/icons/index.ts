@@ -65,3 +65,4 @@ export * from './bellIcon';
 export * from './bagIcon';
 export * from './plusSquareIcon';
 export * from './menuIcon';
+export * from './bookingIcon';
