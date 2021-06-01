@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 
 type TabsStyleProps = {
   active?: boolean;
@@ -7,6 +8,10 @@ type TabsStyleProps = {
 
 export const TabStytles = styled.div`
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 `;
 
 export const TabWrapper = styled.ul`
@@ -19,8 +24,8 @@ export const TabWrapper = styled.ul`
 export const TabBar = styled.span`
   position: absolute;
   bottom: 0;
-  height: 2px;
-  width: 6.25rem;
+  height: ${rem(2)};
+  width: ${rem(100)};
   background-color: ${(props) => props.theme.colors.primary.greenLight};
   transition: left 0.2s ease-in-out;
 `;
@@ -42,9 +47,9 @@ export const TabsStyle = styled.button<TabsStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-column-gap: 0.5rem;
-  min-width: 6.25rem;
-  padding-bottom: 0.625rem;
+  grid-column-gap: ${rem(8)};
+  min-width: ${rem(100)};
+  padding-bottom: ${rem(10)};
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   position: relative;
 
@@ -65,12 +70,17 @@ export const TabsStyle = styled.button<TabsStyleProps>`
 
   svg {
     fill: inherit;
-    width: 0.875rem;
-    min-width: 0.875rem;
+    width: ${rem(14)};
+    min-width: ${rem(14)};
   }
 `;
 
 export const TabPanelContent = styled.div`
-  padding-top: 1.75rem;
+  padding-top: ${rem(28)};
   width: 100%;
+  height: 100%;
+`;
+
+export const TabPanelStyles = styled.div`
+  height: 100%;
 `;
