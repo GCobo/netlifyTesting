@@ -1,5 +1,6 @@
 import React from 'react';
 import { BadgetsStyle } from './BadgetsStyles';
+import PropTypes from 'prop-types';
 
 type IProps = {
   number?: number;
@@ -17,4 +18,10 @@ export const Badgets: React.FunctionComponent<IProps> = ({
       {number && <span>{number > 99 ? '99+' : number}</span>}
     </BadgetsStyle>
   );
+};
+
+Badgets.propTypes = {
+  number: PropTypes.number,
+  className: PropTypes.string,
+  testId: PropTypes.string
 };
