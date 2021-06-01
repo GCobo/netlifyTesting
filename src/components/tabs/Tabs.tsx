@@ -7,7 +7,7 @@ import {
   TabsStyle,
   TabStytles,
   TabWrapper
-} from './styles';
+} from './TabStyles';
 
 type TabsProps = {
   children: React.ReactElement[];
@@ -15,6 +15,7 @@ type TabsProps = {
   onChangeActive?(active: string): void;
   className?: string;
   testId?: string;
+  TabclassName?: string;
 };
 
 export const Tabs = ({
@@ -22,7 +23,8 @@ export const Tabs = ({
   active = '1',
   onChangeActive,
   className,
-  testId
+  testId,
+  TabclassName
 }: TabsProps) => {
   const [selected, setSelected] = useState<string>(active);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -52,7 +54,7 @@ export const Tabs = ({
   );
 
   return (
-    <TabStytles>
+    <TabStytles className={TabclassName}>
       <TabWrapper className={className} data-test={testId}>
         {Children.map(children, (child: React.ReactElement, index: number) => {
           const onClickTab = () => {

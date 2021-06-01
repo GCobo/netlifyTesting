@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { TabPanelStyles } from './TabStyles';
 
 type TabPanelProps = {
   children: React.ReactNode;
@@ -13,9 +14,9 @@ type TabPanelProps = {
 
 const TabPanel = ({ children, testIdPanel, className }: TabPanelProps) => {
   return (
-    <div data-test={testIdPanel} className={className}>
+    <TabPanelStyles data-test={testIdPanel} className={className}>
       {children}
-    </div>
+    </TabPanelStyles>
   );
 };
 
