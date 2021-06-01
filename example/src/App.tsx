@@ -73,7 +73,8 @@ import {
   SettingIcon,
   ArrowUpIcon,
   ArrowDownIcon,
-  LinkIcon
+  LinkIcon,
+  BookingIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -558,6 +559,10 @@ const App = () => {
             <IconWrapper>
               <p>LinkIcon</p>
               <LinkIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>BookingIcon</p>
+              <BookingIcon />
             </IconWrapper>
           </Grid>
         </Section>
