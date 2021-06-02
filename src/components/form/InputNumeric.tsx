@@ -98,8 +98,8 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
         <ButtonNumericContainer errorLabel={errorLabel} disabled={disabled}>
           <ButtonNumeric
             icon={<MinusIcon />}
-            onClick={onMinusValue}
             disabled={minusDisabled}
+            onClick={onMinusValue}
             testId={testId ? `button-minus-${testId}` : undefined}
           />
           <InputNumericStyles
@@ -117,8 +117,8 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
           />
           <ButtonNumeric
             icon={<PlusIcon />}
-            onClick={onAddValue}
             disabled={addDisabled}
+            onClick={onAddValue}
             testId={testId ? `button-add-${testId}` : undefined}
           />
         </ButtonNumericContainer>
