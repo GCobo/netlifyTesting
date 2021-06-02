@@ -69,3 +69,4 @@ export * from './uploadIcon';
 export * from './userIcon';
 export * from './warningIcon';
 export * from './widgetIcon';
+export * from './timeIcon';

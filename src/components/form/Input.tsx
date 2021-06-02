@@ -34,7 +34,7 @@ export type InputPropsBasic = FormContainerProps & {
 };
 
 export type InputProps = InputPropsBasic & {
-  type?: 'text' | 'number' | 'password' | 'email' | 'date';
+  type?: 'text' | 'number' | 'password' | 'email' | 'date' | 'time';
   label?: string;
   helpLabel?: string;
   id?: string;

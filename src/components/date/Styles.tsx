@@ -14,6 +14,10 @@ export const InputCalendarWrapper = styled.div<{
   justify-content: baseline;
   position: relative;
 
+  input[type='time']::-webkit-calendar-picker-indicator {
+    background: none;
+  }
+
   ${(props) =>
     !props.errorLabel &&
     `
