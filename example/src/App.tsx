@@ -74,7 +74,9 @@ import {
   ArrowUpIcon,
   ArrowDownIcon,
   LinkIcon,
-  BookingIcon
+  BookingIcon,
+  InputNumeric,
+  MinusIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -353,6 +355,14 @@ const App = () => {
           </Grid>
         </Section>
         <Section>
+          <Title>Input Numeric</Title>
+          <Grid size={300}>
+            <InputNumeric label='With label' />
+            <InputNumeric label='Number' />
+            <InputNumeric label='Number' />
+          </Grid>
+        </Section>
+        <Section>
           <Title>Textarea</Title>
           <Grid size={300}>
             <TextArea placeHolder='With label' />
@@ -564,6 +574,10 @@ const App = () => {
               <p>BookingIcon</p>
               <BookingIcon />
             </IconWrapper>
+            <IconWrapper>
+              <p>MinusIcon</p>
+              <MinusIcon />
+            </IconWrapper>
           </Grid>
         </Section>
         <Section>
@@ -572,13 +586,13 @@ const App = () => {
             <CheckPlatform
               options={optionsPlatform}
               name='check-platform'
-              onChange={() => {}}
+              onChange={() => { }}
             />
             <CheckPlatform
               options={optionsPlatform}
               size='M'
               name='check-platform'
-              onChange={() => {}}
+              onChange={() => { }}
             />
           </Grid>
         </Section>
