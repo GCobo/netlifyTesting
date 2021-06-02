@@ -841,82 +841,21 @@ import {
 
 
   ShopingPurchasedIcon,
-
-  ShowIcon, socialMedia,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  StateAlert, Switch,
-
-
-
-
-  TabPanel, Tabs,
-
-
-
-
-
-
-
-
-
-  Tag, TextArea, ThemeIcon, Tooltip, TrashIcon,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  UploadIcon, UserIcon, WidgetIcon
+  ChevronDownIcon,
+  ShowIcon,
+  HiddenIcon,
+  HelpIcon,
+  CloseIcon,
+  SettingIcon,
+  ArrowUpIcon,
+  ArrowDownIcon,
+  LinkIcon,
+  BookingIcon,
+  InputNumeric,
+  MinusIcon,
+  CloseCircleIcon,
+  CheckCircleIcon,
+  OffCircleIcon
 } from 'joinble-ui';
 import React from 'react';
 import { DropdownOption } from '../../dist/components/dropdown/model';
@@ -1418,6 +1357,18 @@ const App = () => {
             <IconWrapper>
               <p>MinusIcon</p>
               <MinusIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CloseCircleIcon</p>
+              <CloseCircleIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CheckCircleIcon</p>
+              <CheckCircleIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>OffCircleIcon</p>
+              <OffCircleIcon />
             </IconWrapper>
           </Grid>
         </Section>
