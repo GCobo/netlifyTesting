@@ -73,7 +73,8 @@ import {
   SettingIcon,
   ArrowUpIcon,
   ArrowDownIcon,
-  LinkIcon
+  LinkIcon,
+  BookingIcon
 } from 'joinble-ui';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
@@ -387,7 +388,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Tabs</Title>
-          <Grid size={250}>
+          <Grid size={250} style={{ height: 300 }}>
             <Tabs active='1'>
               <TabPanel name='Tab1' id='1'>
                 Hello Tab 1

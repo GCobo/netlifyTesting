@@ -117,10 +117,8 @@ describe('Tab Component', () => {
     );
 
     cy.wait(300);
-    cy.get('[data-test="tab-1-panel"]').should(
-      'have.attr',
-      'class',
-      'test-tabPanel-1'
-    );
+    cy.get('[data-test="tab-1-panel"]')
+      .invoke('attr', 'class')
+      .should('contain', 'test-tabPanel-1');
   });
 });
