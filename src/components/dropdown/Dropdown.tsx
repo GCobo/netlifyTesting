@@ -5,7 +5,8 @@ import React, {
   useMemo,
   forwardRef,
   Ref,
-  FunctionComponent
+  FunctionComponent,
+  ChangeEvent
 } from 'react';
 import {
   ErrorLabelInput,
@@ -22,6 +23,7 @@ import {
   DropdownStyle,
   InputRequired
 } from './DropdownStyle';
+import { Input } from '../form/Input';
 import { DropdownOption, DropdownProps } from './model';
 import { Spring } from 'react-spring/renderprops.cjs';
 
@@ -40,7 +42,8 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
       placeholder,
       multiple = false,
       overlay = false,
-      required = false
+      required = false,
+      input
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -49,12 +52,17 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
       string | number | string[] | number[] | undefined
     >(value);
 
+    const [innerInputValue, setInnerInputValue] = useState<string | null>(
+      value as string
+    );
+
     const [innerValues, setInnerValues] = useState<any>(value ? value : []);
 
     const [open, setOpen] = useState<boolean>(false);
     const [openContent, setOpenContent] = useState<boolean>(false);
 
     const handleInnerValue = (value: any) => {
+      setInnerInputValue(null);
       if (multiple) {
         setInnerValues((values: any) =>
           values.includes(value)
@@ -65,6 +73,11 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
         setInnerValue(value);
         setOpen(false);
       }
+    };
+
+    const handlerInputValue = (value: string) => {
+      setInnerInputValue(value);
+      setInnerValue(value);
     };
 
     useEffect(() => {
@@ -89,6 +102,10 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
     };
 
     const innerPlaceholder = useMemo(() => {
+      if (innerInputValue && input) {
+        return innerInputValue;
+      }
+
       if (innerValues.length && multiple) {
         return options
           .filter((option: DropdownOption) =>
@@ -170,6 +187,19 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
                         {option.name}
                       </OptionMenuItem>
                     ))}
+                    {input && (
+                      <OptionMenuItem>
+                        {input.label}{' '}
+                        <Input
+                          type={input.type}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            handlerInputValue(event.target.value)
+                          }
+                          value={innerInputValue as string}
+                          testId={input.testId}
+                        />
+                      </OptionMenuItem>
+                    )}
                   </DropdownOptions>
                 </AnimatedOptions>
               )}

@@ -1,5 +1,11 @@
 import { Ref } from 'react';
 
+export type DropdownInput = {
+  label: string;
+  type?: 'text' | 'number' | 'password' | 'email' | 'date',
+  testId?: string;
+}
+
 export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   label?: string;
   helpLabel?: string;
@@ -13,6 +19,7 @@ export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   multiple?: boolean;
   overlay?: boolean;
   required?: boolean;
+  input?: DropdownInput
 }
 
 export type DropdownStyleProps = {

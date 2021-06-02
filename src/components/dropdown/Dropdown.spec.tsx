@@ -216,4 +216,42 @@ describe('Dropdown component', () => {
 
     cy.get('label').should('contain', '*');
   });
+
+  it('should allow custom input to be added', () => {
+    const options: DropdownOption[] = [
+      {
+        name: 'Weekdays',
+        value: 'weekdays'
+      },
+      {
+        name: 'Weekends',
+        value: 'weekends'
+      },
+      {
+        name: 'Every Monday',
+        value: 'monday'
+      }
+    ];
+
+    mount(
+      <WrapperTheme>
+        <Dropdown
+          options={options}
+          label='Date Range'
+          placeholder='Select date Range'
+          testId='dropdown'
+          required
+          input={{ label: 'Specific date', type: 'date', testId: 'input-date' }}
+        />
+      </WrapperTheme>
+    );
+
+    cy.get('[data-test="dropdown"]').click();
+
+    cy.get('[data-test="input-date"]').should('be.visible');
+
+    cy.get('[data-test="input-date"]').type('2020-12-12');
+
+    cy.contains('2020-12-12').should('be.visible');
+  });
 });
