@@ -4,8 +4,8 @@ import { css } from '@emotion/css';
 import { HelpLabel } from '../helpLabel/HelpLabel';
 import { ErrorLabel } from '../errorLabel/ErrorLabel';
 import { FormContainerProps } from './model';
-import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 import { rem } from 'polished';
+import { Button } from '../button';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -26,19 +26,18 @@ export const InputContainer = styled.div<FormContainerProps>`
   padding: 0 ${rem(12)};
   column-gap: ${rem(8)};
   box-shadow: ${(props) => `
-  inset 0px 0px 0px 1px ${
-    props.errorLabel
+  inset 0px 0px 0px 1px ${props.errorLabel
       ? props.theme.colors.system.error
       : props.theme.colors.primary.greyLight
-  }
+    }
 `};
 
   &:hover,
   &:focus {
     box-shadow: ${(props) =>
-      props.disabled
-        ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
-        : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
+    props.disabled
+      ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
+      : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
     border: none;
     outline: none;
   }
@@ -46,9 +45,9 @@ export const InputContainer = styled.div<FormContainerProps>`
     width: ${rem(20)};
     min-width: ${rem(20)};
     fill: ${(props) =>
-      props.errorLabel
-        ? props.theme.colors.system.error
-        : props.theme.colors.primary.greenLight};
+    props.errorLabel
+      ? props.theme.colors.system.error
+      : props.theme.colors.primary.greenLight};
   }
 `;
 
@@ -104,10 +103,9 @@ export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`
   border-radius: ${rem(4)};
   background-color: ${(props) => props.theme.colors.system.white};
   box-shadow: ${(props) =>
-    `inset 0px 0px 0px 1px ${
-      props.errorLabel
-        ? props.theme.colors.system.error
-        : props.theme.colors.primary.greyLight
+    `inset 0px 0px 0px 1px ${props.errorLabel
+      ? props.theme.colors.system.error
+      : props.theme.colors.primary.greyLight
     }`};
   border: none;
   padding: ${rem(8)} ${rem(16)};
@@ -121,9 +119,9 @@ export const TextAreaStyles = styled.textarea<{ errorLabel?: string }>`
   &:hover,
   &:focus {
     box-shadow: ${(props) =>
-      props.disabled
-        ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
-        : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
+    props.disabled
+      ? `inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`
+      : `inset 0px 0px 0px 1px ${props.theme.colors.primary.greenLight}`};
     border: none;
     outline: none;
   }
@@ -138,8 +136,8 @@ export const EditorStyles = (props: any) => css`
   ${props.fonts.regularText('M')};
   box-shadow: inset 0px 0px 0px 1px
     ${props.errorLabel
-      ? props.colors.system.error
-      : props.colors.primary.greyLight};
+    ? props.colors.system.error
+    : props.colors.primary.greyLight};
 
   > div {
     margin: 0;
@@ -153,8 +151,8 @@ export const EditorStyles = (props: any) => css`
   &:hover,
   &:focus {
     box-shadow: ${props.disabled
-      ? `inset 0px 0px 0px 1px ${props.colors.primary.greyLight}`
-      : `inset 0px 0px 0px 1px ${props.colors.primary.greenLight}`};
+    ? `inset 0px 0px 0px 1px ${props.colors.primary.greyLight}`
+    : `inset 0px 0px 0px 1px ${props.colors.primary.greenLight}`};
     border: none;
     outline: none;
   }
@@ -165,21 +163,19 @@ export const EditorStyles = (props: any) => css`
   }
 `;
 
-export const ButtonNumeric = styled(ButtonIcon)`
-  background: ${(props) => props.theme.colors.primary.greenLight};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 36px;
-  width: 42px;
-  border-radius: 5px;
-  margin: 0 2px;
+export const ButtonNumericContainer = styled(InputContainer)`
+  padding: ${rem(2)};
+`
 
-  > svg {
-    display: inline-block;
-    fill: ${(props) => props.theme.colors.primary.greenDark};
-    margin: 0;
+export const ButtonNumeric = styled(Button)`
+
+  height: 100%;
+  min-width: ${rem(42)};
+  width: ${rem(42)};
+  border-radius: ${rem(4)};
+
+    svg {
+    fill: ${(props) => props.theme.colors.system.white};
   }
 `;
 

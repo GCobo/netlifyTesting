@@ -10,12 +10,12 @@ import { InputProps } from './Input';
 import {
   Wrapper,
   Label,
-  InputContainer,
   InputNumericStyles,
   ErrorLabelInput,
   HelpLabelInput,
   ButtonNumeric,
-  InputRequired
+  InputRequired,
+  ButtonNumericContainer
 } from './Styles';
 import { PlusIcon, MinusIcon } from '../icons';
 
@@ -95,7 +95,7 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
             {label} {required && <InputRequired>*</InputRequired>}
           </Label>
         )}
-        <InputContainer errorLabel={errorLabel} disabled={disabled}>
+        <ButtonNumericContainer errorLabel={errorLabel} disabled={disabled}>
           <ButtonNumeric
             icon={<MinusIcon />}
             onClick={onMinusValue}
@@ -121,7 +121,7 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
             disabled={addDisabled}
             testId={testId ? `button-add-${testId}` : undefined}
           />
-        </InputContainer>
+        </ButtonNumericContainer>
         {errorLabel && <ErrorLabelInput label={errorLabel} />}
         {helpLabel && <HelpLabelInput label={helpLabel} />}
       </Wrapper>
