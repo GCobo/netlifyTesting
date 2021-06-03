@@ -55,4 +55,19 @@ describe('Input Time component', () => {
 
     cy.get('p').should('contain', 'error');
   });
+
+  it.only('should add min date', () => {
+    mount(
+      <WrapperTheme>
+        <InputTime
+          label='This is a label'
+          minTime='12:30'
+          maxTime='14:30'
+          onChange={(value) => {
+            console.log(value);
+          }}
+        />
+      </WrapperTheme>
+    );
+  });
 });

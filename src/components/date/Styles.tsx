@@ -24,7 +24,7 @@ export const InputCalendarWrapper = styled.div<{
       svg {
         position: absolute;
         right: 10px;
-        top: ${props.withLabel ? '1.8rem' : '0.4rem'};
+        top: ${props.withLabel ? '2rem' : '0.6rem'};
         fill: ${props.theme.colors.primary.primary};
         pointer-events: none;
         }

@@ -70,3 +70,4 @@ export * from './userIcon';
 export * from './warningIcon';
 export * from './widgetIcon';
 export * from './timeIcon';
+export * from './deleteCircleIcon';

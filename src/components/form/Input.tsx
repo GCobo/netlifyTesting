@@ -47,6 +47,8 @@ export type InputProps = InputPropsBasic & {
   value?: string | number | string[];
   testId?: string;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
+  max?: string;
+  min?: string;
 };
 
 export const Input: FunctionComponent<InputProps> = forwardRef(
@@ -66,7 +68,9 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
       value,
       testId,
       onChange,
-      required = false
+      required = false,
+      max,
+      min
     },
     ref: Ref<HTMLInputElement>
   ) => {
@@ -95,6 +99,8 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
             onChange={onChange}
             value={value}
             data-test={testId}
+            max={max}
+            min={min}
           />
           {type === 'password' && (
             <ButtonIcon

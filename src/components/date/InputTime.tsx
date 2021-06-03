@@ -4,7 +4,6 @@ import { Input, InputPropsBasic } from '../form';
 import { TimeIcon } from '../icons';
 import { InputCalendarWrapper } from './Styles';
 
-
 type IProps = InputPropsBasic & {
   withTime?: boolean;
   minTime?: string;
@@ -14,7 +13,7 @@ type IProps = InputPropsBasic & {
   onChange?(date: string): void;
   confirmText?: string;
   errorLabel?: string;
-  show?:boolean;
+  show?: boolean;
 };
 
 export const InputTime = ({
@@ -29,6 +28,10 @@ export const InputTime = ({
   show = false,
   ...rest
 }: IProps) => {
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    onChange(value);
+  };
 
   return (
     <InputCalendarWrapper
@@ -38,9 +41,11 @@ export const InputTime = ({
       <Input
         type='time'
         {...rest}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(event.target.value)}
+        onChange={onChangeHandler}
         label={label}
         errorLabel={errorLabel}
+        max={maxTime}
+        min={minTime}
       />
       {!errorLabel && <TimeIcon />}
     </InputCalendarWrapper>
