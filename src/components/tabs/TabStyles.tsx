@@ -26,7 +26,7 @@ export const TabBar = styled.span`
   bottom: 0;
   height: ${rem(2)};
   width: ${rem(100)};
-  background-color: ${(props) => props.theme.colors.primary.greenLight};
+  background-color: ${(props) => props.theme.colors.primary.primary};
   transition: left 0.2s ease-in-out;
 `;
 
@@ -35,13 +35,13 @@ export const TabsStyle = styled.button<TabsStyleProps>`
     props.disabled
       ? props.theme.colors.primary.greyLight
       : props.active
-      ? props.theme.colors.primary.greenLight
+      ? props.theme.colors.primary.primary
       : props.theme.colors.primary.greyDark};
   fill: ${(props) =>
     props.disabled
       ? props.theme.colors.primary.greyLight
       : props.active
-      ? props.theme.colors.primary.greenLight
+      ? props.theme.colors.primary.primary
       : props.theme.colors.primary.greyDark};
   ${(props) => props.theme.fonts.regularText('M')};
   display: flex;
@@ -61,11 +61,11 @@ export const TabsStyle = styled.button<TabsStyleProps>`
     color: ${(props) =>
       props.disabled
         ? props.theme.colors.primary.greyLight
-        : props.theme.colors.primary.greenLight};
+        : props.theme.colors.primary.primary};
     fill: ${(props) =>
       props.disabled
         ? props.theme.colors.primary.greyLight
-        : props.theme.colors.primary.greenLight};
+        : props.theme.colors.primary.primary};
   }
 
   svg {

@@ -1,6 +1,6 @@
-import React from 'react';
+import { css, Global, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Global, css, useTheme } from '@emotion/react';
+import React from 'react';
 
 export const InputCalendarWrapper = styled.div<{
   withLabel: boolean;
@@ -25,7 +25,7 @@ export const InputCalendarWrapper = styled.div<{
         position: absolute;
         right: 10px;
         top: ${props.withLabel ? '1.8rem' : '0.4rem'};
-        fill: ${props.theme.colors.primary.greenLight};
+        fill: ${props.theme.colors.primary.primary};
         pointer-events: none;
         }
   `}

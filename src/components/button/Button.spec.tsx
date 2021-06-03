@@ -1,11 +1,11 @@
 /// <reference types="Cypress" />
 
-import React from 'react';
 import { mount } from 'cypress-react-unit-test';
-import { Button } from './Button';
+import React from 'react';
 import { JoinbleTheme } from '../../styles/Theme';
-import { PlusIcon } from '../icons';
 import { WrapperTheme } from '../../utils/test';
+import { PlusIcon } from '../icons';
+import { Button } from './Button';
 
 describe('Button component', () => {
   it('Should be works', () => {
@@ -38,7 +38,7 @@ describe('Button component', () => {
     );
     cy.get('[data-test="button"]').should(
       'have.backgroundColor',
-      JoinbleTheme.colors.primary.greenLight
+      JoinbleTheme.colors.primary.primary
     );
   });
 

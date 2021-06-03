@@ -1,19 +1,18 @@
+import ColorPickerNative from 'rc-color-picker';
 import React, {
-  useState,
   forwardRef,
   FunctionComponent,
+  MouseEvent,
   Ref,
-  MouseEvent
+  useState
 } from 'react';
-import ColorPickerNative from 'rc-color-picker';
-
+import { JoinbleTheme } from '../../styles/Theme';
 import {
   BoxColor,
   ColorPickerWrapper,
-  InputColorPicker,
-  GlobalColorPicker
+  GlobalColorPicker,
+  InputColorPicker
 } from './ColorPickerStyles';
-import { JoinbleTheme } from '../../styles/Theme';
 
 type IProps = {
   value?: string;
@@ -31,7 +30,7 @@ type IProps = {
 export const ColorPicker: FunctionComponent<IProps> = forwardRef(
   (
     {
-      value = JoinbleTheme.colors.primary.greenLight,
+      value = JoinbleTheme.colors.primary.primary,
       name,
       label = 'Select color',
       className,

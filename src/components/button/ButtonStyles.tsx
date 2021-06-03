@@ -1,9 +1,8 @@
+import { css } from '@emotion/css';
 import styled from '@emotion/styled/macro';
 import { darken, rem } from 'polished';
-import { css } from '@emotion/css';
-
-import { ButtonTypeProps } from './ButtonModel';
 import { Loading } from '../loading/Loading';
+import { ButtonTypeProps } from './ButtonModel';
 
 const TRANSITION = 'all 0.3s ease-in-out';
 
@@ -38,7 +37,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
       ? props.theme.colors.system.success
       : props.warning
       ? props.theme.colors.system.warning
-      : props.theme.colors.primary.greenLight};
+      : props.theme.colors.primary.primary};
   ${(props) =>
     props.outline &&
     `box-shadow:  inset 0px 0px 0px 1px ${props.theme.colors.primary.greyLight}`};
@@ -103,7 +102,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
             ? props.theme.colors.system.success
             : props.warning
             ? props.theme.colors.system.warning
-            : props.theme.colors.primary.greenLight};
+            : props.theme.colors.primary.primary};
       }
     }
   }
@@ -139,7 +138,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
           ? darken(0.1, props.theme.colors.system.success)
           : props.warning
           ? darken(0.1, props.theme.colors.system.warning)
-          : darken(0.1, props.theme.colors.primary.greenLight)};
+          : darken(0.1, props.theme.colors.primary.primary)};
     }
   }
 
