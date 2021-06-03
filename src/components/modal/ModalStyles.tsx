@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { Portal } from '../portal/Portal';
 import { animated } from 'react-spring';
+import { Portal } from '../portal/Portal';
 
 export const ModalStyles = styled(animated.div)<{ lateral?: Boolean }>`
   background-color: ${(props) => props.theme.colors.system.white};
@@ -52,7 +52,7 @@ export const ButtonClose = styled.button`
 
   &:hover {
     > svg {
-      fill: ${(props) => props.theme.colors.primary.greenLight};
+      fill: ${(props) => props.theme.colors.primary.primary};
     }
   }
 

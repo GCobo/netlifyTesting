@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
-
-import { DragZoneProps, InputUploadCircleProps } from './InputUploadModel';
-import { AlertIcon, UploadIcon } from '../icons';
-import { HelpLabel } from '../helpLabel/HelpLabel';
-import { Label } from '../form/Styles';
 import { rem } from 'polished';
+import { Label } from '../form/Styles';
+import { HelpLabel } from '../helpLabel/HelpLabel';
+import { AlertIcon, UploadIcon } from '../icons';
+import { DragZoneProps, InputUploadCircleProps } from './InputUploadModel';
 
 const handleBorderColor = (props: any) => {
   if (props.errorLabel) {
@@ -15,7 +14,7 @@ const handleBorderColor = (props: any) => {
   }
 
   if (props.isActive) {
-    return `solid ${props.theme.colors.primary.greenLight}`;
+    return `solid ${props.theme.colors.primary.primary}`;
   }
 
   return `solid ${props.theme.colors.primary.greyLight}`;
@@ -65,7 +64,7 @@ export const ContainerDrag = styled.div<DragZoneProps>`
 
   &:hover,
   &:focus {
-    border: 1px solid ${(props) => props.theme.colors.primary.greenLight};
+    border: 1px solid ${(props) => props.theme.colors.primary.primary};
     outline: none;
   }
 `;

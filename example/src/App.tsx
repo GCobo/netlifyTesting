@@ -1,83 +1,86 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import {
+  Alert,
+  AlertIcon,
+  AndroidIcon,
+  AppleIcon,
+  ApplicationIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
+  Badgets,
+  BagIcon,
+  BellIcon,
+  BookingIcon,
   Button,
   ButtonIcon,
-  SearchIcon,
-  Input,
-  GlobalStyles,
-  AlertIcon,
-  ErrorLabel,
-  HelpLabel,
-  Dropdown,
   ButtonSocialMedia,
-  socialMedia,
-  Loading,
-  Link,
-  ColorPicker,
-  NotificationIcon,
-  Badgets,
-  ApplicationIcon,
-  WidgetIcon,
+  CalendarIcon,
+  Card,
   Checkbox,
-  PlusIcon,
-  TrashIcon,
-  AppleIcon,
-  AndroidIcon,
+  CheckCircleIcon,
   CheckPlatform,
-  ICheckPlatform,
-  Tooltip,
-  JoinbleTheme,
+  ChevronDownIcon,
+  CloseCircleIcon,
+  CloseIcon,
+  CloudCheckIcon,
+  ColorPicker,
+  CopyIcon,
+  CreditCardIcon,
+  Dropdown,
+  EditIcon,
+  ErrorLabel,
   ExitIcon,
-  LockIcon,
+  GlobalStyles,
+  HelpIcon,
+  HelpLabel,
+  HiddenIcon,
+  ICheckPlatform,
+  Input,
+  InputNumeric,
   InputUpload,
+  JoinbleLogo,
+  JoinbleTheme,
+  Link,
+  LinkIcon,
+  Loading,
+  LockIcon,
   LogOutIcon,
-  UserIcon,
+  MenuIcon,
+  MessageIcon,
+  MinusIcon,
+  NotificationIcon,
+  OffCircleIcon,
   OptionMenu,
+  OptionMenuHeader,
   OptionMenuItem,
   OptionMenuSeparator,
-  OptionMenuHeader,
-  Switch,
-  Card,
-  EditIcon,
-  ThemeIcon,
-  Tabs,
-  TabPanel,
   PlayIcon,
-  UploadIcon,
-  PublishIcon,
-  Alert,
-  StateAlert,
-  SeeMoreIcon,
-  ShopingIcon,
-  TextArea,
-  Tag,
-  JoinbleLogo,
-  CalendarIcon,
-  CloudCheckIcon,
-  CopyIcon,
-  BellIcon,
-  SendIcon,
   PlusCircleIcon,
-  BagIcon,
+  PlusIcon,
   PlusSquareIcon,
-  MenuIcon,
-  CreditCardIcon,
-  MessageIcon,
-  ShopingPurchasedIcon,
-  ChevronDownIcon,
-  ShowIcon,
-  HiddenIcon,
-  HelpIcon,
-  CloseIcon,
+  PublishIcon,
+  SearchIcon,
+  SeeMoreIcon,
+  SendIcon,
   SettingIcon,
-  ArrowUpIcon,
-  ArrowDownIcon,
-  LinkIcon,
-  BookingIcon,
-  InputNumeric,
-  MinusIcon
+  ShopingIcon,
+  ShopingPurchasedIcon,
+  ShowIcon,
+  socialMedia,
+  StateAlert,
+  Switch,
+  TabPanel,
+  Tabs,
+  Tag,
+  TextArea,
+  ThemeIcon,
+  Tooltip,
+  TrashIcon,
+  UploadIcon,
+  UserIcon,
+  WidgetIcon
 } from 'joinble-ui';
+import React from 'react';
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
 type IGridProps = {
@@ -160,14 +163,14 @@ const App = () => {
         <Section>
           <Title>Colour Palette</Title>
           <Grid>
-            <PaletteBoxColor
-              background={JoinbleTheme.colors.primary.greenLight}
-            >
-              <p>Green Light</p>
+            <PaletteBoxColor background={JoinbleTheme.colors.primary.primary}>
+              <p>Primary</p>
             </PaletteBoxColor>
 
-            <PaletteBoxColor background={JoinbleTheme.colors.primary.greenDark}>
-              <p>Green Dark</p>
+            <PaletteBoxColor
+              background={JoinbleTheme.colors.primary.primaryDark}
+            >
+              <p>Primary Dark</p>
             </PaletteBoxColor>
 
             <PaletteBoxColor
@@ -578,6 +581,18 @@ const App = () => {
               <p>MinusIcon</p>
               <MinusIcon />
             </IconWrapper>
+            <IconWrapper>
+              <p>OffCircleIcon</p>
+              <OffCircleIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CheckCircleIcon</p>
+              <CheckCircleIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>CloseCircleIcon</p>
+              <CloseCircleIcon />
+            </IconWrapper>
           </Grid>
         </Section>
         <Section>
@@ -586,13 +601,13 @@ const App = () => {
             <CheckPlatform
               options={optionsPlatform}
               name='check-platform'
-              onChange={() => { }}
+              onChange={() => {}}
             />
             <CheckPlatform
               options={optionsPlatform}
               size='M'
               name='check-platform'
-              onChange={() => { }}
+              onChange={() => {}}
             />
           </Grid>
         </Section>
@@ -616,7 +631,7 @@ const App = () => {
           <Grid>
             <ColorPicker
               label='Select Primary color'
-              value={JoinbleTheme.colors.primary.greenLight}
+              value={JoinbleTheme.colors.primary.primary}
             />
           </Grid>
         </Section>

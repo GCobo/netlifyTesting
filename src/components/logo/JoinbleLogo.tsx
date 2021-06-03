@@ -29,11 +29,11 @@ export const JoinbleLogo = ({
           y2='0.47727275'
           id='gradient_1'
         >
-          <stop offset='0' stopColor='#1CD8D2' />
+          <stop offset='0' stopColor={JoinbleTheme.colors.primary.primary} />
           <stop offset='1' stopColor='#93EDC7' />
         </linearGradient>
         <linearGradient x1='0' y1='0.5' x2='1' y2='0.5' id='gradient_2'>
-          <stop offset='0' stopColor='#1CD8D2' />
+          <stop offset='0' stopColor={JoinbleTheme.colors.primary.primary} />
           <stop offset='1' stopColor='#93EDC7' />
         </linearGradient>
         <path d='M0 0L327.111 0L327.111 96L0 96L0 0Z' id='path_1' />

@@ -4,8 +4,8 @@ import { createFont, Font } from './fonts/font';
 export type IThemeProps = {
   colors: {
     primary: {
-      greenLight: string;
-      greenDark: string;
+      primary: string;
+      primaryDark: string;
       greyDarkest: string;
       greyDark: string;
       greyLight: string;
@@ -27,8 +27,8 @@ export type IThemeProps = {
 export const JoinbleTheme: IThemeProps = {
   colors: {
     primary: {
-      greenLight: '#1CD8D2',
-      greenDark: '#0D837F',
+      primary: '#1CD8D2',
+      primaryDark: '#0D837F',
       greyDarkest: '#021514',
       greyDark: '#6E768E',
       greyLight: '#E1E4E8',

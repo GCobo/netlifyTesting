@@ -19,7 +19,7 @@ export const Dot1 = styled.div`
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: ${(props) => props.theme.colors.primary.greenLight};
+  background-color: ${(props) => props.theme.colors.primary.primary};
   border-radius: 100%;
   box-shadow: ${(props) =>
     `inset 0px 0px 0px 1px ${props.theme.colors.system.white} `};

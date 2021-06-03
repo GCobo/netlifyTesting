@@ -1,12 +1,11 @@
 /// <reference types="Cypress" />
 
-import React from 'react';
 import { mount } from 'cypress-react-unit-test';
-
-import { ButtonIcon } from './ButtonIcon';
-import { SearchIcon } from '../icons';
+import React from 'react';
 import { JoinbleTheme } from '../../styles/Theme';
 import { WrapperTheme } from '../../utils/test';
+import { SearchIcon } from '../icons';
+import { ButtonIcon } from './ButtonIcon';
 
 describe('Button Icon', () => {
   it('works', () => {
@@ -40,7 +39,7 @@ describe('Button Icon', () => {
     );
 
     cy.get('[data-test="button-primary"]');
-    cy.should('have.fill', JoinbleTheme.colors.primary.greenLight);
+    cy.should('have.fill', JoinbleTheme.colors.primary.primary);
   });
 
   it('Button Secondary match with secondary color', () => {

@@ -20,7 +20,7 @@ export const ButtonIconStyle = styled.button<IProps>`
       ? props.theme.colors.system.white
       : props.secondary
       ? props.theme.colors.primary.greyDark
-      : props.theme.colors.primary.greenLight};
+      : props.theme.colors.primary.primary};
   width: ${(props) =>
     props.size === 'XL'
       ? `${rem(36)}`
@@ -55,8 +55,8 @@ export const ButtonIconStyle = styled.button<IProps>`
       props.disabled
         ? 'auto'
         : props.negative || props.secondary
-        ? props.theme.colors.primary.greenLight
-        : darken(0.1, props.theme.colors.primary.greenLight)};
+        ? props.theme.colors.primary.primary
+        : darken(0.1, props.theme.colors.primary.primary)};
   }
 
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};

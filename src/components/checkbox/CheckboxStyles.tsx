@@ -50,7 +50,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
     ${LabelCheckbox} {
       color: ${(props) =>
         !props.disabled
-          ? props.theme.colors.primary.greenLight
+          ? props.theme.colors.primary.primary
           : props.theme.colors.primary.greyDark};
     }
     > svg {
@@ -59,7 +59,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
           ? props.theme.colors.system.white
           : props.disabled
           ? props.theme.colors.primary.greyDark
-          : props.theme.colors.primary.greenLight};
+          : props.theme.colors.primary.primary};
     }
   }
 `;
@@ -67,7 +67,7 @@ export const CheckboxContainer = styled.button<ICcheckboxContainerProps>`
 export const CheckboxStyles = styled.div<{ checked: boolean }>`
   background-color: ${(props) =>
     props.checked
-      ? props.theme.colors.primary.greenLight
+      ? props.theme.colors.primary.primary
       : props.theme.colors.system.white};
   width: 1.25rem;
   height: 1.25rem;
@@ -78,7 +78,7 @@ export const CheckboxStyles = styled.div<{ checked: boolean }>`
   box-shadow: ${(props) =>
     `inset 0px 0px 0px 1px ${
       props.checked
-        ? props.theme.colors.primary.greenLight
+        ? props.theme.colors.primary.primary
         : props.theme.colors.primary.greyLight
     }`};
   svg {
