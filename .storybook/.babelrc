@@ -1,0 +1,4 @@
+// Bug in Storybook version, remove this file when closed this issue https://github.com/storybookjs/storybook/issues/13577
+{
+  "plugins": ["@emotion"]
+}
