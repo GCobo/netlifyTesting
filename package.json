@@ -21,7 +21,9 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "semantic-release": "semantic-release",
-    "publish:preview": "semantic-release -d"
+    "publish:preview": "semantic-release -d",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "@emotion/babel-preset-css-prop": "11.0.0",
@@ -48,13 +50,20 @@
     "react-virtuoso": "1.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
     "@emotion/babel-preset-css-prop": "11.0.0",
+    "@storybook/addon-storysource": "6.2.9",
+    "@storybook/preset-create-react-app": "3.1.7",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.1.1",
     "@emotion/styled": "11.0.0",
     "@emotion/styled-base": "11.0.0",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/github": "7.2.0",
+    "@storybook/addon-actions": "6.2.9",
+    "@storybook/addon-essentials": "6.2.9",
+    "@storybook/addon-links": "6.2.9",
+    "@storybook/react": "6.2.9",
     "@testing-library/cypress": "7.0.2",
     "@types/jest": "25.1.4",
     "@types/leaflet": "1.5.21",
@@ -66,6 +75,7 @@
     "@typescript-eslint/eslint-plugin": "2.26.0",
     "@typescript-eslint/parser": "2.26.0",
     "babel-eslint": "10.1.0",
+    "babel-loader": "8.1.0",
     "cross-env": "7.0.2",
     "cypress": "6.5.0",
     "cypress-file-upload": "5.0.2",
@@ -94,7 +104,7 @@
     "semantic-release": "17.1.1",
     "shelljs": "0.8.4",
     "tslint": "6.1.2",
-    "typescript": "3.7.5"
+    "typescript": "3.8.3"
   },
   "files": [
     "dist"
@@ -103,5 +113,8 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "resolutions": {
+    "@storybook/react/babel-loader": "8.1.0"
   }
 }

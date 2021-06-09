@@ -1,12 +1,12 @@
-import React from 'react'
-import { LinkStyles } from './LinkStyles'
+import React from 'react';
+import { LinkStyles } from './LinkStyles';
 
 type IProps = {
-  href: string
-  children?: React.ReactNode
-  testId?: string
-  className?: string
-}
+  href: string;
+  children?: React.ReactNode;
+  testId?: string;
+  className?: string;
+};
 
 export const Link: React.FunctionComponent<IProps> = ({
   href,
@@ -18,5 +18,5 @@ export const Link: React.FunctionComponent<IProps> = ({
     <LinkStyles href={href} data-test={testId} className={className}>
       {children}
     </LinkStyles>
-  )
-}
+  );
+};
