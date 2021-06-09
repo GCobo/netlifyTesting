@@ -27,3 +27,6 @@ debug.log
 
 cypress/videos/
 cypress/screenshots/
+
+#storyboook
+storybook-static
