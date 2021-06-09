@@ -393,6 +393,7 @@ const App = () => {
               errorLabel='Error'
               options={optionsDropdown}
             />
+            <Dropdown label='Multiple' options={optionsDropdown} multiple />
             <Dropdown
               label='label'
               helpLabel='help label'
