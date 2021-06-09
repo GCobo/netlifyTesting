@@ -19,6 +19,7 @@ import { Portal } from '../portal';
 import {
   AnimatedOptions,
   Chevron,
+  DropdownActionsRow,
   DropdownOptions,
   DropdownStyle,
   InputRequired
@@ -26,6 +27,8 @@ import {
 import { Input } from '../form/Input';
 import { DropdownOption, DropdownProps } from './model';
 import { Spring } from 'react-spring/renderprops.cjs';
+import { CloseIcon } from '../icons';
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
   (
@@ -112,7 +115,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
             innerValues.includes(option.value)
           )
           .map((item) => item.name)
-          .join(',');
+          .join(', ');
       }
 
       if (innerValue && !multiple) {
@@ -127,11 +130,15 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
             innerValues.includes(option.value)
           )
           .map((item) => item.name)
-          .join(',');
+          .join(', ');
       }
 
       return placeholder;
     }, [innerValue, multiple, innerValues]);
+
+    const removeSelectedValues = () => {
+      multiple ? setInnerValues([]) : setInnerValue(undefined);
+    };
 
     return (
       <Wrapper className={className}>
@@ -150,7 +157,18 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
           type='button'
         >
           <span>{innerPlaceholder && innerPlaceholder}</span>
-          <Chevron open={open} />
+          <DropdownActionsRow>
+            {(innerValues.length > 0 || innerValue) && (
+              <ButtonIcon
+                icon={<CloseIcon />}
+                size='S'
+                secondary
+                testId='dropdown-delete-value'
+                onClick={removeSelectedValues}
+              />
+            )}
+            <Chevron open={open} />
+          </DropdownActionsRow>
           <input
             type='hidden'
             value={innerValue as string}
@@ -189,7 +207,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
                     ))}
                     {input && (
                       <OptionMenuItem>
-                        {input.label}{' '}
+                        {input.label}
                         <Input
                           type={input.type}
                           onChange={(event: ChangeEvent<HTMLInputElement>) =>

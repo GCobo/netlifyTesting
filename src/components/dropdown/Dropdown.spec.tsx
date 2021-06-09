@@ -39,6 +39,22 @@ describe('Dropdown component', () => {
     cy.get('[data-test="dropdown"]').contains('test').should('be.visible');
   });
 
+  it('Value should be deleted', () => {
+    mount(
+      <WrapperTheme>
+        <Dropdown label='label' options={optionsDropdown} testId='dropdown' />
+      </WrapperTheme>
+    );
+    cy.get('[data-test="dropdown"]')
+      .click()
+      .get('[data-test="dropdown-item-test"]')
+      .click()
+      .get('[data-test="dropdown-delete-value"]')
+      .click()
+      .get('[data-test="dropdown"]')
+      .should('have.value', '');
+  });
+
   it('Default value should be visible', () => {
     mount(
       <WrapperTheme>
@@ -205,6 +221,29 @@ describe('Dropdown component', () => {
     mount(<TestComponent />);
 
     cy.contains('test1,test2').should('be.visible');
+  });
+
+  it.only('Dropdown multiple values should be deleted', () => {
+    mount(
+      <WrapperTheme>
+        <Dropdown
+          label='label'
+          options={optionsDropdown}
+          testId='dropdown'
+          multiple
+        />
+      </WrapperTheme>
+    );
+    cy.get('[data-test="dropdown"]')
+      .click()
+      .get('[data-test="dropdown-item-test"]')
+      .click()
+      .get('[data-test="dropdown-item-test2"]')
+      .click()
+      .get('[data-test="dropdown-delete-value"]')
+      .click()
+      .get('[data-test="dropdown"]')
+      .should('have.value', '');
   });
 
   it('should show the required label', () => {

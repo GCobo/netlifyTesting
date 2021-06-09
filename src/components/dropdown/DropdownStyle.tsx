@@ -68,3 +68,9 @@ export const DropdownOptions = styled(OptionsMenuWrapper)`
       (${PADDING_X_OPTION_MENU})
   );
 `;
+
+export const DropdownActionsRow = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: ${rem(8)};
+`;
