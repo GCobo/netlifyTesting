@@ -9,6 +9,7 @@ type IProps = {
   height?: number;
   itemsOpen?: number;
   totalItems?: number;
+  itemOpen?: boolean;
 };
 
 const CollabsableItem = ({

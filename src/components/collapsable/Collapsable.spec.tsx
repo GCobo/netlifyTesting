@@ -48,4 +48,39 @@ describe('Collapsable Component', () => {
       'true'
     );
   });
+
+  it('Item2 should be open', () => {
+    mount(
+      <WrapperTheme>
+        <Collapsable>
+          <CollabsableItem title='Pages' testId='pages'>
+            Example
+          </CollabsableItem>
+          <CollabsableItem title='Widgets' testId='widgets' itemOpen>
+            Example
+          </CollabsableItem>
+          <CollabsableItem title='Themes' testId='themes'>
+            Example
+          </CollabsableItem>
+        </Collapsable>
+      </WrapperTheme>
+    );
+
+    cy.get('[data-test="collapsable-pages"]').should(
+      'have.attr',
+      'aria-expanded',
+      'false'
+    );
+
+    cy.get('[data-test="collapsable-themes"]').should(
+      'have.attr',
+      'aria-expanded',
+      'false'
+    );
+
+    cy.get('[data-test="collapsable-item-widgets"]')
+      .click()
+      .get('[data-test="collapsable-widgets"]')
+      .should('have.attr', 'aria-expanded', 'true');
+  });
 });

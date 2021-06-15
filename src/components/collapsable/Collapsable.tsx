@@ -35,7 +35,7 @@ export const Collapsable = ({ children }: IProps) => {
             <li>
               <CollapsableItemHeader
                 onClick={() => toggleCollapsable(index)}
-                isOpen={itemsOpened.includes(index)}
+                isOpen={itemsOpened.includes(index) || child.props.itemOpen}
                 data-test={`collapsable-item-${
                   child.props.testId ? child.props.testId : index
                 }`}
