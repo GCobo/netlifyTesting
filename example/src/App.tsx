@@ -3,6 +3,7 @@ import {
   Alert,
   AlertIcon,
   AndroidIcon,
+  AppIcon,
   AppleIcon,
   ApplicationIcon,
   ArrowDownIcon,
@@ -26,6 +27,7 @@ import {
   ColorPicker,
   CopyIcon,
   CreditCardIcon,
+  DocumentIcon,
   Dropdown,
   EditIcon,
   ErrorLabel,
@@ -592,6 +594,14 @@ const App = () => {
             <IconWrapper>
               <p>CloseCircleIcon</p>
               <CloseCircleIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>AppIcon</p>
+              <AppIcon />
+            </IconWrapper>
+            <IconWrapper>
+              <p>DocumentIcon</p>
+              <DocumentIcon />
             </IconWrapper>
           </Grid>
         </Section>
