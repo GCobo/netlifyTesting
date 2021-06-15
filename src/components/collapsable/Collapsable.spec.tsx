@@ -17,42 +17,6 @@ describe('Collapsable Component', () => {
     );
   });
 
-  it('All items should be displayed', () => {
-    mount(
-      <WrapperTheme>
-        <Collapsable allOpen>
-          <CollabsableItem title='Pages' testId='pages'>
-            Example
-          </CollabsableItem>
-          <CollabsableItem title='Widgets' testId='widgets'>
-            Example
-          </CollabsableItem>
-          <CollabsableItem title='Themes' testId='themes'>
-            Example
-          </CollabsableItem>
-        </Collapsable>
-      </WrapperTheme>
-    );
-
-    cy.get('[data-test="collapsable-pages"]').should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
-
-    cy.get('[data-test="collapsable-widgets"]').should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
-
-    cy.get('[data-test="collapsable-themes"]').should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
-  });
-
   it('should click on one of the items and expand', () => {
     mount(
       <WrapperTheme>
