@@ -140,7 +140,7 @@ describe('Dropdown component', () => {
     cy.get('[data-test="dropdown-item-test1"]').click();
     cy.get('[data-test="dropdown-item-test2"]').click();
 
-    cy.contains('test1,test2').should('be.visible');
+    cy.contains('test1, test2').should('be.visible');
   });
 
   it('should open dropdown in modal with height 0', () => {
@@ -149,7 +149,6 @@ describe('Dropdown component', () => {
       margin-left: 500px;
       height: ${(props) => (props.hidden ? 0 : 'auto')};
     `;
-
     const TestComponent = () => {
       const [hidden, setHidden] = useState(true);
 
@@ -219,11 +218,33 @@ describe('Dropdown component', () => {
     };
 
     mount(<TestComponent />);
-
-    cy.contains('test1,test2').should('be.visible');
+    cy.contains('test1, test2').should('be.visible');
   });
 
-  it.only('Dropdown multiple values should be deleted', () => {
+  it('Dropdown multiple values should be deleted', () => {
+    mount(
+      <WrapperTheme>
+        <Dropdown
+          label='label'
+          options={optionsDropdown}
+          testId='dropdown'
+          multiple
+        />
+      </WrapperTheme>
+    );
+    cy.get('[data-test="dropdown"]')
+      .click()
+      .get('[data-test="dropdown-item-test"]')
+      .click()
+      .get('[data-test="dropdown-item-test2"]')
+      .click()
+      .get('[data-test="dropdown-delete-value"]')
+      .click()
+      .get('[data-test="dropdown"]')
+      .should('have.value', '');
+  });
+
+  it('Dropdown multiple values should be deleted', () => {
     mount(
       <WrapperTheme>
         <Dropdown
