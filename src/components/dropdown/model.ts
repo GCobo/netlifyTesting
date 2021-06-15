@@ -2,9 +2,9 @@ import { Ref } from 'react';
 
 export type DropdownInput = {
   label: string;
-  type?: 'text' | 'number' | 'password' | 'email' | 'date',
+  type?: 'text' | 'number' | 'password' | 'email' | 'date';
   testId?: string;
-}
+};
 
 export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   label?: string;
@@ -13,13 +13,13 @@ export interface DropdownProps extends DropdownStyleProps, ChevronProps {
   className?: string;
   options: DropdownOption[];
   testId?: string;
-  onChange?(value: string | number | number[] | string[]): void;
+  onChange?(value: string | number | number[] | string[] | undefined): void;
   placeholder?: string;
   ref?: Ref<HTMLInputElement>;
   multiple?: boolean;
   overlay?: boolean;
   required?: boolean;
-  input?: DropdownInput
+  input?: DropdownInput;
 }
 
 export type DropdownStyleProps = {
