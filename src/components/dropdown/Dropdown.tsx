@@ -137,7 +137,9 @@ export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
     }, [innerValue, multiple, innerValues]);
 
     const removeSelectedValues = () => {
-      multiple ? setInnerValues([]) : setInnerValue(undefined);
+      const valueReset = multiple ? [] : undefined;
+      onChange && onChange(valueReset);
+      multiple ? setInnerValues(valueReset) : setInnerValue(valueReset);
     };
 
     return (
