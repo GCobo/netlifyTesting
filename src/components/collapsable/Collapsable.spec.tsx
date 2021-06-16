@@ -1,5 +1,5 @@
-import React from 'react';
 import { mount } from 'cypress-react-unit-test';
+import React from 'react';
 
 import { WrapperTheme } from '../../utils/test';
 import { Collapsable } from './Collapsable';
@@ -56,7 +56,7 @@ describe('Collapsable Component', () => {
           <CollabsableItem title='Pages' testId='pages'>
             Example
           </CollabsableItem>
-          <CollabsableItem title='Widgets' testId='widgets' itemOpen>
+          <CollabsableItem title='Widgets' testId='widgets' itemIsOpened>
             Example
           </CollabsableItem>
           <CollabsableItem title='Themes' testId='themes'>

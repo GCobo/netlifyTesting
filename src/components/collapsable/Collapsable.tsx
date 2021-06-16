@@ -1,14 +1,14 @@
 import React, {
   Children,
-  useState,
   cloneElement,
+  useEffect,
   useRef,
-  useEffect
+  useState
 } from 'react';
 
-import { CollabsableItem } from './CollapsableItem';
 import { ChevronDownIcon } from '../icons';
-import { CollapseWrapper, CollapsableItemHeader } from './Styles';
+import { CollabsableItem } from './CollapsableItem';
+import { CollapsableItemHeader, CollapseWrapper } from './Styles';
 
 type IProps = {
   children: React.ReactElement[];
@@ -35,7 +35,7 @@ export const Collapsable = ({ children }: IProps) => {
             <li>
               <CollapsableItemHeader
                 onClick={() => toggleCollapsable(index)}
-                isOpen={itemsOpened.includes(index) || child.props.itemOpen}
+                isOpen={itemsOpened.includes(index) || child.props.itemIsOpened}
                 data-test={`collapsable-item-${
                   child.props.testId ? child.props.testId : index
                 }`}
