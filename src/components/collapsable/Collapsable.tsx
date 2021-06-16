@@ -12,14 +12,18 @@ import { CollapsableItemHeader, CollapseWrapper } from './Styles';
 
 type IProps = {
   children: React.ReactElement[];
+  onChange?(value: number[]): void;
 };
 
-export const Collapsable = ({ children }: IProps) => {
+export const Collapsable = ({ children, onChange }: IProps) => {
   const [itemsOpened, setItemsOpened] = useState<number[]>([]);
   const [height, setHeight] = useState<number>(0);
   const containerRef = useRef<HTMLUListElement>(null);
 
-  const toggleCollapsable = (index: number) => setItemsOpened([index]);
+  const toggleCollapsable = (index: number) => {
+    setItemsOpened([index]);
+    onChange && onChange([index]);
+  };
 
   useEffect(() => {
     if (containerRef.current) {
@@ -27,6 +31,12 @@ export const Collapsable = ({ children }: IProps) => {
     }
   }, [containerRef]);
 
+  console.log(
+    'onchange',
+    onChange && onChange(itemsOpened),
+    'itemsOpened',
+    itemsOpened
+  );
   return (
     <CollapseWrapper ref={containerRef}>
       {Children.map(children, (child: React.ReactElement, index: number) => {
