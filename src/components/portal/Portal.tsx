@@ -1,17 +1,10 @@
 import React, {
-  FunctionComponent,
-  useEffect,
-  useState,
-  useCallback,
-  useRef,
-  Fragment,
-  useMemo,
-  MouseEvent
+    Fragment, FunctionComponent, MouseEvent, useCallback, useEffect, useMemo, useRef, useState
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { PortalContainer, PortalOverlay, PortalContent } from './styles';
-import { PortalProps, IPosition, PositionMode } from './PortalModel';
+import { IPosition, PortalProps, PositionMode } from './PortalModel';
+import { PortalContainer, PortalContent, PortalOverlay } from './PortalStyles';
 
 const createElement = () => {
   let popupRoot: HTMLElement | null = document.getElementById('popup-root');

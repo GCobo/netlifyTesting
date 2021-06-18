@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import { animated } from 'react-spring';
+
+import styled from '@emotion/styled';
 
 export const Overlay = styled(animated.div)`
   height: 100vh;
