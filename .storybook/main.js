@@ -8,9 +8,6 @@ module.exports = {
     '@storybook/preset-create-react-app',
     '@storybook/addon-storysource'
   ],
-  typescript: {
-    reactDocgen: 'none'
-  },
   webpackFinal: (config) => {
     return {
       ...config,

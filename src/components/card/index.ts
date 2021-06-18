@@ -1,2 +1,2 @@
 export * from './Card';
-export * from './Styles';
+export * from './CardStyles';
