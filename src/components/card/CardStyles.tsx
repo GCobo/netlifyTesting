@@ -90,14 +90,12 @@ export const CardBoxActions = styled.div<{ horizontal?: boolean }>`
   display: flex;
   justify-content: space-between;
   grid-column-gap: ${rem(16)};
-  ${(props) =>
-    !props.horizontal &&
-    `
-  margin-top: ${rem(16)};
+
   ${(props) =>
     !props.horizontal &&
     `
     width: 100%;
+    margin-top: ${rem(16)};
   `}
 
   svg {
