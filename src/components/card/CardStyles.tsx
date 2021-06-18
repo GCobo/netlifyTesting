@@ -1,36 +1,38 @@
-import styled from '@emotion/styled';
 import { rem } from 'polished';
 import { ReactNode } from 'react';
+
+import styled from '@emotion/styled';
 
 export type CardBoxWrapperProps = {
   imageBig?: boolean;
   header?: ReactNode;
+  horizontal?: boolean;
 };
 
 export const CardBoxWrapper = styled.div<CardBoxWrapperProps>`
   border-radius: ${rem(10)};
   box-shadow: ${(props) => props.theme.mainShadow};
-  height: ${(props) =>
-    props.header
-      ? `${rem(328)}`
-      : props.imageBig
-      ? `${rem(272)}`
-      : `${rem(208)}`};
   width: 100%;
   display: flex;
-  flex-flow: column;
+  flex-direction: ${(props) => (props.horizontal ? 'row' : 'column')};
 `;
 
 export const CardBoxStyles = styled.div<CardBoxWrapperProps>`
   display: flex;
-  flex-flow: column;
+  flex-direction: ${(props) => (props.horizontal ? 'row' : 'column')};
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => props.theme.colors.system.white};
-  padding: ${rem(12)};
+  padding: ${(props) =>
+    props.horizontal ? `${rem(21)} ${rem(24)}` : `${rem(12)}`};
   flex: 1;
   border-radius: ${(props) =>
     props.header ? `0 0 ${rem(10)} ${rem(10)}` : `${rem(10)}`};
+  ${(props) =>
+    props.horizontal &&
+    `
+    column-gap: ${rem(16)};
+    `}
 `;
 
 export const CardBoxHeader = styled.div`
@@ -52,7 +54,8 @@ export const CardBoxLogo = styled.div<CardBoxWrapperProps>`
   border-radius: ${rem(24)};
   border: 3px solid ${(props) => props.theme.colors.primary.greyLighest};
   background-color: ${(props) => props.theme.colors.primary.greyLighest};
-  margin-bottom: ${(props) => (props.imageBig ? `${rem(12)}` : 0)};
+  margin-bottom: ${(props) =>
+    !props.horizontal && props.imageBig ? `${rem(12)}` : 0};
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -83,12 +86,16 @@ export const CardBoxLastUpdate = styled.p`
   font-weight: 300;
 `;
 
-export const CardBoxActions = styled.div`
+export const CardBoxActions = styled.div<{ horizontal?: boolean }>`
   display: flex;
-  justify-content: flex-start;
-  width: 100%;
+  justify-content: space-between;
   grid-column-gap: ${rem(16)};
   margin-top: ${rem(16)};
+  ${(props) =>
+    !props.horizontal &&
+    `
+    width: 100%;
+  `}
 
   svg {
     fill: ${(props) => props.theme.colors.primary.greyDarkest} !important;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Button } from './Button';
 
 export default {
@@ -20,4 +21,8 @@ export const Success = () => {
 
 export const Warning = () => {
   return <Button warning>Button warning</Button>;
+};
+
+export const Error = () => {
+  return <Button error>Button Error</Button>;
 };

@@ -1,88 +1,20 @@
-import styled from '@emotion/styled';
 import {
-  Alert,
-  AlertIcon,
-  AndroidIcon,
-  AppIcon,
-  AppleIcon,
-  ApplicationIcon,
-  ArrowDownIcon,
-  ArrowUpIcon,
-  Badgets,
-  BagIcon,
-  BellIcon,
-  BookingIcon,
-  Button,
-  ButtonIcon,
-  ButtonSocialMedia,
-  CalendarIcon,
-  Card,
-  Checkbox,
-  CheckCircleIcon,
-  CheckPlatform,
-  ChevronDownIcon,
-  CloseCircleIcon,
-  CloseIcon,
-  CloudCheckIcon,
-  ColorPicker,
-  CopyIcon,
-  CreditCardIcon,
-  DocumentIcon,
-  Dropdown,
-  EditIcon,
-  ErrorLabel,
-  ExitIcon,
-  GlobalStyles,
-  HelpIcon,
-  HelpLabel,
-  HiddenIcon,
-  ICheckPlatform,
-  Input,
-  InputNumeric,
-  InputUpload,
-  JoinbleLogo,
-  JoinbleTheme,
-  Link,
-  LinkIcon,
-  Loading,
-  LockIcon,
-  LogOutIcon,
-  MenuIcon,
-  MessageIcon,
-  MinusIcon,
-  NotificationIcon,
-  OffCircleIcon,
-  OptionMenu,
-  OptionMenuHeader,
-  OptionMenuItem,
-  OptionMenuSeparator,
-  PlayIcon,
-  PlusCircleIcon,
-  PlusIcon,
-  PlusSquareIcon,
-  PublishIcon,
-  SearchIcon,
-  SeeMoreIcon,
-  SendIcon,
-  SettingIcon,
-  ShopingIcon,
-  ShopingPurchasedIcon,
-  ShowIcon,
-  socialMedia,
-  StateAlert,
-  Switch,
-  TabPanel,
-  Tabs,
-  Tag,
-  TextArea,
-  ThemeIcon,
-  Tooltip,
-  TrashIcon,
-  UploadIcon,
-  UserIcon,
-  WidgetIcon
+    Alert, AlertIcon, AndroidIcon, AppIcon, AppleIcon, ApplicationIcon, ArrowDownIcon, ArrowUpIcon,
+    Badgets, BagIcon, BellIcon, BookingIcon, Button, ButtonIcon, ButtonSocialMedia, CalendarIcon,
+    Card, Checkbox, CheckCircleIcon, CheckPlatform, ChevronDownIcon, CloseCircleIcon, CloseIcon,
+    CloudCheckIcon, ColorPicker, CopyIcon, CreditCardIcon, DocumentIcon, Dropdown, EditIcon,
+    ErrorLabel, ExitIcon, GlobalStyles, HelpIcon, HelpLabel, HiddenIcon, ICheckPlatform, Input,
+    InputNumeric, InputUpload, JoinbleLogo, JoinbleTheme, Link, LinkIcon, Loading, LockIcon,
+    LogOutIcon, MenuIcon, MessageIcon, MinusIcon, NotificationIcon, OffCircleIcon, OptionMenu,
+    OptionMenuHeader, OptionMenuItem, OptionMenuSeparator, PlayIcon, PlusCircleIcon, PlusIcon,
+    PlusSquareIcon, PublishIcon, SearchIcon, SeeMoreIcon, SendIcon, SettingIcon, ShopingIcon,
+    ShopingPurchasedIcon, ShowIcon, socialMedia, StateAlert, Switch, TabPanel, Tabs, Tag, TextArea,
+    ThemeIcon, Tooltip, TrashIcon, UploadIcon, UserIcon, WidgetIcon
 } from 'joinble-ui';
 import React from 'react';
+
+import styled from '@emotion/styled';
+
 import { DropdownOption } from '../../dist/components/dropdown/model';
 
 type IGridProps = {
@@ -801,7 +733,7 @@ const App = () => {
         </Section>
         <Section>
           <Title>Cards</Title>
-          <Grid>
+          <Grid size={350}>
             <Card
               id='card-app'
               title='title'
@@ -873,6 +805,29 @@ const App = () => {
                   icon={<EditIcon />}
                   onClick={() => alert('click card action')}
                 />
+              }
+            />
+            <div />
+            <Card
+              horizontal
+              id='card-app'
+              title='title'
+              lastUpdate='06/01/21'
+              imageBig
+              image='https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg'
+              actions={
+                <>
+                  <ButtonIcon
+                    secondary
+                    icon={<EditIcon />}
+                    onClick={() => alert('click card action')}
+                  />
+                  <ButtonIcon
+                    secondary
+                    icon={<EditIcon />}
+                    onClick={() => alert('click card action')}
+                  />
+                </>
               }
             />
           </Grid>

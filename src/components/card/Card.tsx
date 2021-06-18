@@ -1,15 +1,9 @@
 import React, { ReactNode } from 'react';
 
 import {
-  CardBoxActions,
-  CardBoxHeader,
-  CardBoxLastUpdate,
-  CardBoxLogo,
-  CardBoxStyles,
-  CardBoxTitle,
-  CardBoxWrapper,
-  CardBoxWrapperProps
-} from './Styles';
+    CardBoxActions, CardBoxHeader, CardBoxLastUpdate, CardBoxLogo, CardBoxStyles, CardBoxTitle,
+    CardBoxWrapper, CardBoxWrapperProps
+} from './CardStyles';
 
 export interface CardsProps extends CardBoxWrapperProps {
   lastUpdate: string;
@@ -19,6 +13,7 @@ export interface CardsProps extends CardBoxWrapperProps {
   testId?: string;
   className?: string;
   image?: ReactNode;
+  horizontal?: boolean;
 }
 
 export const Card = ({
@@ -29,7 +24,8 @@ export const Card = ({
   testId,
   className,
   imageBig,
-  header
+  header,
+  horizontal
 }: CardsProps) => {
   return (
     <CardBoxWrapper
@@ -37,15 +33,16 @@ export const Card = ({
       className={className}
       data-test={testId}
       header={header}
+      horizontal={horizontal}
     >
-      {header && <CardBoxHeader>{header}</CardBoxHeader>}
-      <CardBoxStyles header={header}>
+      {header && !horizontal && <CardBoxHeader>{header}</CardBoxHeader>}
+      <CardBoxStyles header={header} horizontal={horizontal}>
         <CardBoxLogo imageBig={imageBig}>{image}</CardBoxLogo>
         <div>
           <CardBoxTitle>{title}</CardBoxTitle>
           <CardBoxLastUpdate>{lastUpdate}</CardBoxLastUpdate>
         </div>
-        <CardBoxActions>{actions}</CardBoxActions>
+        <CardBoxActions horizontal={horizontal}>{actions}</CardBoxActions>
       </CardBoxStyles>
     </CardBoxWrapper>
   );
