@@ -1,10 +1,4 @@
-import React, {
-  Children,
-  cloneElement,
-  useEffect,
-  useRef,
-  useState
-} from 'react';
+import React, { Children, cloneElement, useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '../icons';
 import { CollabsableItem } from './CollapsableItem';
@@ -22,8 +16,11 @@ export const Collapsable = ({ children, onChange }: IProps) => {
 
   const toggleCollapsable = (index: number) => {
     setItemsOpened([index]);
-    onChange && onChange([index]);
   };
+
+  useEffect(() => {
+    onChange && onChange(itemsOpened);
+  }, [itemsOpened]);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -31,12 +28,6 @@ export const Collapsable = ({ children, onChange }: IProps) => {
     }
   }, [containerRef]);
 
-  console.log(
-    'onchange',
-    onChange && onChange(itemsOpened),
-    'itemsOpened',
-    itemsOpened
-  );
   return (
     <CollapseWrapper ref={containerRef}>
       {Children.map(children, (child: React.ReactElement, index: number) => {
@@ -55,9 +46,9 @@ export const Collapsable = ({ children, onChange }: IProps) => {
               </CollapsableItemHeader>
 
               {cloneElement(child, {
-                open: itemsOpened.includes(index),
+                open: itemsOpened.includes(index) || child.props.itemIsOpened,
                 height,
-                itemsOpen: itemsOpened.length,
+                itemsOpen: itemsOpened.length || child.props.itemIsOpended,
                 totalItems: children.length
               })}
             </li>
