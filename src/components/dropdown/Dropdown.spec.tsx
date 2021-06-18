@@ -146,7 +146,6 @@ describe('Dropdown component', () => {
   it('should open dropdown in modal with height 0', () => {
     const PortalStyled = styled.div<{ hidden?: boolean }>`
       width: 500px;
-      margin-left: 500px;
       height: ${(props) => (props.hidden ? 0 : 'auto')};
     `;
     const TestComponent = () => {
