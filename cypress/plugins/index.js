@@ -12,12 +12,13 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+const injectDevServer = require('@cypress/react/plugins/react-scripts');
+
 /**
  * @type {Cypress.PluginConfig}
  */
+// eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
-  require('cypress-react-unit-test/plugins/react-scripts')(on, config)
-  // IMPORTANT to return the config object
-  // with the any changed environment variables
-  return config
-}
+  injectDevServer(on, config);
+  return config;
+};

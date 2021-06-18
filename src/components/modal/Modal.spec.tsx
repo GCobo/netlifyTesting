@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { Modal } from './Modal';
 import { Button } from '../button/Button';
 import { WrapperTheme } from '../../utils/test';

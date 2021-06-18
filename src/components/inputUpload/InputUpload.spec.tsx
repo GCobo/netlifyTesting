@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 import React, { useEffect, useState } from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { InputUpload } from './InputUpload';
 import { TypeFiles } from './InputUploadModel';
 import { WrapperTheme } from '../../utils/test';

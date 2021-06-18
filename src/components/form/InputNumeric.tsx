@@ -3,7 +3,8 @@ import React, {
   FunctionComponent,
   Ref,
   useState,
-  useMemo
+  useMemo,
+  ChangeEvent
 } from 'react';
 
 import { InputProps } from './Input';
@@ -88,6 +89,14 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
       return false;
     }, [min, innerValue]);
 
+    const onChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
+      const value = parseFloat(event.target.value);
+
+      if (typeof value === 'number') {
+        setInnerValue(value);
+      }
+    };
+
     return (
       <Wrapper className={className}>
         {label && (
@@ -103,17 +112,16 @@ export const InputNumeric: FunctionComponent<NumericInputProps> = forwardRef(
             testId={testId ? `button-minus-${testId}` : undefined}
           />
           <InputNumericStyles
-            type={'numeric'}
+            type={'number'}
             id={id}
             disabled={disabled}
             placeholder={placeHolder}
             name={name}
             ref={ref}
             onClick={onClick}
-            onChange={onChange}
+            onChange={onChangeValue}
             value={innerValue}
             data-test={testId}
-            readOnly
           />
           <ButtonNumeric
             icon={<PlusIcon />}
