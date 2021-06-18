@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import ReactTooltip from 'react-tooltip';
-import { TooltipStyles, TooltipWrapper } from './Tooltip.styles';
+
+import { TooltipStyles, TooltipWrapper } from './TooltipStyles';
 
 type IProps = {
   label: string;

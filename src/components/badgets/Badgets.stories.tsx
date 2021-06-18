@@ -1,15 +1,17 @@
 import React from 'react';
+
 import { Badgets } from './Badgets';
 
 export default {
   title: 'Components/Badgets',
-  component: Badgets
+  component: Badgets,
+  argTypes: {}
 };
 
-export const Basic = () => {
+export const Basic = (args: any) => {
   return (
     <>
-      <Badgets number={9} /> <Badgets number={999} />
+      <Badgets number={9} {...args} />
     </>
   );
 };

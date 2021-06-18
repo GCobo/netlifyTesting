@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
 import flatpickr from 'flatpickr';
 import confirmDatePlugin from 'flatpickr/dist/plugins/confirmDate/confirmDate';
+import React, { useEffect, useRef } from 'react';
 
 import { Input, InputPropsBasic } from '../form';
 import { CalendarIcon } from '../icons';
-import { InputCalendarWrapper, DateGlobalStyles } from './Styles';
+import { DateGlobalStyles, InputCalendarWrapper } from './DateStyles';
 
 export const addCss = () => {
   var head = document.head;

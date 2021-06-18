@@ -4,25 +4,42 @@ import { Button } from './Button';
 
 export default {
   title: 'Components/Button',
-  component: Button
+  component: Button,
+  argTypes: {}
 };
 
-export const Primary = () => {
-  return <Button>Button Primary</Button>;
+export const Primary = (args: any) => {
+  return <Button {...args}>Button Primary</Button>;
 };
 
-export const Outline = () => {
-  return <Button outline>Button Outline</Button>;
+export const Outline = (args: any) => {
+  return (
+    <Button {...args} outline>
+      Button Outline
+    </Button>
+  );
 };
 
-export const Success = () => {
-  return <Button success>Button Success</Button>;
+export const Success = (args: any) => {
+  return (
+    <Button {...args} success>
+      Button Success
+    </Button>
+  );
 };
 
-export const Warning = () => {
-  return <Button warning>Button warning</Button>;
+export const Warning = (args: any) => {
+  return (
+    <Button {...args} warning>
+      Button warning
+    </Button>
+  );
 };
 
-export const Error = () => {
-  return <Button error>Button Error</Button>;
+export const Error = (args: any) => {
+  return (
+    <Button {...args} error>
+      Button Error
+    </Button>
+  );
 };

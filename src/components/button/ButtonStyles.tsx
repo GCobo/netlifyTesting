@@ -1,15 +1,19 @@
+import { darken, rem } from 'polished';
+
 import { css } from '@emotion/css';
 import styled from '@emotion/styled/macro';
-import { darken, rem } from 'polished';
+
 import { Loading } from '../loading/Loading';
 import { ButtonTypeProps } from './ButtonModel';
 
 const TRANSITION = 'all 0.3s ease-in-out';
+const LOADING_SIZE = `${rem(24)}`;
 
 export const LoadingButton = styled(Loading)<ButtonTypeProps>`
-  width: ${rem(24)};
-  min-width: ${rem(24)};
-  height: ${rem(24)};
+  width: ${LOADING_SIZE};
+  min-width: ${LOADING_SIZE};
+  height: ${LOADING_SIZE};
+  min-height: ${LOADING_SIZE};
 
   div {
     position: unset;
@@ -44,6 +48,7 @@ export const ButtonStyles = styled.button<ButtonTypeProps>`
   ${(props) => props.theme.fonts.regularText('M')};
   min-width: ${rem(110)};
   height: ${rem(40)};
+  min-height: ${rem(40)};
   border-radius: ${rem(4)};
   display: inline-flex;
   align-items: center;

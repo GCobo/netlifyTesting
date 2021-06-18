@@ -1,14 +1,8 @@
-import React, {
-  Fragment,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState
-} from 'react';
+import { enGB as en, es } from 'date-fns/locale';
+import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react';
 import { DatePickerCalendar } from 'react-nice-dates';
-import { es, enGB as en } from 'date-fns/locale';
 
-import { DatePickerGlobalStyles, DatePickerWrapper } from './Styles';
+import { DatePickerGlobalStyles, DatePickerWrapper } from './DateStyles';
 
 export enum LanguageDate {
   es = 'es',
