@@ -23,7 +23,7 @@ jobs:
           browser: chrome
           headless: true
       - name: Build StoryBook
-        run:  yarn build-storybook
+        run: yarn build-storybook
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
@@ -36,7 +36,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        - name: Release
+      - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
