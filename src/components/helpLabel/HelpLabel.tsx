@@ -1,6 +1,7 @@
 import React from 'react';
+
 import { HelpIcon } from '../icons';
-import { HelpLabelStyles } from './Styles';
+import { HelpLabelStyles } from './HelpLabelStyles';
 
 type IProps = {
   label: string;

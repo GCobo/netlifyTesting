@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 
 import { Input, InputPropsBasic } from '../form';
 import { TimeIcon } from '../icons';
-import { InputCalendarWrapper } from './Styles';
+import { InputCalendarWrapper } from './DateStyles';
 
 type IProps = InputPropsBasic & {
   withTime?: boolean;

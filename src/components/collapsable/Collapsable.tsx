@@ -1,14 +1,8 @@
-import React, {
-  Children,
-  useState,
-  cloneElement,
-  useRef,
-  useEffect
-} from 'react';
+import React, { Children, cloneElement, useEffect, useRef, useState } from 'react';
 
-import { CollabsableItem } from './CollapsableItem';
 import { ChevronDownIcon } from '../icons';
-import { CollapseWrapper, CollapsableItemHeader } from './Styles';
+import { CollabsableItem } from './CollapsableItem';
+import { CollapsableItemHeader, CollapseWrapper } from './CollapsableStyles';
 
 type IProps = {
   children: React.ReactElement[];
