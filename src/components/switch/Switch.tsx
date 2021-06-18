@@ -1,18 +1,9 @@
 import React, { forwardRef, Ref, useEffect, useState } from 'react';
-import {
-  SwitchContainer,
-  SwitchBoxContainer,
-  SwitchBoxBox,
-  LabelSwitch,
-  HelpLabelInput,
-  InputRequired
-} from './SwitchStyles';
+
+import { ErrorLabelCheck, FlexCenter, HiddenCheckbox } from '../checkbox/CheckboxStyles';
+import { HelpLabelInput, InputRequired } from '../form/Styles';
 import { SwitchProps } from './SwitchModel';
-import {
-  ErrorLabelCheck,
-  FlexCenter,
-  HiddenCheckbox
-} from '../checkbox/CheckboxStyles';
+import { LabelSwitch, SwitchBoxBox, SwitchBoxContainer, SwitchContainer } from './SwitchStyles';
 
 export const Switch = forwardRef(
   (

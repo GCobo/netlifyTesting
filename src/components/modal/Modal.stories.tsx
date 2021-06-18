@@ -16,13 +16,13 @@ export const Base = (args: any) => {
   };
 
   return (
-    <>
+    <Fragment>
       <button onClick={onShowModal} data-test='button-modal'>
         Show Modal
       </button>
       <Modal {...args} show={show}>
         <p>children modal</p>
       </Modal>
-    </>
+    </Fragment>
   );
 };

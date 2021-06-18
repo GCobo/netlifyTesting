@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Badgets } from './Badgets';
 
@@ -10,8 +10,8 @@ export default {
 
 export const Basic = (args: any) => {
   return (
-    <>
+    <Fragment>
       <Badgets number={9} {...args} />
-    </>
+    </Fragment>
   );
 };

@@ -1,34 +1,18 @@
 import React, {
-  useEffect,
-  useRef,
-  useState,
-  useMemo,
-  forwardRef,
-  Ref,
-  FunctionComponent,
-  ChangeEvent
+    ChangeEvent, forwardRef, FunctionComponent, Ref, useEffect, useMemo, useRef, useState
 } from 'react';
-import {
-  ErrorLabelInput,
-  HelpLabelInput,
-  Label,
-  Wrapper
-} from '../form/Styles';
+import { Spring } from 'react-spring/renderprops.cjs';
+
+import { ButtonIcon } from '../buttonIcon/ButtonIcon';
+import { Input } from '../form/Input';
+import { ErrorLabelInput, HelpLabelInput, InputRequired, Label, Wrapper } from '../form/Styles';
+import { CloseIcon } from '../icons';
 import { OptionMenuItem } from '../optionMenu';
 import { Portal } from '../portal';
 import {
-  AnimatedOptions,
-  Chevron,
-  DropdownActionsRow,
-  DropdownOptions,
-  DropdownStyle,
-  InputRequired
+    AnimatedOptions, Chevron, DropdownActionsRow, DropdownOptions, DropdownStyle
 } from './DropdownStyle';
-import { Input } from '../form/Input';
 import { DropdownOption, DropdownProps } from './model';
-import { Spring } from 'react-spring/renderprops.cjs';
-import { CloseIcon } from '../icons';
-import { ButtonIcon } from '../buttonIcon/ButtonIcon';
 
 export const Dropdown: FunctionComponent<DropdownProps> = forwardRef(
   (

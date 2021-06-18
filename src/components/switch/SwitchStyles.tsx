@@ -1,6 +1,6 @@
 import styled from '@emotion/styled/macro';
+
 import { CheckboxContainer, LabelCheckbox } from '../checkbox/CheckboxStyles';
-import { HelpLabel } from '../helpLabel/HelpLabel';
 import { DisabledProps, SwitchBoxProps, SwitchProps } from './SwitchModel';
 
 export const LabelSwitch = styled(LabelCheckbox)<DisabledProps>`
@@ -61,14 +61,4 @@ export const SwitchContainer = styled(CheckboxContainer)<SwitchProps>`
       border-color: ${(props) => props.theme.colors.primary.primary};
     }
   }
-`;
-
-export const HelpLabelInput = styled(HelpLabel)`
-  margin-top: 0.68rem;
-  display: flex;
-  flex: 1;
-`;
-
-export const InputRequired = styled.span`
-  color: ${(props) => props.theme.colors.system.error};
 `;

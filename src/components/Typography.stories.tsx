@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import React from 'react';
+
+import styled from '@emotion/styled';
 
 export default {
   title: 'Typography'
@@ -34,7 +35,7 @@ export const Typography = () => {
   `;
 
   return (
-    <>
+    <Fragment>
       <Box>
         <TypoWrapper>
           <p>9</p>
@@ -73,6 +74,6 @@ export const Typography = () => {
           <Title size='L'>Title with size L</Title>
         </TypoWrapper>
       </Box>
-    </>
+    </Fragment>
   );
 };

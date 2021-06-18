@@ -1,19 +1,9 @@
-import React, {
-  FunctionComponent,
-  forwardRef,
-  Ref,
-  useState,
-  useEffect
-} from 'react';
+import React, { forwardRef, FunctionComponent, Ref, useEffect, useState } from 'react';
+
+import { InputRequired } from '../form';
 import { CheckboxCheckedIcon } from '../icons';
 import {
-  CheckboxContainer,
-  CheckboxStyles,
-  ErrorLabelCheck,
-  FlexCenter,
-  HiddenCheckbox,
-  LabelCheckbox,
-  InputRequired
+    CheckboxContainer, CheckboxStyles, ErrorLabelCheck, FlexCenter, HiddenCheckbox, LabelCheckbox
 } from './CheckboxStyles';
 
 type IProps = {

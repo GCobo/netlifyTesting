@@ -1,18 +1,13 @@
-import styled from '@emotion/styled';
 import { rem } from 'polished';
 import { animated } from 'react-spring/renderprops.cjs';
+
+import styled from '@emotion/styled';
+
 import { InputStyle } from '../form/Styles';
 import { ChevronDownIcon } from '../icons';
 import { HEIGHT_OPTION_ITEM } from '../optionMenu/OptionMenuItemStyles';
-import {
-  OptionsMenuWrapper,
-  PADDING_X_OPTION_MENU
-} from '../optionMenu/OptionMenuStyles';
+import { OptionsMenuWrapper, PADDING_X_OPTION_MENU } from '../optionMenu/OptionMenuStyles';
 import { ChevronProps, DropdownStyleProps } from './model';
-
-export const InputRequired = styled.span`
-  color: ${(props) => props.theme.colors.system.error};
-`;
 
 export const DropdownStyle = styled(InputStyle)<DropdownStyleProps>`
   display: flex;

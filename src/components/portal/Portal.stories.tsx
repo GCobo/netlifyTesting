@@ -14,13 +14,13 @@ export const Base = (args: any) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <>
+    <Fragment>
       <button onClick={() => setShow(!show)} ref={buttonRef}>
         Show portal
       </button>
       <Portal show={show} actionRef={buttonRef} {...args}>
         This is the portal <SearchIcon />
       </Portal>
-    </>
+    </Fragment>
   );
 };

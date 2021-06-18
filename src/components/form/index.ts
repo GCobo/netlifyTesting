@@ -1,4 +1,3 @@
-export * from './Input.stories';
 export * from './Input';
 export * from './InputEditor';
 export * from './InputNumeric';

@@ -1,5 +1,7 @@
-import styled from '@emotion/styled';
 import React from 'react';
+
+import styled from '@emotion/styled';
+
 import { JoinbleTheme } from '../styles';
 
 export default {
@@ -43,7 +45,7 @@ export const Colors = () => {
   };
 
   return (
-    <>
+    <Fragment>
       <ColorItem
         background={JoinbleTheme.colors.primary.primary}
         label='primary'
@@ -94,6 +96,6 @@ export const Colors = () => {
         label='info'
         hex='#4FC6E1'
       />
-    </>
+    </Fragment>
   );
 };
