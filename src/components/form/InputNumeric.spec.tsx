@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 import React from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { InputNumeric } from './InputNumeric';
 import { WrapperTheme } from '../../utils/test';
 
@@ -53,5 +53,19 @@ describe('Input component', () => {
     );
 
     cy.get('label').should('contain', '*');
+  });
+
+  it('should be able to add numbers manually', () => {
+    mount(
+      <WrapperTheme>
+        <InputNumeric label='This is a label' required />
+      </WrapperTheme>
+    );
+
+    cy.get('input').clear();
+
+    cy.get('input').type('12.20');
+
+    cy.get('input').should('be.value', '12.20');
   });
 });

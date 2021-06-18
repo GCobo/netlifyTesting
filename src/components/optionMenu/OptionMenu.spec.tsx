@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { OptionMenu } from './OptionMenu';
 import { OptionMenuItem } from './OptionMenuItem';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { SearchIcon } from '../icons';
 import { PositionMode } from '../portal';
 import { ButtonIcon } from '../buttonIcon/ButtonIcon';

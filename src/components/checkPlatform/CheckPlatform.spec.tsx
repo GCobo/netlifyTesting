@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { CheckPlatform, ICheckPlatform } from './CheckPlatform';
 import { JoinbleThemeProvider } from '../../providers';
 import { AndroidIcon, AppleIcon } from '../icons';

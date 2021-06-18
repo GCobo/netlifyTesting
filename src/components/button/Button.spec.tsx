@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import React from 'react';
 import { JoinbleTheme } from '../../styles/Theme';
 import { WrapperTheme } from '../../utils/test';

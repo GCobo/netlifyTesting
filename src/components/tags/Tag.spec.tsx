@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 import React from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { ThemeProvider } from '@emotion/react';
 import { JoinbleTheme } from '../../styles/Theme';
 import { Tag } from './Tag';

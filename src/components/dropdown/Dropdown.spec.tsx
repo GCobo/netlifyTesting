@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import styled from '@emotion/styled';
 import { Dropdown } from './Dropdown';
 import { Portal } from '../portal/Portal';

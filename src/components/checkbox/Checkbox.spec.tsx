@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 import React from 'react';
-import { mount } from 'cypress-react-unit-test';
+import { mount } from '@cypress/react';
 import { Checkbox } from './Checkbox';
 import { WrapperTheme } from '../../utils/test';
 
