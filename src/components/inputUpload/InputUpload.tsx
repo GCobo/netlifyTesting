@@ -73,6 +73,7 @@ export const InputUpload = ({
 
   useEffect(() => {
     if (value) {
+      console.log(value);
       updateFile(value, fileName);
     }
   }, [value, fileName]);
