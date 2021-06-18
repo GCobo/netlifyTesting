@@ -1,15 +1,19 @@
+import { darken, rem } from 'polished';
+
 import { css } from '@emotion/css';
 import styled from '@emotion/styled/macro';
-import { darken, rem } from 'polished';
+
 import { Loading } from '../loading/Loading';
 import { ButtonTypeProps } from './ButtonModel';
 
 const TRANSITION = 'all 0.3s ease-in-out';
+const BUTTON_SIZE = `${rem(24)}`;
 
 export const LoadingButton = styled(Loading)<ButtonTypeProps>`
-  width: ${rem(24)};
-  min-width: ${rem(24)};
-  height: ${rem(24)};
+  width: ${BUTTON_SIZE};
+  min-width: ${BUTTON_SIZE};
+  height: ${BUTTON_SIZE};
+  min-height: ${BUTTON_SIZE};
 
   div {
     position: unset;
